@@ -1,0 +1,107 @@
+name: Discovery
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Two runs must never overlap: both would push to gh-pages and one would lose.
+# Unlike CI, the in-progress run is not cancelled — let it finish and publish.
+concurrency:
+  group: discovery
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Install Xray core
+        # Pinned: an unpinned "latest" could change the config format under us.
+        env:
+          XRAY_VERSION: v25.3.6
+        run: |
+          set -euo pipefail
+          curl -fsSL -o xray.zip \
+            "https://github.com/XTLS/Xray-core/releases/download/${XRAY_VERSION}/Xray-linux-64.zip"
+          unzip -o -q xray.zip xray -d "$HOME/.local/bin"
+          chmod +x "$HOME/.local/bin/xray"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Verify environment
+        run: python -m geminiroute.cli doctor
+
+      - name: Restore database from gh-pages
+        # The runner is ephemeral; without this, reliability history resets
+        # every hour and every node stays at the "unknown" score.
+        run: |
+          set -euo pipefail
+          mkdir -p data
+          if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
+            git fetch origin gh-pages --depth=1
+            git show origin/gh-pages:data/geminiroute.db > data/geminiroute.db 2>/dev/null \
+              || echo "No database on gh-pages yet; starting fresh."
+          else
+            echo "gh-pages does not exist yet; starting fresh."
+          fi
+
+      - name: Run the pipeline
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GR_OUTPUT_DIR: dist
+          GR_DATABASE_PATH: data/geminiroute.db
+        run: python -m geminiroute.cli run-full-pipeline
+
+      - name: Publish to gh-pages
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
+            git fetch origin gh-pages --depth=1
+            git worktree add publish gh-pages
+          else
+            git worktree add --detach publish
+            git -C publish checkout --orphan gh-pages
+            git -C publish rm -rf . >/dev/null 2>&1 || true
+          fi
+
+          rm -rf publish/sub publish/api
+          cp -r dist/sub dist/api publish/
+          mkdir -p publish/data
+          cp data/geminiroute.db publish/data/geminiroute.db
+
+          cd publish
+          git add -A
+          # Idempotent: without this the branch collects 8,760 empty commits/year.
+          if git diff --cached --quiet; then
+            echo "No changes to publish."
+          else
+            git commit -m "chore: publish subscriptions $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push origin gh-pages
+          fi
+
+      - name: Upload output as an artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: subscriptions
+          path: dist/
+          retention-days: 7

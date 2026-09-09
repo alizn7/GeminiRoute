@@ -1,0 +1,103 @@
+"""Configuration.
+
+    sources.toml — content, edited in PRs and reviewed like code
+    environment  — secrets and per-run knobs, injected by the workflow
+
+GEMINI_API_KEY is optional: without it the pipeline still validates
+reachability, which keeps the repo forkable by anyone.
+"""
+
+from __future__ import annotations
+
+import os
+import tomllib
+from dataclasses import dataclass, field
+from pathlib import Path
+
+from geminiroute.core.models import Source
+
+DEFAULT_SOURCES_FILE = "sources.toml"
+
+
+def _env_int(name: str, default: int) -> int:
+    try:
+        return int(os.environ.get(name, "") or default)
+    except ValueError:
+        return default
+
+
+def _env_float(name: str, default: float) -> float:
+    try:
+        return float(os.environ.get(name, "") or default)
+    except ValueError:
+        return default
+
+
+@dataclass
+class Settings:
+    output_dir: Path = Path("dist")
+    database_path: Path = Path("data/geminiroute.db")
+
+    connectivity_concurrency: int = 100
+    connectivity_timeout: float = 8.0
+    max_latency_ms: float = 3000.0
+
+    gemini_pool_size: int = 12
+    gemini_timeout: float = 20.0
+    gemini_api_key: str | None = None
+    xray_path: str | None = None
+
+    # Cap on how many survivors reach the expensive stage, so an unexpected
+    # influx of sources cannot push the run past the job time limit.
+    max_gemini_candidates: int = 1500
+
+    history_retention_days: int = 90
+    log_level: str = "INFO"
+
+    sources: list[Source] = field(default_factory=list)
+
+    @classmethod
+    def from_env(cls, sources_file: str | Path = DEFAULT_SOURCES_FILE) -> Settings:
+        return cls(
+            output_dir=Path(os.environ.get("GR_OUTPUT_DIR", "dist")),
+            database_path=Path(os.environ.get("GR_DATABASE_PATH", "data/geminiroute.db")),
+            connectivity_concurrency=_env_int("GR_CONNECTIVITY_CONCURRENCY", 100),
+            connectivity_timeout=_env_float("GR_CONNECTIVITY_TIMEOUT", 8.0),
+            max_latency_ms=_env_float("GR_MAX_LATENCY_MS", 3000.0),
+            gemini_pool_size=_env_int("GR_GEMINI_POOL_SIZE", 12),
+            gemini_timeout=_env_float("GR_GEMINI_TIMEOUT", 20.0),
+            gemini_api_key=os.environ.get("GEMINI_API_KEY") or None,
+            xray_path=os.environ.get("XRAY_PATH") or None,
+            max_gemini_candidates=_env_int("GR_MAX_GEMINI_CANDIDATES", 1500),
+            history_retention_days=_env_int("GR_HISTORY_RETENTION_DAYS", 90),
+            log_level=os.environ.get("GR_LOG_LEVEL", "INFO"),
+            sources=load_sources(sources_file),
+        )
+
+
+def load_sources(path: str | Path) -> list[Source]:
+    """Read sources.toml. A missing file yields no sources, not an error."""
+    file_path = Path(path)
+    if not file_path.exists():
+        return []
+
+    with file_path.open("rb") as handle:
+        data = tomllib.load(handle)
+
+    sources: list[Source] = []
+    for entry in data.get("source", []):
+        if not isinstance(entry, dict):
+            continue
+        name = str(entry.get("name", "")).strip()
+        url = str(entry.get("url", "")).strip()
+        if not name or not url:
+            continue
+        sources.append(
+            Source(
+                name=name,
+                type=str(entry.get("type", "raw")).strip().lower(),
+                url=url,
+                enabled=bool(entry.get("enabled", True)),
+            )
+        )
+    return sources

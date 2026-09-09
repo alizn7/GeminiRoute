@@ -1,0 +1,66 @@
+[project]
+name = "geminiroute"
+version = "0.1.0"
+description = "Discovery, validation, scoring and monitoring of network routes to Gemini-compatible endpoints"
+requires-python = ">=3.12"
+
+# Deliberately short. Collection, parsing, normalization, dedup, pre-validation,
+# connectivity, geo, scoring, storage and generation are all standard library.
+# The only third-party code in the pipeline is the HTTP client used for the one
+# request that must travel through a SOCKS proxy, plus the CLI framework.
+dependencies = [
+    "httpx[socks]>=0.27",
+    "typer>=0.12",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+    "ruff>=0.6",
+    "mypy>=1.11",
+]
+
+[project.scripts]
+geminiroute = "geminiroute.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["geminiroute*"]
+
+# ---------------------------------------------------------------- ruff -----
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E", "W",  # pycodestyle
+    "F",       # pyflakes: unused imports/variables, undefined names
+    "I",       # isort: import ordering
+    "UP",      # pyupgrade
+    "B",       # bugbear: likely bugs
+    "SIM",     # simplify
+]
+
+# ---------------------------------------------------------------- mypy -----
+[tool.mypy]
+python_version = "3.12"
+disallow_untyped_defs = true
+warn_unused_ignores = true
+warn_return_any = true
+no_implicit_optional = true
+
+[[tool.mypy.overrides]]
+module = ["httpx.*", "typer.*", "socksio.*"]
+ignore_missing_imports = true
+
+# -------------------------------------------------------------- pytest -----
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+# Lets async tests run without an explicit event-loop fixture.
+asyncio_mode = "auto"

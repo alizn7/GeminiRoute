@@ -1,0 +1,23 @@
+# Sources GeminiRoute collects from.
+#
+# type = "raw"     -> one URL whose body is a config list (plain or base64)
+# type = "github"  -> a GitHub contents-API directory URL; every file is fetched
+#
+# This file is content, not code: adding a source is a normal pull request, and
+# a bad source degrades a run rather than breaking it (see collect_source).
+#
+# The entries below are placeholders. Replace them with sources you have
+# actually checked — an unreviewed source list is the fastest way to fill the
+# database with dead nodes.
+
+[[source]]
+name = "example-raw"
+type = "raw"
+url = "https://raw.githubusercontent.com/OWNER/REPO/main/sub.txt"
+enabled = false
+
+[[source]]
+name = "example-github-dir"
+type = "github"
+url = "https://api.github.com/repos/OWNER/REPO/contents/subscriptions"
+enabled = false
