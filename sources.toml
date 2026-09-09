@@ -3,21 +3,17 @@
 # type = "raw"     -> one URL whose body is a config list (plain or base64)
 # type = "github"  -> a GitHub contents-API directory URL; every file is fetched
 #
-# This file is content, not code: adding a source is a normal pull request, and
-# a bad source degrades a run rather than breaking it (see collect_source).
-#
-# The entries below are placeholders. Replace them with sources you have
-# actually checked — an unreviewed source list is the fastest way to fill the
-# database with dead nodes.
+# Content, not code: adding a source is a normal pull request, and a bad source
+# degrades a run rather than breaking it (see collect_source).
 
 [[source]]
-name = "example-raw"
+name = "barry-far-vmess"
 type = "raw"
-url = "https://raw.githubusercontent.com/OWNER/REPO/main/sub.txt"
-enabled = false
+url = "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vmess.txt"
+enabled = true
 
 [[source]]
-name = "example-github-dir"
-type = "github"
-url = "https://api.github.com/repos/OWNER/REPO/contents/subscriptions"
-enabled = false
+name = "barry-far-vless"
+type = "raw"
+url = "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vless.txt"
+enabled = true
