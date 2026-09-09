@@ -1,20 +1,20 @@
 """Domain enumerations.
 
-Members subclass `str` so they compare equal to their value and serialise
-without a custom JSON encoder.
+`StrEnum` members are also plain strings, so they compare equal to their value
+and serialise without a custom JSON encoder.
 """
 
-from enum import Enum
+from enum import StrEnum
 
 
-class ProtocolType(str, Enum):
+class ProtocolType(StrEnum):
     VLESS = "vless"
     VMESS = "vmess"
     TROJAN = "trojan"
     SHADOWSOCKS = "shadowsocks"
 
 
-class NodeStatus(str, Enum):
+class NodeStatus(StrEnum):
     """Lifecycle of a node.
 
     DISCOVERED -> VALIDATING -> HEALTHY | DEGRADED | DEAD
@@ -29,7 +29,7 @@ class NodeStatus(str, Enum):
     RECHECK = "recheck"
 
 
-class ValidationStage(str, Enum):
+class ValidationStage(StrEnum):
     """Which filter in the funnel produced a result."""
 
     PRE = "pre"

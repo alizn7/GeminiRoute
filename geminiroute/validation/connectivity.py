@@ -101,7 +101,7 @@ async def probe(
             )
             tls_ms = _ms(tls_start, time.perf_counter())
 
-    except (TimeoutError, asyncio.TimeoutError):
+    except TimeoutError:
         return ValidationResult(
             node_fingerprint=node.fingerprint,
             stage=ValidationStage.CONNECTIVITY,
@@ -118,7 +118,7 @@ async def probe(
     finally:
         if writer is not None:
             writer.close()
-            with contextlib.suppress(OSError, ssl.SSLError, asyncio.TimeoutError):
+            with contextlib.suppress(OSError, ssl.SSLError, TimeoutError):
                 await writer.wait_closed()
 
     latency = LatencyResult(

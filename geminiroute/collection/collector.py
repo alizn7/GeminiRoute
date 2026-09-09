@@ -44,7 +44,9 @@ def fetch_text(url: str, timeout: float = DEFAULT_TIMEOUT) -> str:
     """GET a URL and return its body as text. Raises on failure."""
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     with urllib.request.urlopen(request, timeout=timeout) as response:  # noqa: S310
-        body = response.read(MAX_BODY_BYTES)
+        # urlopen is typed as Any in typeshed; pin the type here so the
+        # decoded return value is a real str rather than Any.
+        body: bytes = response.read(MAX_BODY_BYTES)
     return body.decode("utf-8", errors="replace")
 
 

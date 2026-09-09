@@ -193,7 +193,7 @@ class GeminiValidator:
                 # its port and fails the next node assigned to this worker.
                 with contextlib.suppress(ProcessLookupError):
                     process.terminate()
-                with contextlib.suppress(TimeoutError, asyncio.TimeoutError):
+                with contextlib.suppress(TimeoutError):
                     await asyncio.wait_for(process.wait(), 5.0)
                 if process.returncode is None:
                     with contextlib.suppress(ProcessLookupError):
