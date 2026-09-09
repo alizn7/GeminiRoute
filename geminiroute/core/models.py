@@ -5,7 +5,7 @@ which is what keeps every other layer testable without a network or database.
 """
 
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from geminiroute.core.enums import NodeStatus, ProtocolType, ValidationStage
 from geminiroute.core.fingerprint import compute_fingerprint
@@ -13,7 +13,7 @@ from geminiroute.core.fingerprint import compute_fingerprint
 
 def _utcnow() -> datetime:
     """Timezone-aware UTC now. (`datetime.utcnow()` is deprecated in 3.12.)"""
-    return datetime.now(timezone.utc)
+    return datetime.now(UTC)
 
 
 @dataclass(frozen=True)

@@ -8,7 +8,7 @@ likely to be alive.
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 
 MAX_CONSECUTIVE_FAILS = 3
 BACKOFF_MINUTES = (5, 30, 120, 360, 1440)  # 5m, 30m, 2h, 6h, 24h ceiling
@@ -31,7 +31,7 @@ def backoff_minutes(consecutive_fails: int) -> int:
 
 def decide(consecutive_fails: int, now: datetime | None = None) -> RetryDecision:
     """What to do after `consecutive_fails` failures in a row."""
-    now = now or datetime.now(timezone.utc)
+    now = now or datetime.now(UTC)
     if consecutive_fails <= 0:
         return RetryDecision(should_retry=False, next_retry_at=None, give_up=False)
 
@@ -50,4 +50,4 @@ def is_due(next_retry_at: datetime | None, now: datetime | None = None) -> bool:
     """
     if next_retry_at is None:
         return True
-    return (now or datetime.now(timezone.utc)) >= next_retry_at
+    return (now or datetime.now(UTC)) >= next_retry_at

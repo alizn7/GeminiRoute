@@ -46,6 +46,11 @@ select = [
     "SIM",     # simplify
 ]
 
+[tool.ruff.lint.per-file-ignores]
+# Typer declares CLI arguments as function-call defaults; B008 forbids that
+# pattern in general but it is the framework's intended API.
+"geminiroute/cli.py" = ["B008"]
+
 # ---------------------------------------------------------------- mypy -----
 [tool.mypy]
 python_version = "3.12"

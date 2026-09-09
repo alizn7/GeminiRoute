@@ -1,8 +1,8 @@
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 
 from geminiroute.retry.policy import MAX_CONSECUTIVE_FAILS, backoff_minutes, decide, is_due
 
-NOW = datetime(2026, 1, 1, 12, 0, tzinfo=timezone.utc)
+NOW = datetime(2026, 1, 1, 12, 0, tzinfo=UTC)
 
 
 def test_backoff_follows_the_documented_schedule() -> None:

@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import json
 import sqlite3
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 from geminiroute.core.enums import NodeStatus, ProtocolType, ValidationStage
@@ -73,7 +73,7 @@ CREATE INDEX IF NOT EXISTS idx_validation_history_node_time
 
 
 def _now() -> str:
-    return datetime.now(timezone.utc).isoformat()
+    return datetime.now(UTC).isoformat()
 
 
 class SqliteRepository(NodeRepository):
@@ -213,7 +213,7 @@ class SqliteRepository(NodeRepository):
             )
 
     def reliability(self, fingerprint: str, days: int = 30) -> tuple[int, int]:
-        since = (datetime.now(timezone.utc) - timedelta(days=days)).isoformat()
+        since = (datetime.now(UTC) - timedelta(days=days)).isoformat()
         row = self._connection.execute(
             """
             SELECT COALESCE(SUM(passed), 0) AS passed, COUNT(*) AS total
@@ -225,7 +225,7 @@ class SqliteRepository(NodeRepository):
         return int(row["passed"]), int(row["total"])
 
     def prune_history(self, older_than_days: int) -> int:
-        cutoff = (datetime.now(timezone.utc) - timedelta(days=older_than_days)).isoformat()
+        cutoff = (datetime.now(UTC) - timedelta(days=older_than_days)).isoformat()
         with self._connection:
             cursor = self._connection.execute(
                 "DELETE FROM validation_history WHERE checked_at < ?", (cutoff,)

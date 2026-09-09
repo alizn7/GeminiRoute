@@ -12,7 +12,7 @@ from __future__ import annotations
 
 import asyncio
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from geminiroute.collection.collector import collect_all
 from geminiroute.config.settings import Settings
@@ -223,7 +223,7 @@ async def _validate_gemini(
                 stage=ValidationStage.GEMINI,
                 passed=False,
                 error="proxy core unavailable",
-                checked_at=datetime.now(timezone.utc),
+                checked_at=datetime.now(UTC),
             )
             for node in nodes
         ]

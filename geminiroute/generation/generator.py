@@ -11,7 +11,7 @@ from __future__ import annotations
 import base64
 import json
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 from geminiroute.core.models import GeoInfo, Node, Score
@@ -59,7 +59,7 @@ def build_api_payload(items: list[ScoredNode]) -> dict[str, object]:
     named `credential` invites scraping.
     """
     return {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": datetime.now(UTC).isoformat(),
         "count": len(items),
         "nodes": [
             {
@@ -104,7 +104,7 @@ def build_stats_payload(
         countries[key] = countries.get(key, 0) + 1
 
     return {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": datetime.now(UTC).isoformat(),
         "funnel": {
             "collected": collected,
             "after_dedup": after_dedup,
