@@ -1,2 +1,0 @@
-vless://6fb79584-30b8-4888-b358-98f7ef6b8697@213.155.20.83:443?security=reality&encryption=none&pbk=RR_T91yZY_QUPN53wQNakGmCN3mq0i_Ozom7etyh4RI&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=notebookpro.kz#1.🇰🇿 GeminiRoute
-vless://5d16ac22-6eea-426f-b778-6f4c2961faef@91.224.87.22:9882?type=grpc&security=reality&fp=chrome&pbk=bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU&sid=aa&sni=dl.google.com&serviceName=grpc-tunnel#2.🇰🇿 GeminiRoute
