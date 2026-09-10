@@ -16,7 +16,7 @@
 </head>
 <body>
   <h1>GeminiRoute</h1>
-  <p class="muted">Generated 2026-09-10T12:50:36.904136+00:00</p>
+  <p class="muted">Generated 2026-09-10T14:46:54.355588+00:00</p>
 
   <h2>Subscriptions</h2>
   <ul>
@@ -28,6 +28,18 @@
   <p class="muted">Add one of these URLs to a client as a subscription link.
      Each has a <code>.plain.txt</code> twin that is not base64 encoded.</p>
 
+  <h2>Using these</h2>
+  <p>Nodes are verified against the Gemini <strong>API</strong>: each one is
+     checked from inside its own tunnel for where it exits, and rejected if it
+     comes out somewhere Gemini is not served.</p>
+  <p class="muted">The Gemini <strong>web app</strong> has a second gate: it
+     also looks at the country of the Google account you are signed into. A
+     node can be perfectly good and still show
+     <em>&ldquo;Gemini isn&rsquo;t currently supported in your country&rdquo;</em>
+     because of the account, not the node. Open
+     <code>gemini.google.com</code> in a private window, signed out, to rule
+     that out.</p>
+
   <h2>API</h2>
   <ul>
     <li><a href="api/nodes.json">api/nodes.json</a></li>
@@ -36,11 +48,11 @@
 
   <h2>Last run</h2>
   <table>
-      <tr><td>collected</td><td>7269</td></tr>
-      <tr><td>after dedup</td><td>3882</td></tr>
-      <tr><td>after pre validation</td><td>3881</td></tr>
-      <tr><td>after connectivity</td><td>2160</td></tr>
-      <tr><td>after gemini</td><td>156</td></tr>
+      <tr><td>collected</td><td>7326</td></tr>
+      <tr><td>after dedup</td><td>3954</td></tr>
+      <tr><td>after pre validation</td><td>3194</td></tr>
+      <tr><td>after connectivity</td><td>1483</td></tr>
+      <tr><td>after gemini</td><td>277</td></tr>
   </table>
 </body>
 </html>

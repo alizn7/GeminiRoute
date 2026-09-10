@@ -1,2 +1,0 @@
-vless://25f86cb1-2140-4085-abcb-c3a0ea7a4be0@OV-France1.09vpn.com:80?path=/vless/&security=none&encryption=none&type=ws#1.%F0%9F%87%AB%F0%9F%87%B7%20GeminiRoute
-vless://25f86cb1-2140-4085-abcb-c3a0ea7a4be0@152.228.162.19:80?path=/vless/&security=none&encryption=none&type=ws#2.%F0%9F%87%AB%F0%9F%87%B7%20GeminiRoute

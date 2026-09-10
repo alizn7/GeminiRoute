@@ -1,7 +1,0 @@
-vless://11af1c47-865a-47c6-92ff-118013655d78@91.107.190.63:8080?encryption=none&path=/&security=none&type=ws#1.%F0%9F%87%A9%F0%9F%87%AA%20GeminiRoute
-vless://11af1c47-865a-47c6-92ff-118013655d78@91.107.190.175:8080?ed=2048&eh=Sec-WebSocket-Protocol&encryption=none&path=/&security=none&type=ws#2.%F0%9F%87%A9%F0%9F%87%AA%20GeminiRoute
-vless://11af1c47-865a-47c6-92ff-118013655d78@91.107.154.19:8080?ed=2048&eh=Sec-WebSocket-Protocol&encryption=none&path=/&security=none&type=ws#3.%F0%9F%87%A9%F0%9F%87%AA%20GeminiRoute
-vless://5fcdc9b7-e70f-4a5c-85c3-e018ad818326@82.24.203.20:2087?encryption=none&path=/fd5ba98a3970&security=none&type=ws#4.%F0%9F%87%A9%F0%9F%87%AA%20GeminiRoute
-vless://56ba5d34-ef22-4ba6-8090-4188b807df54@163.8.195.241:2087?encryption=none&host=/?–v2rayNplus–v2rayNplus–v2rayNplus–&path=/29c8fed7ca22&security=none&type=ws#5.%F0%9F%87%A9%F0%9F%87%AA%20GeminiRoute
-vless://c21631d5-36c9-4664-b575-97eca17456be@2.27.205.59:443?encryption=none&security=none&type=ws&path=/#6.%F0%9F%87%A9%F0%9F%87%AA%20GeminiRoute
-vless://c21631d5-36c9-4664-b575-97eca17456be@neth8.lunariai.ru:443?encryption=none&security=none&type=ws&host=neth8.lunariai.ru&path=/#7.%F0%9F%87%A9%F0%9F%87%AA%20GeminiRoute

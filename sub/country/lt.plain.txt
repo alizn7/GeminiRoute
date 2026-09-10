@@ -1,0 +1,1 @@
+vless://ae8e0f7d-b661-41ca-b55d-d8c383adb2f8@88.119.176.24:443?flow=xtls-rprx-vision&encryption=none&security=reality&sni=lit9.helper-internet.com&fp=chrome&pbk=W-zf_ncm9sYALF5EqvUsxqTkYGdAw-tQczT2SqwVMGE&sid=ff776ff77be48b88&type=tcp&headerType=none#1.🇱🇹 GeminiRoute
