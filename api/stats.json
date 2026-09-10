@@ -1,33 +1,31 @@
 {
-  "generated_at": "2026-09-10T07:25:32.293325+00:00",
+  "generated_at": "2026-09-10T11:27:49.905022+00:00",
   "funnel": {
-    "collected": 6607,
-    "after_dedup": 3398,
-    "after_pre_validation": 3398,
-    "after_connectivity": 2011,
-    "after_gemini": 162
+    "collected": 7269,
+    "after_dedup": 3882,
+    "after_pre_validation": 3881,
+    "after_connectivity": 2155,
+    "after_gemini": 154
   },
-  "gemini_success_rate": 0.135,
-  "average_latency_ms": 93.45,
+  "gemini_success_rate": 0.1283,
+  "average_latency_ms": 73.01,
   "nodes_by_country": {
-    "canada": 59,
-    "united-states": 57,
-    "france": 7,
-    "germany": 7,
+    "canada": 58,
+    "united-states": 55,
+    "germany": 8,
+    "france": 6,
     "the-netherlands": 6,
     "poland": 6,
-    "united-kingdom": 5,
     "italy": 2,
-    "latvia": 2,
     "japan": 2,
+    "latvia": 2,
+    "united-kingdom": 2,
     "seychelles": 1,
-    "netherlands": 1,
-    "iran": 1,
-    "egypt": 1,
-    "greece": 1,
-    "uzbekistan": 1,
     "singapore": 1,
-    "turkey": 1,
-    "russia": 1
+    "greece": 1,
+    "türkiye": 1,
+    "egypt": 1,
+    "uzbekistan": 1,
+    "turkey": 1
   }
 }

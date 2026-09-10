@@ -1,6 +1,6 @@
-vless://5e7ecc47-e424-4653-876e-c7515a2c82b4@94.183.209.43:443?path=/&security=none&encryption=none&type=ws#@hopev2ray💯
-vless://bf443e4a-aa9e-4509-abf0-d0f6828d57be@178.95.170.98:2087?encryption=none&security=none&type=ws&path=/4bc027a44532#@meliproxyy
-vless://bf443e4a-aa9e-4509-abf0-d0f6828d57be@178.95.170.83:2087/?type=ws&encryption=none&flow=&path=/4bc027a44532&packetEncoding=xudp#波兰
-vless://bf443e4a-aa9e-4509-abf0-d0f6828d57be@178.95.170.115:2087?encryption=none&security=none&type=ws&path=/4bc027a44532#🇩🇪All¹⁰ | @BigSmoke_Config
-vless://78791f9e-fe09-4d4f-88ec-895764bae0d6@94.183.209.58:443?encryption=none&host=pl2.lckdwn.ru&path=%2F&security=none&type=ws#%3E%3E%40oneclickvpnkeys%3A%3APL
-vless://d23cb516-40db-4aa4-8142-6b45ff882f90@94.183.209.59:443?path=%2F&security=none&encryption=none&type=ws#%3E%3E%40outline_vpn%3A%3APL
+vless://bf443e4a-aa9e-4509-abf0-d0f6828d57be@178.95.170.98:2087?encryption=none&security=none&type=ws&path=/4bc027a44532#1.%F0%9F%87%B5%F0%9F%87%B1%20GeminiRoute
+vless://5e7ecc47-e424-4653-876e-c7515a2c82b4@94.183.209.43:443?path=/&security=none&encryption=none&type=ws#2.%F0%9F%87%B5%F0%9F%87%B1%20GeminiRoute
+vless://78791f9e-fe09-4d4f-88ec-895764bae0d6@94.183.209.58:443?encryption=none&host=pl2.lckdwn.ru&path=%2F&security=none&type=ws#3.%F0%9F%87%B5%F0%9F%87%B1%20GeminiRoute
+vless://d23cb516-40db-4aa4-8142-6b45ff882f90@94.183.209.59:443?path=%2F&security=none&encryption=none&type=ws#4.%F0%9F%87%B5%F0%9F%87%B1%20GeminiRoute
+vless://bf443e4a-aa9e-4509-abf0-d0f6828d57be@178.95.170.83:2087/?type=ws&encryption=none&flow=&path=/4bc027a44532&packetEncoding=xudp#5.%F0%9F%87%B5%F0%9F%87%B1%20GeminiRoute
+vless://bf443e4a-aa9e-4509-abf0-d0f6828d57be@178.95.170.115:2087?encryption=none&security=none&type=ws&path=/4bc027a44532#6.%F0%9F%87%B5%F0%9F%87%B1%20GeminiRoute

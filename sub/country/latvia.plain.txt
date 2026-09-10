@@ -1,2 +1,2 @@
-vless://70e20b2e-3b1f-4c25-9a3d-9240570391bb@89.36.161.222:2096/?type=ws&encryption=none&flow=&path=/#@networld_vpn
-vless://70e20b2e-3b1f-4c25-9a3d-9240570391bb@laoye.in-gect.fun:2096?path=/&security=&encryption=none&host=laoye.in-gect.fun&type=ws#Latvia 🇱🇻
+vless://70e20b2e-3b1f-4c25-9a3d-9240570391bb@89.36.161.222:2096?encryption=none&security=none&type=ws&path=/#1.%F0%9F%87%B1%F0%9F%87%BB%20GeminiRoute
+vless://70e20b2e-3b1f-4c25-9a3d-9240570391bb@laoye.in-gect.fun:2096?path=/&security=&encryption=none&host=laoye.in-gect.fun&type=ws#2.%F0%9F%87%B1%F0%9F%87%BB%20GeminiRoute
