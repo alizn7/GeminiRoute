@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-09-10T07:25:32.293325+00:00",
+  "funnel": {
+    "collected": 6607,
+    "after_dedup": 3398,
+    "after_pre_validation": 3398,
+    "after_connectivity": 2011,
+    "after_gemini": 162
+  },
+  "gemini_success_rate": 0.135,
+  "average_latency_ms": 93.45,
+  "nodes_by_country": {
+    "canada": 59,
+    "united-states": 57,
+    "france": 7,
+    "germany": 7,
+    "the-netherlands": 6,
+    "poland": 6,
+    "united-kingdom": 5,
+    "italy": 2,
+    "latvia": 2,
+    "japan": 2,
+    "seychelles": 1,
+    "netherlands": 1,
+    "iran": 1,
+    "egypt": 1,
+    "greece": 1,
+    "uzbekistan": 1,
+    "singapore": 1,
+    "turkey": 1,
+    "russia": 1
+  }
+}
