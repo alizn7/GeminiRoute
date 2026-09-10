@@ -55,9 +55,28 @@ async def test_closed_port_fails_without_raising() -> None:
 async def test_unresolvable_hostname_is_reported_as_dns_failure() -> None:
     bad = Node(protocol=ProtocolType.VLESS, address="no-such-host.invalid",
                port=443, credential="uuid", raw="vless://x")
-    result = await connectivity.probe(bad, timeout=3.0)
+    result = await connectivity.probe(bad, timeout=3.0, resolution=(None, None))
     assert not result.passed
     assert result.error == "dns resolution failed"
+
+
+@pytest.mark.asyncio
+async def test_literal_ip_needs_no_dns_lookup() -> None:
+    resolved = await connectivity.resolve_all(["127.0.0.1", "8.8.8.8"])
+    assert resolved["127.0.0.1"] == ("127.0.0.1", 0.0)
+    assert resolved["8.8.8.8"] == ("8.8.8.8", 0.0)
+
+
+@pytest.mark.asyncio
+async def test_duplicate_hostnames_are_resolved_once() -> None:
+    resolved = await connectivity.resolve_all(["127.0.0.1", "127.0.0.1", "127.0.0.1"])
+    assert len(resolved) == 1
+
+
+@pytest.mark.asyncio
+async def test_unresolvable_name_returns_none_without_raising() -> None:
+    resolved = await connectivity.resolve_all(["no-such-host.invalid"], timeout=3.0)
+    assert resolved["no-such-host.invalid"] == (None, None)
 
 
 @pytest.mark.asyncio
@@ -74,3 +93,30 @@ async def test_latency_ceiling_filters_slow_nodes(listening_port: int) -> None:
     results = await connectivity.probe_all(nodes, timeout=2.0)
     assert connectivity.filter_by_connectivity(nodes, results, max_latency_ms=10000)
     assert connectivity.filter_by_connectivity(nodes, results, max_latency_ms=0.0001) == []
+
+
+@pytest.mark.asyncio
+async def test_a_silent_server_cannot_stall_the_batch() -> None:
+    """A server that accepts TCP but never speaks used to wedge the whole run:
+    `wait_closed()` waited forever for a close_notify that never came, holding
+    its semaphore slot. Aborting instead keeps the batch bounded."""
+
+    async def never_reply(reader: asyncio.StreamReader, writer: asyncio.StreamWriter) -> None:
+        await asyncio.sleep(3600)
+
+    server = await asyncio.start_server(never_reply, "127.0.0.1", 0)
+    port = server.sockets[0].getsockname()[1]
+    nodes = [
+        Node(protocol=ProtocolType.VLESS, address="127.0.0.1", port=port,
+             security="tls", credential=f"u{i}", raw="vless://x")
+        for i in range(12)
+    ]
+    try:
+        results = await asyncio.wait_for(
+            connectivity.probe_all(nodes, concurrency=6, timeout=1.0), 20
+        )
+    finally:
+        server.close()
+
+    assert len(results) == 12
+    assert all(not r.passed for r in results)

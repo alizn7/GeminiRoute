@@ -55,3 +55,23 @@ def test_legal_block_is_treated_as_blocked() -> None:
 def test_unexpected_status_fails_in_both_modes() -> None:
     assert not interpret(302, "", has_api_key=False).passed
     assert not interpret(302, "", has_api_key=True).passed
+
+
+def test_free_port_returns_a_usable_loopback_port() -> None:
+    """Ports are allocated per node: a terminated xray can hold its old port
+    briefly, and reusing it would either fail to bind or look ready while
+    pointing at a dying process."""
+    import socket
+
+    from geminiroute.validation.gemini import free_port
+
+    port = free_port()
+    assert 1024 < port <= 65535
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+        sock.bind(("127.0.0.1", port))          # must be genuinely free
+
+
+def test_consecutive_free_ports_differ() -> None:
+    from geminiroute.validation.gemini import free_port
+
+    assert len({free_port() for _ in range(5)}) > 1

@@ -15,6 +15,7 @@ import asyncio
 import contextlib
 import json
 import shutil
+import socket
 import tempfile
 from dataclasses import dataclass
 from pathlib import Path
@@ -78,24 +79,52 @@ def find_xray_binary(explicit: str | None = None) -> str | None:
     return shutil.which("xray") or shutil.which("sing-box")
 
 
-async def _wait_for_port(port: int, timeout: float) -> bool:
+def free_port() -> int:
+    """Ask the OS for an unused loopback port.
+
+    A port per node, not per worker: a terminated xray can leave its port
+    bound briefly, and the next launch on that port would either fail to bind
+    or — worse — see the dying listener and be treated as ready.
+    """
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+        sock.bind(("127.0.0.1", 0))
+        return int(sock.getsockname()[1])
+
+
+async def _wait_for_port(
+    port: int, timeout: float, process: asyncio.subprocess.Process | None = None
+) -> bool:
     """Poll until the SOCKS port accepts a connection, or give up.
 
     Polled rather than a fixed sleep: xray binds in ~150ms, but a loaded
-    runner can take much longer.
+    runner can take much longer. Returns early if the process has already
+    exited, so a config xray rejects fails in milliseconds, not seconds.
     """
     deadline = asyncio.get_running_loop().time() + timeout
     while asyncio.get_running_loop().time() < deadline:
+        if process is not None and process.returncode is not None:
+            return False
         try:
             _, writer = await asyncio.open_connection("127.0.0.1", port)
         except OSError:
             await asyncio.sleep(0.1)
             continue
-        writer.close()
-        with contextlib.suppress(OSError):
-            await writer.wait_closed()
+        with contextlib.suppress(OSError, AttributeError, RuntimeError):
+            writer.transport.abort()
         return True
     return False
+
+
+async def _read_stderr(process: asyncio.subprocess.Process, limit: int = 300) -> str:
+    """Whatever xray complained about, trimmed to one useful line."""
+    if process.stderr is None:
+        return ""
+    with contextlib.suppress(Exception):
+        data = await asyncio.wait_for(process.stderr.read(4096), 2.0)
+        text = data.decode("utf-8", errors="replace").strip()
+        if text:
+            return text.splitlines()[-1][:limit]
+    return ""
 
 
 class GeminiValidator:
@@ -156,11 +185,15 @@ class GeminiValidator:
                 "-c",
                 str(config_path),
                 stdout=asyncio.subprocess.DEVNULL,
-                stderr=asyncio.subprocess.DEVNULL,
+                # Captured, not discarded: when xray refuses a config it says
+                # exactly why, and that message is the only useful diagnostic.
+                stderr=asyncio.subprocess.PIPE,
             )
             try:
-                if not await _wait_for_port(port, XRAY_STARTUP_TIMEOUT):
-                    return failure("proxy failed to start")
+                if not await _wait_for_port(port, XRAY_STARTUP_TIMEOUT, process):
+                    reason = await _read_stderr(process)
+                    return failure(f"proxy failed to start: {reason}" if reason
+                                   else "proxy failed to start")
 
                 headers = {"Content-Type": "application/json"}
                 if self.api_key:
@@ -179,7 +212,10 @@ class GeminiValidator:
                 except httpx.TimeoutException:
                     return failure("timeout")
                 except httpx.HTTPError as exc:
-                    return failure(f"{type(exc).__name__}: {exc}")
+                    # Several httpx errors stringify to "", which produced the
+                    # useless "ConnectError: " in the histogram.
+                    detail = str(exc).strip() or "no detail"
+                    return failure(f"{type(exc).__name__}: {detail}")
 
                 verdict = interpret(response.status_code, response.text, bool(self.api_key))
                 return ValidationResult(
@@ -208,14 +244,13 @@ class GeminiValidator:
         results: list[ValidationResult | None] = [None] * len(nodes)
 
         async def worker(worker_index: int) -> None:
-            port = self.base_port + worker_index
             while True:
                 try:
                     index, node = queue.get_nowait()
                 except asyncio.QueueEmpty:
                     return
                 try:
-                    results[index] = await self._run_one(node, port)
+                    results[index] = await self._run_one(node, free_port())
                 finally:
                     queue.task_done()
 

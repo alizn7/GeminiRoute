@@ -224,6 +224,25 @@ class SqliteRepository(NodeRepository):
         ).fetchone()
         return int(row["passed"]), int(row["total"])
 
+    def error_histogram(self, stage: str, limit: int = 20) -> list[tuple[str, int]]:
+        """Most common failure reasons for a stage, most recent run first.
+
+        A summary line says how many nodes failed; this says why, which is the
+        difference between "the proxy stage is broken" and a fix.
+        """
+        rows = self._connection.execute(
+            """
+            SELECT COALESCE(error, "(none)") AS reason, COUNT(*) AS n
+              FROM validation_history
+             WHERE stage = ? AND passed = 0
+          GROUP BY reason
+          ORDER BY n DESC
+             LIMIT ?
+            """,
+            (stage, limit),
+        ).fetchall()
+        return [(str(r["reason"]), int(r["n"])) for r in rows]
+
     def prune_history(self, older_than_days: int) -> int:
         cutoff = (datetime.now(UTC) - timedelta(days=older_than_days)).isoformat()
         with self._connection:

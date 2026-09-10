@@ -103,3 +103,21 @@ def test_prune_keeps_recent_history() -> None:
     r.record_results([ValidationResult(n.fingerprint, ValidationStage.GEMINI, True)])
     assert r.prune_history(90) == 0        # today's row survives
     assert r.reliability(n.fingerprint) == (1, 1)
+
+
+def test_error_histogram_groups_failure_reasons() -> None:
+    r = repo()
+    n = node()
+    r.upsert_nodes([n])
+    r.record_results([
+        ValidationResult(n.fingerprint, ValidationStage.GEMINI, False, error="proxy failed"),
+        ValidationResult(n.fingerprint, ValidationStage.GEMINI, False, error="proxy failed"),
+        ValidationResult(n.fingerprint, ValidationStage.GEMINI, False, error="timeout"),
+        ValidationResult(n.fingerprint, ValidationStage.GEMINI, True),
+        ValidationResult(n.fingerprint, ValidationStage.CONNECTIVITY, False, error="timeout"),
+    ])
+    assert r.error_histogram("gemini") == [("proxy failed", 2), ("timeout", 1)]
+
+
+def test_error_histogram_is_empty_when_nothing_failed() -> None:
+    assert repo().error_histogram("gemini") == []

@@ -40,16 +40,24 @@ class Settings:
 
     connectivity_concurrency: int = 100
     connectivity_timeout: float = 8.0
+    dns_concurrency: int = 64
+    dns_timeout: float = 3.0
+    # Cap on nodes entering validation at all. 0 means no cap; useful for
+    # quick local runs against a full source list.
+    max_nodes: int = 0
     max_latency_ms: float = 3000.0
 
-    gemini_pool_size: int = 12
-    gemini_timeout: float = 20.0
+    # Measured against a real source list: ~8.8s of work per node, ~5% pass.
+    # pool 20 / timeout 12 puts 1200 candidates at roughly 9 minutes, which
+    # leaves real headroom under the workflow's 50-minute job limit.
+    gemini_pool_size: int = 20
+    gemini_timeout: float = 12.0
     gemini_api_key: str | None = None
     xray_path: str | None = None
 
     # Cap on how many survivors reach the expensive stage, so an unexpected
     # influx of sources cannot push the run past the job time limit.
-    max_gemini_candidates: int = 1500
+    max_gemini_candidates: int = 1200
 
     history_retention_days: int = 90
     log_level: str = "INFO"
@@ -63,12 +71,15 @@ class Settings:
             database_path=Path(os.environ.get("GR_DATABASE_PATH", "data/geminiroute.db")),
             connectivity_concurrency=_env_int("GR_CONNECTIVITY_CONCURRENCY", 100),
             connectivity_timeout=_env_float("GR_CONNECTIVITY_TIMEOUT", 8.0),
+            dns_concurrency=_env_int("GR_DNS_CONCURRENCY", 64),
+            dns_timeout=_env_float("GR_DNS_TIMEOUT", 3.0),
+            max_nodes=_env_int("GR_MAX_NODES", 0),
             max_latency_ms=_env_float("GR_MAX_LATENCY_MS", 3000.0),
-            gemini_pool_size=_env_int("GR_GEMINI_POOL_SIZE", 12),
-            gemini_timeout=_env_float("GR_GEMINI_TIMEOUT", 20.0),
+            gemini_pool_size=_env_int("GR_GEMINI_POOL_SIZE", 20),
+            gemini_timeout=_env_float("GR_GEMINI_TIMEOUT", 12.0),
             gemini_api_key=os.environ.get("GEMINI_API_KEY") or None,
             xray_path=os.environ.get("XRAY_PATH") or None,
-            max_gemini_candidates=_env_int("GR_MAX_GEMINI_CANDIDATES", 1500),
+            max_gemini_candidates=_env_int("GR_MAX_GEMINI_CANDIDATES", 1200),
             history_retention_days=_env_int("GR_HISTORY_RETENTION_DAYS", 90),
             log_level=os.environ.get("GR_LOG_LEVEL", "INFO"),
             sources=load_sources(sources_file),

@@ -66,6 +66,11 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GR_OUTPUT_DIR: dist
           GR_DATABASE_PATH: data/geminiroute.db
+          # Spelled out rather than left to defaults: these are the knobs that
+          # decide whether the run fits inside timeout-minutes above.
+          GR_MAX_GEMINI_CANDIDATES: "1200"
+          GR_GEMINI_POOL_SIZE: "20"
+          GR_GEMINI_TIMEOUT: "12"
         run: python -m geminiroute.cli run-full-pipeline
 
       - name: Publish to gh-pages

@@ -87,8 +87,8 @@ environment:
 | `GR_OUTPUT_DIR` | `dist` | Where `sub/` and `api/` are written |
 | `GR_DATABASE_PATH` | `data/geminiroute.db` | SQLite file |
 | `GR_CONNECTIVITY_CONCURRENCY` | `100` | Handshakes in flight |
-| `GR_GEMINI_POOL_SIZE` | `12` | Concurrent xray processes |
-| `GR_MAX_GEMINI_CANDIDATES` | `1500` | Cap on the expensive stage |
+| `GR_GEMINI_POOL_SIZE` | `20` | Concurrent xray processes |
+| `GR_MAX_GEMINI_CANDIDATES` | `1200` | Cap on the expensive stage |
 | `GR_HISTORY_RETENTION_DAYS` | `90` | History pruning window |
 
 ## Published output

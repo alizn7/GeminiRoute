@@ -10,7 +10,6 @@ otherwise push the Gemini stage past the job time limit.
 
 from __future__ import annotations
 
-import asyncio
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 
@@ -84,6 +83,9 @@ async def run_pipeline(settings: Settings) -> RunStats:
         repository.upsert_sources(settings.sources)
 
         nodes, stats = collect_and_parse(settings)
+        if settings.max_nodes > 0:
+            nodes = nodes[: settings.max_nodes]
+            log.info("node_cap_applied", limit=settings.max_nodes)
         repository.upsert_nodes(nodes)
 
         # --- stage: pre-validation (free) -----------------------------
@@ -92,10 +94,17 @@ async def run_pipeline(settings: Settings) -> RunStats:
         stats.after_pre = len(survivors)
 
         # --- stage: connectivity + latency (cheap) --------------------
+        # One DNS pass, reused by the geo stage below.
+        resolutions = await connectivity.resolve_all(
+            (n.address for n in survivors),
+            concurrency=settings.dns_concurrency,
+            timeout=settings.dns_timeout,
+        )
         connectivity_results = await connectivity.probe_all(
             survivors,
             concurrency=settings.connectivity_concurrency,
             timeout=settings.connectivity_timeout,
+            resolutions=resolutions,
         )
         repository.record_results(connectivity_results)
         latency_by_fingerprint = {
@@ -114,7 +123,7 @@ async def run_pipeline(settings: Settings) -> RunStats:
         candidates = sorted(reachable, key=total_latency)[: settings.max_gemini_candidates]
 
         # --- geo (decorative, never a filter) -------------------------
-        geo_by_fingerprint = await _lookup_geo(candidates)
+        geo_by_fingerprint = _lookup_geo(candidates, resolutions)
         for node in candidates:
             info = geo_by_fingerprint.get(node.fingerprint)
             if info is not None:
@@ -184,17 +193,18 @@ async def run_pipeline(settings: Settings) -> RunStats:
         repository.close()
 
 
-async def _lookup_geo(nodes: list[Node]) -> dict[str, GeoInfo]:
-    """Resolve geo for the candidate set, keyed by fingerprint."""
+def _lookup_geo(
+    nodes: list[Node], resolutions: dict[str, connectivity.Resolution]
+) -> dict[str, GeoInfo]:
+    """Geo for the candidate set, keyed by fingerprint. Reuses the DNS pass."""
     if not nodes:
         return {}
-    ip_by_fingerprint: dict[str, str] = {}
-    for node in nodes:
-        ip, _ = await connectivity.resolve(node.address, timeout=3.0)
-        if ip:
-            ip_by_fingerprint[node.fingerprint] = ip
-
-    geo_by_ip = await asyncio.to_thread(geo.lookup, list(ip_by_fingerprint.values()))
+    ip_by_fingerprint = {
+        node.fingerprint: ip
+        for node in nodes
+        if (ip := resolutions.get(node.address, (None, None))[0]) is not None
+    }
+    geo_by_ip = geo.lookup(list(ip_by_fingerprint.values()))
     return {
         fingerprint: geo_by_ip[ip]
         for fingerprint, ip in ip_by_fingerprint.items()
