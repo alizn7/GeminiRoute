@@ -1,6 +1,6 @@
-vless://de5906f3-df38-4463-aa9d-2b01320cc6ea@31.76.76.28:443/?type=ws&encryption=none&flow=&host=31.76.76.28&path=/#1.%F0%9F%87%B3%F0%9F%87%B1%20GeminiRoute
-vless://e73df646-1f62-41bf-8c50-653497d603d0@163.172.213.174:80?path=/vless/&security=&encryption=none&host=SC-TheNetherlands2.09vpn.com&type=ws#2.%F0%9F%87%B3%F0%9F%87%B1%20GeminiRoute
-vless://32349ee8-8551-45fa-a265-8704cec72936@193.23.194.167:443?encryption=none&host=193.23.194.167&path=/&security=none&type=ws#3.%F0%9F%87%B3%F0%9F%87%B1%20GeminiRoute
-vless://11af1c47-865a-47c6-92ff-118013655d78@51.158.241.182:8080?ed=2048&eh=Sec-WebSocket-Protocol&encryption=none&path=/&security=none&type=ws#4.%F0%9F%87%B3%F0%9F%87%B1%20GeminiRoute
-vless://11af1c47-865a-47c6-92ff-118013655d78@51.15.57.139:8080?ed=2048&eh=Sec-WebSocket-Protocol&encryption=none&path=/&security=none&type=ws#5.%F0%9F%87%B3%F0%9F%87%B1%20GeminiRoute
+vless://32349ee8-8551-45fa-a265-8704cec72936@193.23.194.167:443?encryption=none&host=193.23.194.167&path=/&security=none&type=ws#1.%F0%9F%87%B3%F0%9F%87%B1%20GeminiRoute
+vless://de5906f3-df38-4463-aa9d-2b01320cc6ea@31.76.76.28:443/?type=ws&encryption=none&flow=&host=31.76.76.28&path=/#2.%F0%9F%87%B3%F0%9F%87%B1%20GeminiRoute
+vless://e73df646-1f62-41bf-8c50-653497d603d0@163.172.213.174:80?path=/vless/&security=&encryption=none&host=SC-TheNetherlands2.09vpn.com&type=ws#3.%F0%9F%87%B3%F0%9F%87%B1%20GeminiRoute
+vless://11af1c47-865a-47c6-92ff-118013655d78@51.15.57.139:8080?ed=2048&eh=Sec-WebSocket-Protocol&encryption=none&path=/&security=none&type=ws#4.%F0%9F%87%B3%F0%9F%87%B1%20GeminiRoute
+vless://11af1c47-865a-47c6-92ff-118013655d78@51.158.241.182:8080?ed=2048&eh=Sec-WebSocket-Protocol&encryption=none&path=/&security=none&type=ws#5.%F0%9F%87%B3%F0%9F%87%B1%20GeminiRoute
 vless://40cc9b52-25b8-4cd5-8b45-715ae26e6baf@sc-thenetherlands1.09vpn.com:80?encryption=none&host=SC-TheNetherlands1.09vpn.com&path=%2Fvless%2F&security=none&type=ws#6.%F0%9F%87%B3%F0%9F%87%B1%20GeminiRoute

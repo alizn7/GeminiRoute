@@ -1,0 +1,1 @@
+vless://9f73cf9a-c68f-4e6d-90f0-e66b64f52f8a@192.145.31.5:443/?type=ws&encryption=none&flow=&path=/#1.%F0%9F%87%B3%F0%9F%87%B1%20GeminiRoute
