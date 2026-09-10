@@ -1,2 +1,1 @@
 vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@at-new-ded2.moritech.net:443?alpn=h2&encryption=none&flow=xtls-rprx-vision&fp=chrome&security=tls&sni=at-new-ded2.moritech.net&type=tcp#1.🇦🇹 GeminiRoute
-vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@at-new-ded.moritech.net:443?alpn=h2&encryption=none&flow=xtls-rprx-vision&fp=chrome&security=tls&sni=at-new-ded.moritech.net&type=tcp#2.🇦🇹 GeminiRoute
