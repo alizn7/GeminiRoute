@@ -179,3 +179,60 @@ def test_config_path_is_stripped_from_failure_reasons() -> None:
     )
     assert a == b
     assert "geminiroute-" not in a
+
+
+# ---- exit location ---------------------------------------------------------
+
+def trace_body(code: str, ip: str = "203.0.113.7") -> str:
+    return (
+        f"fl=123abc\nh=www.cloudflare.com\nip={ip}\nts=1789000000.1\n"
+        f"visit_scheme=https\nuag=curl\ncolo=FRA\nloc={code}\ntls=TLSv1.3\n"
+    )
+
+
+def test_trace_output_is_parsed() -> None:
+    from geminiroute.validation.gemini import parse_exit_trace
+
+    geo = parse_exit_trace(trace_body("DE"))
+    assert geo is not None
+    assert geo.country_code == "DE"
+
+
+def test_trace_without_a_location_yields_no_geo() -> None:
+    from geminiroute.validation.gemini import parse_exit_trace
+
+    assert parse_exit_trace("ip=1.2.3.4\nloc=XX1\n") is None
+    assert parse_exit_trace("<html>captive portal</html>") is None
+    assert parse_exit_trace("") is None
+
+
+def test_supported_exit_country_passes() -> None:
+    from geminiroute.validation.gemini import interpret_exit, parse_exit_trace
+
+    assert interpret_exit(parse_exit_trace(trace_body("CA"))).passed
+    assert interpret_exit(parse_exit_trace(trace_body("TR"))).passed
+    assert interpret_exit(parse_exit_trace(trace_body("DE"))).passed
+
+
+def test_blocked_exit_country_fails() -> None:
+    """A node can be perfectly healthy and still useless because Gemini is not
+    served where it comes out."""
+    from geminiroute.validation.gemini import interpret_exit, parse_exit_trace
+
+    for code in ("IR", "RU", "CN", "KP", "CU", "SY"):
+        verdict = interpret_exit(parse_exit_trace(trace_body(code)))
+        assert not verdict.passed
+        assert code in (verdict.error or "")
+
+
+def test_unknown_exit_country_is_not_treated_as_proof() -> None:
+    """An unavailable lookup says nothing; the later checks still decide."""
+    from geminiroute.validation.gemini import interpret_exit
+
+    assert interpret_exit(None).passed
+
+
+def test_country_code_is_normalised() -> None:
+    from geminiroute.validation.gemini import interpret_exit, parse_exit_trace
+
+    assert not interpret_exit(parse_exit_trace(trace_body("ir"))).passed

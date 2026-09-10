@@ -140,17 +140,29 @@ async def run_pipeline(settings: Settings) -> RunStats:
             proven=sum(1 for n in candidates if n.fingerprint in proven),
         )
 
-        # --- geo (decorative, never a filter) -------------------------
+        # --- geo from the node's address ------------------------------
+        # A fallback only: it describes the entry point, which for a
+        # CDN-fronted config is the edge rather than the exit. The Gemini stage
+        # below replaces it with the truth wherever it gets one.
         geo_by_fingerprint = _lookup_geo(candidates, resolutions)
-        for node in candidates:
-            info = geo_by_fingerprint.get(node.fingerprint)
-            if info is not None:
-                repository.set_geo(node.fingerprint, info.country, info.city, info.asn, info.isp)
 
         # --- stage: gemini validation (expensive) ---------------------
         gemini_results = await _validate_gemini(settings, candidates, stats)
         repository.record_results(gemini_results)
         gemini_by_fingerprint = {r.node_fingerprint: r for r in gemini_results}
+
+        # The Gemini stage asks the tunnel where it actually comes out, which
+        # beats geolocating the node's address: for a CDN-fronted config that
+        # address is the edge, not the exit. Prefer it wherever we have it.
+        for outcome in gemini_results:
+            if outcome.geo is not None:
+                geo_by_fingerprint[outcome.node_fingerprint] = outcome.geo
+        for node in candidates:
+            info = geo_by_fingerprint.get(node.fingerprint)
+            if info is not None:
+                repository.set_geo(
+                    node.fingerprint, info.country, info.city, info.asn, info.isp
+                )
 
         # --- lifecycle + retry scheduling -----------------------------
         scored: list[ScoredNode] = []

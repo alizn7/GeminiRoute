@@ -22,7 +22,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from geminiroute.core.enums import ValidationStage
-from geminiroute.core.models import Node, ValidationResult
+from geminiroute.core.models import GeoInfo, Node, ValidationResult
 from geminiroute.observability.logging import get_logger
 from geminiroute.validation.xray import UnsupportedNodeError, build_config
 
@@ -30,6 +30,15 @@ log = get_logger(__name__)
 
 GEMINI_HOST = "generativelanguage.googleapis.com"
 GEMINI_WEB_URL = "https://gemini.google.com/"
+# Asked through the proxy, so it reports where traffic actually leaves from.
+# Geolocating the node's own address instead reports the CDN edge in front of
+# it, which is how thirty nodes ended up labelled Canada while exiting from
+# somewhere Gemini refuses to serve.
+#
+# Cloudflare's trace endpoint rather than a geo API: it is HTTPS (plain HTTP
+# through these tunnels produces a spray of protocol errors), it is unmetered,
+# and it is reachable from essentially anywhere Gemini might be.
+EXIT_TRACE_URL = "https://www.cloudflare.com/cdn-cgi/trace"
 MODEL = "gemini-2.0-flash"
 DEFAULT_TIMEOUT = 20.0
 DEFAULT_POOL_SIZE = 12
@@ -66,6 +75,10 @@ BLOCKED_HINTS = frozenset({407, 451})
 # A node can reach Google perfectly and still be useless, because Gemini is not
 # offered in the country the node exits from. That refusal is what these
 # markers identify — in the API's JSON error and in the web app's HTML.
+# Where the Gemini API and Google AI Studio are not served. A node exiting from
+# one of these cannot work no matter how healthy the tunnel is.
+BLOCKED_COUNTRY_CODES = frozenset({"CN", "CU", "IR", "KP", "RU", "SY"})
+
 REGION_BLOCK_MARKERS = (
     "user location is not supported",
     "not supported for the api use",
@@ -80,6 +93,34 @@ REGION_BLOCK_MARKERS = (
 class Verdict:
     passed: bool
     error: str | None = None
+
+
+def parse_exit_trace(body: str) -> GeoInfo | None:
+    """Read Cloudflare's `key=value` trace output.
+
+    The two lines that matter are `ip=` and `loc=`; everything else is ignored
+    so a change to the rest of the payload cannot break this.
+    """
+    values: dict[str, str] = {}
+    for line in body.splitlines():
+        key, separator, value = line.partition("=")
+        if separator:
+            values[key.strip()] = value.strip()
+
+    code = values.get("loc", "").strip().upper()
+    if len(code) != 2 or not code.isalpha():
+        return None
+    return GeoInfo(country=None, country_code=code, city=None, asn=None)
+
+
+def interpret_exit(geo: GeoInfo | None) -> Verdict:
+    """Reject nodes that exit from a country Gemini does not serve."""
+    if geo is None or not geo.country_code:
+        # Unknown is not proof of anything; let the later checks decide.
+        return Verdict(True)
+    if geo.country_code in BLOCKED_COUNTRY_CODES:
+        return Verdict(False, f"region not supported: {geo.country_code}")
+    return Verdict(True)
 
 
 def is_region_blocked(body: str) -> bool:
@@ -323,12 +364,15 @@ class GeminiValidator:
     async def _run_one(self, node: Node, port: int) -> ValidationResult:
         import httpx  # lazy: the rest of the pipeline needs no HTTP client
 
+        exit_geo: GeoInfo | None = None
+
         def failure(error: str) -> ValidationResult:
             return ValidationResult(
                 node_fingerprint=node.fingerprint,
                 stage=ValidationStage.GEMINI,
                 passed=False,
                 error=error,
+                geo=exit_geo,
             )
 
         try:
@@ -375,8 +419,18 @@ class GeminiValidator:
                         timeout=self.timeout,
                         follow_redirects=True,
                     ) as client:
-                        # Free probe first, on every node: it costs no quota
-                        # and already catches dead proxies and country blocks.
+                        # Where does this tunnel actually come out? Asked first
+                        # because it is the cheapest decisive signal: a node
+                        # exiting from a blocked country cannot work, and its
+                        # real country is also what the published label needs.
+                        exit_response = await client.get(EXIT_TRACE_URL)
+                        exit_geo = parse_exit_trace(exit_response.text)
+                        exit_verdict = interpret_exit(exit_geo)
+                        if not exit_verdict.passed:
+                            return failure(exit_verdict.error or "region not supported")
+
+                        # Free probe, on every node: costs no quota and catches
+                        # dead proxies plus country blocks the list misses.
                         response = await client.get(
                             GEMINI_WEB_URL, headers={"User-Agent": BROWSER_UA}
                         )
@@ -408,6 +462,7 @@ class GeminiValidator:
                     stage=ValidationStage.GEMINI,
                     passed=verdict.passed,
                     error=verdict.error,
+                    geo=exit_geo,
                 )
             finally:
                 # Always reap, including on cancellation: a leaked xray holds

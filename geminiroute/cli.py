@@ -14,7 +14,7 @@ from geminiroute.observability.logging import configure_logging
 from geminiroute.orchestration.runner import collect_and_parse, run_pipeline
 from geminiroute.storage.sqlite_repo import SqliteRepository
 from geminiroute.validation.gemini import find_xray_binary
-from geminiroute.validation.selfcheck import run_checks
+from geminiroute.validation.selfcheck import probe_node, run_checks
 
 app = typer.Typer(add_completion=False, help="GeminiRoute pipeline")
 
@@ -201,6 +201,44 @@ def xray_check(
 
     typer.echo(f"\n{problems} problem(s)")
     if problems:
+        raise typer.Exit(code=1)
+
+
+@app.command("probe-node")
+def probe_node_command(
+    config: str = typer.Argument(..., help="A single vless:// / vmess:// / trojan:// config"),
+    xray: Path | None = typer.Option(None, help="Path to xray (defaults to XRAY_PATH)"),
+    save: Path | None = typer.Option(None, help="Write the fetched page here for inspection"),
+) -> None:
+    """Run one config through the full check and print what actually came back."""
+    settings = Settings.from_env()
+    path = str(xray) if xray else find_xray_binary(settings.xray_path)
+    if not path:
+        typer.secho("xray not found. Set XRAY_PATH or pass --xray.", fg=typer.colors.RED)
+        raise typer.Exit(code=1)
+
+    report = asyncio.run(
+        probe_node(path, config, settings.gemini_api_key, keep_body=save is not None)
+    )
+
+    if report.error:
+        typer.secho(f"error: {report.error}", fg=typer.colors.RED)
+    typer.echo(f"exit ip        : {report.exit_ip or '-'}")
+    typer.echo(f"exit country   : {report.exit_country or '-'}")
+    typer.echo(f"web status     : {report.web_status or '-'}")
+    typer.echo(f"web size       : {report.web_bytes} bytes")
+    typer.secho(
+        f"region blocked : {report.region_marker_found}",
+        fg=typer.colors.RED if report.region_marker_found else typer.colors.GREEN,
+    )
+    typer.echo(f"page excerpt   : {report.web_excerpt or '-'}")
+    if save is not None and report.web_body:
+        save.write_text(report.web_body, encoding="utf-8")
+        typer.echo(f"page saved to  : {save}")
+    if report.api_status:
+        typer.echo(f"api status     : {report.api_status}")
+        typer.echo(f"api response   : {report.api_excerpt}")
+    if report.error:
         raise typer.Exit(code=1)
 
 

@@ -17,7 +17,7 @@ from pathlib import Path
 from geminiroute.core.models import GeoInfo, Node, Score
 from geminiroute.generation.branding import make_label, rebrand
 from geminiroute.observability.logging import get_logger
-from geminiroute.validation.geo import country_code
+from geminiroute.validation.geo import country_code as country_slug
 
 log = get_logger(__name__)
 
@@ -34,6 +34,19 @@ class ScoredNode:
     gemini_passed: bool
     latency_ms: float | None = None
     geo: GeoInfo | None = None
+
+
+def country_key(geo: GeoInfo | None) -> str:
+    """Filesystem-safe key for the per-country files.
+
+    Prefers the ISO code: the exit-location check reports a code rather than a
+    name, and codes stay stable where display names do not.
+    """
+    if geo is None:
+        return "unknown"
+    if geo.country_code:
+        return geo.country_code.lower()
+    return country_slug(geo.country)
 
 
 def _encode(lines: list[str]) -> str:
@@ -108,6 +121,18 @@ def build_index_html(stats: dict[str, object]) -> str:
   <p class="muted">Add one of these URLs to a client as a subscription link.
      Each has a <code>.plain.txt</code> twin that is not base64 encoded.</p>
 
+  <h2>Using these</h2>
+  <p>Nodes are verified against the Gemini <strong>API</strong>: each one is
+     checked from inside its own tunnel for where it exits, and rejected if it
+     comes out somewhere Gemini is not served.</p>
+  <p class="muted">The Gemini <strong>web app</strong> has a second gate: it
+     also looks at the country of the Google account you are signed into. A
+     node can be perfectly good and still show
+     <em>&ldquo;Gemini isn&rsquo;t currently supported in your country&rdquo;</em>
+     because of the account, not the node. Open
+     <code>gemini.google.com</code> in a private window, signed out, to rule
+     that out.</p>
+
   <h2>API</h2>
   <ul>
     <li><a href="api/nodes.json">api/nodes.json</a></li>
@@ -171,7 +196,7 @@ def build_stats_payload(
     latencies = [i.latency_ms for i in items if i.latency_ms is not None]
     countries: dict[str, int] = {}
     for item in gemini_ok:
-        key = country_code(item.geo.country if item.geo else None)
+        key = country_key(item.geo)
         countries[key] = countries.get(key, 0) + 1
 
     return {
@@ -216,9 +241,7 @@ def generate(
 
     by_country: dict[str, list[ScoredNode]] = {}
     for item in gemini_ok:
-        by_country.setdefault(country_code(item.geo.country if item.geo else None), []).append(
-            item
-        )
+        by_country.setdefault(country_key(item.geo), []).append(item)
     for code, group in by_country.items():
         write_subscription(sub_dir / "country", code, group)
 

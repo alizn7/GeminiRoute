@@ -16,7 +16,6 @@ from __future__ import annotations
 import base64
 import binascii
 import json
-from urllib.parse import quote
 
 from geminiroute.core.enums import ProtocolType
 
@@ -57,10 +56,16 @@ def _rebrand_vmess(raw: str, label: str) -> str:
 
 
 def _rebrand_fragment(raw: str, label: str) -> str:
+    """Write the label as literal UTF-8.
+
+    Percent-encoding is what the URI spec wants, but every real source and
+    client in this ecosystem uses raw emoji and spaces in the fragment, and an
+    encoded label shows up as `%F0%9F...` in the client instead of a flag. Only
+    characters that would break parsing are stripped.
+    """
     base = raw.split("#", 1)[0]
-    # safe="" so the flag and space are percent-encoded; some clients choke on
-    # a literal space in a URI fragment.
-    return f"{base}#{quote(label, safe='')}"
+    clean = label.replace("#", "").replace("\n", " ").replace("\r", " ").strip()
+    return f"{base}#{clean}"
 
 
 def rebrand(raw: str, protocol: ProtocolType, label: str) -> str:

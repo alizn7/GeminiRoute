@@ -34,10 +34,17 @@ the pool size directly caps how many exist at once.
 
 `GEMINI_API_KEY` is optional:
 
-Every candidate gets the free probe; the API key confirms the winners.
+Every candidate is first asked, through its own tunnel, where it comes out.
+Geolocating the node's address instead reports the CDN edge in front of it, so
+a config fronted by a Canadian edge looks Canadian while exiting somewhere
+Gemini refuses to serve. The exit country decides both the published flag and
+whether the node is rejected outright.
+
+Then every candidate gets the free probe; the API key confirms the winners.
 
 | Step | Applies to | Costs quota | What it proves |
 |---|---|---|---|
+| `GET ip-api.com` through the tunnel | every candidate | no | The real exit IP and country |
 | `GET gemini.google.com` | every candidate | no | The web app loaded and did not say Gemini is unavailable in that country |
 | `POST generateContent` | first N that passed step 1 | yes | A real call returned candidates — definitive |
 
@@ -55,6 +62,17 @@ as failures (`region not supported`), not successes.
 
 Set `GEMINI_API_KEY` if you can: the keyless path infers the region from the
 web app's HTML, which is weaker than the API's explicit refusal.
+
+## API access is not web access
+
+Nodes are verified against the Gemini API, which decides on the caller's IP.
+The Gemini web app applies a second gate: the country of the Google account
+signed into the browser. A verified node can still show "Gemini isn't currently
+supported in your country" for that reason alone — signing out (a private
+window) isolates which of the two is refusing.
+
+The same gate applies to obtaining a `GEMINI_API_KEY`: AI Studio requires a
+sign-in and reads the account's country, not the exit IP.
 
 ## Published labels
 

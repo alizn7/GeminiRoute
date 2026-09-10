@@ -1,7 +1,7 @@
 import base64
 import json
 from pathlib import Path
-from urllib.parse import unquote, urlsplit
+from urllib.parse import urlsplit
 
 from geminiroute.core.enums import ProtocolType
 from geminiroute.core.models import GeoInfo, Node, Score
@@ -33,19 +33,19 @@ def test_subscription_keeps_the_functional_config_and_rebrands_the_label(tmp_pat
     generate(tmp_path, [scored("a", 0.9)])
     line = decode(tmp_path / "sub" / "all.txt")[0]
     assert line.startswith("vless://uuid@a.example.net:443#")
-    assert "GeminiRoute" in unquote(line)
+    assert "GeminiRoute" in line
 
 
 def test_published_labels_are_numbered_from_one(tmp_path: Path) -> None:
     generate(tmp_path, [scored("a", 0.9), scored("b", 0.8), scored("c", 0.7)])
-    labels = [unquote(line.split("#", 1)[1]) for line in decode(tmp_path / "sub" / "all.txt")]
+    labels = [line.split("#", 1)[1] for line in decode(tmp_path / "sub" / "all.txt")]
     assert labels == ["1.🇩🇪 GeminiRoute", "2.🇩🇪 GeminiRoute", "3.🇩🇪 GeminiRoute"]
 
 
 def test_each_file_is_numbered_independently(tmp_path: Path) -> None:
     generate(tmp_path, [scored("bad", 0.9, gemini=False), scored("ok", 0.8)])
     lines = decode(tmp_path / "sub" / "gemini.txt")
-    gemini_labels = [unquote(line.split("#", 1)[1]) for line in lines]
+    gemini_labels = [line.split("#", 1)[1] for line in lines]
     assert gemini_labels == ["1.🇩🇪 GeminiRoute"]
 
 
@@ -75,8 +75,8 @@ def test_fast_file_applies_the_latency_ceiling(tmp_path: Path) -> None:
 def test_per_country_files_are_written(tmp_path: Path) -> None:
     generate(tmp_path, [scored("a", 0.9, country="Germany", code="DE"),
                         scored("b", 0.9, country="Japan", code="JP")])
-    assert (tmp_path / "sub" / "country" / "germany.txt").exists()
-    assert (tmp_path / "sub" / "country" / "japan.txt").exists()
+    assert (tmp_path / "sub" / "country" / "de.txt").exists()
+    assert (tmp_path / "sub" / "country" / "jp.txt").exists()
 
 
 def test_nodes_without_geo_land_in_unknown(tmp_path: Path) -> None:
@@ -131,3 +131,26 @@ def test_index_html_shows_the_funnel(tmp_path: Path) -> None:
 def test_index_html_survives_an_empty_run(tmp_path: Path) -> None:
     generate(tmp_path, [])
     assert "<title>GeminiRoute</title>" in (tmp_path / "index.html").read_text()
+
+
+def test_country_files_are_keyed_on_the_iso_code(tmp_path: Path) -> None:
+    """The exit-location check reports a code, not a name, and codes stay
+    stable where display names do not."""
+    generate(tmp_path, [scored("a", 0.9, country=None, code="DE"),
+                        scored("b", 0.9, country=None, code="JP")])
+    assert (tmp_path / "sub" / "country" / "de.txt").exists()
+    assert (tmp_path / "sub" / "country" / "jp.txt").exists()
+
+
+def test_country_name_is_used_when_no_code_is_available(tmp_path: Path) -> None:
+    generate(tmp_path, [scored("a", 0.9, country="Germany", code=None)])
+    assert (tmp_path / "sub" / "country" / "germany.txt").exists()
+
+
+def test_index_explains_the_account_gate(tmp_path: Path) -> None:
+    """Anyone using these will hit the same wall we did: a good node still
+    refused because of the signed-in account's country."""
+    generate(tmp_path, [scored("a", 0.9)])
+    html = (tmp_path / "index.html").read_text()
+    assert "private window" in html
+    assert "web app" in html

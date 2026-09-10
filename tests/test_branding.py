@@ -2,7 +2,7 @@
 
 import base64
 import json
-from urllib.parse import unquote, urlsplit
+from urllib.parse import urlsplit
 
 from geminiroute.core.enums import ProtocolType
 from geminiroute.generation.branding import flag_emoji, make_label, rebrand
@@ -33,7 +33,7 @@ def test_label_shape() -> None:
 
 def test_vless_label_is_replaced() -> None:
     result = rebrand(VLESS, ProtocolType.VLESS, make_label(3, "DE"))
-    assert unquote(urlsplit(result).fragment) == "3.🇩🇪 GeminiRoute"
+    assert result.endswith("#3.🇩🇪 GeminiRoute")
     assert "SomeoneElse" not in result
 
 
@@ -46,10 +46,17 @@ def test_vless_functional_parts_survive() -> None:
     assert parts.query == "type=ws&security=tls&sni=cdn.example.net"
 
 
-def test_fragment_is_percent_encoded() -> None:
-    """A literal space in a fragment breaks some clients."""
-    result = rebrand(VLESS, ProtocolType.VLESS, make_label(1, "DE"))
-    assert " " not in result.split("#", 1)[1]
+def test_label_is_literal_utf8_not_percent_encoded() -> None:
+    """Clients display the fragment as-is, so an encoded label shows up as
+    %F0%9F... instead of a flag."""
+    fragment = rebrand(VLESS, ProtocolType.VLESS, make_label(1, "DE")).split("#", 1)[1]
+    assert fragment == "1.🇩🇪 GeminiRoute"
+    assert "%" not in fragment
+
+
+def test_a_hash_in_the_label_cannot_split_the_fragment() -> None:
+    result = rebrand(VLESS, ProtocolType.VLESS, "1.#weird GeminiRoute")
+    assert result.count("#") == 1
 
 
 def test_config_without_a_fragment_gets_one() -> None:
@@ -86,5 +93,5 @@ def test_empty_input_is_returned_unchanged() -> None:
 def test_trojan_uses_the_fragment_path() -> None:
     result = rebrand("trojan://pw@c.example.net:443#Old", ProtocolType.TROJAN,
                      make_label(2, "FR"))
-    assert unquote(urlsplit(result).fragment) == "2.🇫🇷 GeminiRoute"
+    assert result.endswith("#2.🇫🇷 GeminiRoute")
     assert urlsplit(result).username == "pw"

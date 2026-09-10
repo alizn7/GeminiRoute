@@ -207,3 +207,146 @@ async def run_checks(xray_path: str) -> tuple[bool, list[CheckResult]]:
     allow_insecure = await detect_allow_insecure(xray_path)
     results = [await check_variant(xray_path, v) for v in variants(allow_insecure)]
     return allow_insecure, results
+
+
+@dataclass(frozen=True)
+class ProbeReport:
+    """What one node's tunnel actually returned, step by step."""
+
+    parsed: bool
+    exit_ip: str = ""
+    exit_country: str = ""
+    web_status: int = 0
+    web_bytes: int = 0
+    region_marker_found: bool = False
+    web_excerpt: str = ""
+    web_body: str = ""
+    api_status: int = 0
+    api_excerpt: str = ""
+    error: str = ""
+
+
+async def probe_node(
+    xray_path: str, raw: str, api_key: str | None = None, keep_body: bool = False
+) -> ProbeReport:
+    """Run one config through the full check and report what came back.
+
+    Aggregate counts say how many nodes failed, never what a specific node
+    returned. This shows the raw answers for a single config, which is what
+    settles questions like "does the web app really say the country is
+    unsupported, or is that rendered by JavaScript we never run?".
+    """
+    import httpx
+
+    from geminiroute.normalization.normalizer import normalize
+    from geminiroute.parsing.registry import parse_line
+    from geminiroute.validation.gemini import (
+        BROWSER_UA,
+        EXIT_TRACE_URL,
+        GEMINI_HOST,
+        GEMINI_WEB_URL,
+        MODEL,
+        XRAY_STARTUP_TIMEOUT,
+        _read_output,
+        _wait_for_port,
+        detect_allow_insecure,
+        is_region_blocked,
+        parse_exit_trace,
+    )
+
+    node = parse_line(raw.strip())
+    if node is None:
+        return ProbeReport(parsed=False, error="config could not be parsed")
+    node = normalize(node)
+
+    allow_insecure = await detect_allow_insecure(xray_path)
+    port = free_port()
+    try:
+        config = build_config(node, port, allow_insecure)
+    except UnsupportedNodeError as exc:
+        return ProbeReport(parsed=True, error=f"config not built: {exc}")
+
+    with tempfile.TemporaryDirectory(prefix="geminiroute-probe-") as tmpdir:
+        path = Path(tmpdir) / "config.json"
+        path.write_text(json.dumps(config), encoding="utf-8")
+        process = await asyncio.create_subprocess_exec(
+            xray_path, "run", "-c", str(path),
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.STDOUT,
+        )
+        try:
+            if not await _wait_for_port(port, XRAY_STARTUP_TIMEOUT, process):
+                return ProbeReport(parsed=True, error=f"proxy failed to start: "
+                                                      f"{await _read_output(process)}")
+
+            async with httpx.AsyncClient(
+                proxy=f"socks5://127.0.0.1:{port}", timeout=20.0, follow_redirects=True
+            ) as client:
+                try:
+                    trace = await client.get(EXIT_TRACE_URL)
+                except httpx.HTTPError as exc:
+                    return ProbeReport(parsed=True, error=f"exit lookup failed: {exc!r}")
+
+                geo = parse_exit_trace(trace.text)
+                # Normalised once: GeoInfo.country_code is optional, and the
+                # report's field is not.
+                exit_country = (geo.country_code or "") if geo else ""
+                exit_ip = ""
+                for line in trace.text.splitlines():
+                    if line.startswith("ip="):
+                        exit_ip = line[3:].strip()
+
+                try:
+                    web = await client.get(
+                        GEMINI_WEB_URL,
+                        headers={"User-Agent": BROWSER_UA},
+                    )
+                except httpx.HTTPError as exc:
+                    return ProbeReport(
+                        parsed=True,
+                        exit_ip=exit_ip,
+                        exit_country=exit_country,
+                        error=f"web fetch failed: {exc!r}",
+                    )
+
+                excerpt = _excerpt(web.text)
+                api_status = 0
+                api_excerpt = ""
+                if api_key:
+                    api = await client.post(
+                        f"https://{GEMINI_HOST}/v1beta/models/{MODEL}:generateContent",
+                        headers={"Content-Type": "application/json", "x-goog-api-key": api_key},
+                        json={"contents": [{"parts": [{"text": "hi"}]}],
+                              "generationConfig": {"maxOutputTokens": 1}},
+                    )
+                    api_status = api.status_code
+                    api_excerpt = api.text[:300]
+
+                return ProbeReport(
+                    parsed=True,
+                    exit_ip=exit_ip,
+                    exit_country=exit_country,
+                    web_body=web.text if keep_body else "",
+                    web_status=web.status_code,
+                    web_bytes=len(web.text),
+                    region_marker_found=is_region_blocked(web.text),
+                    web_excerpt=excerpt,
+                    api_status=api_status,
+                    api_excerpt=api_excerpt,
+                )
+        finally:
+            with contextlib.suppress(ProcessLookupError):
+                process.terminate()
+            with contextlib.suppress(TimeoutError):
+                await asyncio.wait_for(process.wait(), 5.0)
+
+
+def _excerpt(html: str, window: int = 160) -> str:
+    """The part of the page that talks about availability, if any."""
+    lowered = html.lower()
+    for needle in ("your country", "not supported", "isn't available", "not available"):
+        index = lowered.find(needle)
+        if index != -1:
+            start = max(0, index - window // 2)
+            return " ".join(html[start : start + window].split())
+    return " ".join(html[:window].split())
