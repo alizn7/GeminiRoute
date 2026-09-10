@@ -38,11 +38,15 @@ jobs:
           XRAY_VERSION: v25.3.6
         run: |
           set -euo pipefail
+          # unzip -d only creates one level, and ~/.local does not exist on a
+          # fresh runner.
+          mkdir -p "$HOME/.local/bin"
           curl -fsSL -o xray.zip \
             "https://github.com/XTLS/Xray-core/releases/download/${XRAY_VERSION}/Xray-linux-64.zip"
           unzip -o -q xray.zip xray -d "$HOME/.local/bin"
           chmod +x "$HOME/.local/bin/xray"
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          "$HOME/.local/bin/xray" version
 
       - name: Verify environment
         run: python -m geminiroute.cli doctor
@@ -55,8 +59,16 @@ jobs:
           mkdir -p data
           if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
             git fetch origin gh-pages --depth=1
-            git show origin/gh-pages:data/geminiroute.db > data/geminiroute.db 2>/dev/null \
-              || echo "No database on gh-pages yet; starting fresh."
+            # Written to a temp file first: a plain redirect would leave a
+            # 0-byte database behind when the file is not there yet.
+            if git show origin/gh-pages:data/geminiroute.db > /tmp/restored.db 2>/dev/null \
+               && [ -s /tmp/restored.db ]; then
+              mv /tmp/restored.db data/geminiroute.db
+              echo "Restored database ($(stat -c%s data/geminiroute.db) bytes)."
+            else
+              rm -f /tmp/restored.db
+              echo "No database on gh-pages yet; starting fresh."
+            fi
           else
             echo "gh-pages does not exist yet; starting fresh."
           fi
@@ -81,7 +93,7 @@ jobs:
 
           if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
             git fetch origin gh-pages --depth=1
-            git worktree add publish gh-pages
+            git worktree add publish -B gh-pages origin/gh-pages
           else
             git worktree add --detach publish
             git -C publish checkout --orphan gh-pages
