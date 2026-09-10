@@ -112,3 +112,90 @@ def test_reality_settings_are_emitted_when_complete() -> None:
     reality = build_config(n, 1)["outbounds"][0]["streamSettings"]["realitySettings"]
     assert reality["publicKey"] == "KEY"
     assert reality["shortId"] == "ab"
+
+
+def test_unknown_fingerprint_is_dropped_not_passed_through() -> None:
+    """An unrecognised fingerprint makes xray reject the whole config; the node
+    still works without it."""
+    n = node(params={"sni": "x.com", "fp": "netscape-navigator"})
+    tls = build_config(n, 1)["outbounds"][0]["streamSettings"]["tlsSettings"]
+    assert "fingerprint" not in tls
+
+
+def test_known_fingerprint_survives_and_is_lowercased() -> None:
+    n = node(params={"sni": "x.com", "fp": "Chrome"})
+    tls = build_config(n, 1)["outbounds"][0]["streamSettings"]["tlsSettings"]
+    assert tls["fingerprint"] == "chrome"
+
+
+def test_junk_alpn_entries_are_filtered_out() -> None:
+    n = node(params={"sni": "x.com", "alpn": "h2,garbage,http/1.1"})
+    tls = build_config(n, 1)["outbounds"][0]["streamSettings"]["tlsSettings"]
+    assert tls["alpn"] == ["h2", "http/1.1"]
+
+
+def test_alpn_is_omitted_when_nothing_valid_remains() -> None:
+    n = node(params={"sni": "x.com", "alpn": "nonsense"})
+    tls = build_config(n, 1)["outbounds"][0]["streamSettings"]["tlsSettings"]
+    assert "alpn" not in tls
+
+
+def test_xtls_security_is_expressed_as_tls() -> None:
+    """Xray removed xtls as a standalone security layer; it is tls plus a flow."""
+    stream = build_config(node(security="xtls"), 1)["outbounds"][0]["streamSettings"]
+    assert stream["security"] == "tls"
+    assert "tlsSettings" in stream
+
+
+def test_allow_insecure_is_emitted_when_supported() -> None:
+    tls = build_config(node(), 1, allow_insecure=True)["outbounds"][0]["streamSettings"][
+        "tlsSettings"
+    ]
+    assert tls["allowInsecure"] is True
+
+
+def test_allow_insecure_is_omitted_when_the_binary_rejects_it() -> None:
+    """Recent xray builds removed the field and refuse any config containing
+    it, which killed every TLS node with no obvious cause."""
+    tls = build_config(node(), 1, allow_insecure=False)["outbounds"][0]["streamSettings"][
+        "tlsSettings"
+    ]
+    assert "allowInsecure" not in tls
+    assert tls["serverName"] == "cdn.example.net"
+
+
+def test_httpupgrade_settings_are_emitted() -> None:
+    n = node(transport="httpupgrade", params={"path": "/up", "host": "cdn.example.net"})
+    stream = build_config(n, 1)["outbounds"][0]["streamSettings"]
+    assert stream["httpupgradeSettings"] == {"path": "/up", "host": "cdn.example.net"}
+
+
+def test_xhttp_settings_are_emitted_with_a_default_mode() -> None:
+    n = node(transport="xhttp", params={"path": "/x"})
+    stream = build_config(n, 1)["outbounds"][0]["streamSettings"]
+    assert stream["xhttpSettings"]["path"] == "/x"
+    assert stream["xhttpSettings"]["mode"] == "auto"
+
+
+def test_h2_transport_is_migrated_to_xhttp() -> None:
+    """Xray removed the standalone HTTP/2 transport; emitting httpSettings gets
+    the whole config refused."""
+    n = node(transport="http", params={"path": "/h2", "host": "cdn.example.net"})
+    stream = build_config(n, 1)["outbounds"][0]["streamSettings"]
+    assert stream["network"] == "xhttp"
+    assert "httpSettings" not in stream
+    assert stream["xhttpSettings"]["mode"] == "stream-one"
+    assert stream["xhttpSettings"]["path"] == "/h2"
+
+
+def test_h2_host_list_is_reduced_to_one_value() -> None:
+    """httpSettings took a list of hosts; xhttpSettings takes a single string."""
+    n = node(transport="http", params={"host": "a.example.net,b.example.net"})
+    stream = build_config(n, 1)["outbounds"][0]["streamSettings"]
+    assert stream["xhttpSettings"]["host"] == "a.example.net"
+
+
+def test_explicit_mode_overrides_the_migration_default() -> None:
+    n = node(transport="http", params={"path": "/h2", "mode": "packet-up"})
+    stream = build_config(n, 1)["outbounds"][0]["streamSettings"]
+    assert stream["xhttpSettings"]["mode"] == "packet-up"

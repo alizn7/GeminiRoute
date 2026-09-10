@@ -22,8 +22,8 @@ from geminiroute.generation.generator import ScoredNode, generate
 from geminiroute.normalization.normalizer import normalize_all
 from geminiroute.observability.logging import get_logger
 from geminiroute.parsing.registry import parse_lines
-from geminiroute.reliability.lifecycle import next_status
-from geminiroute.retry.policy import decide
+from geminiroute.reliability.lifecycle import next_status, revive
+from geminiroute.retry.policy import decide, is_due
 from geminiroute.scoring.scorer import ScoreInputs, score_node
 from geminiroute.storage.sqlite_repo import SqliteRepository
 from geminiroute.validation import connectivity, geo, pre
@@ -39,6 +39,7 @@ class RunStats:
     collected: int = 0
     parsed: int = 0
     after_dedup: int = 0
+    skipped_in_backoff: int = 0
     after_pre: int = 0
     after_connectivity: int = 0
     gemini_tested: int = 0
@@ -88,6 +89,12 @@ async def run_pipeline(settings: Settings) -> RunStats:
             log.info("node_cap_applied", limit=settings.max_nodes)
         repository.upsert_nodes(nodes)
 
+        # --- backoff: skip nodes that are not due yet -----------------
+        # Without this the retry policy is decorative: a node that has failed
+        # three runs straight still occupies a slot every hour, crowding out
+        # untested ones.
+        nodes = _apply_backoff(repository, nodes, stats)
+
         # --- stage: pre-validation (free) -----------------------------
         survivors, pre_results = pre.filter_nodes(nodes)
         repository.record_results(pre_results)
@@ -115,12 +122,23 @@ async def run_pipeline(settings: Settings) -> RunStats:
         )
         stats.after_connectivity = len(reachable)
 
-        # --- cap: keep the fastest N for the expensive stage ----------
-        def total_latency(node: Node) -> float:
-            latency = latency_by_fingerprint.get(node.fingerprint)
-            return latency.total_ms if latency and latency.total_ms is not None else 1e9
+        # --- cap: choose which nodes reach the expensive stage --------
+        # Proven nodes first, then the fastest of the rest. Sorting on latency
+        # alone over-selects CDN-fronted configs, whose TLS handshake succeeds
+        # against the CDN whether or not the node behind it is alive.
+        proven = repository.successful_fingerprints()
 
-        candidates = sorted(reachable, key=total_latency)[: settings.max_gemini_candidates]
+        def priority(node: Node) -> tuple[int, float]:
+            latency = latency_by_fingerprint.get(node.fingerprint)
+            total = latency.total_ms if latency and latency.total_ms is not None else 1e9
+            return (0 if node.fingerprint in proven else 1, total)
+
+        candidates = sorted(reachable, key=priority)[: settings.max_gemini_candidates]
+        log.info(
+            "candidates_selected",
+            total=len(candidates),
+            proven=sum(1 for n in candidates if n.fingerprint in proven),
+        )
 
         # --- geo (decorative, never a filter) -------------------------
         geo_by_fingerprint = _lookup_geo(candidates, resolutions)
@@ -169,6 +187,8 @@ async def run_pipeline(settings: Settings) -> RunStats:
         repository.save_scores([item.score for item in scored])
         stats.gemini_passed = sum(1 for item in scored if item.gemini_passed)
 
+        _record_source_stats(repository, nodes, reachable, scored)
+
         # --- stage: generate ------------------------------------------
         generate(
             settings.output_dir,
@@ -191,6 +211,69 @@ async def run_pipeline(settings: Settings) -> RunStats:
         return stats
     finally:
         repository.close()
+
+
+def _apply_backoff(
+    repository: SqliteRepository, nodes: list[Node], stats: RunStats
+) -> list[Node]:
+    """Drop nodes still inside their retry window; revive the ones that left it.
+
+    A node with no stored state is new and always due.
+    """
+    state = repository.scheduling_state()
+    due: list[Node] = []
+
+    for node in nodes:
+        stored = state.get(node.fingerprint)
+        if stored is None:
+            due.append(node)
+            continue
+        if not is_due(stored.next_retry_at):
+            stats.skipped_in_backoff += 1
+            continue
+        node.status = revive(stored.status)
+        due.append(node)
+
+    log.info("backoff_applied", due=len(due), skipped=stats.skipped_in_backoff)
+    return due
+
+
+def _record_source_stats(
+    repository: SqliteRepository,
+    nodes: list[Node],
+    reachable: list[Node],
+    scored: list[ScoredNode],
+) -> None:
+    """Attribute each stage's survivors back to the sources that supplied them.
+
+    This is what turns "should I keep this source?" from a guess into a lookup:
+    a source contributing thousands of nodes and zero Gemini passes is costing
+    the run time for nothing.
+    """
+    reachable_fingerprints = {n.fingerprint for n in reachable}
+    passing_fingerprints = {i.node.fingerprint for i in scored if i.gemini_passed}
+
+    contributed: dict[str, int] = {}
+    valid: dict[str, int] = {}
+    gemini_ok: dict[str, int] = {}
+
+    for node in nodes:
+        for source_name in node.source_names:
+            contributed[source_name] = contributed.get(source_name, 0) + 1
+            if node.fingerprint in reachable_fingerprints:
+                valid[source_name] = valid.get(source_name, 0) + 1
+            if node.fingerprint in passing_fingerprints:
+                gemini_ok[source_name] = gemini_ok.get(source_name, 0) + 1
+
+    for source_name, count in contributed.items():
+        repository.record_source_stats(
+            source_name, count, valid.get(source_name, 0), gemini_ok.get(source_name, 0)
+        )
+    log.info(
+        "source_stats_recorded",
+        sources=len(contributed),
+        gemini_ok={k: v for k, v in gemini_ok.items()},
+    )
 
 
 def _lookup_geo(
@@ -243,6 +326,7 @@ async def _validate_gemini(
         api_key=settings.gemini_api_key,
         pool_size=settings.gemini_pool_size,
         timeout=settings.gemini_timeout,
+        api_confirm_limit=settings.gemini_api_confirm_limit,
     )
     return await validator.validate_all(nodes)
 

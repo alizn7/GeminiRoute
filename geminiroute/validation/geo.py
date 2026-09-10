@@ -17,7 +17,7 @@ from geminiroute.observability.logging import get_logger
 log = get_logger(__name__)
 
 ENDPOINT = "http://ip-api.com/batch"
-FIELDS = "status,country,city,as,isp,query"
+FIELDS = "status,country,countryCode,city,as,isp,query"
 BATCH_SIZE = 100
 TIMEOUT = 15.0
 
@@ -53,6 +53,7 @@ def lookup(ips: list[str]) -> dict[str, GeoInfo]:
                 continue
             resolved[ip] = GeoInfo(
                 country=entry.get("country"),
+                country_code=entry.get("countryCode"),
                 city=entry.get("city"),
                 asn=entry.get("as"),
                 isp=entry.get("isp"),

@@ -9,12 +9,22 @@ from __future__ import annotations
 
 import json
 import sqlite3
+from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 from geminiroute.core.enums import NodeStatus, ProtocolType, ValidationStage
 from geminiroute.core.models import Node, Score, Source, ValidationResult
 from geminiroute.storage.base import NodeRepository
+
+
+@dataclass(frozen=True)
+class SchedulingState:
+    """What the scheduler needs to know about a node it has seen before."""
+
+    status: NodeStatus
+    consecutive_fails: int
+    next_retry_at: datetime | None
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS nodes (
@@ -175,6 +185,61 @@ class SqliteRepository(NodeRepository):
                 ),
             )
 
+    def scheduling_state(self) -> dict[str, SchedulingState]:
+        """Stored status, failure count and backoff deadline for every node.
+
+        Read in one query rather than per node: the alternative is thousands of
+        round trips at the start of every run.
+        """
+        rows = self._connection.execute(
+            "SELECT fingerprint, status, consecutive_fails, next_retry_at FROM nodes"
+        ).fetchall()
+        state: dict[str, SchedulingState] = {}
+        for row in rows:
+            raw = row["next_retry_at"]
+            state[str(row["fingerprint"])] = SchedulingState(
+                status=NodeStatus(row["status"]),
+                consecutive_fails=int(row["consecutive_fails"] or 0),
+                next_retry_at=datetime.fromisoformat(raw) if raw else None,
+            )
+        return state
+
+    def successful_fingerprints(self, days: int = 7) -> set[str]:
+        """Nodes that passed the Gemini stage at least once recently.
+
+        Used to prioritise candidates: a node with a track record is worth more
+        than an untested one that merely happens to have low latency.
+        """
+        since = (datetime.now(UTC) - timedelta(days=days)).isoformat()
+        rows = self._connection.execute(
+            """
+            SELECT DISTINCT node_fingerprint
+              FROM validation_history
+             WHERE stage = ? AND passed = 1 AND checked_at >= ?
+            """,
+            (ValidationStage.GEMINI.value, since),
+        ).fetchall()
+        return {str(r["node_fingerprint"]) for r in rows}
+
+    def source_report(self) -> list[tuple[str, int, int, int]]:
+        """(name, contributed, reachable, gemini_ok), best yield first."""
+        rows = self._connection.execute(
+            """
+            SELECT name, nodes_contributed, nodes_valid, nodes_gemini_ok
+              FROM sources
+          ORDER BY nodes_gemini_ok DESC, nodes_contributed DESC
+            """
+        ).fetchall()
+        return [
+            (
+                str(r["name"]),
+                int(r["nodes_contributed"] or 0),
+                int(r["nodes_valid"] or 0),
+                int(r["nodes_gemini_ok"] or 0),
+            )
+            for r in rows
+        ]
+
     def get_consecutive_fails(self, fingerprint: str) -> int:
         row = self._connection.execute(
             "SELECT consecutive_fails FROM nodes WHERE fingerprint = ?", (fingerprint,)
@@ -278,14 +343,22 @@ class SqliteRepository(NodeRepository):
         self, name: str, contributed: int, valid: int, gemini_ok: int
     ) -> None:
         with self._connection:
+            # Upsert, not update: a source name can reach here from a node's
+            # source list without a matching row, and a silent no-op would
+            # leave the stats permanently empty.
             self._connection.execute(
                 """
-                UPDATE sources
-                   SET nodes_contributed = ?, nodes_valid = ?, nodes_gemini_ok = ?,
-                       last_collected_at = ?
-                 WHERE name = ?
+                INSERT INTO sources
+                    (name, type, url, nodes_contributed, nodes_valid,
+                     nodes_gemini_ok, last_collected_at)
+                VALUES (?, "unknown", "", ?, ?, ?, ?)
+                ON CONFLICT(name) DO UPDATE SET
+                    nodes_contributed = excluded.nodes_contributed,
+                    nodes_valid       = excluded.nodes_valid,
+                    nodes_gemini_ok   = excluded.nodes_gemini_ok,
+                    last_collected_at = excluded.last_collected_at
                 """,
-                (contributed, valid, gemini_ok, _now(), name),
+                (name, contributed, valid, gemini_ok, _now()),
             )
 
     def close(self) -> None:

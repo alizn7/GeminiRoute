@@ -1,6 +1,7 @@
 import base64
 import json
 from pathlib import Path
+from urllib.parse import unquote, urlsplit
 
 from geminiroute.core.enums import ProtocolType
 from geminiroute.core.models import GeoInfo, Node, Score
@@ -8,7 +9,7 @@ from geminiroute.generation.generator import ScoredNode, build_stats_payload, ge
 
 
 def scored(name: str, score: float, gemini: bool = True, latency: float = 200.0,
-           country: str | None = "Germany") -> ScoredNode:
+           country: str | None = "Germany", code: str | None = "DE") -> ScoredNode:
     node = Node(
         protocol=ProtocolType.VLESS, address=f"{name}.example.net", port=443,
         credential="uuid", remark=name, raw=f"vless://uuid@{name}.example.net:443#{name}",
@@ -18,7 +19,7 @@ def scored(name: str, score: float, gemini: bool = True, latency: float = 200.0,
         score=Score(node.fingerprint, 1.0, 1.0, 1.0, 1.0, score),
         gemini_passed=gemini,
         latency_ms=latency,
-        geo=GeoInfo(country=country),
+        geo=GeoInfo(country=country, country_code=code),
     )
 
 
@@ -26,22 +27,37 @@ def decode(path: Path) -> list[str]:
     return base64.b64decode(path.read_text()).decode().splitlines()
 
 
-def test_subscription_is_base64_and_contains_the_original_lines(tmp_path: Path) -> None:
-    """The published line must be the source's own config, not a
-    re-serialisation that could silently drop an unmodelled parameter."""
+def test_subscription_keeps_the_functional_config_and_rebrands_the_label(tmp_path: Path) -> None:
+    """Everything before the fragment is the source's own config; only the
+    display label is ours."""
     generate(tmp_path, [scored("a", 0.9)])
-    assert decode(tmp_path / "sub" / "all.txt") == ["vless://uuid@a.example.net:443#a"]
+    line = decode(tmp_path / "sub" / "all.txt")[0]
+    assert line.startswith("vless://uuid@a.example.net:443#")
+    assert "GeminiRoute" in unquote(line)
+
+
+def test_published_labels_are_numbered_from_one(tmp_path: Path) -> None:
+    generate(tmp_path, [scored("a", 0.9), scored("b", 0.8), scored("c", 0.7)])
+    labels = [unquote(line.split("#", 1)[1]) for line in decode(tmp_path / "sub" / "all.txt")]
+    assert labels == ["1.🇩🇪 GeminiRoute", "2.🇩🇪 GeminiRoute", "3.🇩🇪 GeminiRoute"]
+
+
+def test_each_file_is_numbered_independently(tmp_path: Path) -> None:
+    generate(tmp_path, [scored("bad", 0.9, gemini=False), scored("ok", 0.8)])
+    lines = decode(tmp_path / "sub" / "gemini.txt")
+    gemini_labels = [unquote(line.split("#", 1)[1]) for line in lines]
+    assert gemini_labels == ["1.🇩🇪 GeminiRoute"]
 
 
 def test_plain_variant_is_written_for_humans(tmp_path: Path) -> None:
     generate(tmp_path, [scored("a", 0.9)])
-    assert "vless://uuid@a.example.net:443#a" in (tmp_path / "sub" / "all.plain.txt").read_text()
+    assert "vless://uuid@a.example.net:443#" in (tmp_path / "sub" / "all.plain.txt").read_text()
 
 
 def test_nodes_are_ranked_by_score(tmp_path: Path) -> None:
     generate(tmp_path, [scored("low", 0.2), scored("high", 0.95), scored("mid", 0.5)])
-    lines = decode(tmp_path / "sub" / "all.txt")
-    assert [line.split("#")[1] for line in lines] == ["high", "mid", "low"]
+    hosts = [urlsplit(line).hostname for line in decode(tmp_path / "sub" / "all.txt")]
+    assert hosts == ["high.example.net", "mid.example.net", "low.example.net"]
 
 
 def test_gemini_file_excludes_unverified_nodes(tmp_path: Path) -> None:
@@ -52,17 +68,19 @@ def test_gemini_file_excludes_unverified_nodes(tmp_path: Path) -> None:
 
 def test_fast_file_applies_the_latency_ceiling(tmp_path: Path) -> None:
     generate(tmp_path, [scored("quick", 0.9, latency=120), scored("slow", 0.9, latency=2000)])
-    assert [line.split("#")[1] for line in decode(tmp_path / "sub" / "fast.txt")] == ["quick"]
+    hosts = [urlsplit(line).hostname for line in decode(tmp_path / "sub" / "fast.txt")]
+    assert hosts == ["quick.example.net"]
 
 
 def test_per_country_files_are_written(tmp_path: Path) -> None:
-    generate(tmp_path, [scored("a", 0.9, country="Germany"), scored("b", 0.9, country="Japan")])
+    generate(tmp_path, [scored("a", 0.9, country="Germany", code="DE"),
+                        scored("b", 0.9, country="Japan", code="JP")])
     assert (tmp_path / "sub" / "country" / "germany.txt").exists()
     assert (tmp_path / "sub" / "country" / "japan.txt").exists()
 
 
 def test_nodes_without_geo_land_in_unknown(tmp_path: Path) -> None:
-    generate(tmp_path, [scored("a", 0.9, country=None)])
+    generate(tmp_path, [scored("a", 0.9, country=None, code=None)])
     assert (tmp_path / "sub" / "country" / "unknown.txt").exists()
 
 
@@ -91,3 +109,25 @@ def test_empty_run_still_writes_valid_files(tmp_path: Path) -> None:
     generate(tmp_path, [])
     assert (tmp_path / "sub" / "all.txt").read_text() == ""
     assert json.loads((tmp_path / "api" / "nodes.json").read_text())["count"] == 0
+
+
+def test_index_html_is_written(tmp_path: Path) -> None:
+    generate(tmp_path, [scored("a", 0.9)], collected=100, after_dedup=80,
+             after_pre=60, after_connectivity=40)
+    html = (tmp_path / "index.html").read_text()
+    assert "<title>GeminiRoute</title>" in html
+    assert 'href="sub/gemini.txt"' in html
+    assert 'href="api/stats.json"' in html
+
+
+def test_index_html_shows_the_funnel(tmp_path: Path) -> None:
+    generate(tmp_path, [scored("a", 0.9)], collected=20000, after_dedup=12000,
+             after_pre=5000, after_connectivity=800)
+    html = (tmp_path / "index.html").read_text()
+    for value in ("20000", "12000", "5000", "800"):
+        assert f"<td>{value}</td>" in html
+
+
+def test_index_html_survives_an_empty_run(tmp_path: Path) -> None:
+    generate(tmp_path, [])
+    assert "<title>GeminiRoute</title>" in (tmp_path / "index.html").read_text()

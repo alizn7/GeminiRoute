@@ -14,6 +14,7 @@ from geminiroute.observability.logging import configure_logging
 from geminiroute.orchestration.runner import collect_and_parse, run_pipeline
 from geminiroute.storage.sqlite_repo import SqliteRepository
 from geminiroute.validation.gemini import find_xray_binary
+from geminiroute.validation.selfcheck import run_checks
 
 app = typer.Typer(add_completion=False, help="GeminiRoute pipeline")
 
@@ -58,12 +59,23 @@ def run_full_pipeline(
         settings.max_nodes = limit
     _require_enabled_sources(settings, sources)
 
+    # Checked up front rather than at the stage that needs it: without this the
+    # run spends a minute on collection and connectivity before revealing that
+    # nothing could have been verified anyway.
+    if find_xray_binary(settings.xray_path) is None:
+        typer.secho(
+            "xray not found — the Gemini stage will be skipped and this run "
+            "will verify nothing. Set XRAY_PATH or put xray on PATH.",
+            fg=typer.colors.YELLOW,
+        )
+
     stats = asyncio.run(run_pipeline(settings))
     typer.echo(
         json.dumps(
             {
                 "collected": stats.collected,
                 "unique": stats.after_dedup,
+                "skipped_in_backoff": stats.skipped_in_backoff,
                 "pre_passed": stats.after_pre,
                 "reachable": stats.after_connectivity,
                 "gemini_tested": stats.gemini_tested,
@@ -126,6 +138,70 @@ def errors(
     width = max(len(str(count)) for _, count in histogram)
     for reason, count in histogram:
         typer.echo(f"{count:>{width}}  {reason}")
+
+
+@app.command("sources")
+def sources_report(
+    database: Path = typer.Option(Path("data/geminiroute.db")),
+) -> None:
+    """Show what each source actually contributed, worst yield last."""
+    if not database.exists():
+        typer.secho(f"No database at {database}", fg=typer.colors.RED)
+        raise typer.Exit(code=1)
+
+    repository = SqliteRepository(database)
+    try:
+        rows = repository.source_report()
+    finally:
+        repository.close()
+
+    if not rows:
+        typer.echo("No source statistics recorded yet. Run the pipeline first.")
+        return
+
+    typer.echo(f"{'source':<28}{'nodes':>8}{'reachable':>11}{'gemini':>8}{'yield':>8}")
+    for name, contributed, valid, ok in rows:
+        rate = f"{ok / contributed:.2%}" if contributed else "-"
+        typer.echo(f"{name:<28}{contributed:>8}{valid:>11}{ok:>8}{rate:>8}")
+
+
+@app.command("xray-check")
+def xray_check(
+    xray: Path | None = typer.Option(None, help="Path to xray (defaults to XRAY_PATH)"),
+) -> None:
+    """Offer every config shape we generate to the xray binary and report which
+    ones it accepts. Answers config-building questions without a pipeline run."""
+    settings = Settings.from_env()
+    path = str(xray) if xray else find_xray_binary(settings.xray_path)
+    if not path:
+        typer.secho("xray not found. Set XRAY_PATH or pass --xray.", fg=typer.colors.RED)
+        raise typer.Exit(code=1)
+
+    typer.echo(f"Checking {path}")
+    allow_insecure, results = asyncio.run(run_checks(path))
+    typer.echo(f"allowInsecure supported: {allow_insecure}\n")
+
+    # The explicit allowInsecure pair tests both settings on purpose, so
+    # whichever one this binary rejects is an expected result, not a defect.
+    expected_failures = {"tls, allowInsecure on", "tls, allowInsecure off"}
+
+    problems = 0
+    for result in results:
+        expected = result.name in expected_failures
+        if result.accepted:
+            typer.secho(f"OK    {result.name}", fg=typer.colors.GREEN)
+            continue
+        if expected:
+            typer.secho(f"n/a   {result.name} (not supported by this build)",
+                        fg=typer.colors.YELLOW)
+            continue
+        problems += 1
+        typer.secho(f"FAIL  {result.name}", fg=typer.colors.RED)
+        typer.echo(f"        {result.reason}")
+
+    typer.echo(f"\n{problems} problem(s)")
+    if problems:
+        raise typer.Exit(code=1)
 
 
 @app.command("doctor")

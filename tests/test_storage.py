@@ -121,3 +121,42 @@ def test_error_histogram_groups_failure_reasons() -> None:
 
 def test_error_histogram_is_empty_when_nothing_failed() -> None:
     assert repo().error_histogram("gemini") == []
+
+
+def test_scheduling_state_is_read_in_one_query() -> None:
+    from datetime import UTC, datetime, timedelta
+
+    r = repo()
+    a, b = node("a.example.net"), node("b.example.net")
+    r.upsert_nodes([a, b])
+    later = datetime.now(UTC) + timedelta(minutes=30)
+    r.update_status(a.fingerprint, NodeStatus.DEGRADED, 2, later)
+
+    state = r.scheduling_state()
+    assert state[a.fingerprint].status is NodeStatus.DEGRADED
+    assert state[a.fingerprint].consecutive_fails == 2
+    assert state[a.fingerprint].next_retry_at is not None
+    # Never validated, so no backoff and nothing to wait for.
+    assert state[b.fingerprint].next_retry_at is None
+
+
+def test_successful_fingerprints_only_counts_gemini_passes() -> None:
+    r = repo()
+    a, b, c = node("a.example.net"), node("b.example.net"), node("c.example.net")
+    r.upsert_nodes([a, b, c])
+    r.record_results([
+        ValidationResult(a.fingerprint, ValidationStage.GEMINI, True),
+        ValidationResult(b.fingerprint, ValidationStage.GEMINI, False),
+        ValidationResult(c.fingerprint, ValidationStage.CONNECTIVITY, True),
+    ])
+    assert r.successful_fingerprints() == {a.fingerprint}
+
+
+def test_source_stats_are_recorded() -> None:
+    r = repo()
+    r.upsert_sources([Source("s1", "raw", "https://a", True)])
+    r.record_source_stats("s1", 500, 200, 9)
+    row = r._connection.execute(
+        "SELECT nodes_contributed, nodes_valid, nodes_gemini_ok FROM sources"
+    ).fetchone()
+    assert (row["nodes_contributed"], row["nodes_valid"], row["nodes_gemini_ok"]) == (500, 200, 9)

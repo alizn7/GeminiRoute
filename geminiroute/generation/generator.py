@@ -15,6 +15,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 from geminiroute.core.models import GeoInfo, Node, Score
+from geminiroute.generation.branding import make_label, rebrand
 from geminiroute.observability.logging import get_logger
 from geminiroute.validation.geo import country_code
 
@@ -44,12 +45,82 @@ def _write(path: Path, content: str) -> None:
     path.write_text(content, encoding="utf-8")
 
 
+def branded_lines(nodes: list[ScoredNode]) -> list[str]:
+    """Config lines with our own numbered label, in the order given.
+
+    Numbered per file rather than globally, so every file reads 1..N.
+    """
+    lines: list[str] = []
+    for index, item in enumerate(nodes, start=1):
+        if not item.node.raw:
+            continue
+        code = item.geo.country_code if item.geo else None
+        lines.append(rebrand(item.node.raw, item.node.protocol, make_label(index, code)))
+    return lines
+
+
 def write_subscription(directory: Path, name: str, nodes: list[ScoredNode]) -> None:
     """Write `<name>.txt` (base64) and `<name>.plain.txt` (human-readable)."""
-    lines = [item.node.raw for item in nodes if item.node.raw]
+    lines = branded_lines(nodes)
     _write(directory / f"{name}.txt", _encode(lines))
     _write(directory / f"{name}.plain.txt", "\n".join(lines) + ("\n" if lines else ""))
     log.info("subscription_written", name=name, nodes=len(lines))
+
+
+def build_index_html(stats: dict[str, object]) -> str:
+    """A landing page for the published tree.
+
+    Also serves as the check that Pages is actually serving the branch: a
+    root URL that 404s is ambiguous, one that renders is not.
+    """
+    funnel = stats.get("funnel", {})
+    rows = "\n".join(
+        f"      <tr><td>{name.replace('_', ' ')}</td><td>{value}</td></tr>"
+        for name, value in (funnel.items() if isinstance(funnel, dict) else [])
+    )
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GeminiRoute</title>
+  <style>
+    body {{ font-family: system-ui, sans-serif; max-width: 46rem; margin: 3rem auto;
+           padding: 0 1rem; line-height: 1.6; color: #1a1a1a; }}
+    code {{ background: #f4f4f4; padding: .15rem .35rem; border-radius: 3px; }}
+    table {{ border-collapse: collapse; margin: 1rem 0; }}
+    td {{ border-bottom: 1px solid #eee; padding: .35rem 1.5rem .35rem 0; }}
+    td:last-child {{ text-align: right; font-variant-numeric: tabular-nums; }}
+    .muted {{ color: #666; font-size: .9rem; }}
+  </style>
+</head>
+<body>
+  <h1>GeminiRoute</h1>
+  <p class="muted">Generated {stats.get("generated_at", "")}</p>
+
+  <h2>Subscriptions</h2>
+  <ul>
+    <li><a href="sub/gemini.txt">sub/gemini.txt</a> — verified nodes</li>
+    <li><a href="sub/best.txt">sub/best.txt</a> — top 30 by score</li>
+    <li><a href="sub/fast.txt">sub/fast.txt</a> — verified and under 500 ms</li>
+    <li><a href="sub/all.txt">sub/all.txt</a> — everything tested</li>
+  </ul>
+  <p class="muted">Add one of these URLs to a client as a subscription link.
+     Each has a <code>.plain.txt</code> twin that is not base64 encoded.</p>
+
+  <h2>API</h2>
+  <ul>
+    <li><a href="api/nodes.json">api/nodes.json</a></li>
+    <li><a href="api/stats.json">api/stats.json</a></li>
+  </ul>
+
+  <h2>Last run</h2>
+  <table>
+{rows}
+  </table>
+</body>
+</html>
+"""
 
 
 def build_api_payload(items: list[ScoredNode]) -> dict[str, object]:
@@ -155,12 +226,7 @@ def generate(
         api_dir / "nodes.json",
         json.dumps(build_api_payload(ranked), ensure_ascii=False, indent=2),
     )
-    _write(
-        api_dir / "stats.json",
-        json.dumps(
-            build_stats_payload(ranked, collected, after_dedup, after_pre, after_connectivity),
-            ensure_ascii=False,
-            indent=2,
-        ),
-    )
+    stats = build_stats_payload(ranked, collected, after_dedup, after_pre, after_connectivity)
+    _write(api_dir / "stats.json", json.dumps(stats, ensure_ascii=False, indent=2))
+    _write(output_dir / "index.html", build_index_html(stats))
     log.info("generation_done", total=len(ranked), gemini_ok=len(gemini_ok))

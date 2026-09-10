@@ -34,10 +34,35 @@ the pool size directly caps how many exist at once.
 
 `GEMINI_API_KEY` is optional:
 
-| Mode | What it proves |
-|---|---|
-| key set | A real `generateContent` call returned candidates |
-| no key | The request reached Google (400/401/403 all count) rather than a censor or a blackhole |
+Every candidate gets the free probe; the API key confirms the winners.
+
+| Step | Applies to | Costs quota | What it proves |
+|---|---|---|---|
+| `GET gemini.google.com` | every candidate | no | The web app loaded and did not say Gemini is unavailable in that country |
+| `POST generateContent` | first N that passed step 1 | yes | A real call returned candidates — definitive |
+
+The split exists because the free tier allows roughly 10–15 requests a minute
+and a few hundred a day, while a run tests over a thousand candidates every
+hour. Spending the key on everything would exhaust the quota in one run and
+turn every later node into a 429. `GR_GEMINI_API_CONFIRM_LIMIT` (default 10)
+caps calls per run; they are paced to stay inside the per-minute limit.
+
+**Reaching Google is not enough.** A node can connect to Google perfectly and
+still be useless, because Gemini is not offered where the node exits. Google
+signals this with `400 FAILED_PRECONDITION / "User location is not supported
+for the API use."`, and the web app says so in the page body. Both are treated
+as failures (`region not supported`), not successes.
+
+Set `GEMINI_API_KEY` if you can: the keyless path infers the region from the
+web app's HTML, which is weaker than the API's explicit refusal.
+
+## Published labels
+
+Every published config's display label is rewritten to `<n>.<flag> GeminiRoute`
+— numbered from 1 within each file, with the flag from the node's exit country.
+Only the label changes; the credential, host, port, transport and every
+parameter are republished exactly as collected. Change `BRAND` in
+`geminiroute/generation/branding.py` to rename.
 
 Without the xray binary the Gemini stage is skipped and the run is recorded as
 degraded — it does not silently publish unverified nodes as verified.
@@ -61,6 +86,9 @@ cp sources.toml sources.local.toml   # then add real sources and enable them
 geminiroute doctor                    # check environment before blaming the pipeline
 geminiroute collect                   # collect + parse only; fast feedback loop
 geminiroute run-full-pipeline         # the whole thing; what the hourly job runs
+geminiroute errors --stage gemini     # why nodes failed a stage, grouped
+geminiroute sources                   # what each source actually contributed
+geminiroute xray-check                # which config shapes this xray accepts
 ```
 
 Exit codes: `0` success, `1` no sources configured, `2` the run produced zero
@@ -88,6 +116,7 @@ environment:
 | `GR_DATABASE_PATH` | `data/geminiroute.db` | SQLite file |
 | `GR_CONNECTIVITY_CONCURRENCY` | `100` | Handshakes in flight |
 | `GR_GEMINI_POOL_SIZE` | `20` | Concurrent xray processes |
+| `GR_GEMINI_API_CONFIRM_LIMIT` | `10` | API calls per run (quota guard) |
 | `GR_MAX_GEMINI_CANDIDATES` | `1200` | Cap on the expensive stage |
 | `GR_HISTORY_RETENTION_DAYS` | `90` | History pruning window |
 
@@ -99,6 +128,8 @@ weeks.
 
 ```
 https://<user>.github.io/geminiroute/
+├── index.html           (landing page: links plus the last run's funnel)
+├── .nojekyll            (Pages must serve the tree as-is, not build it)
 ├── sub/
 │   ├── all.txt          (base64, what clients poll)
 │   ├── all.plain.txt    (human-readable, for debugging)
@@ -111,6 +142,34 @@ https://<user>.github.io/geminiroute/
 │   └── stats.json       (the funnel, stage by stage)
 └── data/geminiroute.db  (carried between runs; the runner is ephemeral)
 ```
+
+## Checking config generation
+
+`geminiroute xray-check` offers every config shape the generator produces to
+the xray binary and reports which ones it accepts. Run it after changing xray
+versions or touching `validation/xray.py`.
+
+It exists because xray versions disagree about what a valid config is —
+`allowInsecure` was accepted for years and is refused by recent builds — and a
+refused config is recorded as a node failure, indistinguishable from a dead
+node. One command answers what would otherwise take a pipeline run per
+question.
+
+The pipeline itself probes the same question at startup (`xray_capabilities` in
+the log) and emits `allowInsecure` only when the binary in use still takes it.
+
+## Scheduling
+
+A node that fails is not retried immediately: backoff pushes it out 5 minutes,
+then 30, then hours, up to a daily ceiling, and three straight failures mark it
+dead. Nodes inside their window are skipped at the top of a run, so the hourly
+slots go to nodes that might actually work. A dead node re-enters the pool as
+`recheck` once its wait elapses — dead is a state, not a grave.
+
+Candidates for the expensive stage are chosen proven-first, then fastest. Pure
+latency ordering over-selects CDN-fronted configs: their TLS handshake succeeds
+against the CDN whether or not the node behind it is alive, so they look fast
+and healthy right up until the Gemini stage rejects them.
 
 ## Scoring
 

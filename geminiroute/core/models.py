@@ -72,6 +72,7 @@ class LatencyResult:
 @dataclass(frozen=True)
 class GeoInfo:
     country: str | None = None
+    country_code: str | None = None
     city: str | None = None
     asn: str | None = None
     isp: str | None = None

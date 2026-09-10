@@ -5,6 +5,11 @@
 #
 # Content, not code: adding a source is a normal pull request, and a bad source
 # degrades a run rather than breaking it (see collect_source).
+#
+# Before enabling a new source, run `geminiroute collect` with it on and check
+# that `unique` actually moves. A source that only repeats what others already
+# supply costs run time and returns nothing. After a few runs,
+# `geminiroute sources` shows the yield each one really produced.
 
 [[source]]
 name = "barry-far-vmess"
@@ -16,4 +21,16 @@ enabled = true
 name = "barry-far-vless"
 type = "raw"
 url = "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vless.txt"
+enabled = true
+
+[[source]]
+name = "matinghanbari-vless"
+type = "raw"
+url = "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/vless.txt"
+enabled = true
+
+[[source]]
+name = "matinghanbari-trojan"
+type = "raw"
+url = "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/trojan.txt"
 enabled = true

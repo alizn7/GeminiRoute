@@ -53,6 +53,9 @@ class Settings:
     gemini_pool_size: int = 20
     gemini_timeout: float = 12.0
     gemini_api_key: str | None = None
+    # API calls per run. Free-tier quota is a few hundred a day and this runs
+    # hourly, so the key confirms winners rather than testing everything.
+    gemini_api_confirm_limit: int = 10
     xray_path: str | None = None
 
     # Cap on how many survivors reach the expensive stage, so an unexpected
@@ -78,6 +81,7 @@ class Settings:
             gemini_pool_size=_env_int("GR_GEMINI_POOL_SIZE", 20),
             gemini_timeout=_env_float("GR_GEMINI_TIMEOUT", 12.0),
             gemini_api_key=os.environ.get("GEMINI_API_KEY") or None,
+            gemini_api_confirm_limit=_env_int("GR_GEMINI_API_CONFIRM_LIMIT", 10),
             xray_path=os.environ.get("XRAY_PATH") or None,
             max_gemini_candidates=_env_int("GR_MAX_GEMINI_CANDIDATES", 1200),
             history_retention_days=_env_int("GR_HISTORY_RETENTION_DAYS", 90),

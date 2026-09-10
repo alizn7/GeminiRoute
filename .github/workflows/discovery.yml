@@ -35,7 +35,7 @@ jobs:
       - name: Install Xray core
         # Pinned: an unpinned "latest" could change the config format under us.
         env:
-          XRAY_VERSION: v25.3.6
+          XRAY_VERSION: v26.3.27
         run: |
           set -euo pipefail
           # unzip -d only creates one level, and ~/.local does not exist on a
@@ -104,6 +104,12 @@ jobs:
           cp -r dist/sub dist/api publish/
           mkdir -p publish/data
           cp data/geminiroute.db publish/data/geminiroute.db
+
+          # Without this, Pages runs the published tree through Jekyll, which
+          # silently drops any path starting with _ or . and can fail the
+          # deploy on content it does not understand.
+          touch publish/.nojekyll
+          cp dist/index.html publish/index.html
 
           cd publish
           git add -A

@@ -22,25 +22,53 @@ class UnsupportedNodeError(ValueError):
     """The node cannot be expressed as an xray outbound."""
 
 
-def _stream_settings(node: Node) -> dict[str, Any]:
+# uTLS fingerprints xray accepts. Anything else makes it reject the whole
+# config, so an unknown value is dropped rather than passed through — the node
+# still works, it just does not mimic a specific browser.
+KNOWN_FINGERPRINTS = frozenset({
+    "chrome", "firefox", "safari", "ios", "android", "edge", "360", "qq",
+    "random", "randomized", "randomizednoalpn", "unsafe",
+})
+
+# ALPN values that mean anything to a TLS stack. Sources put junk here.
+KNOWN_ALPN = frozenset({"h2", "http/1.1", "h3"})
+
+
+def _stream_settings(node: Node, allow_insecure: bool = True) -> dict[str, Any]:
     """Transport + TLS layer, shared by every protocol."""
     params = node.params
     network = node.transport or "tcp"
     settings: dict[str, Any] = {"network": network}
 
     security = node.security if node.security not in ("", "none") else "none"
+    # Xray dropped "xtls" as a standalone security layer; XTLS is now expressed
+    # as tls plus a flow on the user. Passing "xtls" makes xray refuse the
+    # config outright.
+    if security == "xtls":
+        security = "tls"
     settings["security"] = security
 
-    if security in ("tls", "xtls"):
+    if security == "tls":
         tls: dict[str, Any] = {
             "serverName": params.get("sni") or params.get("host") or node.address,
-            # Many working nodes use self-signed certs or a mismatched SNI.
-            "allowInsecure": True,
         }
-        if params.get("fp"):
-            tls["fingerprint"] = params["fp"]
-        if params.get("alpn"):
-            tls["alpn"] = [a.strip() for a in params["alpn"].split(",") if a.strip()]
+        # Many working nodes use self-signed certs or a mismatched SNI, so we
+        # want this on — but recent xray builds removed the field and reject any
+        # config containing it. Whether to emit it is decided by probing the
+        # binary at startup, not assumed.
+        if allow_insecure:
+            tls["allowInsecure"] = True
+        fingerprint = params.get("fp", "").strip().lower()
+        if fingerprint in KNOWN_FINGERPRINTS:
+            tls["fingerprint"] = fingerprint
+
+        alpn = [
+            value.strip().lower()
+            for value in params.get("alpn", "").split(",")
+            if value.strip().lower() in KNOWN_ALPN
+        ]
+        if alpn:
+            tls["alpn"] = alpn
         settings["tlsSettings"] = tls
 
     elif security == "reality":
@@ -66,11 +94,25 @@ def _stream_settings(node: Node) -> dict[str, Any]:
             "multiMode": params.get("mode", "") == "multi",
         }
 
-    elif network == "http":  # h2
-        http: dict[str, Any] = {"path": params.get("path", "/")}
+    elif network == "httpupgrade":
+        upgrade: dict[str, Any] = {"path": params.get("path", "/")}
         if params.get("host"):
-            http["host"] = [h.strip() for h in params["host"].split(",") if h.strip()]
-        settings["httpSettings"] = http
+            upgrade["host"] = params["host"]
+        settings["httpupgradeSettings"] = upgrade
+
+    elif network in ("xhttp", "http"):
+        # Xray removed the standalone HTTP/2 transport and migrated it to
+        # XHTTP; a config with httpSettings is refused outright. An h2 node is
+        # therefore expressed as xhttp in stream-one mode, which is the
+        # migration path xray's own error message names.
+        settings["network"] = "xhttp"
+        xhttp: dict[str, Any] = {
+            "path": params.get("path", "/"),
+            "mode": params.get("mode") or ("stream-one" if network == "http" else "auto"),
+        }
+        if params.get("host"):
+            xhttp["host"] = params["host"].split(",")[0].strip()
+        settings["xhttpSettings"] = xhttp
 
     return settings
 
@@ -129,7 +171,9 @@ def _outbound_settings(node: Node) -> dict[str, Any]:
     raise UnsupportedNodeError(f"unsupported protocol: {node.protocol}")
 
 
-def build_config(node: Node, socks_port: int) -> dict[str, Any]:
+def build_config(
+    node: Node, socks_port: int, allow_insecure: bool = True
+) -> dict[str, Any]:
     """A complete xray config: SOCKS5 in on localhost, the node out.
 
     `listen` is pinned to 127.0.0.1: an open SOCKS port on a CI runner would
@@ -151,7 +195,7 @@ def build_config(node: Node, socks_port: int) -> dict[str, Any]:
                 "tag": "proxy",
                 "protocol": node.protocol.value,
                 "settings": _outbound_settings(node),
-                "streamSettings": _stream_settings(node),
+                "streamSettings": _stream_settings(node, allow_insecure),
             }
         ],
     }
