@@ -147,3 +147,20 @@ def test_stats_with_no_sources_still_writes_everything(tmp_path: Path) -> None:
     generate(tmp_path, [scored("a", 0.9)])
     assert json.loads((tmp_path / "api" / "stats.json").read_text())["sources"] == []
     assert (tmp_path / "index.html").exists()
+
+
+def test_live_readme_assets_are_written(tmp_path: Path) -> None:
+    """The README embeds these; if a run does not write them, its badges show
+    the previous run's numbers with no sign anything is wrong."""
+    generate(tmp_path, [scored("a", 0.9)], collected=100, after_dedup=80,
+             after_pre=60, after_connectivity=40)
+    for name in ("api/badge.json", "api/badge-countries.json",
+                 "api/badge-success.json", "card.svg"):
+        assert (tmp_path / name).exists(), name
+
+
+def test_badge_reports_this_run(tmp_path: Path) -> None:
+    generate(tmp_path, [scored("a", 0.9), scored("b", 0.8),
+                        scored("c", 0.7, gemini=False)])
+    badge = json.loads((tmp_path / "api" / "badge.json").read_text())
+    assert badge["message"] == "2"

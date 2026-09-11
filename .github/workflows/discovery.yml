@@ -110,6 +110,8 @@ jobs:
           # deploy on content it does not understand.
           touch publish/.nojekyll
           cp dist/index.html publish/index.html
+          # The README embeds this, so it has to reach the published branch.
+          cp dist/card.svg publish/card.svg
 
           cd publish
           git add -A

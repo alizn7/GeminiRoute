@@ -15,6 +15,12 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 from geminiroute.core.models import GeoInfo, Node, Score
+from geminiroute.generation.badges import (
+    countries_badge,
+    stats_card,
+    success_badge,
+    verified_badge,
+)
 from geminiroute.generation.branding import make_label, rebrand
 from geminiroute.generation.dashboard import render as render_dashboard
 from geminiroute.observability.logging import get_logger
@@ -212,4 +218,11 @@ def generate(
     )
     _write(api_dir / "stats.json", json.dumps(stats, ensure_ascii=False, indent=2))
     _write(output_dir / "index.html", render_dashboard(stats, file_counts))
+
+    # Embedded by the README so its numbers describe the last run rather than
+    # the last time someone edited the file.
+    _write(api_dir / "badge.json", verified_badge(stats))
+    _write(api_dir / "badge-countries.json", countries_badge(stats))
+    _write(api_dir / "badge-success.json", success_badge(stats))
+    _write(output_dir / "card.svg", stats_card(stats))
     log.info("generation_done", total=len(ranked), gemini_ok=len(gemini_ok))
