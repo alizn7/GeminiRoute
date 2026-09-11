@@ -23,26 +23,28 @@ type = "raw"
 url = "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/vless.txt"
 enabled = true
 
-
+# Restored. It was dropped on local numbers that showed zero yield, but those
+# runs predated the xray config and exit-country fixes. On CI it is the
+# highest-yielding source in the list at 22%.
 [[source]]
 name = "barry-far-vmess"
 type = "raw"
 url = "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vmess.txt"
 enabled = true
 
-
-[[source]]
-name = "coldwater-sub7"
-type = "raw"
-url = "https://raw.githubusercontent.com/coldwater-10/V2ray-Config/main/Sub7.txt"
-enabled = true
-
-[[source]]
-name = "coldwater-sub10"
-type = "raw"
-url = "https://raw.githubusercontent.com/coldwater-10/V2ray-Config/main/Sub10.txt"
-enabled = true
-
+# Tried and dropped, with the numbers that settled it:
+#
+#   morpheusadam vmess.txt   8,058 configs   2,012 reachable   28 verified
+#   morpheusadam best.txt    1,922 configs   1,102 reachable    7 verified
+#   coldwater Sub7             600 configs     211 reachable    0 verified
+#   coldwater Sub10            600 configs     217 reachable    0 verified
+#
+# All four have high TCP reachability and almost nothing that proxies. Three of
+# them came from an upstream ranking that scores sources on TCP reachability,
+# which is exactly the property that does not predict a working route: the
+# fastest responders are CDN edges in front of dead backends.
+#
+# Screen a candidate with `geminiroute try-source <url>` before adding it.
 
 [[source]]
 name = "matinghanbari-trojan"
