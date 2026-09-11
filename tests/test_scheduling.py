@@ -100,3 +100,82 @@ def test_proven_nodes_outrank_faster_untested_ones() -> None:
         ValidationResult(proven.fingerprint, ValidationStage.GEMINI, True)
     ])
     assert repo.successful_fingerprints() == {proven.fingerprint}
+
+
+# ---- candidate selection ---------------------------------------------------
+
+def reachable_nodes(count: int) -> list[Node]:
+    return [node(f"n{i}.example.net") for i in range(count)]
+
+
+def test_proven_nodes_are_selected_first() -> None:
+    import random
+
+    from geminiroute.orchestration.runner import select_candidates
+
+    nodes = reachable_nodes(100)
+    proven = {nodes[70].fingerprint, nodes[80].fingerprint}
+    selected = select_candidates(nodes, proven, cap=5, rng=random.Random(0))
+    assert {n.fingerprint for n in selected[:2]} == proven
+
+
+def test_the_rest_are_shuffled_not_ordered() -> None:
+    """Ordering the remainder by latency over-selects CDN edges in front of
+    dead backends, which respond fast and proxy nothing."""
+    import random
+
+    from geminiroute.orchestration.runner import select_candidates
+
+    nodes = reachable_nodes(200)
+    first = [n.address for n in select_candidates(nodes, set(), 50, random.Random(1))]
+    second = [n.address for n in select_candidates(nodes, set(), 50, random.Random(2))]
+    assert first != second
+    assert first != [n.address for n in nodes[:50]]
+
+
+def test_selection_rotates_coverage_across_runs() -> None:
+    """With more reachable nodes than the cap allows, a fixed order would test
+    the same subset every hour and never reach the rest."""
+    import random
+
+    from geminiroute.orchestration.runner import select_candidates
+
+    nodes = reachable_nodes(300)
+    seen: set[str] = set()
+    for seed in range(6):
+        seen.update(n.address for n in select_candidates(nodes, set(), 100, random.Random(seed)))
+    assert len(seen) > 150
+
+
+def test_cap_is_respected() -> None:
+    import random
+
+    from geminiroute.orchestration.runner import select_candidates
+
+    nodes = reachable_nodes(50)
+    assert len(select_candidates(nodes, set(), 10, random.Random(0))) == 10
+    assert len(select_candidates(nodes, set(), 500, random.Random(0))) == 50
+
+
+def test_every_selected_node_appears_once() -> None:
+    import random
+
+    from geminiroute.orchestration.runner import select_candidates
+
+    nodes = reachable_nodes(60)
+    proven = {n.fingerprint for n in nodes[:10]}
+    selected = select_candidates(nodes, proven, 40, random.Random(0))
+    assert len({n.fingerprint for n in selected}) == len(selected)
+
+
+def test_retired_sources_stop_reporting_stale_numbers() -> None:
+    """A source dropped from sources.toml kept its last row, and the report then
+    presented old numbers as if they described the current run."""
+    repo = SqliteRepository(":memory:")
+    repo.record_source_stats("retired", 500, 200, 40)
+    repo.record_source_stats("current", 300, 150, 30)
+
+    repo.clear_source_stats({"current"})
+    report = repo.source_report()
+
+    assert [row[0] for row in report] == ["current"]

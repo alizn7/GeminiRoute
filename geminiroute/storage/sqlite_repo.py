@@ -221,12 +221,33 @@ class SqliteRepository(NodeRepository):
         ).fetchall()
         return {str(r["node_fingerprint"]) for r in rows}
 
+    def clear_source_stats(self, keep: set[str]) -> int:
+        """Zero the counters of sources that contributed nothing this run.
+
+        A source removed from sources.toml keeps its last row, and the report
+        then presents months-old numbers as if they described the current run —
+        which is exactly the evidence someone uses to decide whether to keep it.
+        """
+        rows = self._connection.execute("SELECT name FROM sources").fetchall()
+        stale = [str(r["name"]) for r in rows if str(r["name"]) not in keep]
+        with self._connection:
+            self._connection.executemany(
+                """
+                UPDATE sources
+                   SET nodes_contributed = 0, nodes_valid = 0, nodes_gemini_ok = 0
+                 WHERE name = ?
+                """,
+                [(name,) for name in stale],
+            )
+        return len(stale)
+
     def source_report(self) -> list[tuple[str, int, int, int]]:
         """(name, contributed, reachable, gemini_ok), best yield first."""
         rows = self._connection.execute(
             """
             SELECT name, nodes_contributed, nodes_valid, nodes_gemini_ok
               FROM sources
+             WHERE nodes_contributed > 0
           ORDER BY nodes_gemini_ok DESC, nodes_contributed DESC
             """
         ).fetchall()
