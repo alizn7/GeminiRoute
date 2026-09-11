@@ -28,6 +28,7 @@ from concurrent.futures import ThreadPoolExecutor
 from geminiroute.core.enums import ValidationStage
 from geminiroute.core.models import LatencyResult, Node, ValidationResult
 from geminiroute.observability.logging import get_logger
+from geminiroute.validation.pre import is_usable_hostname
 
 log = get_logger(__name__)
 
@@ -157,7 +158,10 @@ async def probe(
         return failure("dns resolution failed")
 
     use_tls = node.security in TLS_SECURITIES
-    server_hostname = node.params.get("sni") or node.params.get("host") or node.address
+    # Sources put anything in `sni`. An unusable one is dropped rather than
+    # sent: the handshake still measures reachability without it.
+    candidate = node.params.get("sni") or node.params.get("host") or node.address
+    server_hostname = candidate if is_usable_hostname(candidate) else None
 
     overall_start = time.perf_counter()
     writer = None
@@ -181,6 +185,11 @@ async def probe(
     except TimeoutError:
         return failure("timeout")
     except (OSError, ssl.SSLError) as exc:
+        return failure(f"{type(exc).__name__}: {exc}")
+    except ValueError as exc:
+        # UnicodeError from the idna codec lands here, and it is a ValueError
+        # rather than an OSError. One malformed config must never end a run of
+        # ten thousand.
         return failure(f"{type(exc).__name__}: {exc}")
     finally:
         if writer is not None:
@@ -232,6 +241,18 @@ async def probe_all(
                     stage=ValidationStage.CONNECTIVITY,
                     passed=False,
                     error="probe exceeded its budget",
+                )
+            except Exception as exc:  # noqa: BLE001
+                # The guarantee that one bad config cannot end a run of ten
+                # thousand is made here, once, rather than by enumerating
+                # exception types at every call site — which is how a
+                # UnicodeError from the idna codec got through.
+                log.warning("probe_crashed", node=node.fingerprint, error=repr(exc))
+                result = ValidationResult(
+                    node_fingerprint=node.fingerprint,
+                    stage=ValidationStage.CONNECTIVITY,
+                    passed=False,
+                    error=f"probe raised {type(exc).__name__}",
                 )
         done += 1
         if done % step == 0:

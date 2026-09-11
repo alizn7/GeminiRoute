@@ -199,3 +199,17 @@ def test_explicit_mode_overrides_the_migration_default() -> None:
     n = node(transport="http", params={"path": "/h2", "mode": "packet-up"})
     stream = build_config(n, 1)["outbounds"][0]["streamSettings"]
     assert stream["xhttpSettings"]["mode"] == "packet-up"
+
+
+def test_unencodable_sni_falls_back_to_the_address() -> None:
+    """Passing junk through only moves the failure to dial time."""
+    n = node(params={"sni": "a..b"})
+    tls = build_config(n, 1)["outbounds"][0]["streamSettings"]["tlsSettings"]
+    assert tls["serverName"] == "check.example.net" or tls["serverName"] == n.address
+
+
+def test_reality_server_name_is_validated_too() -> None:
+    n = node(security="reality",
+             params={"sni": "trailing.", "pbk": "KEY", "host": "cdn.example.net"})
+    reality = build_config(n, 1)["outbounds"][0]["streamSettings"]["realitySettings"]
+    assert reality["serverName"] == "cdn.example.net"

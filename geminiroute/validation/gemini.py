@@ -494,6 +494,16 @@ class GeminiValidator:
                     return
                 try:
                     results[index] = await self._run_one(node, free_port())
+                except Exception as exc:  # noqa: BLE001
+                    # Same guarantee as the connectivity stage: no single node
+                    # may end the batch, whatever it manages to raise.
+                    log.warning("gemini_crashed", node=node.fingerprint, error=repr(exc))
+                    results[index] = ValidationResult(
+                        node_fingerprint=node.fingerprint,
+                        stage=ValidationStage.GEMINI,
+                        passed=False,
+                        error=f"check raised {type(exc).__name__}",
+                    )
                 finally:
                     queue.task_done()
 

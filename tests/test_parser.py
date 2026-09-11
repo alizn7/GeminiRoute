@@ -163,3 +163,17 @@ def test_parse_lines_skips_junk_comments_and_blanks() -> None:
     nodes = parse_lines(lines)
     assert len(nodes) == 2
     assert {n.protocol for n in nodes} == {ProtocolType.VLESS, ProtocolType.VMESS}
+
+
+def test_a_parser_that_raises_cannot_stop_the_batch() -> None:
+    """Parsers promise to return None rather than raise; this is the net that
+    makes that true even when one forgets."""
+    from unittest import mock
+
+    from geminiroute.parsing import registry
+
+    def exploding(raw: str) -> None:
+        raise RuntimeError("bad parser")
+
+    with mock.patch.object(registry, "parse_line", exploding):
+        assert registry.parse_lines([VLESS, vmess_link()]) == []

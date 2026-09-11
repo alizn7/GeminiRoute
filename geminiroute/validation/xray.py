@@ -16,6 +16,7 @@ from typing import Any
 
 from geminiroute.core.enums import ProtocolType
 from geminiroute.core.models import Node
+from geminiroute.validation.pre import is_usable_hostname
 
 
 class UnsupportedNodeError(ValueError):
@@ -34,6 +35,18 @@ KNOWN_FINGERPRINTS = frozenset({
 KNOWN_ALPN = frozenset({"h2", "http/1.1", "h3"})
 
 
+def _server_name(node: Node) -> str:
+    """The SNI to present, or empty when the sources supplied junk.
+
+    Same guard as the connectivity probe: a hostname with an empty or over-long
+    label is not encodable, and passing it on only moves the failure later.
+    """
+    for candidate in (node.params.get("sni"), node.params.get("host"), node.address):
+        if candidate and is_usable_hostname(candidate):
+            return candidate
+    return ""
+
+
 def _stream_settings(node: Node, allow_insecure: bool = True) -> dict[str, Any]:
     """Transport + TLS layer, shared by every protocol."""
     params = node.params
@@ -49,9 +62,7 @@ def _stream_settings(node: Node, allow_insecure: bool = True) -> dict[str, Any]:
     settings["security"] = security
 
     if security == "tls":
-        tls: dict[str, Any] = {
-            "serverName": params.get("sni") or params.get("host") or node.address,
-        }
+        tls: dict[str, Any] = {"serverName": _server_name(node)}
         # Many working nodes use self-signed certs or a mismatched SNI, so we
         # want this on — but recent xray builds removed the field and reject any
         # config containing it. Whether to emit it is decided by probing the
@@ -75,7 +86,7 @@ def _stream_settings(node: Node, allow_insecure: bool = True) -> dict[str, Any]:
         if not params.get("pbk"):
             raise UnsupportedNodeError("reality node without a public key")
         settings["realitySettings"] = {
-            "serverName": params.get("sni", ""),
+            "serverName": _server_name(node),
             "fingerprint": params.get("fp", "chrome"),
             "publicKey": params["pbk"],
             "shortId": params.get("sid", ""),

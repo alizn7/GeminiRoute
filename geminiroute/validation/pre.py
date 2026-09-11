@@ -6,6 +6,7 @@ a cleanliness one: without it the validator would probe the machine it runs on.
 
 from __future__ import annotations
 
+import contextlib
 import ipaddress
 import re
 from dataclasses import dataclass
@@ -41,6 +42,24 @@ class PreCheck:
 
     passed: bool
     error: str | None = None
+
+
+def is_usable_hostname(name: str) -> bool:
+    """Can this be sent as an SNI or dialled by name?
+
+    Stricter than "looks like a hostname": Python encodes SNI with the idna
+    codec, which raises on an empty or over-long label. That exception is a
+    UnicodeError, so it slips past socket and TLS error handling and takes the
+    whole run with it.
+    """
+    if not name or len(name) > 253:
+        return False
+    with contextlib.suppress(ValueError):
+        ipaddress.ip_address(name)
+        return True  # a literal IP is always dialable
+    if not _HOSTNAME_RE.match(name.lower()):
+        return False
+    return all(0 < len(label) < 64 for label in name.split("."))
 
 
 def _address_problem(address: str) -> str | None:

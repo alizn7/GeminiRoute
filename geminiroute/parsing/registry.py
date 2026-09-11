@@ -46,7 +46,12 @@ def parse_lines(lines: Iterable[str]) -> list[Node]:
         stripped = line.strip()
         if not stripped or stripped.startswith("#"):
             continue
-        node = parse_line(stripped)
+        try:
+            node = parse_line(stripped)
+        except Exception:  # noqa: BLE001
+            # Parsers promise to return None rather than raise; this is the
+            # net that makes that true even when one forgets.
+            continue
         if node is not None:
             nodes.append(node)
     return nodes

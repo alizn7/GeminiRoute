@@ -120,3 +120,49 @@ async def test_a_silent_server_cannot_stall_the_batch() -> None:
 
     assert len(results) == 12
     assert all(not r.passed for r in results)
+
+
+@pytest.mark.asyncio
+async def test_unencodable_sni_cannot_end_the_batch() -> None:
+    """A single config with an SNI like `a..b` raised UnicodeError out of the
+    idna codec and killed a run of ten thousand nodes."""
+
+    async def silent(reader: asyncio.StreamReader, writer: asyncio.StreamWriter) -> None:
+        await asyncio.sleep(30)
+
+    server = await asyncio.start_server(silent, "127.0.0.1", 0)
+    port = server.sockets[0].getsockname()[1]
+    nodes = [
+        Node(protocol=ProtocolType.VLESS, address="127.0.0.1", port=port,
+             security="tls", credential=f"u{i}", raw="vless://x",
+             params={"sni": sni})
+        for i, sni in enumerate(["a..b", ".leading", "trailing.", "x" * 70 + ".com"])
+    ]
+    try:
+        results = await asyncio.wait_for(
+            connectivity.probe_all(nodes, concurrency=4, timeout=1.0), 25
+        )
+    finally:
+        server.close()
+
+    assert len(results) == 4
+    assert all(not r.passed for r in results)
+
+
+@pytest.mark.asyncio
+async def test_an_unlisted_exception_cannot_end_the_batch() -> None:
+    """The guarantee is made at batch level, once, rather than by enumerating
+    exception types at every call site — which is how UnicodeError got through."""
+    from unittest import mock
+
+    nodes = [Node(protocol=ProtocolType.VLESS, address="127.0.0.1", port=9,
+                  credential=f"u{i}", raw="x") for i in range(5)]
+
+    async def exploding(*args: object, **kwargs: object) -> None:
+        raise RuntimeError("something nobody listed")
+
+    with mock.patch.object(connectivity, "probe", exploding):
+        results = await connectivity.probe_all(nodes, concurrency=3, timeout=1.0)
+
+    assert len(results) == 5
+    assert all("RuntimeError" in (r.error or "") for r in results)

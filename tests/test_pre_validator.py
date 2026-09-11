@@ -64,3 +64,22 @@ def test_filter_returns_survivors_and_a_result_for_every_node() -> None:
     assert len(survivors) == 2
     assert len(results) == 3          # rejects are recorded too, not dropped
     assert sum(1 for r in results if not r.passed) == 1
+
+
+# ---- hostname usability ----------------------------------------------------
+
+def test_usable_hostnames_are_accepted() -> None:
+    for name in ("example.net", "cdn.example.co.uk", "8.8.8.8", "2001:db8::1"):
+        assert pre.is_usable_hostname(name), name
+
+
+def test_hostnames_python_cannot_encode_are_rejected() -> None:
+    """Python encodes SNI with the idna codec, which raises UnicodeError on an
+    empty or over-long label. That is a ValueError, so it slips past socket and
+    TLS error handling and ends the whole run."""
+    for name in ("a..b", ".leading", "trailing.", "x" * 64 + ".com", "", "   "):
+        assert not pre.is_usable_hostname(name), name
+
+
+def test_over_length_hostnames_are_rejected() -> None:
+    assert not pre.is_usable_hostname("a." * 200)
