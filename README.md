@@ -6,14 +6,29 @@
 [![exit countries](https://img.shields.io/endpoint?url=https://alizn7.github.io/GeminiRoute/api/badge-countries.json)](https://alizn7.github.io/GeminiRoute/)
 [![verified of tested](https://img.shields.io/endpoint?url=https://alizn7.github.io/GeminiRoute/api/badge-success.json)](https://alizn7.github.io/GeminiRoute/api/stats.json)
 [![rebuilt hourly](https://img.shields.io/github/actions/workflow/status/alizn7/GeminiRoute/discovery.yml?style=flat-square&label=rebuilt%20hourly&labelColor=1f2d3a)](https://github.com/alizn7/GeminiRoute/actions)
+[![license](https://img.shields.io/badge/license-MIT-1f2d3a?style=flat-square)](LICENSE)
 
-**English** &nbsp;·&nbsp; [فارسی](README.fa.md)
+[English](README.md) &nbsp;·&nbsp; [فارسی](README.fa.md)
 
-### Free proxy configs that actually reach Gemini.<br>Collected, tested and rebuilt every hour.
+### An automated pipeline that discovers, verifies and ranks network routes.<br>Runs hourly on GitHub Actions. Publishes what survives.
 
-[**Live status**](https://alizn7.github.io/GeminiRoute/) &nbsp;·&nbsp; [**All links**](#links) &nbsp;·&nbsp; [**Questions**](#faq)
+![Python 3.12](https://img.shields.io/badge/Python%203.12-3776AB?style=flat-square&logo=python&logoColor=white)
+![asyncio](https://img.shields.io/badge/asyncio-1f2d3a?style=flat-square)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222?style=flat-square&logo=github&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
+![Xray core](https://img.shields.io/badge/Xray%20core-1f2d3a?style=flat-square)
+![Typer](https://img.shields.io/badge/Typer-1f2d3a?style=flat-square)
+![httpx](https://img.shields.io/badge/httpx-1f2d3a?style=flat-square)
+![Ruff](https://img.shields.io/badge/Ruff-D7FF64?style=flat-square&logo=ruff&logoColor=white)
+![Mypy](https://img.shields.io/badge/Mypy-1f2d3a?style=flat-square)
+![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
+
+[**Use it**](#start) &nbsp;·&nbsp; [**How it works**](#engineering) &nbsp;·&nbsp; [**Live status**](https://alizn7.github.io/GeminiRoute/) &nbsp;·&nbsp; [**Run it yourself**](#dev)
 
 </div>
+
+<a id="start"></a>
 
 ## 🚀 Start here
 
@@ -30,7 +45,7 @@ https://alizn7.github.io/GeminiRoute/sub/best.txt
 That is the whole setup. No account, no signup. The list rebuilds itself every
 hour, so tapping *update* in your app is all the maintenance there is.
 
-### 📱 Which app?
+### 📱 &nbsp; Which app?
 
 | App | Platform | Where to paste |
 |:--|:--|:--|
@@ -121,13 +136,6 @@ changes hourly — the [status page](https://alizn7.github.io/GeminiRoute/) has 
 | [🇯🇵 `jp`](https://alizn7.github.io/GeminiRoute/sub/country/jp.txt) | [🇨🇦 `ca`](https://alizn7.github.io/GeminiRoute/sub/country/ca.txt) | [🇪🇸 `es`](https://alizn7.github.io/GeminiRoute/sub/country/es.txt) | [🇹🇷 `tr`](https://alizn7.github.io/GeminiRoute/sub/country/tr.txt) | [🇪🇪 `ee`](https://alizn7.github.io/GeminiRoute/sub/country/ee.txt) |
 | [🇸🇪 `se`](https://alizn7.github.io/GeminiRoute/sub/country/se.txt) | [🇳🇴 `no`](https://alizn7.github.io/GeminiRoute/sub/country/no.txt) | [🇰🇷 `kr`](https://alizn7.github.io/GeminiRoute/sub/country/kr.txt) | [🇦🇺 `au`](https://alizn7.github.io/GeminiRoute/sub/country/au.txt) | [🇮🇳 `in`](https://alizn7.github.io/GeminiRoute/sub/country/in.txt) |
 
-### 📈 Machine-readable
-
-| Link | What is in it |
-|:--|:--|
-| [`api/stats.json`](https://alizn7.github.io/GeminiRoute/api/stats.json) | The funnel, countries, yield per source |
-| [`api/nodes.json`](https://alizn7.github.io/GeminiRoute/api/nodes.json) | Every route with its score and country. No credentials. |
-
 ---
 
 ### 📈 &nbsp; Machine-readable
@@ -144,7 +152,9 @@ changes hourly — the [status page](https://alizn7.github.io/GeminiRoute/) has 
 source. `nodes.json` carries every tested route with its score and exit
 country, and no credentials.
 
-## 📊 What happened to everything else
+<a id="engineering"></a>
+
+## 🏗 How it works
 
 <div align="center">
 
@@ -152,48 +162,99 @@ country, and no credentials.
 
 </div>
 
-Most lists publish a count. The number worth publishing is what got discarded,
-and where.
-
-The step that discards the most is the **exit check**: every candidate is
-asked, from inside its own tunnel, where it comes out. Geolocating the config's
-address instead reports the CDN edge in front of it — which is how thirty
-routes once ended up labelled Canada while exiting somewhere Gemini refuses to
-serve.
-
-<details>
-<summary><b>How a route earns its place</b></summary>
-
-<br>
+Fifteen thousand candidates arrive each hour and a few hundred survive. Most
+lists publish the survivors; the interesting number is what was discarded and
+where, which is why the funnel above is the first thing on the status page.
 
 ```
 collect → parse → normalize → dedup → plausibility → connect
-        → exit check → Gemini → publish
+        → exit check → Gemini → score → publish
 ```
 
-Cheap filters run first, so the expensive stage sees hundreds of candidates
-rather than thousands.
+Every stage is a package with no knowledge of the ones around it. `core/`
+imports nothing outside the standard library, which is what lets the whole
+pipeline be exercised without a network or a database.
 
-More candidates survive the connectivity check than that stage can test, so
-which ones get tested matters. Routes with a verified history go first; the
-rest are **shuffled, not sorted by latency**. The fastest responders are CDN
-edges in front of dead backends — they answer a handshake in milliseconds and
-proxy nothing. Adding a source of low-latency CDN-fronted configs once halved
-the verification rate while the average handshake fell from 209 ms to 85 ms.
+### The decisions that turned out to matter
 
-Routes are scored on latency (30%), Gemini verification (30%), reliability over
-the last 30 days (25%) and handshake quality (15%). A route with no history
-scores 0.5 on reliability — unknown, not bad — so new routes start mid-pack and
-earn their position.
+Each of these came from a measurement that contradicted the obvious choice.
+
+**Latency ordering selects for dead servers.** With more reachable candidates
+than the expensive stage can test, the obvious move is to test the fastest
+first. Doing that picks CDN edges sitting in front of dead backends: they
+complete a TLS handshake in milliseconds and proxy nothing. Adding one source
+of low-latency CDN-fronted configs halved the verification rate while the
+average handshake *improved* from 209 ms to 85 ms. Candidates are now ordered
+proven-first, then shuffled — which also rotates coverage, so the whole
+reachable pool is seen within about six hours instead of the same subset every
+hour.
+
+**Ask the tunnel where it comes out, not the config.** Geolocating a config's
+address reports the CDN edge in front of it. Thirty routes were once published
+labelled Canada while exiting somewhere Gemini refuses to serve. Every
+candidate is now asked, through its own tunnel, for its real exit — which
+decides both the published flag and whether the route is dropped outright.
+
+**Ask the binary what it accepts.** Xray versions disagree about what a valid
+config is; `allowInsecure` was accepted for years and is refused by recent
+builds. A refused config is recorded as a route failure, indistinguishable from
+a dead route — 139 routes in one run failed for that reason with no way to tell.
+The pipeline now probes the binary once per run, and `geminiroute xray-check`
+offers all 21 config shapes it generates to the installed binary and reports
+which are accepted.
+
+**Never-raise contracts belong at the batch level.** One config carried an SNI
+the `idna` codec refuses to encode. The resulting `UnicodeError` is a
+`ValueError`, so it slipped past the socket and TLS handlers and ended a run of
+10,671 routes at 3,000 in. Enumerating exception types at each call site will
+always have a gap; the guarantee is now made once per batch.
+
+**Sources are kept on measured yield, not reputation.** Verified over reachable:
+sources kept sit between 17% and 66%, and every one dropped sat under 3% while
+having *better* TCP reachability. Three of the rejected lists came from an
+upstream ranking that scores sources on TCP reachability — precisely the
+property that does not predict a working route. `geminiroute try-source` now
+screens a candidate against a sample in about two minutes.
+
+<details>
+<summary><b>Scoring, scheduling and output</b></summary>
+
+<br>
+
+Routes are scored on latency (30%), verification (30%), reliability over the
+last 30 days (25%) and handshake quality (15%). A route with no history scores
+0.5 on reliability — unknown, not bad — so new routes start mid-pack and earn
+their position over the next few runs.
 
 A failing route is not retried immediately. Backoff pushes it out 5 minutes,
-then 30, then hours. Three straight failures mark it dead, and a dead route
-re-enters the pool once its wait elapses.
+then 30, then hours, to a daily ceiling. Three straight failures mark it dead,
+and a dead route re-enters the pool once its wait elapses. Without this, routes
+that failed three runs running would still occupy a slot every hour.
+
+The SQLite database rides on the `gh-pages` branch because the runner is
+destroyed after every run; without it the reliability history would reset
+hourly and every route would sit at the unknown score forever.
 
 Every published label is rewritten to `<n>.<flag> GeminiRoute`, numbered from 1
 within each file, carrying the flag of its real exit country. Only the label
 changes — credential, host, port, transport and every parameter are
-republished exactly as collected.
+republished exactly as collected, because re-serialising from parsed fields
+would silently drop any parameter the model does not represent.
+
+</details>
+
+<details>
+<summary><b>What is in the repository</b></summary>
+
+<br>
+
+| | |
+|:--|:--|
+| **15 packages** | `core`, `parsing`, `normalization`, `collection`, `dedup`, `validation`, `scoring`, `reliability`, `retry`, `storage`, `generation`, `orchestration`, `observability`, `config` |
+| **278 tests** | Unit tests plus integration tests against real local sockets and HTTP servers — no mocking library |
+| **Two workflows** | `ci.yml` runs Ruff, Mypy and pytest on Python 3.12 and 3.13 for every pull request; `discovery.yml` runs the pipeline hourly and publishes to GitHub Pages |
+| **Eight CLI commands** | Pipeline execution plus diagnostics: `doctor`, `errors`, `sources`, `try-source`, `xray-check`, `probe-node` |
+| **Dependencies** | Two at runtime. Collection, parsing, connectivity, geo, scoring, storage and generation are all standard library |
 
 </details>
 
@@ -238,16 +299,6 @@ why this rebuilds hourly.
 </details>
 
 <details>
-<summary><b>How often does it update?</b></summary>
-
-<br>
-
-Every hour, automatically. The badges at the top read from the last run, so if
-they ever look stale you can see that the job is broken.
-
-</details>
-
-<details>
 <summary><b>Can I use these for something other than Gemini?</b></summary>
 
 <br>
@@ -261,20 +312,18 @@ for.
 
 <a id="dev"></a>
 
-## 🛠 For developers
-
-<details>
-<summary><b>Run it yourself</b></summary>
-
-<br>
+## 🛠 Run it yourself
 
 ```bash
+git clone https://github.com/alizn7/GeminiRoute.git && cd GeminiRoute
 python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -e ".[dev]"
+
+ruff check . && mypy geminiroute && pytest
 ```
 
-The Gemini stage needs the [Xray](https://github.com/XTLS/Xray-core/releases)
-binary on `PATH`, or set `XRAY_PATH`.
+The verification stage needs the [Xray](https://github.com/XTLS/Xray-core/releases)
+binary on `PATH`, or set `XRAY_PATH`. Everything else runs without it.
 
 | Command | What it does |
 |:--|:--|
@@ -287,19 +336,8 @@ binary on `PATH`, or set `XRAY_PATH`.
 | `geminiroute xray-check` | Which config shapes your xray build accepts |
 | `geminiroute probe-node "<config>"` | Run one config through the full check |
 
-`xray-check` exists because xray versions disagree about what a valid config is
-— `allowInsecure` was accepted for years and is refused by recent builds — and
-a refused config is recorded as a route failure, indistinguishable from a dead
-route.
-
-```bash
-ruff check . && mypy geminiroute && pytest
-```
-
-</details>
-
 <details>
-<summary><b>Add a source</b></summary>
+<summary><b>Adding a source</b></summary>
 
 <br>
 
@@ -309,10 +347,8 @@ Screen it before committing to it:
 geminiroute try-source "https://raw.githubusercontent.com/owner/repo/main/sub.txt"
 ```
 
-The number that matters is **verified over reachable**. Sources kept in this
-list sit between 17% and 66%; every one dropped so far sat under 3% while
-having *better* TCP reachability than the ones kept. A wall of CDN edges
-answers a handshake in milliseconds and proxies nothing.
+The number that matters is **verified over reachable**. Then add it to
+`sources.toml`, which is content rather than code:
 
 ```toml
 [[source]]
@@ -323,7 +359,7 @@ enabled = true
 ```
 
 After a few runs the `sources` block in [`stats.json`](https://alizn7.github.io/GeminiRoute/api/stats.json)
-shows the yield each one really produced.
+shows the yield it really produced.
 
 </details>
 
@@ -331,9 +367,6 @@ shows the yield each one really produced.
 <summary><b>Configuration</b></summary>
 
 <br>
-
-`sources.toml` holds the source list; everything else comes from the
-environment.
 
 | Variable | Default | Purpose |
 |:--|:--|:--|
@@ -351,11 +384,6 @@ run get a real `generateContent` call. The split exists because the free tier
 allows a few hundred calls a day while a run tests over a thousand candidates
 every hour.
 
-Two workflows: `ci.yml` runs ruff, mypy and pytest on every pull request;
-`discovery.yml` runs the pipeline hourly and publishes to `gh-pages`.
-Everything generated lives on that branch, never on `main` — an hourly job
-committing to `main` would bury real history within weeks.
-
 </details>
 
 ## ⚠️ Honest limits
@@ -371,3 +399,9 @@ network, which is the one leg that cannot be tested from CI.
 
 Published for research and for reaching the open internet where it is
 restricted. Obey the laws that apply to you.
+
+---
+
+<div align="center">
+<sub>MIT licensed · built in the open · <a href="https://alizn7.github.io/GeminiRoute/">live status</a></sub>
+</div>
