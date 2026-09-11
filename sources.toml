@@ -23,13 +23,23 @@ type = "raw"
 url = "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/vless.txt"
 enabled = true
 
-# Replaces barry-far-vmess, which produced no verified nodes across several
-# runs. This one is deduplicated by endpoint and ordered by source quality
-# upstream, so the same volume carries more distinct servers.
+# Restored. It was dropped on local numbers that showed zero yield, but those
+# runs predated the xray config and exit-country fixes. On CI it is the
+# highest-yielding source in the list at 22%.
 [[source]]
-name = "morpheusadam-vmess"
+name = "barry-far-vmess"
 type = "raw"
-url = "https://raw.githubusercontent.com/morpheusadam/v2ray-config/main/subs/bundles/vmess.txt"
+url = "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vmess.txt"
+enabled = true
+
+# The measured bundle rather than the raw vmess dump. The dump supplied 8,058
+# configs at 0.35% yield — 68% of all input for 10% of the verified routes,
+# crowding better sources out of the candidate cap. This one carries only
+# sources that scored 85 or above upstream.
+[[source]]
+name = "morpheusadam-best"
+type = "raw"
+url = "https://raw.githubusercontent.com/morpheusadam/v2ray-config/main/subs/bundles/best.txt"
 enabled = true
 
 [[source]]
