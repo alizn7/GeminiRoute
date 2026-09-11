@@ -12,12 +12,6 @@
 # `geminiroute sources` shows the yield each one really produced.
 
 [[source]]
-name = "barry-far-vmess"
-type = "raw"
-url = "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vmess.txt"
-enabled = true
-
-[[source]]
 name = "barry-far-vless"
 type = "raw"
 url = "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vless.txt"
@@ -27,6 +21,15 @@ enabled = true
 name = "matinghanbari-vless"
 type = "raw"
 url = "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/vless.txt"
+enabled = true
+
+# Replaces barry-far-vmess, which produced no verified nodes across several
+# runs. This one is deduplicated by endpoint and ordered by source quality
+# upstream, so the same volume carries more distinct servers.
+[[source]]
+name = "morpheusadam-vmess"
+type = "raw"
+url = "https://raw.githubusercontent.com/morpheusadam/v2ray-config/main/subs/bundles/vmess.txt"
 enabled = true
 
 [[source]]
