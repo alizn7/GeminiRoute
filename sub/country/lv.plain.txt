@@ -1,1 +1,2 @@
 vless://2b2ea9d8-501e-4b79-8fd9-19bff6ed5cf5@nl.cloudtechone.org:443?encryption=none&type=tcp&security=reality&headerType=none&sni=nl.cloudtechone.org&insecure=1&allowInsecure=1&pbk=_IBXb9NfhsnS21XbU9PIl73ExvrjXGXVLO0Za1ui5Fo&sid=f93c9d5127e622e4&flow=xtls-rprx-vision#1.🇱🇻 GeminiRoute
+vless://02fcc1a4-ee90-4970-8bbb-4ffaa8109d24@195.123.213.28:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=www.cloudflare.com&security=reality&pbk=NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo&sid=5c256336e3b673fa#2.🇱🇻 GeminiRoute
