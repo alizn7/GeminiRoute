@@ -60,7 +60,7 @@ class Settings:
 
     # Cap on how many survivors reach the expensive stage, so an unexpected
     # influx of sources cannot push the run past the job time limit.
-    max_gemini_candidates: int = 1200
+    max_gemini_candidates: int = 1600
 
     history_retention_days: int = 90
     log_level: str = "INFO"
@@ -83,7 +83,7 @@ class Settings:
             gemini_api_key=os.environ.get("GEMINI_API_KEY") or None,
             gemini_api_confirm_limit=_env_int("GR_GEMINI_API_CONFIRM_LIMIT", 10),
             xray_path=os.environ.get("XRAY_PATH") or None,
-            max_gemini_candidates=_env_int("GR_MAX_GEMINI_CANDIDATES", 1200),
+            max_gemini_candidates=_env_int("GR_MAX_GEMINI_CANDIDATES", 1600),
             history_retention_days=_env_int("GR_HISTORY_RETENTION_DAYS", 90),
             log_level=os.environ.get("GR_LOG_LEVEL", "INFO"),
             sources=load_sources(sources_file),
