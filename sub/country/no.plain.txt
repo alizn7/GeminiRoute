@@ -1,2 +1,2 @@
-vless://a34b5e88-cf0d-4c01-8199-2d1002d3c787@oslomeow.nethcloud.top:8443?path=/&security=reality&encryption=none&pbk=p9ISfhV0uZpKSgrK_8R6Mm4A01tWdzpKMlFR2TIj81s&fp=chrome&type=xhttp&sni=wikihow.com#1.🇳🇴 GeminiRoute
-vless://db320947-adfb-400d-b60b-383b8324bffe@46.29.238.88:40443?type=tcp&headerType=none&security=reality&pbk=aZOpodpnifoxDqTzWgxJRffgsiGnG9-h-EZd4SvOImc&fp=chrome&sni=deepl.com&sid=f7b2&spx=/#2.🇳🇴 GeminiRoute
+vless://db320947-adfb-400d-b60b-383b8324bffe@46.29.238.88:40443?type=tcp&headerType=none&security=reality&pbk=aZOpodpnifoxDqTzWgxJRffgsiGnG9-h-EZd4SvOImc&fp=chrome&sni=deepl.com&sid=f7b2&spx=/#1.🇳🇴 GeminiRoute
+vless://a34b5e88-cf0d-4c01-8199-2d1002d3c787@oslomeow.nethcloud.top:8443?path=/&security=reality&encryption=none&pbk=p9ISfhV0uZpKSgrK_8R6Mm4A01tWdzpKMlFR2TIj81s&fp=chrome&type=xhttp&sni=wikihow.com#2.🇳🇴 GeminiRoute
