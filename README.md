@@ -53,21 +53,42 @@ hour, so tapping *update* in your app is all the maintenance there is.
 
 ## 🔗 All the links
 
-| Link | What is in it |
-|:--|:--|
-| [**`sub/best.txt`**](https://alizn7.github.io/GeminiRoute/sub/best.txt) | The 30 highest scoring routes — **start here** |
-| [`sub/gemini.txt`](https://alizn7.github.io/GeminiRoute/sub/gemini.txt) | Every verified route, best first |
-| [`sub/fast.txt`](https://alizn7.github.io/GeminiRoute/sub/fast.txt) | Verified and under 500 ms |
-| [`sub/all.txt`](https://alizn7.github.io/GeminiRoute/sub/all.txt) | Every route tested, verified or not |
-| [`api/stats.json`](https://alizn7.github.io/GeminiRoute/api/stats.json) | The funnel, countries, yield per source |
-| [`api/nodes.json`](https://alizn7.github.io/GeminiRoute/api/nodes.json) | Every route with its score and country. No credentials. |
+Each of these is a complete subscription. Copy one and paste it into your app.
 
-Each file has a `.plain.txt` twin that is not base64 encoded.
+**Best — the 30 highest scoring routes.** Start here.
+
+```
+https://alizn7.github.io/GeminiRoute/sub/best.txt
+```
+
+**All verified — every route that passed the check, best first.**
+
+```
+https://alizn7.github.io/GeminiRoute/sub/gemini.txt
+```
+
+**Fast — verified and under 500 ms.**
+
+```
+https://alizn7.github.io/GeminiRoute/sub/fast.txt
+```
+
+**Everything — every route tested, verified or not.**
+
+```
+https://alizn7.github.io/GeminiRoute/sub/all.txt
+```
+
+Append `.plain.txt` instead of `.txt` for a version that is not base64 encoded.
 
 ### 🌍 One country only
 
-Every link below is a subscription of its own. The set changes hourly — the
-[status page](https://alizn7.github.io/GeminiRoute/) has the current one.
+```
+https://alizn7.github.io/GeminiRoute/sub/country/<code>.txt
+```
+
+Twenty countries from recent runs, each a subscription of its own. The set
+changes hourly — the [status page](https://alizn7.github.io/GeminiRoute/) has the current one.
 
 |   |   |   |   |   |
 |:-:|:-:|:-:|:-:|:-:|
@@ -75,6 +96,13 @@ Every link below is a subscription of its own. The set changes hourly — the
 | [🇫🇮 `fi`](https://alizn7.github.io/GeminiRoute/sub/country/fi.txt) | [🇬🇧 `gb`](https://alizn7.github.io/GeminiRoute/sub/country/gb.txt) | [🇸🇬 `sg`](https://alizn7.github.io/GeminiRoute/sub/country/sg.txt) | [🇮🇹 `it`](https://alizn7.github.io/GeminiRoute/sub/country/it.txt) | [🇭🇰 `hk`](https://alizn7.github.io/GeminiRoute/sub/country/hk.txt) |
 | [🇯🇵 `jp`](https://alizn7.github.io/GeminiRoute/sub/country/jp.txt) | [🇨🇦 `ca`](https://alizn7.github.io/GeminiRoute/sub/country/ca.txt) | [🇪🇸 `es`](https://alizn7.github.io/GeminiRoute/sub/country/es.txt) | [🇹🇷 `tr`](https://alizn7.github.io/GeminiRoute/sub/country/tr.txt) | [🇪🇪 `ee`](https://alizn7.github.io/GeminiRoute/sub/country/ee.txt) |
 | [🇸🇪 `se`](https://alizn7.github.io/GeminiRoute/sub/country/se.txt) | [🇳🇴 `no`](https://alizn7.github.io/GeminiRoute/sub/country/no.txt) | [🇰🇷 `kr`](https://alizn7.github.io/GeminiRoute/sub/country/kr.txt) | [🇦🇺 `au`](https://alizn7.github.io/GeminiRoute/sub/country/au.txt) | [🇮🇳 `in`](https://alizn7.github.io/GeminiRoute/sub/country/in.txt) |
+
+### 📈 Machine-readable
+
+| Link | What is in it |
+|:--|:--|
+| [`api/stats.json`](https://alizn7.github.io/GeminiRoute/api/stats.json) | The funnel, countries, yield per source |
+| [`api/nodes.json`](https://alizn7.github.io/GeminiRoute/api/nodes.json) | Every route with its score and country. No credentials. |
 
 ## 📊 What happened to everything else
 

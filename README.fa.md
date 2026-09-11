@@ -65,20 +65,61 @@ https://alizn7.github.io/GeminiRoute/sub/best.txt
 
 <div dir="rtl">
 
-| لینک | محتوا |
-|:--|:--|
-| [**`sub/best.txt`**](https://alizn7.github.io/GeminiRoute/sub/best.txt) | ۳۰ نود با بالاترین امتیاز — **از این شروع کنید** |
-| [`sub/gemini.txt`](https://alizn7.github.io/GeminiRoute/sub/gemini.txt) | همهٔ نودهای تأییدشده، به ترتیب امتیاز |
-| [`sub/fast.txt`](https://alizn7.github.io/GeminiRoute/sub/fast.txt) | تأییدشده و زیر ۵۰۰ میلی‌ثانیه |
-| [`sub/all.txt`](https://alizn7.github.io/GeminiRoute/sub/all.txt) | هر نودی که تست شده، تأییدشده یا نه |
-| [`api/stats.json`](https://alizn7.github.io/GeminiRoute/api/stats.json) | قیف، کشورها، بازده هر منبع |
-| [`api/nodes.json`](https://alizn7.github.io/GeminiRoute/api/nodes.json) | هر نود با امتیاز و کشورش. بدون اطلاعات محرمانه. |
+هرکدام از این‌ها یک اشتراک کامل است. یکی را کپی کنید و در برنامه‌تان paste کنید.
 
-هر فایل یک نسخهٔ `.plain.txt` هم دارد که base64 نشده است.
+**بهترین‌ها — ۳۰ نود با بالاترین امتیاز.** از این شروع کنید.
+
+</div>
+
+```
+https://alizn7.github.io/GeminiRoute/sub/best.txt
+```
+
+<div dir="rtl">
+
+**همهٔ تأییدشده‌ها — هر نودی که تست را رد کرده، به ترتیب امتیاز.**
+
+</div>
+
+```
+https://alizn7.github.io/GeminiRoute/sub/gemini.txt
+```
+
+<div dir="rtl">
+
+**سریع — تأییدشده و زیر ۵۰۰ میلی‌ثانیه.**
+
+</div>
+
+```
+https://alizn7.github.io/GeminiRoute/sub/fast.txt
+```
+
+<div dir="rtl">
+
+**همه چیز — هر نودی که تست شده، تأییدشده یا نه.**
+
+</div>
+
+```
+https://alizn7.github.io/GeminiRoute/sub/all.txt
+```
+
+<div dir="rtl">
+
+اگر به‌جای `.txt` بنویسید `.plain.txt`، نسخه‌ای می‌گیرید که base64 نشده است.
 
 ### 🌍 فقط یک کشور
 
-هر لینک زیر خودش یک اشتراک کامل است. این فهرست هر ساعت عوض می‌شود —
+</div>
+
+```
+https://alizn7.github.io/GeminiRoute/sub/country/<code>.txt
+```
+
+<div dir="rtl">
+
+بیست کشور از اجراهای اخیر، هرکدام یک اشتراک کامل. این فهرست هر ساعت عوض می‌شود —
 [صفحهٔ وضعیت](https://alizn7.github.io/GeminiRoute/) نسخهٔ جاری را دارد.
 
 </div>
@@ -89,6 +130,17 @@ https://alizn7.github.io/GeminiRoute/sub/best.txt
 | [🇫🇮 `fi`](https://alizn7.github.io/GeminiRoute/sub/country/fi.txt) | [🇬🇧 `gb`](https://alizn7.github.io/GeminiRoute/sub/country/gb.txt) | [🇸🇬 `sg`](https://alizn7.github.io/GeminiRoute/sub/country/sg.txt) | [🇮🇹 `it`](https://alizn7.github.io/GeminiRoute/sub/country/it.txt) | [🇭🇰 `hk`](https://alizn7.github.io/GeminiRoute/sub/country/hk.txt) |
 | [🇯🇵 `jp`](https://alizn7.github.io/GeminiRoute/sub/country/jp.txt) | [🇨🇦 `ca`](https://alizn7.github.io/GeminiRoute/sub/country/ca.txt) | [🇪🇸 `es`](https://alizn7.github.io/GeminiRoute/sub/country/es.txt) | [🇹🇷 `tr`](https://alizn7.github.io/GeminiRoute/sub/country/tr.txt) | [🇪🇪 `ee`](https://alizn7.github.io/GeminiRoute/sub/country/ee.txt) |
 | [🇸🇪 `se`](https://alizn7.github.io/GeminiRoute/sub/country/se.txt) | [🇳🇴 `no`](https://alizn7.github.io/GeminiRoute/sub/country/no.txt) | [🇰🇷 `kr`](https://alizn7.github.io/GeminiRoute/sub/country/kr.txt) | [🇦🇺 `au`](https://alizn7.github.io/GeminiRoute/sub/country/au.txt) | [🇮🇳 `in`](https://alizn7.github.io/GeminiRoute/sub/country/in.txt) |
+
+### 📈 برای برنامه‌ها
+
+<div dir="rtl">
+
+| لینک | محتوا |
+|:--|:--|
+| [`api/stats.json`](https://alizn7.github.io/GeminiRoute/api/stats.json) | قیف، کشورها، بازده هر منبع |
+| [`api/nodes.json`](https://alizn7.github.io/GeminiRoute/api/nodes.json) | هر نود با امتیاز و کشورش. بدون اطلاعات محرمانه. |
+
+</div>
 
 ## 📊 بقیه کجا رفتند
 
