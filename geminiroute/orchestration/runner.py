@@ -200,6 +200,7 @@ async def run_pipeline(settings: Settings) -> RunStats:
         stats.gemini_passed = sum(1 for item in scored if item.gemini_passed)
 
         _record_source_stats(repository, nodes, reachable, scored)
+        source_rows = repository.source_report()
 
         # --- stage: generate ------------------------------------------
         generate(
@@ -209,6 +210,7 @@ async def run_pipeline(settings: Settings) -> RunStats:
             after_dedup=stats.after_dedup,
             after_pre=stats.after_pre,
             after_connectivity=stats.after_connectivity,
+            sources=source_rows,
         )
 
         removed = repository.prune_history(settings.history_retention_days)

@@ -111,28 +111,6 @@ def test_empty_run_still_writes_valid_files(tmp_path: Path) -> None:
     assert json.loads((tmp_path / "api" / "nodes.json").read_text())["count"] == 0
 
 
-def test_index_html_is_written(tmp_path: Path) -> None:
-    generate(tmp_path, [scored("a", 0.9)], collected=100, after_dedup=80,
-             after_pre=60, after_connectivity=40)
-    html = (tmp_path / "index.html").read_text()
-    assert "<title>GeminiRoute</title>" in html
-    assert 'href="sub/gemini.txt"' in html
-    assert 'href="api/stats.json"' in html
-
-
-def test_index_html_shows_the_funnel(tmp_path: Path) -> None:
-    generate(tmp_path, [scored("a", 0.9)], collected=20000, after_dedup=12000,
-             after_pre=5000, after_connectivity=800)
-    html = (tmp_path / "index.html").read_text()
-    for value in ("20000", "12000", "5000", "800"):
-        assert f"<td>{value}</td>" in html
-
-
-def test_index_html_survives_an_empty_run(tmp_path: Path) -> None:
-    generate(tmp_path, [])
-    assert "<title>GeminiRoute</title>" in (tmp_path / "index.html").read_text()
-
-
 def test_country_files_are_keyed_on_the_iso_code(tmp_path: Path) -> None:
     """The exit-location check reports a code, not a name, and codes stay
     stable where display names do not."""
@@ -147,10 +125,25 @@ def test_country_name_is_used_when_no_code_is_available(tmp_path: Path) -> None:
     assert (tmp_path / "sub" / "country" / "germany.txt").exists()
 
 
-def test_index_explains_the_account_gate(tmp_path: Path) -> None:
-    """Anyone using these will hit the same wall we did: a good node still
-    refused because of the signed-in account's country."""
+def test_stats_publish_per_source_yield(tmp_path: Path) -> None:
+    """Whether a source earns its place is the most common question about this
+    pipeline, and the answer should not require cloning the database branch."""
+    stats = build_stats_payload(
+        [], 100, 80, 60, 40,
+        sources=[("weak", 500, 100, 1), ("strong", 400, 300, 90)],
+    )
+    published = stats["sources"]
+    assert [s["name"] for s in published] == ["strong", "weak"]   # best first
+    assert published[0]["yield"] == 0.225
+    assert published[1]["yield"] == 0.002
+
+
+def test_source_with_no_nodes_has_no_yield(tmp_path: Path) -> None:
+    stats = build_stats_payload([], 0, 0, 0, 0, sources=[("empty", 0, 0, 0)])
+    assert stats["sources"][0]["yield"] is None
+
+
+def test_stats_with_no_sources_still_writes_everything(tmp_path: Path) -> None:
     generate(tmp_path, [scored("a", 0.9)])
-    html = (tmp_path / "index.html").read_text()
-    assert "private window" in html
-    assert "web app" in html
+    assert json.loads((tmp_path / "api" / "stats.json").read_text())["sources"] == []
+    assert (tmp_path / "index.html").exists()

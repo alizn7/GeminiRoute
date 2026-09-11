@@ -16,6 +16,7 @@ from pathlib import Path
 
 from geminiroute.core.models import GeoInfo, Node, Score
 from geminiroute.generation.branding import make_label, rebrand
+from geminiroute.generation.dashboard import render as render_dashboard
 from geminiroute.observability.logging import get_logger
 from geminiroute.validation.geo import country_code as country_slug
 
@@ -80,74 +81,6 @@ def write_subscription(directory: Path, name: str, nodes: list[ScoredNode]) -> N
     log.info("subscription_written", name=name, nodes=len(lines))
 
 
-def build_index_html(stats: dict[str, object]) -> str:
-    """A landing page for the published tree.
-
-    Also serves as the check that Pages is actually serving the branch: a
-    root URL that 404s is ambiguous, one that renders is not.
-    """
-    funnel = stats.get("funnel", {})
-    rows = "\n".join(
-        f"      <tr><td>{name.replace('_', ' ')}</td><td>{value}</td></tr>"
-        for name, value in (funnel.items() if isinstance(funnel, dict) else [])
-    )
-    return f"""<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GeminiRoute</title>
-  <style>
-    body {{ font-family: system-ui, sans-serif; max-width: 46rem; margin: 3rem auto;
-           padding: 0 1rem; line-height: 1.6; color: #1a1a1a; }}
-    code {{ background: #f4f4f4; padding: .15rem .35rem; border-radius: 3px; }}
-    table {{ border-collapse: collapse; margin: 1rem 0; }}
-    td {{ border-bottom: 1px solid #eee; padding: .35rem 1.5rem .35rem 0; }}
-    td:last-child {{ text-align: right; font-variant-numeric: tabular-nums; }}
-    .muted {{ color: #666; font-size: .9rem; }}
-  </style>
-</head>
-<body>
-  <h1>GeminiRoute</h1>
-  <p class="muted">Generated {stats.get("generated_at", "")}</p>
-
-  <h2>Subscriptions</h2>
-  <ul>
-    <li><a href="sub/gemini.txt">sub/gemini.txt</a> — verified nodes</li>
-    <li><a href="sub/best.txt">sub/best.txt</a> — top 30 by score</li>
-    <li><a href="sub/fast.txt">sub/fast.txt</a> — verified and under 500 ms</li>
-    <li><a href="sub/all.txt">sub/all.txt</a> — everything tested</li>
-  </ul>
-  <p class="muted">Add one of these URLs to a client as a subscription link.
-     Each has a <code>.plain.txt</code> twin that is not base64 encoded.</p>
-
-  <h2>Using these</h2>
-  <p>Nodes are verified against the Gemini <strong>API</strong>: each one is
-     checked from inside its own tunnel for where it exits, and rejected if it
-     comes out somewhere Gemini is not served.</p>
-  <p class="muted">The Gemini <strong>web app</strong> has a second gate: it
-     also looks at the country of the Google account you are signed into. A
-     node can be perfectly good and still show
-     <em>&ldquo;Gemini isn&rsquo;t currently supported in your country&rdquo;</em>
-     because of the account, not the node. Open
-     <code>gemini.google.com</code> in a private window, signed out, to rule
-     that out.</p>
-
-  <h2>API</h2>
-  <ul>
-    <li><a href="api/nodes.json">api/nodes.json</a></li>
-    <li><a href="api/stats.json">api/stats.json</a></li>
-  </ul>
-
-  <h2>Last run</h2>
-  <table>
-{rows}
-  </table>
-</body>
-</html>
-"""
-
-
 def build_api_payload(items: list[ScoredNode]) -> dict[str, object]:
     """`api/nodes.json` — what the dashboard reads.
 
@@ -186,6 +119,7 @@ def build_stats_payload(
     after_dedup: int,
     after_pre: int,
     after_connectivity: int,
+    sources: list[tuple[str, int, int, int]] | None = None,
 ) -> dict[str, object]:
     """`api/stats.json` — per-stage survivor counts.
 
@@ -211,6 +145,21 @@ def build_stats_payload(
         "gemini_success_rate": round(len(gemini_ok) / len(items), 4) if items else 0.0,
         "average_latency_ms": round(sum(latencies) / len(latencies), 2) if latencies else None,
         "nodes_by_country": dict(sorted(countries.items(), key=lambda kv: -kv[1])),
+        # Published rather than left in the database: deciding whether a source
+        # earns its place is the most common question about this pipeline, and
+        # the database lives on a branch nobody wants to clone to answer it.
+        "sources": [
+            {
+                "name": name,
+                "contributed": contributed,
+                "reachable": reachable,
+                "gemini_ok": ok,
+                "yield": round(ok / contributed, 4) if contributed else None,
+            }
+            for name, contributed, reachable, ok in sorted(
+                sources or [], key=lambda row: -row[3]
+            )
+        ],
     }
 
 
@@ -221,6 +170,7 @@ def generate(
     after_dedup: int = 0,
     after_pre: int = 0,
     after_connectivity: int = 0,
+    sources: list[tuple[str, int, int, int]] | None = None,
 ) -> None:
     """Write the full published tree: sub/*.txt plus api/*.json."""
     sub_dir = output_dir / "sub"
@@ -234,9 +184,10 @@ def generate(
         if i.latency_ms is not None and i.latency_ms <= FAST_LATENCY_MS
     ]
 
+    best = gemini_ok[:BEST_COUNT]
     write_subscription(sub_dir, "all", ranked)
     write_subscription(sub_dir, "gemini", gemini_ok)
-    write_subscription(sub_dir, "best", gemini_ok[:BEST_COUNT])
+    write_subscription(sub_dir, "best", best)
     write_subscription(sub_dir, "fast", fast)
 
     by_country: dict[str, list[ScoredNode]] = {}
@@ -245,11 +196,20 @@ def generate(
     for code, group in by_country.items():
         write_subscription(sub_dir / "country", code, group)
 
+    file_counts = {
+        "all": len(ranked),
+        "gemini": len(gemini_ok),
+        "best": len(best),
+        "fast": len(fast),
+    }
+
     _write(
         api_dir / "nodes.json",
         json.dumps(build_api_payload(ranked), ensure_ascii=False, indent=2),
     )
-    stats = build_stats_payload(ranked, collected, after_dedup, after_pre, after_connectivity)
+    stats = build_stats_payload(
+        ranked, collected, after_dedup, after_pre, after_connectivity, sources
+    )
     _write(api_dir / "stats.json", json.dumps(stats, ensure_ascii=False, indent=2))
-    _write(output_dir / "index.html", build_index_html(stats))
+    _write(output_dir / "index.html", render_dashboard(stats, file_counts))
     log.info("generation_done", total=len(ranked), gemini_ok=len(gemini_ok))
