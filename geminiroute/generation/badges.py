@@ -71,6 +71,24 @@ def success_badge(stats: dict[str, Any]) -> str:
     return _badge("verified of tested", text, SIGNAL.lstrip("#"))
 
 
+# One badge per published subscription, so the README can show how many routes
+# are in each one right now instead of a number someone typed once.
+SUBSCRIPTION_BADGES = {
+    "best": ("best", PASS),
+    "gemini": ("all verified", SIGNAL),
+    "fast": ("fast", SIGNAL),
+    "all": ("everything", MUTED),
+}
+
+
+def subscription_badges(file_counts: dict[str, int]) -> dict[str, str]:
+    """`{filename: shields endpoint json}` for each subscription file."""
+    return {
+        name: _badge(label, f"{file_counts.get(name, 0):,} routes", colour.lstrip("#"))
+        for name, (label, colour) in SUBSCRIPTION_BADGES.items()
+    }
+
+
 def stats_card(stats: dict[str, Any]) -> str:
     """The funnel as an SVG, for the README to embed.
 

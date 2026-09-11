@@ -164,3 +164,12 @@ def test_badge_reports_this_run(tmp_path: Path) -> None:
                         scored("c", 0.7, gemini=False)])
     badge = json.loads((tmp_path / "api" / "badge.json").read_text())
     assert badge["message"] == "2"
+
+
+def test_a_badge_file_is_written_for_every_subscription(tmp_path: Path) -> None:
+    generate(tmp_path, [scored("a", 0.9), scored("b", 0.8, gemini=False)])
+    for name in ("best", "gemini", "fast", "all"):
+        path = tmp_path / "api" / f"badge-sub-{name}.json"
+        assert path.exists(), name
+    counts = json.loads((tmp_path / "api" / "badge-sub-gemini.json").read_text())
+    assert counts["message"] == "1 routes"

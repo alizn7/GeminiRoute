@@ -88,3 +88,19 @@ def test_card_needs_no_font_file() -> None:
     """GitHub proxies this image; anything it cannot fetch will not render."""
     assert "@font-face" not in stats_card(STATS)
     assert "http" not in stats_card(STATS).replace("http://www.w3.org/2000/svg", "")
+
+
+def test_a_badge_is_produced_for_every_subscription() -> None:
+    """The README shows how many routes each file holds right now; a missing
+    badge renders as a broken image next to a working link."""
+    from geminiroute.generation.badges import subscription_badges
+
+    badges = subscription_badges({"best": 30, "gemini": 289, "fast": 64, "all": 1016})
+    assert set(badges) == {"best", "gemini", "fast", "all"}
+    assert json.loads(badges["gemini"])["message"] == "289 routes"
+
+
+def test_subscription_badges_survive_a_missing_count() -> None:
+    from geminiroute.generation.badges import subscription_badges
+
+    assert json.loads(subscription_badges({})["fast"])["message"] == "0 routes"

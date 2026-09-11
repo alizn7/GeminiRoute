@@ -63,11 +63,21 @@ https://alizn7.github.io/GeminiRoute/sub/best.txt
 
 ## 🔗 همهٔ لینک‌ها
 
+<div align="center">
+
+[![best](https://img.shields.io/endpoint?url=https://alizn7.github.io/GeminiRoute/api/badge-sub-best.json)](#best) &nbsp; [![all verified](https://img.shields.io/endpoint?url=https://alizn7.github.io/GeminiRoute/api/badge-sub-gemini.json)](#gemini) &nbsp; [![fast](https://img.shields.io/endpoint?url=https://alizn7.github.io/GeminiRoute/api/badge-sub-fast.json)](#fast) &nbsp; [![everything](https://img.shields.io/endpoint?url=https://alizn7.github.io/GeminiRoute/api/badge-sub-all.json)](#all)
+
+<sub>عددها هر ساعت به‌روز می‌شوند</sub>
+
+</div>
+
+<a id="best"></a>
+
+### 🎯 &nbsp; بهترین‌ها &nbsp;·&nbsp; از اینجا شروع کنید
+
 <div dir="rtl">
 
-هرکدام از این‌ها یک اشتراک کامل است. یکی را کپی کنید و در برنامه‌تان paste کنید.
-
-**بهترین‌ها — ۳۰ نود با بالاترین امتیاز.** از این شروع کنید.
+۳۰ نود با بالاترین امتیاز، هر ساعت دوباره رتبه‌بندی می‌شوند.
 
 </div>
 
@@ -75,9 +85,14 @@ https://alizn7.github.io/GeminiRoute/sub/best.txt
 https://alizn7.github.io/GeminiRoute/sub/best.txt
 ```
 
+<a id="gemini"></a>
+
+### ✅ &nbsp; همهٔ تأییدشده‌ها
+
 <div dir="rtl">
 
-**همهٔ تأییدشده‌ها — هر نودی که تست را رد کرده، به ترتیب امتیاز.**
+هر نودی که تست را رد کرده، به ترتیب امتیاز. اگر `best` جواب نداد، این را
+امتحان کنید.
 
 </div>
 
@@ -85,9 +100,13 @@ https://alizn7.github.io/GeminiRoute/sub/best.txt
 https://alizn7.github.io/GeminiRoute/sub/gemini.txt
 ```
 
+<a id="fast"></a>
+
+### ⚡ &nbsp; سریع
+
 <div dir="rtl">
 
-**سریع — تأییدشده و زیر ۵۰۰ میلی‌ثانیه.**
+تأییدشده **و** زیر ۵۰۰ میلی‌ثانیه. تعدادش کمتر است ولی سریع‌تر وصل می‌شود.
 
 </div>
 
@@ -95,9 +114,13 @@ https://alizn7.github.io/GeminiRoute/sub/gemini.txt
 https://alizn7.github.io/GeminiRoute/sub/fast.txt
 ```
 
+<a id="all"></a>
+
+### 📦 &nbsp; همه چیز
+
 <div dir="rtl">
 
-**همه چیز — هر نودی که تست شده، تأییدشده یا نه.**
+هر نودی که تست شده، تأییدشده یا نه. برای استفاده‌ای غیر از Gemini.
 
 </div>
 
@@ -107,11 +130,13 @@ https://alizn7.github.io/GeminiRoute/sub/all.txt
 
 <div dir="rtl">
 
-اگر به‌جای `.txt` بنویسید `.plain.txt`، نسخه‌ای می‌گیرید که base64 نشده است.
-
-### 🌍 فقط یک کشور
+<sub>اگر به‌جای <code>.txt</code> بنویسید <code>.plain.txt</code>، نسخه‌ای می‌گیرید که base64 نشده است.</sub>
 
 </div>
+
+---
+
+### 🌍 &nbsp; فقط یک کشور
 
 ```
 https://alizn7.github.io/GeminiRoute/sub/country/<code>.txt
@@ -119,8 +144,8 @@ https://alizn7.github.io/GeminiRoute/sub/country/<code>.txt
 
 <div dir="rtl">
 
-بیست کشور از اجراهای اخیر، هرکدام یک اشتراک کامل. این فهرست هر ساعت عوض می‌شود —
-[صفحهٔ وضعیت](https://alizn7.github.io/GeminiRoute/) نسخهٔ جاری را دارد.
+بیست کشور از اجراهای اخیر، هرکدام یک اشتراک کامل. این فهرست هر ساعت عوض
+می‌شود — [صفحهٔ وضعیت](https://alizn7.github.io/GeminiRoute/) نسخهٔ جاری را دارد.
 
 </div>
 
@@ -139,6 +164,25 @@ https://alizn7.github.io/GeminiRoute/sub/country/<code>.txt
 |:--|:--|
 | [`api/stats.json`](https://alizn7.github.io/GeminiRoute/api/stats.json) | قیف، کشورها، بازده هر منبع |
 | [`api/nodes.json`](https://alizn7.github.io/GeminiRoute/api/nodes.json) | هر نود با امتیاز و کشورش. بدون اطلاعات محرمانه. |
+
+</div>
+
+---
+
+### 📈 &nbsp; برای برنامه‌ها
+
+<div align="center">
+
+[![stats.json](https://img.shields.io/badge/api-stats.json-1f2d3a?style=flat-square)](https://alizn7.github.io/GeminiRoute/api/stats.json)
+&nbsp;
+[![nodes.json](https://img.shields.io/badge/api-nodes.json-1f2d3a?style=flat-square)](https://alizn7.github.io/GeminiRoute/api/nodes.json)
+
+</div>
+
+<div dir="rtl">
+
+فایل `stats.json` قیف، تفکیک کشوری و بازده هر منبع را دارد. `nodes.json` هر نود
+تست‌شده را با امتیاز و کشور خروجش دارد، بدون هیچ اطلاعات محرمانه‌ای.
 
 </div>
 

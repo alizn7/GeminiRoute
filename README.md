@@ -53,35 +53,59 @@ hour, so tapping *update* in your app is all the maintenance there is.
 
 ## 🔗 All the links
 
-Each of these is a complete subscription. Copy one and paste it into your app.
+<div align="center">
 
-**Best — the 30 highest scoring routes.** Start here.
+[![best](https://img.shields.io/endpoint?url=https://alizn7.github.io/GeminiRoute/api/badge-sub-best.json)](#best) &nbsp; [![all verified](https://img.shields.io/endpoint?url=https://alizn7.github.io/GeminiRoute/api/badge-sub-gemini.json)](#gemini) &nbsp; [![fast](https://img.shields.io/endpoint?url=https://alizn7.github.io/GeminiRoute/api/badge-sub-fast.json)](#fast) &nbsp; [![everything](https://img.shields.io/endpoint?url=https://alizn7.github.io/GeminiRoute/api/badge-sub-all.json)](#all)
+
+<sub>counts update every hour</sub>
+
+</div>
+
+<a id="best"></a>
+
+### 🎯 &nbsp; Best &nbsp;·&nbsp; start here
+
+The 30 highest scoring routes, re-ranked every hour.
 
 ```
 https://alizn7.github.io/GeminiRoute/sub/best.txt
 ```
 
-**All verified — every route that passed the check, best first.**
+<a id="gemini"></a>
+
+### ✅ &nbsp; All verified
+
+Every route that passed the check, best first. Use this if `best` runs dry.
 
 ```
 https://alizn7.github.io/GeminiRoute/sub/gemini.txt
 ```
 
-**Fast — verified and under 500 ms.**
+<a id="fast"></a>
+
+### ⚡ &nbsp; Fast
+
+Verified *and* under 500 ms. Fewer routes, quicker to connect.
 
 ```
 https://alizn7.github.io/GeminiRoute/sub/fast.txt
 ```
 
-**Everything — every route tested, verified or not.**
+<a id="all"></a>
+
+### 📦 &nbsp; Everything
+
+Every route tested, verified or not. For use outside Gemini.
 
 ```
 https://alizn7.github.io/GeminiRoute/sub/all.txt
 ```
 
-Append `.plain.txt` instead of `.txt` for a version that is not base64 encoded.
+<sub>Append <code>.plain.txt</code> instead of <code>.txt</code> for a version that is not base64 encoded.</sub>
 
-### 🌍 One country only
+---
+
+### 🌍 &nbsp; One country only
 
 ```
 https://alizn7.github.io/GeminiRoute/sub/country/<code>.txt
@@ -103,6 +127,22 @@ changes hourly — the [status page](https://alizn7.github.io/GeminiRoute/) has 
 |:--|:--|
 | [`api/stats.json`](https://alizn7.github.io/GeminiRoute/api/stats.json) | The funnel, countries, yield per source |
 | [`api/nodes.json`](https://alizn7.github.io/GeminiRoute/api/nodes.json) | Every route with its score and country. No credentials. |
+
+---
+
+### 📈 &nbsp; Machine-readable
+
+<div align="center">
+
+[![stats.json](https://img.shields.io/badge/api-stats.json-1f2d3a?style=flat-square)](https://alizn7.github.io/GeminiRoute/api/stats.json)
+&nbsp;
+[![nodes.json](https://img.shields.io/badge/api-nodes.json-1f2d3a?style=flat-square)](https://alizn7.github.io/GeminiRoute/api/nodes.json)
+
+</div>
+
+`stats.json` carries the funnel, the country breakdown and the yield of every
+source. `nodes.json` carries every tested route with its score and exit
+country, and no credentials.
 
 ## 📊 What happened to everything else
 

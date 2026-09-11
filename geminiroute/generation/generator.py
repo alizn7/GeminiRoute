@@ -18,6 +18,7 @@ from geminiroute.core.models import GeoInfo, Node, Score
 from geminiroute.generation.badges import (
     countries_badge,
     stats_card,
+    subscription_badges,
     success_badge,
     verified_badge,
 )
@@ -225,4 +226,6 @@ def generate(
     _write(api_dir / "badge-countries.json", countries_badge(stats))
     _write(api_dir / "badge-success.json", success_badge(stats))
     _write(output_dir / "card.svg", stats_card(stats))
+    for name, payload in subscription_badges(file_counts).items():
+        _write(api_dir / f"badge-sub-{name}.json", payload)
     log.info("generation_done", total=len(ranked), gemini_ok=len(gemini_ok))
