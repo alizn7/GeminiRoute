@@ -12,6 +12,7 @@ import typer
 from geminiroute.config.settings import Settings
 from geminiroute.observability.logging import configure_logging
 from geminiroute.orchestration.runner import collect_and_parse, run_pipeline
+from geminiroute.orchestration.trial import evaluate_source, verdict_text
 from geminiroute.storage.sqlite_repo import SqliteRepository
 from geminiroute.validation.gemini import find_xray_binary
 from geminiroute.validation.selfcheck import probe_node, run_checks
@@ -240,6 +241,39 @@ def probe_node_command(
         typer.echo(f"api response   : {report.api_excerpt}")
     if report.error:
         raise typer.Exit(code=1)
+
+
+@app.command("try-source")
+def try_source(
+    url: str = typer.Argument(..., help="Subscription URL to evaluate"),
+    source_type: str = typer.Option("raw", "--type", help="raw or github"),
+    sample: int = typer.Option(150, help="How many of its nodes to test"),
+    sources: Path = typer.Option(Path("sources.toml")),
+) -> None:
+    """Measure a candidate source against a sample before adding it."""
+    settings = _settings(sources, None, None)
+    trial = asyncio.run(evaluate_source(url, settings, source_type, sample))
+
+    typer.echo(f"collected        {trial.collected:,} lines")
+    typer.echo(f"parsed           {trial.parsed:,}")
+    typer.echo(f"unique           {trial.unique:,}")
+    if trial.novelty is not None:
+        typer.echo(
+            f"already covered  {trial.already_covered:,} "
+            f"({1 - trial.novelty:.0%} of its unique nodes)"
+        )
+    typer.echo(f"sampled          {trial.sampled:,}")
+    typer.echo(f"reachable        {trial.reachable:,}")
+    typer.echo(f"verified         {trial.verified:,}")
+    if trial.countries:
+        top = sorted(trial.countries.items(), key=lambda kv: -kv[1])[:8]
+        typer.echo("exit countries   " + ", ".join(f"{c} {n}" for c, n in top))
+
+    conversion = trial.conversion
+    if conversion is not None:
+        colour = typer.colors.GREEN if conversion >= 0.03 else typer.colors.RED
+        typer.secho(f"\nverified/reachable  {conversion:.1%}", fg=colour, bold=True)
+    typer.echo(verdict_text(trial))
 
 
 @app.command("doctor")

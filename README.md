@@ -88,6 +88,16 @@ collect → parse → normalize → dedup → plausibility → connect
 Cheap filters run first, so the expensive stage sees hundreds of candidates
 rather than thousands.
 
+More candidates survive the connectivity check than the expensive stage can
+test, so which ones get tested matters. Routes with a verified history go
+first; the rest are **shuffled, not sorted by latency**. The fastest responders
+are CDN edges in front of dead backends — they answer a handshake in
+milliseconds and proxy nothing. Adding a source of low-latency CDN-fronted
+configs once halved this pipeline's verification rate while the average
+handshake dropped from 209 ms to 85 ms. Shuffling also rotates coverage: the
+whole reachable pool gets seen over a few hours instead of the same subset
+every hour.
+
 Routes are scored on latency (30%), Gemini verification (30%), reliability over
 the last 30 days (25%) and handshake quality (15%). A route with no history
 scores 0.5 on reliability — unknown, not bad — so new routes start mid-pack and
@@ -151,6 +161,7 @@ binary on `PATH`, or set `XRAY_PATH`.
 | `geminiroute sources` | What each source actually contributed |
 | `geminiroute xray-check` | Which config shapes your xray build accepts |
 | `geminiroute probe-node "<config>"` | Run one config through the full check and print what came back |
+| `geminiroute try-source "<url>"` | Measure a candidate source against a sample before adding it |
 
 `xray-check` exists because xray versions disagree about what a valid config is
 — `allowInsecure` was accepted for years and is refused by recent builds — and
@@ -178,9 +189,16 @@ url = "https://raw.githubusercontent.com/owner/repo/main/sub.txt"
 enabled = true
 ```
 
-Add an entry, run `geminiroute collect`, and check that `unique` actually
-moves. A source that only repeats what others already supply costs run time and
-returns nothing.
+Screen it first:
+
+```bash
+geminiroute try-source "https://raw.githubusercontent.com/owner/repo/main/sub.txt"
+```
+
+The number that matters is **verified over reachable**. Sources kept in this
+list sit between 17% and 66%; every one dropped so far sat under 3% while
+having *better* TCP reachability than the ones kept. A wall of CDN edges
+answers a handshake in milliseconds and proxies nothing.
 
 After a few runs the `sources` block in
 [`stats.json`](https://alizn7.github.io/GeminiRoute/api/stats.json) shows the yield each one really produced.
