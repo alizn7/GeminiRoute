@@ -23,24 +23,26 @@ type = "raw"
 url = "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/vless.txt"
 enabled = true
 
-# Restored. It was dropped on local numbers that showed zero yield, but those
-# runs predated the xray config and exit-country fixes. On CI it is the
-# highest-yielding source in the list at 22%.
+
 [[source]]
 name = "barry-far-vmess"
 type = "raw"
 url = "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vmess.txt"
 enabled = true
 
-# The measured bundle rather than the raw vmess dump. The dump supplied 8,058
-# configs at 0.35% yield — 68% of all input for 10% of the verified routes,
-# crowding better sources out of the candidate cap. This one carries only
-# sources that scored 85 or above upstream.
+
 [[source]]
-name = "morpheusadam-best"
+name = "coldwater-sub7"
 type = "raw"
-url = "https://raw.githubusercontent.com/morpheusadam/v2ray-config/main/subs/bundles/best.txt"
+url = "https://raw.githubusercontent.com/coldwater-10/V2ray-Config/main/Sub7.txt"
 enabled = true
+
+[[source]]
+name = "coldwater-sub10"
+type = "raw"
+url = "https://raw.githubusercontent.com/coldwater-10/V2ray-Config/main/Sub10.txt"
+enabled = true
+
 
 [[source]]
 name = "matinghanbari-trojan"
