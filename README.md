@@ -1,203 +1,175 @@
 # GeminiRoute
 
-Automated discovery, validation, scoring and continuous monitoring of network
-routes to Gemini-compatible endpoints. Healthy routes are republished as
-subscription files on a schedule, with no manual steps.
+Public proxy configs, collected every hour and kept only if they actually reach
+the Gemini API from a country Google serves.
 
-**Status:** Phase 1 (core engine) and Phase 2 (automation) implemented.
+**[Live status &rarr;](https://alizn7.github.io/GeminiRoute/)**
 
-## The funnel
+Most lists publish a count. This one publishes what it threw away: a typical run
+collects around 7,000 configs and verifies a few hundred. The rest are dead,
+duplicated, or exit somewhere Gemini refuses to answer.
 
-Cheap filters run first so the expensive stage sees hundreds of nodes instead
-of tens of thousands:
+## Get a link
+
+Paste one of these into your client's subscription field. That is the whole
+setup.
+
+| Link | What is in it |
+|---|---|
+| `https://alizn7.github.io/GeminiRoute/sub/best.txt` | The 30 highest scoring routes. **Start here.** |
+| `https://alizn7.github.io/GeminiRoute/sub/gemini.txt` | Every route that passed verification, best first |
+| `https://alizn7.github.io/GeminiRoute/sub/fast.txt` | Verified and under 500 ms |
+| `https://alizn7.github.io/GeminiRoute/sub/all.txt` | Every route tested, verified or not |
+
+Want one country? Swap in its two-letter code:
+`.../sub/country/de.txt`, `.../sub/country/us.txt`, `.../sub/country/nl.txt`.
+The [status page](https://alizn7.github.io/GeminiRoute/) lists which countries
+had routes in the last run.
+
+Every file has a `.plain.txt` twin that is not base64 encoded, if you want to
+read it rather than import it.
+
+### Machine-readable
+
+| Link | What is in it |
+|---|---|
+| `https://alizn7.github.io/GeminiRoute/api/stats.json` | The funnel, success rate, countries, per-source yield |
+| `https://alizn7.github.io/GeminiRoute/api/nodes.json` | Every tested route with its score, latency and country. No credentials. |
+
+## If Gemini says your country is unsupported
+
+The Gemini **web app** has a second gate that a proxy cannot change: the country
+of the Google account signed into your browser. A working route can still be
+refused for that reason alone.
+
+Open `gemini.google.com` in a private window, signed out, to tell the two apart.
+If it works there, the route is fine and the block is on your account.
+
+The same gate applies to getting a `GEMINI_API_KEY`: AI Studio reads the
+account's country, not the exit IP.
+
+## How a route earns its place
 
 ```
-collect → parse → normalize → dedup → pre-validate → connectivity/latency
-        → cap → geo → Gemini validation → score → generate → publish
+collect -> parse -> normalize -> dedup -> plausibility -> connect
+        -> exit check -> Gemini -> publish
 ```
 
-Only the Gemini stage proves a node is actually useful. Everything before it
-exists to make that stage affordable.
+Cheap filters run first so the expensive stage sees hundreds of candidates
+instead of thousands.
 
-## How Gemini validation actually works
+The step that matters most is the **exit check**. Each candidate is asked, from
+inside its own tunnel, where it comes out. Geolocating the config's address
+instead would report the CDN edge in front of it &mdash; which is how thirty
+routes once ended up labelled Canada while exiting somewhere Gemini refuses to
+serve. Routes exiting from a country Google does not serve are dropped there.
 
-Python cannot speak VLESS, VMess or Trojan — those need a proxy core. So each
-node is tested like this:
+Routes are then scored on latency (30%), Gemini verification (30%), reliability
+over the last 30 days (25%) and handshake quality (15%). A route with no history
+scores 0.5 on reliability &mdash; unknown, not bad &mdash; so new routes start
+mid-pack and earn their position.
 
-```
-Node → xray config with a local SOCKS5 inbound → start xray
-     → HTTPS request through 127.0.0.1:<port> → verdict → stop xray
-```
-
-A fixed pool of workers each own a port, so xray processes never collide and
-the pool size directly caps how many exist at once.
-
-`GEMINI_API_KEY` is optional:
-
-Every candidate is first asked, through its own tunnel, where it comes out.
-Geolocating the node's address instead reports the CDN edge in front of it, so
-a config fronted by a Canadian edge looks Canadian while exiting somewhere
-Gemini refuses to serve. The exit country decides both the published flag and
-whether the node is rejected outright.
-
-Then every candidate gets the free probe; the API key confirms the winners.
-
-| Step | Applies to | Costs quota | What it proves |
-|---|---|---|---|
-| `GET ip-api.com` through the tunnel | every candidate | no | The real exit IP and country |
-| `GET gemini.google.com` | every candidate | no | The web app loaded and did not say Gemini is unavailable in that country |
-| `POST generateContent` | first N that passed step 1 | yes | A real call returned candidates — definitive |
-
-The split exists because the free tier allows roughly 10–15 requests a minute
-and a few hundred a day, while a run tests over a thousand candidates every
-hour. Spending the key on everything would exhaust the quota in one run and
-turn every later node into a 429. `GR_GEMINI_API_CONFIRM_LIMIT` (default 10)
-caps calls per run; they are paced to stay inside the per-minute limit.
-
-**Reaching Google is not enough.** A node can connect to Google perfectly and
-still be useless, because Gemini is not offered where the node exits. Google
-signals this with `400 FAILED_PRECONDITION / "User location is not supported
-for the API use."`, and the web app says so in the page body. Both are treated
-as failures (`region not supported`), not successes.
-
-Set `GEMINI_API_KEY` if you can: the keyless path infers the region from the
-web app's HTML, which is weaker than the API's explicit refusal.
-
-## API access is not web access
-
-Nodes are verified against the Gemini API, which decides on the caller's IP.
-The Gemini web app applies a second gate: the country of the Google account
-signed into the browser. A verified node can still show "Gemini isn't currently
-supported in your country" for that reason alone — signing out (a private
-window) isolates which of the two is refusing.
-
-The same gate applies to obtaining a `GEMINI_API_KEY`: AI Studio requires a
-sign-in and reads the account's country, not the exit IP.
+A route that fails is not retried immediately: backoff pushes it out 5 minutes,
+then 30, then hours. Three straight failures mark it dead, and a dead route
+re-enters the pool once its wait elapses.
 
 ## Published labels
 
-Every published config's display label is rewritten to `<n>.<flag> GeminiRoute`
-— numbered from 1 within each file, with the flag from the node's exit country.
-Only the label changes; the credential, host, port, transport and every
-parameter are republished exactly as collected. Change `BRAND` in
-`geminiroute/generation/branding.py` to rename.
+Every published config's label is rewritten to `<n>.<flag> GeminiRoute`,
+numbered from 1 within each file, with the flag of its real exit country. Only
+the label changes &mdash; credential, host, port, transport and every parameter
+are republished exactly as collected.
 
-Without the xray binary the Gemini stage is skipped and the run is recorded as
-degraded — it does not silently publish unverified nodes as verified.
-
-## Local setup
+## Running it yourself
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
+python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -e ".[dev]"
-
-# Optional, needed for the Gemini stage:
-#   download the xray binary and put it on PATH (see .github/workflows/discovery.yml)
-
-cp sources.toml sources.local.toml   # then add real sources and enable them
 ```
 
-## Commands
+The Gemini stage needs the [Xray](https://github.com/XTLS/Xray-core/releases)
+binary. Put it on `PATH` or set `XRAY_PATH`.
+
+| Command | What it does |
+|---|---|
+| `geminiroute doctor` | Check the environment before blaming the pipeline |
+| `geminiroute collect` | Collect and parse only &mdash; no network validation |
+| `geminiroute run-full-pipeline` | The whole thing. `--limit N` to try a subset |
+| `geminiroute errors --stage gemini` | Why routes failed, grouped by reason |
+| `geminiroute sources` | What each source actually contributed |
+| `geminiroute xray-check` | Which config shapes your xray build accepts |
+| `geminiroute probe-node "<config>"` | Run one config through the full check and print what came back |
+
+`xray-check` exists because xray versions disagree about what a valid config is
+&mdash; `allowInsecure` was accepted for years and is refused by recent builds
+&mdash; and a refused config is recorded as a route failure, indistinguishable
+from a dead route.
+
+### Checks
 
 ```bash
-geminiroute doctor                    # check environment before blaming the pipeline
-geminiroute collect                   # collect + parse only; fast feedback loop
-geminiroute run-full-pipeline         # the whole thing; what the hourly job runs
-geminiroute errors --stage gemini     # why nodes failed a stage, grouped
-geminiroute sources                   # what each source actually contributed
-geminiroute xray-check                # which config shapes this xray accepts
+ruff check . && mypy geminiroute && pytest
 ```
 
-Exit codes: `0` success, `1` no sources configured, `2` the run produced zero
-publishable nodes (deliberately a failure, so a broken run cannot overwrite a
-good subscription with an empty one).
+## Adding a source
 
-## Checks
+`sources.toml` is content, not code. Add an entry, run `geminiroute collect`,
+and check that `unique` actually moves &mdash; a source that only repeats what
+others supply costs run time and returns nothing.
 
-```bash
-pytest
-ruff check .
-mypy geminiroute
+```toml
+[[source]]
+name = "some-list"
+type = "raw"                      # or "github" for a contents-API directory
+url = "https://raw.githubusercontent.com/owner/repo/main/sub.txt"
+enabled = true
 ```
+
+After a few runs, the `sources` block in `stats.json` shows the yield each one
+really produced. Anything under 2% is costing more than it returns.
 
 ## Configuration
 
-`sources.toml` is content, reviewed like code. Everything else comes from the
-environment:
+`sources.toml` holds the source list; everything else comes from the
+environment.
 
 | Variable | Default | Purpose |
 |---|---|---|
-| `GEMINI_API_KEY` | unset | Enables authenticated validation |
+| `GEMINI_API_KEY` | unset | Upgrades verification from "reached Google" to "the model answered" |
 | `XRAY_PATH` | auto-detected | Explicit path to the proxy core |
-| `GR_OUTPUT_DIR` | `dist` | Where `sub/` and `api/` are written |
-| `GR_DATABASE_PATH` | `data/geminiroute.db` | SQLite file |
-| `GR_CONNECTIVITY_CONCURRENCY` | `100` | Handshakes in flight |
+| `GR_MAX_GEMINI_CANDIDATES` | `1600` | Cap on the expensive stage |
 | `GR_GEMINI_POOL_SIZE` | `20` | Concurrent xray processes |
-| `GR_GEMINI_API_CONFIRM_LIMIT` | `10` | API calls per run (quota guard) |
-| `GR_MAX_GEMINI_CANDIDATES` | `1200` | Cap on the expensive stage |
+| `GR_GEMINI_API_CONFIRM_LIMIT` | `10` | API calls per run, to stay inside the free quota |
+| `GR_CONNECTIVITY_CONCURRENCY` | `100` | Handshakes in flight |
 | `GR_HISTORY_RETENTION_DAYS` | `90` | History pruning window |
 
-## Published output
+`GEMINI_API_KEY` is optional. Without it, every candidate still gets the exit
+check plus a free reachability probe; with it, the ten best-looking routes per
+run get a real `generateContent` call. The split exists because the free tier
+allows a few hundred calls a day while a run tests over a thousand candidates
+every hour.
 
-Everything generated lives on the `gh-pages` branch, never on `main` — an
-hourly job committing to `main` would bury real development history within
-weeks.
+## Automation
 
-```
-https://<user>.github.io/geminiroute/
-├── index.html           (landing page: links plus the last run's funnel)
-├── .nojekyll            (Pages must serve the tree as-is, not build it)
-├── sub/
-│   ├── all.txt          (base64, what clients poll)
-│   ├── all.plain.txt    (human-readable, for debugging)
-│   ├── gemini.txt       (verified only)
-│   ├── best.txt         (top 30 by score)
-│   ├── fast.txt         (verified and under 500 ms)
-│   └── country/<code>.txt
-├── api/
-│   ├── nodes.json
-│   └── stats.json       (the funnel, stage by stage)
-└── data/geminiroute.db  (carried between runs; the runner is ephemeral)
-```
-
-## Checking config generation
-
-`geminiroute xray-check` offers every config shape the generator produces to
-the xray binary and reports which ones it accepts. Run it after changing xray
-versions or touching `validation/xray.py`.
-
-It exists because xray versions disagree about what a valid config is —
-`allowInsecure` was accepted for years and is refused by recent builds — and a
-refused config is recorded as a node failure, indistinguishable from a dead
-node. One command answers what would otherwise take a pipeline run per
-question.
-
-The pipeline itself probes the same question at startup (`xray_capabilities` in
-the log) and emits `allowInsecure` only when the binary in use still takes it.
-
-## Scheduling
-
-A node that fails is not retried immediately: backoff pushes it out 5 minutes,
-then 30, then hours, up to a daily ceiling, and three straight failures mark it
-dead. Nodes inside their window are skipped at the top of a run, so the hourly
-slots go to nodes that might actually work. A dead node re-enters the pool as
-`recheck` once its wait elapses — dead is a state, not a grave.
-
-Candidates for the expensive stage are chosen proven-first, then fastest. Pure
-latency ordering over-selects CDN-fronted configs: their TLS handshake succeeds
-against the CDN whether or not the node behind it is alive, so they look fast
-and healthy right up until the Gemini stage rejects them.
-
-## Scoring
-
-`latency 30% + gemini 30% + reliability 25% + connection 15%`, each normalised
-to 0..1 first so changing a weight cannot change the scale of the result. A
-node with no history scores 0.5 on reliability — unknown, not bad.
-
-## Workflows
-
-| File | Trigger | Does |
+| Workflow | Trigger | Does |
 |---|---|---|
 | `ci.yml` | pull request, push to main | ruff, mypy, pytest on Python 3.12 and 3.13 |
-| `discovery.yml` | hourly cron, manual dispatch | full pipeline, publish to `gh-pages` |
+| `discovery.yml` | hourly, or manually | Full pipeline, publishes to `gh-pages` |
+
+Everything generated lives on `gh-pages`, never on `main` &mdash; an hourly job
+committing to `main` would bury real history within weeks. The SQLite database
+rides along on that branch, because the runner is destroyed after every run and
+without it the reliability history would reset hourly.
+
+## Honest limits
+
+These are other people's servers, collected automatically. Nothing here is
+operated by this project, and a free public proxy can see your traffic &mdash;
+use end-to-end encryption for anything you care about.
+
+Verification runs from a GitHub runner in a country Google serves. That proves
+the route reaches Gemini; it does not prove the route is reachable *from* your
+network, which is the one leg that cannot be tested from CI.
+
+Published for research and for reaching the open internet where it is
+restricted. Obey the laws that apply to you.
