@@ -79,8 +79,14 @@ def stats_card(stats: dict[str, Any]) -> str:
     """
     funnel = stats.get("funnel", {})
     funnel = funnel if isinstance(funnel, dict) else {}
-    values = [(label, funnel.get(key)) for key, label in STAGES]
-    values = [(label, v) for label, v in values if isinstance(v, int)]
+    # Built with a loop rather than filtered in place: reassigning a name from a
+    # comprehension over itself keeps the original, wider type, so the values
+    # stay `int | None` no matter what the filter says.
+    values: list[tuple[str, int]] = []
+    for key, label in STAGES:
+        value = funnel.get(key)
+        if isinstance(value, int):
+            values.append((label, value))
     top = max((v for _, v in values), default=0) or 1
 
     generated = html.escape(str(stats.get("generated_at", ""))[:16].replace("T", " "))
@@ -91,8 +97,8 @@ def stats_card(stats: dict[str, Any]) -> str:
     bar_width = 560
     rows = []
     y = 92
-    for label, value in values:
-        width = max(round(value / top * bar_width), 2)
+    for label, count in values:
+        width = max(round(count / top * bar_width), 2)
         colour = PASS if label == "verified" else RULE
         rows.append(
             f'<text x="130" y="{y + 13}" fill="{MUTED}" font-size="13" '
@@ -103,7 +109,7 @@ def stats_card(stats: dict[str, Any]) -> str:
             f'fill="{colour}"/>'
             f'<text x="{bar_left + bar_width + 14}" y="{y + 14}" '
             f'fill="{PASS if label == "verified" else INK}" font-size="13">'
-            f"{value:,}</text>"
+            f"{count:,}</text>"
         )
         y += 28
 
