@@ -1,5 +1,2 @@
-vless://30cc2bdb-4d43-4a4e-8cae-bb44e615fc90@188.114.99.250:443?path=/full&security=tls&alpn=h2,http/1.1&encryption=none&insecure=0&host=kurdnet.arianetmili.xyz&fp=chrome&type=ws&allowInsecure=0&sni=kurdnet.arianetmili.xyz#1.🇹🇷 GeminiRoute
-vless://b052df40-d51c-456c-9bd6-57af01a87e4e@156.67.63.231:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=sync-bridge.org&fp=chrome&pbk=PTqeBbbr2xJ1L3V1PyYjKjxanMKKqJHU-wtnpYmFQCI&sid=5606d4a25c99e7af&type=tcp&headerType=none#2.🇹🇷 GeminiRoute
-vless://8562c1e2-042c-4fb0-b4dc-d3ccce574a4c@turkii.parsclad.ir:57362?encryption=none&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=ZB8dPnYX8VwMsqp__WdDA_-6rpqzje62Jx7SSfQ2X3s&sid=69a619&spx=/22eea8a68bbac97&type=tcp&headerType=none#3.🇹🇷 GeminiRoute
-vless://953358cb-82ba-4296-960d-6d2ec3468f4c@195.162.69.203:8443?encryption=none&fp=chrome&security=tls&sni=195-162-69-203.sslip.io&type=tcp#4.🇹🇷 GeminiRoute
-vless://6be01e14-b937-4ed5-9d2c-074a0da22ffc@tr2.rockblack.site:8443?security=reality&encryption=none&pbk=fXsQV_dib6rKGAl6EncN6Pm-fTb6TqOa3uTCQWe86Dg&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=ads.x5.ru#5.🇹🇷 GeminiRoute
+vless://b052df40-d51c-456c-9bd6-57af01a87e4e@156.67.63.231:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=sync-bridge.org&fp=chrome&pbk=PTqeBbbr2xJ1L3V1PyYjKjxanMKKqJHU-wtnpYmFQCI&sid=5606d4a25c99e7af&type=tcp&headerType=none#1.🇹🇷 GeminiRoute
+vless://953358cb-82ba-4296-960d-6d2ec3468f4c@195.162.69.203:8443?encryption=none&fp=chrome&security=tls&sni=195-162-69-203.sslip.io&type=tcp#2.🇹🇷 GeminiRoute
