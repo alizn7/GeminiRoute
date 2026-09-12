@@ -1,3 +1,4 @@
 vless://b3a11068-1a7e-4643-85de-7c82cce46943@79.141.174.147:33743?encryption=none&fp=&pbk=wGMBs7bvzyzA0-OUiwSkOOTDEMdxEOsSdRzxiP8GGQY&security=reality&serviceName=TunService&sni=www.google.com&type=grpc#1.🇸🇪 GeminiRoute
-vless://b3a11068-1a7e-4643-85de-7c82cce46943@91.193.17.156:9458?encryption=none&fp=&pbk=wGMBs7bvzyzA0-OUiwSkOOTDEMdxEOsSdRzxiP8GGQY&security=reality&serviceName=TunService&sni=www.google.com&type=grpc#2.🇸🇪 GeminiRoute
-vless://77da6e30-ad4e-11f1-94d5-525400d1d4f7@143.246.193.215:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=wSjV1yR_rhDUdoNbM9zIXNGLASLp9RorComnyoayo2c&security=reality&sni=www.blocket.se&type=tcp#3.🇸🇪 GeminiRoute
+vless://77da6e30-ad4e-11f1-94d5-525400d1d4f7@143.246.193.215:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=wSjV1yR_rhDUdoNbM9zIXNGLASLp9RorComnyoayo2c&security=reality&sni=www.blocket.se&type=tcp#2.🇸🇪 GeminiRoute
+vless://b3a11068-1a7e-4643-85de-7c82cce46943@91.193.17.156:9458?encryption=none&fp=&pbk=wGMBs7bvzyzA0-OUiwSkOOTDEMdxEOsSdRzxiP8GGQY&security=reality&serviceName=TunService&sni=www.google.com&type=grpc#3.🇸🇪 GeminiRoute
+vless://eec2f6a7-c10f-43b0-b133-61f9bf9bbc27@2.56.121.43:443?security=reality&encryption=none&pbk=vnUSQFujh6K08KR6FHYWoBkZCAEZNWSKji0PPw9eMWM&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.ikea.com&sid=86229a5e3b1e6ef4#4.🇸🇪 GeminiRoute
