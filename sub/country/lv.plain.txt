@@ -1,2 +1,1 @@
-vless://773251ef-4691-453e-b062-27e3ed3ed784@169.40.1.62:1443?allowInsecure=1&encryption=none&flow=xtls-rprx-vision&security=tls&sni=lv.pawnet.ink&type=tcp#1.🇱🇻 GeminiRoute
-vless://5234b2b7-5e07-422c-8159-d62a676c00c6@138.124.180.137:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c&security=reality&sid=33acba1b&sni=www.apple.com&type=tcp#2.🇱🇻 GeminiRoute
+vless://5234b2b7-5e07-422c-8159-d62a676c00c6@138.124.180.137:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c&security=reality&sid=33acba1b&sni=www.apple.com&type=tcp#1.🇱🇻 GeminiRoute
