@@ -43,3 +43,10 @@ name = "windowsB4-de-mci"
 type = "raw"
 url = "https://ogy.de/oneclickvpnkeys-free-sub"
 enabled = true
+
+
+[[source]]
+name = "barry-far-trojan"
+type = "raw"
+url = "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/trojan.txt"
+enabled = true
