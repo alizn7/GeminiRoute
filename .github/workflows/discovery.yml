@@ -2,7 +2,11 @@ name: Discovery
 
 on:
   schedule:
-    - cron: "0 * * * *"
+    # Deliberately not on the hour. GitHub documents that scheduled events are
+    # delayed during high load, that the top of every hour is the peak, and
+    # that queued runs may be dropped entirely under enough load. Runs here sat
+    # 3+ hours waiting for a runner on `0 * * * *`.
+    - cron: "37 * * * *"
   workflow_dispatch:
 
 permissions:

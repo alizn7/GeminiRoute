@@ -264,7 +264,7 @@ def render(stats: dict[str, Any], files: dict[str, int] | None = None) -> str:
 <main>
   <div class="masthead">
     <h1>GeminiRoute</h1>
-    <p>rebuilt hourly &middot; {generated}</p>
+    <p>scheduled hourly &middot; last run {generated}</p>
   </div>
 
   <p class="lede">Every hour this collects public proxy configs, asks each one
