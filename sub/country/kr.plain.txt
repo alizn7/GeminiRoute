@@ -1,5 +1,1 @@
 vless://77777777-8a3e-6666-b6d1-a9c5f0e8b3a2@172.67.217.240:443?encryption=none&type=ws&path=%2F%3Fed%3D2560&host=fx3h2kf8xn.fx6hsv0.ccwu.cc&security=tls&sni=fx3h2kf8xn.fx6hsv0.ccwu.cc&fp=unsafe#1.🇰🇷 GeminiRoute
-vless://f12cc297-c9ce-4cdb-98d4-8e47c3f09644@104.18.34.245:8880?security=none&type=ws&host=weathered-union-5358.101-262.workers.dev#2.🇰🇷 GeminiRoute
-vless://7e3cd2f1-0de5-4717-9002-64d8597bc577@172.64.88.251:8880?encryption=none&host=dry-credit-fc26.203-d8c.workers.dev&path=%2Fpyip%3DProxyIP.KR.CMLiussss.net&security=none&type=ws#3.🇰🇷 GeminiRoute
-vless://730cbebb-39b2-4a1c-b2f8-f922095d6623@188.114.97.6:8080?security=false&fp=chrome&packet-encoding=xudp&type=ws&headerType=none&host=wandering-bonus-e035.272.workers.dev&path=%2Fpyip%3DProxyIP.KR.CMLiussss.net#4.🇰🇷 GeminiRoute
-vless://25844c02-a1fe-43ec-a6b9-44e3bf375b83@172.67.209.127:8880?encryption=none&security=none&type=ws&host=dark-breeze-a59a.494.workers.dev&path=%2Fpyip%3DProxyIP.KR.CMLiussss.net#5.🇰🇷 GeminiRoute
