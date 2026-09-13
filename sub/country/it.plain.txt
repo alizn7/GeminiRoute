@@ -1,4 +1,5 @@
-vless://1e280316-0408-47c4-b058-05b8f1f17f02@57.131.32.191:80?encryption=none&host=ov-italy1.09vpn.com&path=/vless/&security=none&type=ws#1.🇮🇹 GeminiRoute
-vless://9f0285ee-20ca-4953-bcdb-86a920652923@204.216.216.23:10086?encryption=none&security=none&type=tcp#2.🇮🇹 GeminiRoute
-vless://049e56d8-0ba0-49e3-b764-ee04122b9f00@57.131.32.191:80?path=/vless/&security=none&encryption=none&type=ws#3.🇮🇹 GeminiRoute
+vless://d4b08cd6-0903-411a-9dac-45dbdf5c9712@57.131.38.163:2053?security=reality&encryption=none&pbk=Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc&headerType=none&fp=chrome&type=tcp&sni=www.apple.com&sid=5b8a942318178e7b#1.🇮🇹 GeminiRoute
+vless://df677fac-8183-4658-b448-307511ee6572@57.131.19.226:443?security=reality&encryption=none&pbk=9mgAr9QUQzxncMwhYf7Xg8SSJ49444K1rUxq7LPGAFk&headerType=&fp=chrome&spx=/29479a3fed14bf0&type=tcp&sni=www.sony.com.au&sid=f1e2d15f#2.🇮🇹 GeminiRoute
+vless://624208cf-54e0-4341-823b-1bee6595fce9@s98.cdn.tbotapi.ru:443?security=reality&encryption=none&pbk=bBTka5j8aqNSD5hl8X0YUhwYH04IrPIaeKUFkijUllg&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=s98.cdn.tbotapi.ru#3.🇮🇹 GeminiRoute
 vless://92089155-6602-4122-86d4-fe6de20e8c4d@31.59.150.174:9443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=hotcoals.aeternavpn.space&allowInsecure=1&fp=chrome&security=reality&pbk=RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI&sid=a1b2c3d4#4.🇮🇹 GeminiRoute
+vless://9f0285ee-20ca-4953-bcdb-86a920652923@204.216.216.23:10086?encryption=none&security=none&type=tcp#5.🇮🇹 GeminiRoute
