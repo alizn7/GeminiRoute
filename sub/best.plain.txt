@@ -1,30 +1,30 @@
-trojan://M%69TiVPN@167.82.76.7:443?path=%40mehrosaboran&security=tls&alpn=http%2F1.1&insecure=0&host=m%69tivpn---ss--s---m%69tivpn-33.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#1.🇩🇪 GeminiRoute
-trojan://M%69TiVPN@151.101.56.101:443?path=%40mehrosaboran&security=tls&alpn=http%2F1.1&insecure=0&host=m%69tivpn---ss--s---m%69tivpn-5.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#2.🇩🇪 GeminiRoute
-trojan://MiTiVPN@199.232.78.101:443?security=tls&alpn=http%2F1.1&insecure=0&host=mitivpn---ss--s---mitivpn-11.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#3.🇩🇪 GeminiRoute
-trojan://humanity@188.114.97.7:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#4.🇫🇷 GeminiRoute
-trojan://humanity@104.16.174.36:443?path=/assignment&security=tls&insecure=0&host=www.ignitelimit.com&type=ws&allowInsecure=0&sni=www.ignitelimit.com#5.🇫🇷 GeminiRoute
-vless://4e4f1f70-5e56-4a76-bb9d-db087f4690c4@104.16.10.185:443?path=/tyxyws&security=tls&encryption=none&fm={"tcp":[{"type":"fragment","settings":{"packets":"tlshello","lengths":["0","104","1"],"delays":["0"],"maxSplit":"0"}},{"type":"fragment","settings":{"packets":"1-1","lengths":["114","1"],"delays":["1"],"maxSplit":"11"}}]}&insecure=0&host=jp3.yohototo.top&fp=unsafe&type=ws&allowInsecure=0&sni=jp3.yohototo.top#6.🇯🇵 GeminiRoute
-vless://ae0658ee-4922-43df-c946-811f539e9cda@hcaptcha.com:443?alpn=h3,h2,http/1.1&encryption=none&fp=chrome&host=meeeeeew.esmahdi9.com&mode=auto&path=/meww&security=tls&sni=meeeeeew.esmahdi9.com&type=xhttp#7.🇳🇱 GeminiRoute
-trojan://humanity@162.159.136.234:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#8.🇫🇷 GeminiRoute
-trojan://humanity@8.47.69.0:443?path=%2Fassignment&security=tls&alpn=http%2F1.1&insecure=0&host=www.pleadcourt.org&type=ws&allowInsecure=0&sni=www.pleadcourt.org#9.🇳🇱 GeminiRoute
-trojan://humanity@104.17.111.8:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#10.🇫🇷 GeminiRoute
-trojan://humanity@104.18.152.108:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#11.🇫🇷 GeminiRoute
-trojan://humanity@45.130.125.158:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#12.🇫🇷 GeminiRoute
-trojan://humanity@104.20.6.134:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#13.🇫🇷 GeminiRoute
-trojan://humanity@104.18.152.208:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#14.🇫🇷 GeminiRoute
-trojan://humanity@104.16.174.12:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#15.🇫🇷 GeminiRoute
-trojan://humanity@104.16.174.143:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#16.🇫🇷 GeminiRoute
-trojan://humanity@104.17.111.1:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#17.🇫🇷 GeminiRoute
-vless://1b5a2c6a-b758-465b-a406-6118574e6a9d@www.visa.com:2053?encryption=none&security=tls&sni=us.twvip.de5.net&fp=chrome&type=ws&host=us.twvip.de5.net&path=/vless-argo?ed=2560#18.🇺🇸 GeminiRoute
-trojan://humanity@104.18.152.207:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#19.🇫🇷 GeminiRoute
-vmess://eyJhZGQiOiIxMzQuMTk1LjE5Ni4yMTEiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiZjhjOGRjM2QtMGQzNy00NmIwLThiMzQtYTcyMzI4ODJmY2ZlIiwiaW5zZWN1cmUiOiIwIiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBvcnQiOiIxODAwMCIsInBzIjoiMjAu8J+HqPCfh6YgR2VtaW5pUm91dGUiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9
-vmess://eyJhZGQiOiIyMy4xNjIuMjAwLjE5OCIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicGNzIjoiIiwicG9ydCI6IjE4MDAwIiwicHMiOiIyMS7wn4eo8J+HpiBHZW1pbmlSb3V0ZSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoiIiwidiI6IjIiLCJ2Y24iOiIifQ==
-trojan://humanity@104.16.174.117:443?path=/assignment&security=tls&insecure=0&host=www.ignitelimit.com&type=ws&allowInsecure=0&sni=www.ignitelimit.com#22.🇫🇷 GeminiRoute
-trojan://humanity@104.18.152.229:443?path=/assignment&security=tls&insecure=0&host=www.ignitelimit.com&type=ws&allowInsecure=0&sni=www.ignitelimit.com#23.🇫🇷 GeminiRoute
-trojan://humanity@104.18.37.228:443?security=tls&sni=www.calmlunch.com&type=ws&path=/assignment&Host=www.calmlunch.com#24.🇫🇷 GeminiRoute
-trojan://humanity@104.16.174.44:443?path=/assignment&security=tls&insecure=0&host=www.ignitelimit.com&type=ws&allowInsecure=0&sni=www.ignitelimit.com#25.🇫🇷 GeminiRoute
-trojan://humanity@104.18.152.233:443?path=/assignment&security=tls&insecure=0&host=www.ignitelimit.com&type=ws&allowInsecure=0&sni=www.ignitelimit.com#26.🇫🇷 GeminiRoute
-trojan://humanity@104.16.7.70:443?path=/assignment&security=tls&insecure=0&type=ws&allowInsecure=0&sni=www.ignitelimit.com#27.🇫🇷 GeminiRoute
-vless://d342d11e-d424-4583-b36e-524ab1f0afa4@104.18.42.54:2083?security=tls&type=ws&path=/?ed=2560&host=newwk1.f1w.de5.net&packetEncoding=xudp&sni=newwk1.f1w.de5.net&fp=chrome#28.🇺🇸 GeminiRoute
-vless://d25ba473-5b05-48bb-b048-e82844e2ae39@log.bpminecraft.com:8880?security=none&type=ws&path=/pyip=ProxyIP.JP.CMLiussss.net&host=misty-recipe-be74.271.workers.dev&packetEncoding=xudp&encryption=none#29.🇯🇵 GeminiRoute
-vmess://eyJ2IjoiMiIsInBzIjoiMzAu8J+HuvCfh7ggR2VtaW5pUm91dGUiLCJhZGQiOiIyMTYuMTA2LjE4My4zNSIsInBvcnQiOiIyMjMyNCIsImlkIjoiMDQ2MjFiYWUtYWIzNi0xMWVjLWI5MDktMDI0MmFjMTIwMDAyIiwiYWlkIjoiMCIsInNjeSI6ImF1dG8iLCJuZXQiOiJ0Y3AiLCJ0eXBlIjoibm9uZSIsImhvc3QiOiIiLCJwYXRoIjoiIiwidGxzIjoiIiwic25pIjoiIiwiYWxwbiI6IiIsImZwIjoiIiwiaW5zZWN1cmUiOiIwIn0=
+vless://47fcef29-ab4e-4aa6-932b-d95a18f28a4e@162.159.24.131:8880?security=none&type=ws&path=/?ed=2560security=tls&host=8nj2r.2k8t.f88.hh.vavava.kdns.fr&packetEncoding=xudp&sni=8nj2r.2k8t.f88.hh.vavava.kdns.fr#1.🇺🇸 GeminiRoute
+vless://b8d8a5b0-867f-4491-b4e4-30edc04bb10e@support.zoom.us:80/?type=ws&encryption=none&flow=&host=u.srilankangrill.online&path=/#2.🇸🇬 GeminiRoute
+vless://47fcef29-ab4e-4aa6-932b-d95a18f28a4e@162.159.45.19:2086?&type=ws&headerType=none&host=8nj2r.2k8t.f88.hh.vavava.kdns.fr&path=/?ed=2560security=tls#3.🇺🇸 GeminiRoute
+vmess://eyJ2IjoiMiIsInBzIjoiNC7wn4e68J+HuCBHZW1pbmlSb3V0ZSIsImFkZCI6IjIxNi4xMDYuMTgzLjM1IiwicG9ydCI6IjIyMzI0IiwiaWQiOiIwNDYyMWJhZS1hYjM2LTExZWMtYjkwOS0wMjQyYWMxMjAwMDIiLCJhaWQiOiIwIiwic2N5IjoiYXV0byIsIm5ldCI6InRjcCIsInR5cGUiOiJub25lIiwiaG9zdCI6IiIsInBhdGgiOiIiLCJ0bHMiOiIiLCJzbmkiOiIiLCJhbHBuIjoiIiwiZnAiOiIiLCJpbnNlY3VyZSI6IjAifQ==
+trojan://MiTiVPN@199.232.78.101:443?security=tls&alpn=http%2F1.1&insecure=0&host=mitivpn---ss--s---mitivpn-11.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#5.🇩🇪 GeminiRoute
+trojan://humanity@162.159.136.234:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#6.🇫🇷 GeminiRoute
+trojan://humanity@104.21.8.107:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#7.🇫🇷 GeminiRoute
+trojan://humanity@104.16.174.117:443?path=/assignment&security=tls&insecure=0&host=www.ignitelimit.com&type=ws&allowInsecure=0&sni=www.ignitelimit.com#8.🇫🇷 GeminiRoute
+trojan://humanity@104.18.152.208:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#9.🇫🇷 GeminiRoute
+trojan://MiTiVPN@167.82.76.7:443?security=tls&sni=ssl.fastly.com&fp=chrome&alpn=http%2F1.1&type=ws&host=mitivpn---ss--s---mitivpn-33.global.ssl.fastly.net&path=%2F#10.🇩🇪 GeminiRoute
+trojan://humanity@104.18.152.207:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#11.🇫🇷 GeminiRoute
+trojan://humanity@104.18.152.108:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#12.🇫🇷 GeminiRoute
+trojan://humanity@45.130.125.158:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#13.🇫🇷 GeminiRoute
+trojan://humanity@188.114.97.7:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#14.🇫🇷 GeminiRoute
+trojan://humanity@104.17.111.1:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#15.🇫🇷 GeminiRoute
+trojan://humanity@104.18.152.144:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#16.🇫🇷 GeminiRoute
+trojan://humanity@104.16.174.34:443?path=/assignment&security=tls&insecure=0&host=www.ignitelimit.com&type=ws&allowInsecure=0&sni=www.ignitelimit.com#17.🇫🇷 GeminiRoute
+vless://d51ed55c-d6dd-400b-aaf6-017c33969bfe@ww10.levikogjgfdd.ir:55861?encryption=none&flow=xtls-rprx-vision&fp=&pbk=t2ndf6SeVxinFCo5bcemnW_ZZhAtmHWiAkllks5qPWs&security=reality&sid=7551ed1b&sni=www.intel.com&type=tcp#18.🇺🇸 GeminiRoute
+vless://b3a11068-1a7e-4643-85de-7c82cce46943@79.141.172.154:10453?encryption=none&fp=&pbk=rAHMmpeUJ6uOoGgk31dTF4-1RTtLZFnOEs_li2AYQWc&security=reality&serviceName=TunService&sni=www.google.com&type=grpc#19.🇺🇸 GeminiRoute
+trojan://humanity@104.16.174.36:443?path=/assignment&security=tls&insecure=0&host=www.ignitelimit.com&type=ws&allowInsecure=0&sni=www.ignitelimit.com#20.🇫🇷 GeminiRoute
+trojan://humanity@join-telegram-channel-tirexnet.trex.kdns.fr:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#21.🇫🇷 GeminiRoute
+trojan://humanity@104.20.6.134:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#22.🇫🇷 GeminiRoute
+trojan://humanity@172.67.188.109:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#23.🇫🇷 GeminiRoute
+vless://d51ed55c-d6dd-400b-aaf6-017c33969bfe@47.89.186.170:55861?security=reality&encryption=none&pbk=t2ndf6SeVxinFCo5bcemnW_ZZhAtmHWiAkllks5qPWs&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.intel.com&sid=7551ed1b#24.🇺🇸 GeminiRoute
+vless://44eae030-290b-4083-8102-6f8bab05701b@104.16.10.185:443?path=/&security=tls&encryption=none&fm={"tcp":[{"type":"fragment","settings":{"packets":"tlshello","lengths":["0","104","1"],"delays":["0"],"maxSplit":"0"}},{"type":"fragment","settings":{"packets":"1-1","lengths":["114","1"],"delays":["1"],"maxSplit":"11"}}]}&insecure=0&host=cfvvv-ev1.pages.dev&type=ws&allowInsecure=0&sni=cfvvv-ev1.pages.dev#25.🇺🇸 GeminiRoute
+vless://47fcef29-ab4e-4aa6-932b-d95a18f28a4e@104.18.34.14:8880?&type=ws&headerType=none&host=8nj2r.2k8t.f88.hh.vavava.kdns.fr&path=/?ed=2560security=tls#26.🇺🇸 GeminiRoute
+vmess://eyJhZGQiOiIxMzQuMTk1LjE5Ni4yMTEiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiZjhjOGRjM2QtMGQzNy00NmIwLThiMzQtYTcyMzI4ODJmY2ZlIiwiaW5zZWN1cmUiOiIwIiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBvcnQiOiIxODAwMCIsInBzIjoiMjcu8J+HqPCfh6YgR2VtaW5pUm91dGUiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9
+vmess://eyJhZGQiOiIyMy4xNjIuMjAwLjE5OCIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjE4MDAwIiwicHMiOiIyOC7wn4eo8J+HpiBHZW1pbmlSb3V0ZSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoiIiwidiI6IjIiLCJza2lwLWNlcnQtdmVyaWZ5Ijp0cnVlfQ==
+trojan://humanity@104.16.174.12:443?path=/assignment&security=tls&insecure=0&host=www.ignitelimit.com&type=ws&allowInsecure=0&sni=www.ignitelimit.com#29.🇫🇷 GeminiRoute
+vless://47fcef29-ab4e-4aa6-932b-d95a18f28a4e@104.18.39.218:2086?security=none&type=ws&path=/?ed=2560security=tls&host=8nj2r.2k8t.f88.hh.vavava.kdns.fr&packetEncoding=xudp&sni=8nj2r.2k8t.f88.hh.vavava.kdns.fr#30.🇺🇸 GeminiRoute
