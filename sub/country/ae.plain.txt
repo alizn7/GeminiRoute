@@ -1,1 +1,2 @@
-vless://39947382-3212-41c9-bc3a-589574ac8b23@uae.unixzone.us:22573?encryption=none&security=none&type=ws&host=uae.unixzone.us&path=/#1.🇦🇪 GeminiRoute
+vless://c2c3de71-5ec5-430c-b096-81969b16ff8d@104.24.219.225:443?path=/&security=tls&alpn=h2,http/1.1,h3&encryption=none&insecure=0&host=cdnfree.abdollahvand2.ir&fp=chrome&type=ws&allowInsecure=0&sni=cdnfree.abdollahvand2.ir#1.🇦🇪 GeminiRoute
+vless://39947382-3212-41c9-bc3a-589574ac8b23@uae.unixzone.us:22573?encryption=none&security=none&type=ws&host=uae.unixzone.us&path=/#2.🇦🇪 GeminiRoute

@@ -1,1 +1,2 @@
-vless://7668f678-faee-40cc-9b56-9c39dc773388@185.126.238.87:2083/?type=grpc&encryption=none&flow=&serviceName=security.debian.org#1.🇬🇷 GeminiRoute
+vless://7668f678-faee-40cc-9b56-9c39dc773388@185.126.238.87:2083?encryption=none&security=none&fm=https://t.me/ShadowFlux2&type=grpc&authority=&serviceName=security.debian.org&mode=gun#1.🇬🇷 GeminiRoute
+vless://824faea9-cafe-5fa1-90dd-46d975d22ca8@38.54.29.113:8553?flow=xtls-rprx-vision&encryption=none&security=reality&sni=www.apple.com&fp=chrome&pbk=C41m2OJvTIXOIo9KsTstW-4BggXA0BR3p3B7Ve5jkx8&sid=a141e13cdb91e888&type=tcp&headerType=none#2.🇬🇷 GeminiRoute
