@@ -1,1 +1,2 @@
 vless://8e403675-d020-4801-9520-9cba4bbfda0e@181.214.147.216:443?security=reality&encryption=none&pbk=66DIn_CbsE4-fWeWpy3vrRLP-XN8D-axun3jbZzuPmk&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=lith.2clash.ru#1.🇱🇹 GeminiRoute
+vless://f2381f29-c724-4491-95a3-a17bd6eea47f@144.31.243.247:443?encryption=none&type=tcp&security=reality&flow=xtls-rprx-vision&sni=lt.willo.help&pbk=MldGYzZegwydL76HI_beMlXgD-4ZyCZjIX0sBVPjphY&sid=abcd1234&fp=firefox#2.🇱🇹 GeminiRoute
