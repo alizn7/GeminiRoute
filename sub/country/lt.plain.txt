@@ -1,2 +1,2 @@
 vless://c5694dc5-39fd-4a92-8430-3837baa522a3@lt.aether-runet.top:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=vrcsm8L_tY7sNbnCEdLCEjOthh_w9bdWS3wFPgsIomk&security=reality&sid=4fa44664f6a566d3&sni=lt.aether-runet.top&type=tcp#1.🇱🇹 GeminiRoute
-vless://c5694dc5-39fd-4a92-8430-3837baa522a3@84.32.215.117:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=vrcsm8L_tY7sNbnCEdLCEjOthh_w9bdWS3wFPgsIomk&security=reality&sid=4fa44664f6a566d3&sni=lt.aether-runet.top&type=tcp#2.🇱🇹 GeminiRoute
+vless://c5694dc5-39fd-4a92-8430-3837baa522a3@84.32.215.117:443?security=reality&encryption=none&pbk=vrcsm8L_tY7sNbnCEdLCEjOthh_w9bdWS3wFPgsIomk&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=lt.aether-runet.top&sid=4fa44664f6a566d3#2.🇱🇹 GeminiRoute
