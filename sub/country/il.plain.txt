@@ -1,0 +1,1 @@
+vless://21710d7d-5e87-4655-bac2-36e9b655e3ee@85.209.157.184:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=YDYWOKQpoOkOPQ64PosSfJHAaLPuAZJ_jiB6Qj_iYnQ&security=reality&sni=www.microsoft.com&type=tcp#1.🇮🇱 GeminiRoute
