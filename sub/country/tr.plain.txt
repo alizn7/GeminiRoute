@@ -1,2 +1,2 @@
 vless://0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8@151.241.226.201:2053?encryption=none&fp=&pbk=bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104&security=reality&sid=9e419c0759b54d6f&sni=www.apple.com&type=tcp#1.🇹🇷 GeminiRoute
-vless://464bc502-f963-45b6-81e3-e33d18427506@shop.neexbyte.ir:8443?security=tls&encryption=none&insecure=0&type=ws&allowInsecure=0#2.🇹🇷 GeminiRoute
+vless://6e58f644-bc22-4dae-824a-4c3a760dc7a1@193.46.56.74:8443?alpn=h3&encryption=none&host=dns.refprov.online&mode=packet-up&path=%2Fh3-updates&security=tls&sni=dns.refprov.online&type=xhttp#2.🇹🇷 GeminiRoute
