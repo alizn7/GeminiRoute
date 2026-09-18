@@ -116,22 +116,22 @@ footer { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--rul
 <main>
   <div class="masthead">
     <h1>GeminiRoute</h1>
-    <p>scheduled hourly &middot; last run 2026-09-18T06:36:30.526536+00:00</p>
+    <p>scheduled hourly &middot; last run 2026-09-18T11:46:49.375469+00:00</p>
   </div>
 
   <p class="lede">Every hour this collects public proxy configs, asks each one
   from inside its own tunnel where it comes out, and keeps only the ones that
   reach the Gemini API from a country Google serves. Last run:
-  <b>551 of 8,011</b> survived.</p>
+  <b>459 of 8,046</b> survived.</p>
 
   <section>
-    <h2>What happened to the 8,011 collected</h2>
+    <h2>What happened to the 8,046 collected</h2>
     <div class="funnel">
-      <div class="stage"><span>collected</span><span class="track"><span class="fill" style="width:100.0%"></span></span><span class="count">8,011</span></div>
-      <div class="stage"><span>unique</span><span class="track"><span class="fill" style="width:50.39%"></span></span><span class="count">4,037</span></div>
-      <div class="stage"><span>plausible</span><span class="track"><span class="fill" style="width:31.87%"></span></span><span class="count">2,553</span></div>
-      <div class="stage"><span>reachable</span><span class="track"><span class="fill" style="width:10.89%"></span></span><span class="count">872</span></div>
-      <div class="stage"><span>verified</span><span class="track"><span class="fill" style="width:6.88%"></span></span><span class="count">551</span></div>
+      <div class="stage"><span>collected</span><span class="track"><span class="fill" style="width:100.0%"></span></span><span class="count">8,046</span></div>
+      <div class="stage"><span>unique</span><span class="track"><span class="fill" style="width:50.55%"></span></span><span class="count">4,067</span></div>
+      <div class="stage"><span>plausible</span><span class="track"><span class="fill" style="width:31.94%"></span></span><span class="count">2,570</span></div>
+      <div class="stage"><span>reachable</span><span class="track"><span class="fill" style="width:11.04%"></span></span><span class="count">888</span></div>
+      <div class="stage"><span>verified</span><span class="track"><span class="fill" style="width:5.7%"></span></span><span class="count">459</span></div>
     </div>
   </section>
 
@@ -139,9 +139,9 @@ footer { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--rul
     <h2>Get a link</h2>
     <div class="links">
       <div class="link"><span class="name">best</span><span class="what">the highest scoring, capped at 30</span><span class="n">30 routes</span><button type="button" data-file="sub/best.txt">Copy</button></div>
-      <div class="link"><span class="name">gemini</span><span class="what">everything that passed verification</span><span class="n">551 routes</span><button type="button" data-file="sub/gemini.txt">Copy</button></div>
-      <div class="link"><span class="name">fast</span><span class="what">verified and under 500 ms</span><span class="n">464 routes</span><button type="button" data-file="sub/fast.txt">Copy</button></div>
-      <div class="link"><span class="name">all</span><span class="what">every route tested, verified or not</span><span class="n">872 routes</span><button type="button" data-file="sub/all.txt">Copy</button></div>
+      <div class="link"><span class="name">gemini</span><span class="what">everything that passed verification</span><span class="n">459 routes</span><button type="button" data-file="sub/gemini.txt">Copy</button></div>
+      <div class="link"><span class="name">fast</span><span class="what">verified and under 500 ms</span><span class="n">366 routes</span><button type="button" data-file="sub/fast.txt">Copy</button></div>
+      <div class="link"><span class="name">all</span><span class="what">every route tested, verified or not</span><span class="n">888 routes</span><button type="button" data-file="sub/all.txt">Copy</button></div>
     </div>
     <p class="note" style="margin-top:1rem">Paste one into a client's
     subscription field. Every file has a <code>.plain.txt</code> twin that is
@@ -151,18 +151,18 @@ footer { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--rul
   <section>
     <h2>Where the verified routes come out</h2>
     <div class="exits">
-      <div class="exit"><span class="place">🇺🇸 us</span><span class="bar" style="width:100.0%"></span><span class="n">151</span></div>
-      <div class="exit"><span class="place">🇫🇷 fr</span><span class="bar" style="width:62.25%"></span><span class="n">94</span></div>
-      <div class="exit"><span class="place">🇩🇪 de</span><span class="bar" style="width:50.99%"></span><span class="n">77</span></div>
-      <div class="exit"><span class="place">🇳🇱 nl</span><span class="bar" style="width:47.68%"></span><span class="n">72</span></div>
-      <div class="exit"><span class="place">🇫🇮 fi</span><span class="bar" style="width:10.6%"></span><span class="n">16</span></div>
-      <div class="exit"><span class="place">🇸🇬 sg</span><span class="bar" style="width:9.93%"></span><span class="n">15</span></div>
-      <div class="exit"><span class="place">🇬🇧 gb</span><span class="bar" style="width:9.27%"></span><span class="n">14</span></div>
-      <div class="exit"><span class="place">🇨🇦 ca</span><span class="bar" style="width:7.95%"></span><span class="n">12</span></div>
-      <div class="exit"><span class="place">🇵🇱 pl</span><span class="bar" style="width:7.28%"></span><span class="n">11</span></div>
-      <div class="exit"><span class="place">🇷🇸 rs</span><span class="bar" style="width:6.62%"></span><span class="n">10</span></div>
-      <div class="exit"><span class="place">🇯🇵 jp</span><span class="bar" style="width:5.96%"></span><span class="n">9</span></div>
-      <div class="exit"><span class="place">🇧🇬 bg</span><span class="bar" style="width:5.3%"></span><span class="n">8</span></div>
+      <div class="exit"><span class="place">🇺🇸 us</span><span class="bar" style="width:100.0%"></span><span class="n">147</span></div>
+      <div class="exit"><span class="place">🇳🇱 nl</span><span class="bar" style="width:46.26%"></span><span class="n">68</span></div>
+      <div class="exit"><span class="place">🇫🇷 fr</span><span class="bar" style="width:42.86%"></span><span class="n">63</span></div>
+      <div class="exit"><span class="place">🇩🇪 de</span><span class="bar" style="width:34.69%"></span><span class="n">51</span></div>
+      <div class="exit"><span class="place">🇬🇧 gb</span><span class="bar" style="width:8.16%"></span><span class="n">12</span></div>
+      <div class="exit"><span class="place">🇫🇮 fi</span><span class="bar" style="width:8.16%"></span><span class="n">12</span></div>
+      <div class="exit"><span class="place">🇸🇬 sg</span><span class="bar" style="width:7.48%"></span><span class="n">11</span></div>
+      <div class="exit"><span class="place">🇵🇱 pl</span><span class="bar" style="width:6.8%"></span><span class="n">10</span></div>
+      <div class="exit"><span class="place">🇲🇩 md</span><span class="bar" style="width:6.8%"></span><span class="n">10</span></div>
+      <div class="exit"><span class="place">🇨🇦 ca</span><span class="bar" style="width:5.44%"></span><span class="n">8</span></div>
+      <div class="exit"><span class="place">🇭🇰 hk</span><span class="bar" style="width:5.44%"></span><span class="n">8</span></div>
+      <div class="exit"><span class="place">🇧🇬 bg</span><span class="bar" style="width:5.44%"></span><span class="n">8</span></div>
     </div>
   </section>
 
@@ -171,12 +171,12 @@ footer { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--rul
     <table>
       <tr><th>source</th><th>collected</th><th>reachable</th><th>verified</th>
           <th>yield</th></tr>
-      <tr><td>barry-far-vless</td><td>1,845</td><td>595</td><td>358</td><td>19.4%</td></tr>
-      <tr><td>windowsB4-de-mci</td><td>214</td><td>206</td><td>191</td><td>89.2%</td></tr>
-      <tr><td>barry-far-trojan</td><td>133</td><td>87</td><td>82</td><td>61.7%</td></tr>
-      <tr><td>matinghanbari-vless</td><td>188</td><td>95</td><td>57</td><td>30.3%</td></tr>
-      <tr><td>barry-far-vmess</td><td>122</td><td>48</td><td>26</td><td>21.3%</td></tr>
-      <tr><td>matinghanbari-trojan</td><td>312</td><td>54</td><td>22</td><td>7.0%</td></tr>
+      <tr><td>barry-far-vless</td><td>1,892</td><td>612</td><td>300</td><td>15.9%</td></tr>
+      <tr><td>windowsB4-de-mci</td><td>237</td><td>223</td><td>196</td><td>82.7%</td></tr>
+      <tr><td>matinghanbari-vless</td><td>186</td><td>92</td><td>44</td><td>23.7%</td></tr>
+      <tr><td>barry-far-trojan</td><td>139</td><td>97</td><td>43</td><td>30.9%</td></tr>
+      <tr><td>barry-far-vmess</td><td>128</td><td>51</td><td>28</td><td>21.9%</td></tr>
+      <tr><td>matinghanbari-trojan</td><td>260</td><td>29</td><td>19</td><td>7.3%</td></tr>
     </table>
   </section>
 
@@ -189,7 +189,7 @@ footer { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--rul
     two apart.</p>
   </section>
 
-  <footer>316 ms median handshake &middot; <a href="api/stats.json">stats.json</a>
+  <footer>328 ms median handshake &middot; <a href="api/stats.json">stats.json</a>
   &middot; <a href="api/nodes.json">nodes.json</a></footer>
 </main>
 <script>

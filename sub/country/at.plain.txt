@@ -1,2 +1,1 @@
 vless://edde565e-41f5-400e-84ea-7b87a3e84488@152.53.1.40:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc&security=reality&sid=43dcff53849b81e6&sni=at.quattro-tech.ru&type=tcp#1.🇦🇹 GeminiRoute
-vless://d65a82af-a403-405e-8b7b-27a68b830511@g1.haxat.bestvbest.ir:20610/?type=tcp&encryption=none&flow=&sni=doctor-yab.ir&fp=chrome&security=reality&pbk=lcXIrYi2o8yXrYHR321qQ--5lqVT8a6TKbaGpYTq4CI&sid=1d1a8f9fefeff5e6#2.🇦🇹 GeminiRoute
