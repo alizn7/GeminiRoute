@@ -1,3 +1,4 @@
 vless://77777777-8a3e-6666-b6d1-a9c5f0e8b3a2@172.67.217.240:443?&security=tls&fp=unsafe&sni=fx3h2kf8xn.fx6hsv0.ccwu.cc&type=ws&headerType=none&host=fx3h2kf8xn.fx6hsv0.ccwu.cc&path=/?ed=2560#1.🇰🇷 GeminiRoute
 vless://77777777-8a3e-6666-b6d1-a9c5f0e8b3a2@104.16.10.185:443?security=tls&sni=fx3h2kf8xn.fx6hsv0.ccwu.cc&type=ws&path=%2F%3Fed%3D2560&host=fx3h2kf8xn.fx6hsv0.ccwu.cc#2.🇰🇷 GeminiRoute
 vless://814bd064-544d-4255-a070-5705c03f6da9@3.39.4.109:13672?encryption=none&flow=xtls-rprx-vision&fp=&pbk=k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0&security=reality&sid=48050fab&sni=www.apple.com&type=tcp#3.🇰🇷 GeminiRoute
+vless://30a88c40-581e-4952-aa4c-8af95686ede0@104.21.23.72:8880?type=ws&host=rapid-lab-95ef.173-74c.workers.dev#4.🇰🇷 GeminiRoute
