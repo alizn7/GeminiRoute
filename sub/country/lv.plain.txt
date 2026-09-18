@@ -1,4 +1,4 @@
 vless://f7c74a35-1da0-5097-9fa7-a20735610ac1@atomic-prase23893.my-vm.work:8088?encryption=none&host=queuev4.vk.com&path=%2Fapi&security=none&type=ws#1.🇱🇻 GeminiRoute
-vless://5234b2b7-5e07-422c-8159-d62a676c00c6@138.124.180.137:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c&security=reality&sid=33acba1b&sni=www.apple.com&type=tcp#2.🇱🇻 GeminiRoute
-vless://de78ba38-5600-47d1-b93b-b45bdf280ac0@195.123.212.60:15392?security=reality&encryption=none&pbk=TgaE-83sqLrJ6auwPP2Nq7vDO_xuFqa6uMnG4Au18jg&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=intel.com&sid=82#3.🇱🇻 GeminiRoute
+vless://de78ba38-5600-47d1-b93b-b45bdf280ac0@195.123.212.60:15392?security=reality&encryption=none&pbk=TgaE-83sqLrJ6auwPP2Nq7vDO_xuFqa6uMnG4Au18jg&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=intel.com&sid=82#2.🇱🇻 GeminiRoute
+vless://5234b2b7-5e07-422c-8159-d62a676c00c6@138.124.180.137:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c&security=reality&sid=33acba1b&sni=www.apple.com&type=tcp#3.🇱🇻 GeminiRoute
 vless://d806a58b-33aa-42e0-b170-395e49c16b37@sql.popmintxo.cc:443?security=reality&encryption=none&pbk=Y0noOXC8qHmbM0GmDpj-9BBwKSOtHs-uMbNfKU050GQ&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.microsoft.com&sid=b558b9305a0b#4.🇱🇻 GeminiRoute
