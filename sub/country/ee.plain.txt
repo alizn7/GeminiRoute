@@ -1,6 +1,5 @@
-vless://8f67f9f8-01a1-4a30-9a77-0e497341bdfe@12ok.aciasib.ir:5654?security=reality&encryption=none&pbk=8uBURL-ImsEqN1nPC6AVQouxJWxtB-h37SQChHp47w4&headerType=none&fp=chrome&spx=/&type=tcp&flow=xtls-rprx-vision&sni=storage-p2.googleapis.com&sid=c211a0#1.🇪🇪 GeminiRoute
-vless://5edbcb44-8d04-4fa7-a587-bc5d60c24ca1@94.183.170.147:8443?encryption=none&fp=&pbk=s2uiu3GQA2SlZzsr86Z5Dav97eAFTPf7Nvr-zqzzRgg&security=reality&serviceName=9d30d49278&sid=72ccd4a7563c2953&sni=www.cloudflare.com&type=grpc#2.🇪🇪 GeminiRoute
-vless://d0f0a880-0df1-48c9-bdf1-5669fb9483ce@95.85.224.17:443?encryption=none&flow=xtls-rprx-vision&type=raw&security=reality&sni=est1313.ggisopi.su&fp=chrome&pbk=SB1uC0OEveYjSiS_Nuw9Ld-uVVXWqi794OGnldthY3I#3.🇪🇪 GeminiRoute
-vless://06c4e938-2954-478f-a870-ca1b163e30e9@94.183.170.135:8443?encryption=none&fp=chrome&security=tls&sni=estproxy4.lockdwn.com&type=tcp#4.🇪🇪 GeminiRoute
-vless://47d9b534-8a0a-4bd2-90f1-1d6ade14427e@150.241.101.80:8443/?type=raw&encryption=none&flow=xtls-rprx-vision&sni=yandex.net&fp=chrome&security=reality&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&sid=6ba85179e30d4fc2&packetEncoding=xudp#5.🇪🇪 GeminiRoute
-vless://06c4e938-2954-478f-a870-ca1b163e30e9@94.183.170.135:443?encryption=none&path=/&security=none&type=ws#6.🇪🇪 GeminiRoute
+vless://5edbcb44-8d04-4fa7-a587-bc5d60c24ca1@94.183.170.147:8443?encryption=none&fp=&pbk=s2uiu3GQA2SlZzsr86Z5Dav97eAFTPf7Nvr-zqzzRgg&security=reality&serviceName=9d30d49278&sid=72ccd4a7563c2953&sni=www.cloudflare.com&type=grpc#1.🇪🇪 GeminiRoute
+vless://47d9b534-8a0a-4bd2-90f1-1d6ade14427e@150.241.101.80:8443/?type=raw&encryption=none&flow=xtls-rprx-vision&sni=yandex.net&fp=chrome&security=reality&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&sid=6ba85179e30d4fc2&packetEncoding=xudp#2.🇪🇪 GeminiRoute
+vless://06c4e938-2954-478f-a870-ca1b163e30e9@94.183.170.135:8443?encryption=none&fp=chrome&security=tls&sni=estproxy4.lockdwn.com&type=tcp#3.🇪🇪 GeminiRoute
+vless://06c4e938-2954-478f-a870-ca1b163e30e9@94.183.170.135:443?encryption=none&path=/&security=none&type=ws#4.🇪🇪 GeminiRoute
+vless://d0f0a880-0df1-48c9-bdf1-5669fb9483ce@95.85.224.17:443?encryption=none&flow=xtls-rprx-vision&type=raw&security=reality&sni=est1313.ggisopi.su&fp=chrome&pbk=SB1uC0OEveYjSiS_Nuw9Ld-uVVXWqi794OGnldthY3I#5.🇪🇪 GeminiRoute
