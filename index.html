@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GeminiRoute</title>
+<meta name="description" content="Routes to the Gemini API, measured hourly.">
+<style>
+:root {
+  --ground: #0e1a24;
+  --panel:  #15242f;
+  --rule:   #22384a;
+  --ink:    #dce8f0;
+  --muted:  #7793a8;
+  --signal: #e8a33d;
+  --pass:   #5bc08c;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 3rem 1.25rem 5rem;
+  background: var(--ground);
+  color: var(--ink);
+  font: 400 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+main { max-width: 58rem; margin: 0 auto; }
+
+.masthead {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  justify-content: space-between; gap: .75rem;
+  padding-bottom: 1.25rem; border-bottom: 1px solid var(--rule);
+}
+.masthead h1 {
+  margin: 0; font-size: 1.5rem; font-weight: 600; letter-spacing: -0.01em;
+}
+.masthead p { margin: 0; color: var(--muted); font-size: .875rem; }
+
+.lede {
+  margin: 2.5rem 0 2rem; max-width: 34rem;
+  font-size: 1.0625rem; color: var(--muted);
+}
+.lede b { color: var(--ink); font-weight: 600; }
+
+section { margin-top: 3.25rem; }
+section h2 {
+  margin: 0 0 1.25rem; font-size: .9375rem; font-weight: 600;
+  color: var(--muted);
+}
+
+/* The funnel: one row per stage, bar width proportional to survivors. */
+.funnel { display: grid; gap: .5rem; }
+.stage {
+  display: grid; grid-template-columns: 11rem 1fr auto;
+  align-items: center; gap: 1rem;
+}
+.stage span:first-child { color: var(--muted); font-size: .875rem; }
+.track { height: 1.75rem; background: var(--panel); border-radius: 2px; }
+.fill { height: 100%; background: var(--rule); border-radius: 2px; }
+.stage:last-child .fill { background: var(--pass); }
+.stage:last-child span:last-child { color: var(--pass); font-weight: 600; }
+.count { font-size: .9375rem; min-width: 4rem; text-align: right; }
+
+.links { display: grid; gap: .5rem; }
+.link {
+  display: grid; grid-template-columns: 6.5rem 1fr auto auto;
+  align-items: center; gap: 1rem;
+  padding: .875rem 1rem; background: var(--panel);
+  border: 1px solid var(--rule); border-radius: 3px;
+}
+.link .name { font-weight: 600; }
+.link .what { color: var(--muted); font-size: .875rem; }
+.link .n { color: var(--muted); font-size: .875rem; }
+.link button {
+  font: inherit; font-size: .8125rem; padding: .3rem .75rem; cursor: pointer;
+  color: var(--ground); background: var(--signal);
+  border: 0; border-radius: 3px;
+}
+.link button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.link button[data-copied] { background: var(--pass); }
+
+.exits { display: grid; gap: .375rem; }
+.exit { display: grid; grid-template-columns: 3.5rem 1fr auto; gap: 1rem;
+        align-items: center; }
+.exit .place { color: var(--muted); font-size: .875rem; }
+.exit .bar { height: .625rem; background: var(--signal); border-radius: 2px;
+             min-width: 2px; opacity: .85; }
+.exit .n { font-size: .875rem; color: var(--muted); }
+
+table { width: 100%; border-collapse: collapse; font-size: .9375rem; }
+th, td { padding: .625rem .5rem; border-bottom: 1px solid var(--rule);
+         text-align: right; }
+th:first-child, td:first-child { text-align: left; }
+th { color: var(--muted); font-weight: 400; font-size: .8125rem; }
+
+.note { color: var(--muted); font-size: .9375rem; max-width: 36rem; }
+.note code { color: var(--ink); background: var(--panel);
+             padding: .1rem .35rem; border-radius: 2px; font-size: .875em; }
+a { color: var(--signal); }
+footer { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--rule);
+         color: var(--muted); font-size: .8125rem; }
+
+@media (max-width: 34rem) {
+  .stage { grid-template-columns: 1fr auto; }
+  .stage .track { display: none; }
+  .link { grid-template-columns: 1fr auto; }
+  .link .what, .link .n { grid-column: 1 / -1; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .link button { transition: background-color .15s; }
+}
+</style>
+</head>
+<body>
+<main>
+  <div class="masthead">
+    <h1>GeminiRoute</h1>
+    <p>scheduled hourly &middot; last run 2026-09-23T05:32:02.106830+00:00</p>
+  </div>
+
+  <p class="lede">Every hour this collects public proxy configs, asks each one
+  from inside its own tunnel where it comes out, and keeps only the ones that
+  reach the Gemini API from a country Google serves. Last run:
+  <b>516 of 7,865</b> survived.</p>
+
+  <section>
+    <h2>What happened to the 7,865 collected</h2>
+    <div class="funnel">
+      <div class="stage"><span>collected</span><span class="track"><span class="fill" style="width:100.0%"></span></span><span class="count">7,865</span></div>
+      <div class="stage"><span>unique</span><span class="track"><span class="fill" style="width:54.19%"></span></span><span class="count">4,262</span></div>
+      <div class="stage"><span>plausible</span><span class="track"><span class="fill" style="width:54.16%"></span></span><span class="count">4,260</span></div>
+      <div class="stage"><span>reachable</span><span class="track"><span class="fill" style="width:31.81%"></span></span><span class="count">2,502</span></div>
+      <div class="stage"><span>verified</span><span class="track"><span class="fill" style="width:6.56%"></span></span><span class="count">516</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Get a link</h2>
+    <div class="links">
+      <div class="link"><span class="name">best</span><span class="what">the highest scoring, capped at 30</span><span class="n">30 routes</span><button type="button" data-file="sub/best.txt">Copy</button></div>
+      <div class="link"><span class="name">gemini</span><span class="what">everything that passed verification</span><span class="n">516 routes</span><button type="button" data-file="sub/gemini.txt">Copy</button></div>
+      <div class="link"><span class="name">fast</span><span class="what">verified and under 500 ms</span><span class="n">446 routes</span><button type="button" data-file="sub/fast.txt">Copy</button></div>
+      <div class="link"><span class="name">all</span><span class="what">every route tested, verified or not</span><span class="n">1,600 routes</span><button type="button" data-file="sub/all.txt">Copy</button></div>
+    </div>
+    <p class="note" style="margin-top:1rem">Paste one into a client's
+    subscription field. Every file has a <code>.plain.txt</code> twin that is
+    not base64 encoded, if you want to read it.</p>
+  </section>
+
+  <section>
+    <h2>Where the verified routes come out</h2>
+    <div class="exits">
+      <div class="exit"><span class="place">🇺🇸 us</span><span class="bar" style="width:100.0%"></span><span class="n">157</span></div>
+      <div class="exit"><span class="place">🇫🇷 fr</span><span class="bar" style="width:46.5%"></span><span class="n">73</span></div>
+      <div class="exit"><span class="place">🇩🇪 de</span><span class="bar" style="width:38.22%"></span><span class="n">60</span></div>
+      <div class="exit"><span class="place">🇳🇱 nl</span><span class="bar" style="width:32.48%"></span><span class="n">51</span></div>
+      <div class="exit"><span class="place">🇫🇮 fi</span><span class="bar" style="width:13.38%"></span><span class="n">21</span></div>
+      <div class="exit"><span class="place">🇵🇱 pl</span><span class="bar" style="width:10.83%"></span><span class="n">17</span></div>
+      <div class="exit"><span class="place">🇸🇬 sg</span><span class="bar" style="width:9.55%"></span><span class="n">15</span></div>
+      <div class="exit"><span class="place">🇯🇵 jp</span><span class="bar" style="width:8.92%"></span><span class="n">14</span></div>
+      <div class="exit"><span class="place">🇨🇦 ca</span><span class="bar" style="width:7.01%"></span><span class="n">11</span></div>
+      <div class="exit"><span class="place">🇬🇧 gb</span><span class="bar" style="width:5.73%"></span><span class="n">9</span></div>
+      <div class="exit"><span class="place">🇰🇷 kr</span><span class="bar" style="width:5.73%"></span><span class="n">9</span></div>
+      <div class="exit"><span class="place">🇧🇬 bg</span><span class="bar" style="width:5.1%"></span><span class="n">8</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Where they came from</h2>
+    <table>
+      <tr><th>source</th><th>collected</th><th>reachable</th><th>verified</th>
+          <th>yield</th></tr>
+      <tr><td>barry-far-vless</td><td>3,446</td><td>2,103</td><td>350</td><td>10.2%</td></tr>
+      <tr><td>windowsB4-de-mci</td><td>222</td><td>215</td><td>149</td><td>67.1%</td></tr>
+      <tr><td>barry-far-trojan</td><td>166</td><td>124</td><td>45</td><td>27.1%</td></tr>
+      <tr><td>matinghanbari-vless</td><td>239</td><td>151</td><td>42</td><td>17.6%</td></tr>
+      <tr><td>barry-far-vmess</td><td>180</td><td>86</td><td>37</td><td>20.6%</td></tr>
+      <tr><td>matinghanbari-trojan</td><td>307</td><td>72</td><td>21</td><td>6.8%</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>If Gemini still says your country is unsupported</h2>
+    <p class="note">The Gemini web app has a second gate: the country of the
+    Google account signed into your browser, which a proxy does not change. A
+    working route can still be refused for that reason alone. Open
+    <code>gemini.google.com</code> in a private window, signed out, to tell the
+    two apart.</p>
+  </section>
+
+  <footer>305 ms median handshake &middot; <a href="api/stats.json">stats.json</a>
+  &middot; <a href="api/nodes.json">nodes.json</a></footer>
+</main>
+<script>
+for (const button of document.querySelectorAll('[data-file]')) {
+  button.addEventListener('click', async () => {
+    const base = location.href.replace(/index\.html$/, '').replace(/\/?$/, '/');
+    try {
+      await navigator.clipboard.writeText(base + button.dataset.file);
+      button.dataset.copied = '1';
+      button.textContent = 'Copied';
+      setTimeout(() => { delete button.dataset.copied;
+                         button.textContent = 'Copy'; }, 1600);
+    } catch { button.textContent = 'Press ctrl+C'; }
+  });
+}
+</script>
+</body>
+</html>

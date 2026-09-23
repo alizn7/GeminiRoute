@@ -1,0 +1,92 @@
+{
+  "generated_at": "2026-09-23T05:32:02.106830+00:00",
+  "funnel": {
+    "collected": 7865,
+    "after_dedup": 4262,
+    "after_pre_validation": 4260,
+    "after_connectivity": 2502,
+    "after_gemini": 516
+  },
+  "gemini_success_rate": 0.3225,
+  "average_latency_ms": 305.04,
+  "nodes_by_country": {
+    "us": 157,
+    "fr": 73,
+    "de": 60,
+    "nl": 51,
+    "fi": 21,
+    "pl": 17,
+    "sg": 15,
+    "jp": 14,
+    "ca": 11,
+    "gb": 9,
+    "kr": 9,
+    "bg": 8,
+    "in": 8,
+    "rs": 7,
+    "md": 7,
+    "hk": 6,
+    "ee": 6,
+    "es": 5,
+    "it": 5,
+    "se": 4,
+    "br": 3,
+    "ch": 3,
+    "ro": 3,
+    "no": 2,
+    "id": 2,
+    "tw": 2,
+    "at": 1,
+    "lv": 1,
+    "th": 1,
+    "tr": 1,
+    "am": 1,
+    "au": 1,
+    "ie": 1,
+    "kz": 1
+  },
+  "sources": [
+    {
+      "name": "barry-far-vless",
+      "contributed": 3446,
+      "reachable": 2103,
+      "gemini_ok": 350,
+      "yield": 0.1016
+    },
+    {
+      "name": "windowsB4-de-mci",
+      "contributed": 222,
+      "reachable": 215,
+      "gemini_ok": 149,
+      "yield": 0.6712
+    },
+    {
+      "name": "barry-far-trojan",
+      "contributed": 166,
+      "reachable": 124,
+      "gemini_ok": 45,
+      "yield": 0.2711
+    },
+    {
+      "name": "matinghanbari-vless",
+      "contributed": 239,
+      "reachable": 151,
+      "gemini_ok": 42,
+      "yield": 0.1757
+    },
+    {
+      "name": "barry-far-vmess",
+      "contributed": 180,
+      "reachable": 86,
+      "gemini_ok": 37,
+      "yield": 0.2056
+    },
+    {
+      "name": "matinghanbari-trojan",
+      "contributed": 307,
+      "reachable": 72,
+      "gemini_ok": 21,
+      "yield": 0.0684
+    }
+  ]
+}
