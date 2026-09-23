@@ -1,1 +1,0 @@
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@50.62.195.30:8880?path=/&security=none&encryption=none&host=vms.lifetime38.workers.dev&type=ws#1.🇰🇿 GeminiRoute

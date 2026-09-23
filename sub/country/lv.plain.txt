@@ -1,1 +1,2 @@
 vless://5234b2b7-5e07-422c-8159-d62a676c00c6@138.124.180.137:443?flow=xtls-rprx-vision&fp=chrome&pbk=GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c&security=reality&sid=33acba1b&sni=www.apple.com&type=tcp#1.🇱🇻 GeminiRoute
+vless://fc47db0c-c6f2-4665-bdb2-8f717822ce9d@168.222.255.91:443?security=reality&encryption=none&pbk=8ucDg6Cz6vjDIdvI6vHFCv7-15UJWJnfCXXlWnjm_CY&headerType=none&fp=chrome&spx=/&type=tcp&flow=xtls-rprx-vision&sni=j89q0egl-k02g49.datahubfiles.com&sid=a471814de6f315d1#2.🇱🇻 GeminiRoute

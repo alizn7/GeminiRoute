@@ -1,3 +1,1 @@
 vmess://eyJhZGQiOiIxNzIuMjMzLjE0LjE3IiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6IjA0NjIxYmFlLWFiMzYtMTFlYy1iOTA5LTAyNDJhYzEyMDAwMiIsImluc2VjdXJlIjoiMCIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwY3MiOiIiLCJwb3J0IjoiMjIzMjQiLCJwcyI6IjEu8J+Hp/Cfh7cgR2VtaW5pUm91dGUiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiIsInZjbiI6IiJ9
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@185.148.106.50:8880?encryption=none&host=vms.lifetime54.workers.dev&path=/&security=none&type=ws#2.🇧🇷 GeminiRoute
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@154.197.75.40:8880?encryption=none&host=vms.lifetime37.workers.dev&path=/&security=none&type=ws#3.🇧🇷 GeminiRoute

@@ -1,1 +1,3 @@
-vless://0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8@151.241.226.201:2053?type=tcp&security=reality&sni=www.apple.com&fp=chrome&pbk=bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104&sid=9e419c0759b54d6f#1.🇹🇷 GeminiRoute
+vless://a22bff60-a40a-4250-bde2-4c660e363b47@172.67.192.84:2095?path=%2Fjuvsrnmgdu8i0179k5&security=none&encryption=none&host=index.harmonica02.workers.dev&type=ws#1.🇹🇷 GeminiRoute
+vless://0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8@151.241.226.201:2053?type=tcp&security=reality&sni=www.apple.com&fp=chrome&pbk=bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104&sid=9e419c0759b54d6f#2.🇹🇷 GeminiRoute
+vless://a22bff60-a40a-4250-bde2-4c660e363b47@104.17.169.13:2053?path=/axch1mttbxz2k55y01&security=tls&encryption=none&insecure=0&host=inDeX.HaRMONiCA01.WORkers.DeV&type=ws&allowInsecure=0&sni=inDeX.HaRMONiCA01.WORkers.DeV#3.🇹🇷 GeminiRoute
