@@ -1,8 +1,9 @@
 """SQLite repository.
 
 The runner is ephemeral, so the .db file must be carried between runs (this
-project keeps it on the gh-pages branch). Without that, reliability history
-resets every hour and every node sits at the "unknown" score forever.
+project keeps it as an asset on the db-state release). Without that,
+reliability history resets every hour and every node sits at the "unknown"
+score forever.
 """
 
 from __future__ import annotations
@@ -81,9 +82,26 @@ CREATE INDEX IF NOT EXISTS idx_validation_history_node_time
     ON validation_history (node_fingerprint, checked_at);
 """
 
+# error_histogram only serves the current run's debugging, so failures outside
+# the gemini stage do not need the 30 days reliability() reads.
+DIAGNOSTIC_RETENTION_DAYS = 3
+
 
 def _now() -> str:
     return datetime.now(UTC).isoformat()
+
+
+def _stage_value(stage: object) -> str:
+    return stage.value if isinstance(stage, ValidationStage) else str(stage)
+
+
+def _is_informative(result: ValidationResult) -> bool:
+    """A pass outside the gemini stage is read by no query.
+
+    reliability() and successful_fingerprints() filter on the gemini stage,
+    error_histogram() on failures. These rows were 59% of the table.
+    """
+    return (not result.passed) or _stage_value(result.stage) == ValidationStage.GEMINI.value
 
 
 class SqliteRepository(NodeRepository):
@@ -278,6 +296,9 @@ class SqliteRepository(NodeRepository):
     # --------------------------------------------------------- history --
 
     def record_results(self, results: list[ValidationResult]) -> None:
+        rows = [r for r in results if _is_informative(r)]
+        if not rows:
+            return
         with self._connection:
             self._connection.executemany(
                 """
@@ -288,13 +309,13 @@ class SqliteRepository(NodeRepository):
                 [
                     (
                         r.node_fingerprint,
-                        r.stage.value if isinstance(r.stage, ValidationStage) else str(r.stage),
+                        _stage_value(r.stage),
                         1 if r.passed else 0,
                         r.latency.total_ms if r.latency else None,
                         r.error,
                         r.checked_at.isoformat(),
                     )
-                    for r in results
+                    for r in rows
                 ],
             )
 
@@ -330,12 +351,27 @@ class SqliteRepository(NodeRepository):
         return [(str(r["reason"]), int(r["n"])) for r in rows]
 
     def prune_history(self, older_than_days: int) -> int:
-        cutoff = (datetime.now(UTC) - timedelta(days=older_than_days)).isoformat()
+        """Two windows: reliability() reads 30 days of gemini rows, the error
+        histogram only needs the last few runs."""
+        now = datetime.now(UTC)
+        gemini_cutoff = (now - timedelta(days=older_than_days)).isoformat()
+        diag_cutoff = (now - timedelta(days=DIAGNOSTIC_RETENTION_DAYS)).isoformat()
+        gemini = ValidationStage.GEMINI.value
         with self._connection:
             cursor = self._connection.execute(
-                "DELETE FROM validation_history WHERE checked_at < ?", (cutoff,)
+                """
+                DELETE FROM validation_history
+                 WHERE (stage =  ? AND checked_at < ?)
+                    OR (stage != ? AND checked_at < ?)
+                """,
+                (gemini, gemini_cutoff, gemini, diag_cutoff),
             )
-        return cursor.rowcount
+        removed = cursor.rowcount
+        if removed:
+            # DELETE only frees pages inside the file; without this the
+            # published database never actually shrinks.
+            self._connection.execute("VACUUM")
+        return removed
 
     # ---------------------------------------------------------- scores --
 
@@ -383,4 +419,6 @@ class SqliteRepository(NodeRepository):
             )
 
     def close(self) -> None:
+        # WAL parks recent writes in a side file that nothing downstream copies.
+        self._connection.execute("PRAGMA wal_checkpoint(TRUNCATE)")
         self._connection.close()
