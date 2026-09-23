@@ -62,7 +62,10 @@ class Settings:
     # influx of sources cannot push the run past the job time limit.
     max_gemini_candidates: int = 1600
 
-    history_retention_days: int = 90
+    # Matches the window reliability() reads: a shorter retention would
+    # silently truncate the score, a longer one grew the database past
+    # GitHub's 100 MB file limit.
+    history_retention_days: int = 30
     log_level: str = "INFO"
 
     sources: list[Source] = field(default_factory=list)
@@ -84,7 +87,7 @@ class Settings:
             gemini_api_confirm_limit=_env_int("GR_GEMINI_API_CONFIRM_LIMIT", 10),
             xray_path=os.environ.get("XRAY_PATH") or None,
             max_gemini_candidates=_env_int("GR_MAX_GEMINI_CANDIDATES", 1600),
-            history_retention_days=_env_int("GR_HISTORY_RETENTION_DAYS", 90),
+            history_retention_days=_env_int("GR_HISTORY_RETENTION_DAYS", 30),
             log_level=os.environ.get("GR_LOG_LEVEL", "INFO"),
             sources=load_sources(sources_file),
         )

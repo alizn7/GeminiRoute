@@ -22,6 +22,12 @@ jobs:
   discover:
     runs-on: ubuntu-latest
     timeout-minutes: 50
+    env:
+      GH_TOKEN: ${{ github.token }}
+      # The database is carried between runs as an asset on this release
+      # rather than committed: a binary that size, rewritten hourly, bloats
+      # the branch and eventually trips GitHub's 100 MB file limit.
+      DB_RELEASE_TAG: db-state
 
     steps:
       - uses: actions/checkout@v6
@@ -55,26 +61,21 @@ jobs:
       - name: Verify environment
         run: python -m geminiroute.cli doctor
 
-      - name: Restore database from gh-pages
+      - name: Restore database from the release
         # The runner is ephemeral; without this, reliability history resets
         # every hour and every node stays at the "unknown" score.
         run: |
           set -euo pipefail
           mkdir -p data
-          if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
-            git fetch origin gh-pages --depth=1
-            # Written to a temp file first: a plain redirect would leave a
-            # 0-byte database behind when the file is not there yet.
-            if git show origin/gh-pages:data/geminiroute.db > /tmp/restored.db 2>/dev/null \
-               && [ -s /tmp/restored.db ]; then
-              mv /tmp/restored.db data/geminiroute.db
-              echo "Restored database ($(stat -c%s data/geminiroute.db) bytes)."
-            else
-              rm -f /tmp/restored.db
-              echo "No database on gh-pages yet; starting fresh."
-            fi
+          if gh release view "$DB_RELEASE_TAG" >/dev/null 2>&1; then
+            # No `|| true` here on purpose: if the release exists, a failed
+            # download is a real error. Continuing would start from an empty
+            # database and then overwrite the stored history with it.
+            gh release download "$DB_RELEASE_TAG" -p geminiroute.db.gz -D /tmp --clobber
+            gunzip -c /tmp/geminiroute.db.gz > data/geminiroute.db
+            echo "Restored database ($(stat -c%s data/geminiroute.db) bytes)."
           else
-            echo "gh-pages does not exist yet; starting fresh."
+            echo "No $DB_RELEASE_TAG release yet; starting fresh."
           fi
 
       - name: Run the pipeline
@@ -88,6 +89,23 @@ jobs:
           GR_GEMINI_POOL_SIZE: "20"
           GR_GEMINI_TIMEOUT: "12"
         run: python -m geminiroute.cli run-full-pipeline
+
+      - name: Save database to the release
+        # Before publishing, not after: a failure downstream should not cost
+        # this run's history.
+        run: |
+          set -euo pipefail
+          gzip -9 -c data/geminiroute.db > /tmp/geminiroute.db.gz
+          # Logged every run so the growth trend is visible long before the
+          # 2 GB asset limit is anywhere in sight.
+          ls -lh data/geminiroute.db /tmp/geminiroute.db.gz
+          if ! gh release view "$DB_RELEASE_TAG" >/dev/null 2>&1; then
+            gh release create "$DB_RELEASE_TAG" \
+              --title "Pipeline state" \
+              --notes "Internal database used by the discovery workflow. Not a software release." \
+              --prerelease
+          fi
+          gh release upload "$DB_RELEASE_TAG" /tmp/geminiroute.db.gz --clobber
 
       - name: Publish to gh-pages
         run: |
@@ -106,8 +124,9 @@ jobs:
 
           rm -rf publish/sub publish/api
           cp -r dist/sub dist/api publish/
-          mkdir -p publish/data
-          cp data/geminiroute.db publish/data/geminiroute.db
+          # Drops the database left by earlier runs, which is now kept on the
+          # release instead.
+          rm -rf publish/data
 
           # Without this, Pages runs the published tree through Jekyll, which
           # silently drops any path starting with _ or . and can fail the
