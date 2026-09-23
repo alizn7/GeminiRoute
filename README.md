@@ -231,9 +231,13 @@ then 30, then hours, to a daily ceiling. Three straight failures mark it dead,
 and a dead route re-enters the pool once its wait elapses. Without this, routes
 that failed three runs running would still occupy a slot every hour.
 
-The SQLite database rides on the `gh-pages` branch because the runner is
-destroyed after every run; without it the reliability history would reset
-hourly and every route would sit at the unknown score forever.
+The SQLite database is carried between runs as a compressed asset on the
+`db-state` release, because the runner is destroyed after every one; without it
+the reliability history would reset hourly and every route would sit at the
+unknown score forever. It lives there rather than in git because a binary that
+size, rewritten hourly, bloats branch history and eventually trips GitHub's
+100 MB file limit — see the
+[postmortem](docs/incidents/2026-09-22-database-size-limit.md).
 
 Every published label is rewritten to `<n>.<flag> GeminiRoute`, numbered from 1
 within each file, carrying the flag of its real exit country. Only the label
@@ -255,6 +259,7 @@ would silently drop any parameter the model does not represent.
 | **Two workflows** | `ci.yml` runs Ruff, Mypy and pytest on Python 3.12 and 3.13 for every pull request; `discovery.yml` runs the pipeline hourly and publishes to GitHub Pages |
 | **Eight CLI commands** | Pipeline execution plus diagnostics: `doctor`, `errors`, `sources`, `try-source`, `xray-check`, `probe-node` |
 | **Dependencies** | Two at runtime. Collection, parsing, connectivity, geo, scoring, storage and generation are all standard library |
+| **Postmortems** | [Incident writeups](docs/incidents/) for failures that reached production |
 
 </details>
 
@@ -376,7 +381,7 @@ shows the yield it really produced.
 | `GR_GEMINI_POOL_SIZE` | `20` | Concurrent xray processes |
 | `GR_GEMINI_API_CONFIRM_LIMIT` | `10` | API calls per run, to stay inside the free quota |
 | `GR_CONNECTIVITY_CONCURRENCY` | `100` | Handshakes in flight |
-| `GR_HISTORY_RETENTION_DAYS` | `90` | History pruning window |
+| `GR_HISTORY_RETENTION_DAYS` | `30` | History pruning window, matched to the reliability window |
 
 `GEMINI_API_KEY` is optional. Without it every candidate still gets the exit
 check and a free reachability probe; with it, the ten best-looking routes per
