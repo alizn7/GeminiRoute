@@ -1,1 +1,2 @@
 vless://edde565e-41f5-400e-84ea-7b87a3e84488@152.53.1.40:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc&security=reality&sid=43dcff53849b81e6&sni=at.quattro-tech.ru&type=tcp#1.🇦🇹 GeminiRoute
+vless://79251d3c-aabc-475c-b598-67263479b382@31.56.222.61:17852?security=&encryption=none&headerType=none&type=tcp#2.🇦🇹 GeminiRoute
