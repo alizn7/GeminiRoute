@@ -1,6 +1,6 @@
 vless://f4ade6db-3c64-4939-9f32-788b87a9392f@185.71.219.128:80?encryption=none&security=none&type=ws&host=play.google.com&path=/#1.🇹🇷 GeminiRoute
-vless://f4ade6db-3c64-4939-9f32-788b87a9392f@185.71.219.128:2052?alpn=h2,http/1.1&encryption=none&fp=chrome&security=tls&sni=185.71.219.128&type=tcp#2.🇹🇷 GeminiRoute
-vless://f4ade6db-3c64-4939-9f32-788b87a9392f@185.71.219.128:8080?security=tls&encryption=none&headerType=none&fp=chrome&type=tcp&sni=185.71.219.128#3.🇹🇷 GeminiRoute
-vless://f4ade6db-3c64-4939-9f32-788b87a9392f@185.71.219.128:2082?path=/&security=tls&alpn=h2,http/1.1&encryption=none&host=play.google.com&fp=chrome&type=httpupgrade&sni=185.71.219.128#4.🇹🇷 GeminiRoute
+vless://f4ade6db-3c64-4939-9f32-788b87a9392f@185.71.219.128:2052?security=tls&alpn=h2,http/1.1&encryption=none&headerType=none&fp=chrome&type=tcp&sni=185.71.219.128#2.🇹🇷 GeminiRoute
+vless://f4ade6db-3c64-4939-9f32-788b87a9392f@185.71.219.128:2082?path=/&security=tls&alpn=h2,http/1.1&encryption=none&host=play.google.com&fp=chrome&type=httpupgrade&sni=185.71.219.128#3.🇹🇷 GeminiRoute
+vless://f4ade6db-3c64-4939-9f32-788b87a9392f@185.71.219.128:8080?security=tls&encryption=none&headerType=none&fp=chrome&type=tcp&sni=185.71.219.128#4.🇹🇷 GeminiRoute
 vless://f4ade6db-3c64-4939-9f32-788b87a9392f@185.71.219.128:8443?encryption=none&security=reality&sni=youtubekids.com&fp=chrome&pbk=yrKUxdxmj4Z5ECKB70SuqjmmjY7KUOtTL9-uWmKLqDw&sid=26f54a3aeec766&spx=/a7a0095c32ef80b&type=tcp&headerType=none#5.🇹🇷 GeminiRoute
 vless://0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8@151.241.226.201:2053?type=tcp&security=reality&sni=www.apple.com&fp=chrome&pbk=bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104&sid=9e419c0759b54d6f#6.🇹🇷 GeminiRoute
