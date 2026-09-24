@@ -1,1 +1,0 @@
-vless://db320947-adfb-400d-b60b-383b8324bffe@46.29.238.88:40443?encryption=none&fp=&pbk=aZOpodpnifoxDqTzWgxJRffgsiGnG9-h-EZd4SvOImc&security=reality&sid=f7b2&sni=deepl.com&type=tcp#1.🇳🇴 GeminiRoute
