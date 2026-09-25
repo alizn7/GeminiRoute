@@ -1,2 +1,0 @@
-vless://79251d3c-aabc-475c-b598-67263479b382@31.56.222.61:34739?security=&encryption=none&headerType=none&type=tcp#1.🇦🇱 GeminiRoute
-vless://79251d3c-aabc-475c-b598-67263479b382@31.56.222.61:50521?security=&encryption=none&headerType=none&type=tcp#2.🇦🇱 GeminiRoute
