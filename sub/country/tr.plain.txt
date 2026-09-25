@@ -1,3 +1,3 @@
-vless://552d68c0-dccf-4623-9eca-f4203e2203d1@93.190.9.172:3090?encryption=none&mode=multi&security=none&serviceName=vless&type=grpc#1.🇹🇷 GeminiRoute
-vmess://eyJhZGQiOiIyMDYuMS45OC43MiIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJOaXRyb19Ta3lib3RAIiwibmV0Ijoid3MiLCJwYXRoIjoiLyIsInBvcnQiOiIyMTgxMSIsInBzIjoiMi7wn4e58J+HtyBHZW1pbmlSb3V0ZSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoiLS0tIiwidiI6IjIifQ==
-vless://0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8@151.241.226.201:2053?type=tcp&security=reality&sni=www.apple.com&fp=chrome&pbk=bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104&sid=9e419c0759b54d6f#3.🇹🇷 GeminiRoute
+vmess://eyJhZGQiOiIyMDYuMS45OC43MiIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJOaXRyb19Ta3lib3RAIiwibmV0Ijoid3MiLCJwYXRoIjoiLyIsInBvcnQiOiIyMTgxMSIsInBzIjoiMS7wn4e58J+HtyBHZW1pbmlSb3V0ZSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoiLS0tIiwidiI6IjIifQ==
+vless://0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8@151.241.226.201:2053?type=tcp&security=reality&sni=www.apple.com&fp=chrome&pbk=bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104&sid=9e419c0759b54d6f#2.🇹🇷 GeminiRoute
+vless://6933bb34-cb01-4605-88c3-f335e4307d23@37.221.79.226:18443?encryption=none&type=tcp&security=reality&sni=www.sony.com&fp=chrome&pbk=9hnmqap98ULg2y1fk4aqAtQEtPLQPIypZNmnrb42VWs&sid=50d9ee91&spx=/&allowInsecure=1#3.🇹🇷 GeminiRoute

@@ -1,4 +1,1 @@
-vless://e13cf851-b4fd-413b-8d49-146e6eb8e5d4@platform118.golnamakcert.top:80?encryption=none&host=platform118.halalkhor.info&path=%2Fplatform118&security=none&type=ws#1.🇮🇱 GeminiRoute
-vless://e13cf851-b4fd-413b-8d49-146e6eb8e5d4@platform113.golnamakcert.top:80?path=/platform113&security=none&encryption=none&host=platform113.halalkhor.info&type=ws#2.🇮🇱 GeminiRoute
-vless://e13cf851-b4fd-413b-8d49-146e6eb8e5d4@platform115.golnamakcert.top:80?encryption=none&host=platform115.halalkhor.info&path=%2Fplatform115&security=none&type=ws#3.🇮🇱 GeminiRoute
-vless://e13cf851-b4fd-413b-8d49-146e6eb8e5d4@platform117.golnamakcert.top:80?encryption=none&host=platform117.halalkhor.info&path=%2Fplatform117&security=none&type=ws#4.🇮🇱 GeminiRoute
+vless://83b4af70-376e-427c-8c11-a025bec6b085@188.114.97.6:443?path=/cdn/99294c014f2c7791?ed=2056&security=tls&alpn=http/1.1&encryption=none&fm={"tcp":[{"type":"fragment","settings":{"packets":"tlshello","lengths":["0","104"]}}]}&insecure=0&host=fserver-worker-001.mapleridgeway.top&fp=unsafe&type=ws&allowInsecure=0&sni=fserver-worker-001.mapleridgeway.top#1.🇮🇱 GeminiRoute
