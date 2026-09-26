@@ -1,1 +1,0 @@
-vless://721bacfe-ff09-4e63-a735-686015bc1351@ch-plr-xh-pilot.tcp-reset-club.net:8443?mode=stream-one&path=/assets/v2/pkg&security=reality&encryption=none&pbk=Gu_QdtOX6E8pZcYvDWgHKA5dxcit7hrpU27sizCEWXg&type=xhttp&sni=s3.netavex.com&sid=e0#1.🇨🇭 GeminiRoute
