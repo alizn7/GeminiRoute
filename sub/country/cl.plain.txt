@@ -1,3 +1,4 @@
-vless://e13cf851-b4fd-413b-8d49-146e6eb8e5d4@platform113.golnamakcert.top:80?path=/platform113&security=none&encryption=none&host=platform113.halalkhor.info&type=ws#1.🇨🇱 GeminiRoute
-vless://e13cf851-b4fd-413b-8d49-146e6eb8e5d4@platform115.golnamakcert.top:80?encryption=none&host=platform115.halalkhor.info&path=/platform115&security=none&type=ws#2.🇨🇱 GeminiRoute
-vless://e13cf851-b4fd-413b-8d49-146e6eb8e5d4@platform117.golnamakcert.top:80?encryption=none&host=platform117.halalkhor.info&path=%2Fplatform117&security=none&type=ws#3.🇨🇱 GeminiRoute
+vless://e13cf851-b4fd-413b-8d49-146e6eb8e5d4@platform117.golnamakcert.top:80?encryption=none&host=platform117.halalkhor.info&path=%2Fplatform117&security=none&type=ws#1.🇨🇱 GeminiRoute
+vless://e13cf851-b4fd-413b-8d49-146e6eb8e5d4@platform102.golnamakcert.top:80?&type=ws&headerType=none&host=platform102.halalkhor.info&path=/platform102#2.🇨🇱 GeminiRoute
+vless://e13cf851-b4fd-413b-8d49-146e6eb8e5d4@platform113.golnamakcert.top:80?path=/platform113&security=none&encryption=none&host=platform113.halalkhor.info&type=ws#3.🇨🇱 GeminiRoute
+vless://e13cf851-b4fd-413b-8d49-146e6eb8e5d4@platform115.golnamakcert.top:80?encryption=none&host=platform115.halalkhor.info&path=/platform115&security=none&type=ws#4.🇨🇱 GeminiRoute
