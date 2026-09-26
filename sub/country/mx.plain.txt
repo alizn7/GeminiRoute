@@ -1,2 +1,1 @@
 vless://9aab8f39-ccb3-44ea-acdc-a8aefe211287@45.164.20.114:10226/?type=tcp&encryption=none&flow=#1.🇲🇽 GeminiRoute
-vless://878fb7f7-fc65-465e-a352-17c7216c6f3d@185.47.254.251:443?security=reality&encryption=none&pbk=6-_ZidygR8PRt4gtHlGCAW-PPmjEIm7Wn7MZqJU1z1Q&headerType=&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=gateway.icloud.com&sid=6c059ecfddf9b179#2.🇲🇽 GeminiRoute

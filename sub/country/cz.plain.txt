@@ -1,1 +1,1 @@
-vless://7a8d2c3f-d6dd-0004-81d8-cff23d8364ee@13.143.181.220:443?security=reality&encryption=none&pbk=QfdR5yEjdbaqSet3-XrkDdVjPO9VTRGlUI-MV-b4p38&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=msk1.maxtelemost.com#1.🇨🇿 GeminiRoute
+vless://7a8d2c3f-d6dd-0004-81d8-cff23d8364ee@13.143.181.220:443?security=reality&encryption=none&pbk=QfdR5yEjdbaqSet3-XrkDdVjPO9VTRGlUI-MV-b4p38&headerType=&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=msk1.maxtelemost.com#1.🇨🇿 GeminiRoute

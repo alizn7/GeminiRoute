@@ -1,1 +1,0 @@
-vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@ireland-new-ded1.failspace.top:443?allowInsecure=1&insecure=1&type=tcp&security=tls&sni=ireland-new-ded1.failspace.top&flow=xtls-rprx-vision#1.🇮🇪 GeminiRoute
