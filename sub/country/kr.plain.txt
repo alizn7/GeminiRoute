@@ -1,1 +1,5 @@
-vless://814bd064-544d-4255-a070-5705c03f6da9@3.39.4.109:13672?encryption=none&flow=xtls-rprx-vision&fp=&pbk=k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0&security=reality&sid=48050fab&sni=www.apple.com&type=tcp#1.🇰🇷 GeminiRoute
+vless://97532b08-357e-4140-a6f0-8e07f2ed3327@cf.877774.xyz:443?encryption=none&type=ws&path=/proxyip=kr.william.us.ci&host=yf.962456.xyz&security=tls&sni=yf.962456.xyz&fp=chrome#1.🇰🇷 GeminiRoute
+vless://97532b08-357e-4140-a6f0-8e07f2ed3327@188.114.97.6:443?path=/proxyip=kr.william.us.ci&security=tls&alpn=http/1.1&encryption=none&fm={"tcp":[{"type":"fragment","settings":{"packets":"tlshello","lengths":["0","104"]}}]}&insecure=0&host=yf.962456.xyz&type=ws&allowInsecure=0&sni=yf.962456.xyz#2.🇰🇷 GeminiRoute
+vless://814bd064-544d-4255-a070-5705c03f6da9@3.39.4.109:13672?encryption=none&flow=xtls-rprx-vision&fp=&pbk=k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0&security=reality&sid=48050fab&sni=www.apple.com&type=tcp#3.🇰🇷 GeminiRoute
+vless://97532b08-357e-4140-a6f0-8e07f2ed3327@154.17.233.72:8443?&security=tls&fp=chrome&sni=yf.962456.xyz&type=ws&headerType=none&host=yf.962456.xyz&path=/proxyip=kr.william.us.ci#4.🇰🇷 GeminiRoute
+vless://97532b08-357e-4140-a6f0-8e07f2ed3327@103.177.249.40:2083?&security=tls&fp=chrome&sni=yf.962456.xyz&type=ws&headerType=none&host=yf.962456.xyz&path=/proxyip=kr.william.us.ci#5.🇰🇷 GeminiRoute
