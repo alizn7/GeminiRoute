@@ -1,2 +1,3 @@
-vless://9ef61079-6f7d-4911-9608-943da85d8e6f@82.47.63.156:2053?security=none&type=tcp#1.🇹🇷 GeminiRoute
+vless://9ef61079-6f7d-4911-9608-943da85d8e6f@test.keoplentuio.xyz:2053?security=&encryption=none&headerType=&type=tcp#1.🇹🇷 GeminiRoute
 vless://0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8@151.241.226.201:2053?encryption=none&fp=&pbk=bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104&security=reality&sid=9e419c0759b54d6f&sni=www.apple.com&type=tcp#2.🇹🇷 GeminiRoute
+vless://a22bff60-a40a-4250-bde2-4c660e363b47@104.20.6.153:8880?security=none&type=ws&path=/j100sy9wn073cxbvir&host=index.harmonica02.workers.dev&packetEncoding=xudp#3.🇹🇷 GeminiRoute
