@@ -1,1 +1,1 @@
-vless://dd4f323a-d7c3-45ef-8036-b1d7ffa27537@al1.obxodvpn.us:443?security=reality&encryption=none&pbk=uOp9IW69PEn-toNzDs9IlCs8sdsMYm4XXjiPerrj41k&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.apple.com#1.🇦🇱 GeminiRoute
+vless://ac5a37a9-6238-45c2-a8ba-3d18f58e6be0@netcraft.com:2053?alpn=h2&encryption=none&fp=chrome&host=camera.tgseenrobo.ir&path=/api/v1/payment/verify/9mQ2rL8sKp4xN7&security=tls&sni=camera.tgseenrobo.ir&type=ws#1.🇦🇱 GeminiRoute
