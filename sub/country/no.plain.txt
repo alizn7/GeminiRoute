@@ -1,3 +1,2 @@
-vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@norw-1.failspace.top:443?security=tls&encryption=none&insecure=0&type=tcp&allowInsecure=0&flow=xtls-rprx-vision#1.🇳🇴 GeminiRoute
-vless://df9f5aca-eda0-428f-a752-e53866153d12@89.185.81.95:8765?encryption=none&flow=xtls-rprx-vision&fp=&pbk=Da_s-Cgqm5kqaIbCgXVJdrq_KF7fCQveRByRhKUzonc&security=reality&sid=7bf47eabf939728b&sni=r-b8a34c.vless.monster&type=tcp#2.🇳🇴 GeminiRoute
-vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@31.76.5.51:443?security=tls&encryption=none&insecure=0&headerType=none&fp=chrome&type=tcp&allowInsecure=0&flow=xtls-rprx-vision&sni=norw-mori-5.failspace.top#3.🇳🇴 GeminiRoute
+vless://eec2f6a7-c10f-43b0-b133-61f9bf9bbc27@45.139.85.86:443?encryption=none&type=tcp&flow=xtls-rprx-vision&security=reality&sni=www.amazon.com&fp=chrome&pbk=bPbAdn6ogLbiv5cRe5d12EL7FhooAIVrC3-fg90P-Bw&sid=72104d27a0f5f62e&allowInsecure=1#1.🇳🇴 GeminiRoute
+vless://df9f5aca-eda0-428f-a752-e53866153d12@89.185.81.95:8765?security=reality&encryption=none&pbk=Da_s-Cgqm5kqaIbCgXVJdrq_KF7fCQveRByRhKUzonc&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=r-b8a34c.vless.monster&sid=7bf47eabf939728b#2.🇳🇴 GeminiRoute
