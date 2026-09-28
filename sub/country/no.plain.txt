@@ -1,2 +1,2 @@
-vless://db320947-adfb-400d-b60b-383b8324bffe@46.29.238.88:40443?encryption=none&fp=&pbk=aZOpodpnifoxDqTzWgxJRffgsiGnG9-h-EZd4SvOImc&security=reality&sid=f7b2&sni=deepl.com&type=tcp#1.🇳🇴 GeminiRoute
+vless://eec2f6a7-c10f-43b0-b133-61f9bf9bbc27@45.139.85.86:443?security=reality&encryption=none&pbk=bPbAdn6ogLbiv5cRe5d12EL7FhooAIVrC3-fg90P-Bw&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.amazon.com&sid=72104d27a0f5f62e#1.🇳🇴 GeminiRoute
 vless://5d16ac22-6eea-426f-b778-6f4c2961faef@176.108.247.104:9881?mode=gun&security=reality&encryption=none&pbk=Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0&fp=chrome&type=grpc&serviceName=grpc-tunnel&sni=dl.google.com&sid=aabb#2.🇳🇴 GeminiRoute
