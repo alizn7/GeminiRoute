@@ -1,1 +1,4 @@
-vless://fdc48be3-a615-41ac-8bd1-ed844c931048@130.94.0.228:443?Telegram=@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad&encryption=none&fp=chrome&host=edgetunnel-4uw.pages.dev&path=/&security=tls&sni=edgetunnel-4uw.pages.dev&type=ws#1.🇹🇷 GeminiRoute
+vless://9ef61079-6f7d-4911-9608-943da85d8e6f@178.83.46.216:2053?security=&encryption=none&headerType=none&type=tcp#1.🇹🇷 GeminiRoute
+vless://fdc48be3-a615-41ac-8bd1-ed844c931048@130.94.0.228:443?Telegram=@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad&encryption=none&fp=chrome&host=edgetunnel-4uw.pages.dev&path=/&security=tls&sni=edgetunnel-4uw.pages.dev&type=ws#2.🇹🇷 GeminiRoute
+vless://0da0a073-a5b0-4229-bf11-24592f6290b9@104.21.41.247:2053?path=/tucdn/&security=tls&encryption=none&insecure=0&host=tcdnu.azad0namah.ir&type=ws&allowInsecure=0&sni=tcdnu.azad0namah.ir#3.🇹🇷 GeminiRoute
+vless://0da0a073-a5b0-4229-bf11-24592f6290b9@tcdnu.azad0namah.ir:8443?path=/tuws/&security=tls&encryption=none&insecure=0&host=tcdnu.azad0namah.ir&type=ws&allowInsecure=0&sni=tcdnu.azad0namah.ir#4.🇹🇷 GeminiRoute
