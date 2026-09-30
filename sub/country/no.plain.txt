@@ -1,2 +1,0 @@
-vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@norw-mori-4.failspace.top:443?security=tls&encryption=none&insecure=0&headerType=none&type=tcp&allowInsecure=0&flow=xtls-rprx-vision#1.🇳🇴 GeminiRoute
-vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@31.76.5.149:443?security=tls&encryption=none&insecure=0&headerType=none&fp=chrome&type=tcp&allowInsecure=0&flow=xtls-rprx-vision&sni=norw-mori-4.failspace.top#2.🇳🇴 GeminiRoute
