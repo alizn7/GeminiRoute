@@ -1,8 +1,2 @@
-vless://@V2XNET-@V2XNET@199.232.78.105:443?mode=auto&path=/&security=tls&alpn=h2&encryption=none&extra={"mode":"auto","xPaddingBytes":"100-1000"}&insecure=0&host=imcreeprddde43e.global.ssl.fastly.net&fp=chrome&type=xhttp&allowInsecure=0&sni=ssl.fastly.com#1.🇹🇷 GeminiRoute
-vless://0da0a073-a5b0-4229-bf11-24592f6290b9@tcdnu.azad0namah.ir:8443?path=/tuws/&security=tls&encryption=none&insecure=0&host=tcdnu.azad0namah.ir&type=ws&allowInsecure=0&sni=tcdnu.azad0namah.ir#2.🇹🇷 GeminiRoute
-vless://9ef61079-6f7d-4911-9608-943da85d8e6f@test.keoplentuio.xyz:2053?encryption=none&security=none&type=tcp#3.🇹🇷 GeminiRoute
-vless://9ef61079-6f7d-4911-9608-943da85d8e6f@178.83.46.216:2053?security=&encryption=none&headerType=none&type=tcp#4.🇹🇷 GeminiRoute
-vless://0da0a073-a5b0-4229-bf11-24592f6290b9@104.21.41.247:2053?path=/tucdn/&security=tls&encryption=none&insecure=0&host=tcdnu.azad0namah.ir&type=ws&allowInsecure=0&sni=tcdnu.azad0namah.ir#5.🇹🇷 GeminiRoute
-vless://fdc48be3-a615-41ac-8bd1-ed844c931048@130.94.0.228:443?sni=edgetunnel-4uw.pages.dev&type=ws&host=edgetunnel-4uw.pages.dev&path=/fp=chrome&security=tls#6.🇹🇷 GeminiRoute
-vless://fc40ce64-3c90-4d32-8e2f-ed456a0553fd@francegoodapp1355.speed.hoom0.naxinshooping.ir:10000?security=reality&encryption=none&pbk=UOa0v_JpSPRPMO6ABMM7tIir-GclotOVfnbI2WqJGVE&headerType=none&fp=chrome&type=tcp&sni=play.googleapis.com&sid=9791feaccc1ca4d8#7.🇹🇷 GeminiRoute
-vless://0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8@151.241.226.201:2053?type=tcp&security=reality&sni=www.apple.com&fp=chrome&pbk=bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104&sid=9e419c0759b54d6f#8.🇹🇷 GeminiRoute
+vless://9ef61079-6f7d-4911-9608-943da85d8e6f@178.83.46.216:2053?security=&encryption=none&headerType=none&type=tcp#1.🇹🇷 GeminiRoute
+vless://fdc48be3-a615-41ac-8bd1-ed844c931048@130.94.0.228:443?Telegram=@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad&encryption=none&fp=chrome&host=edgetunnel-4uw.pages.dev&path=/&security=tls&sni=edgetunnel-4uw.pages.dev&type=ws#2.🇹🇷 GeminiRoute

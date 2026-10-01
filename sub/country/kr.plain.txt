@@ -1,5 +1,1 @@
-vmess://eyJhZGQiOiIxNDAuMjM4LjIuMjUwIiwiYWlkIjoiMCIsImlkIjoiNDFhNzA4OWEtMDQwYi00NTM4LThiOGQtMDEwOTAyNDA1YmRlIiwibmV0IjoidGNwIiwicG9ydCI6IjQ0MyIsInBzIjoiMS7wn4ew8J+HtyBHZW1pbmlSb3V0ZSIsInNjeSI6ImF1dG8iLCJza2lwLWNlcnQtdmVyaWZ5Ijp0cnVlLCJ0bHMiOiIiLCJ0eXBlIjoiIiwidiI6IjIifQ==
-vless://58C828CD-3EBA-46F9-B297-16003D7A6E68@kr2-r.link-t7.com:10047?mode=gun&security=reality&encryption=none&pbk=wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE&fp=chrome&type=grpc&serviceName=update&sni=s0.awsstatic.com&sid=686c0ef0#2.🇰🇷 GeminiRoute
-vless://9e3132b8-b595-444a-833a-2de44789f9d7@158.247.253.111:2087?sni=shephe.dpdns.org&type=ws&host=shephe.dpdns.org&path=/fp=chrome&security=tls#3.🇰🇷 GeminiRoute
-vless://7e3cd2f1-0de5-4717-9002-64d8597bc577@172.64.88.251:8880?encryption=none&host=dry-credit-fc26.203-d8c.workers.dev&path=%2Fpyip%3DProxyIP.KR.CMLiussss.net&security=none&type=ws#4.🇰🇷 GeminiRoute
-vless://38ede46b-d237-4c76-9de1-a10738642adc@172.66.170.53:8880?type=ws&encryption=none&path=%2Fpyip%3DProxyIP.KR.CMLiussss.net&host=summer-hat-ba5c.430.workers.dev&fp=chrome&alpn=http%2F1.1&headerType=none#5.🇰🇷 GeminiRoute
+vless://58C828CD-3EBA-46F9-B297-16003D7A6E68@kr2-r.link-t7.com:10047?mode=gun&security=reality&encryption=none&pbk=wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE&fp=chrome&type=grpc&serviceName=update&sni=s0.awsstatic.com&sid=686c0ef0#1.🇰🇷 GeminiRoute
