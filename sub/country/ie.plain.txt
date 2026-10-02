@@ -1,1 +1,0 @@
-trojan://Trojan@82164024@ie.tronsg.com:443?security=tls&sni=ie.tronsg.com#1.🇮🇪 GeminiRoute
