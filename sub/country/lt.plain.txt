@@ -1,0 +1,2 @@
+vless://b4090350-b91f-4920-b5c0-c3ffd2798534@84.32.209.77:8081?mode=gun&security=none&encryption=none&type=grpc#1.🇱🇹 GeminiRoute
+vless://2eceaf2b-a775-5a9c-9990-dad2b3660fb6@62.77.158.1:443?security=reality&type=tcp&sni=online.1c.ru&fp=chrome&flow=xtls-rprx-vision&sid=6a&pbk=sVhkyiMXvpofflCdSszxQmsqOXV1kg1Ldxq1a9mOPjs&encryption=none#2.🇱🇹 GeminiRoute
