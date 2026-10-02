@@ -1,1 +1,1 @@
-vless://5786d86f-7731-4174-b1a3-84297e54b015@litva.ali-bard.online:443?security=reality&encryption=none&pbk=SB1uC0OEveYjSiS_Nuw9Ld-uVVXWqi794OGnldthY3I&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=litva.ali-bard.online#1.🇱🇹 GeminiRoute
+vless://2eceaf2b-a775-5a9c-9990-dad2b3660fb6@62.77.158.1:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=online.1c.ru&fp=chrome&pbk=sVhkyiMXvpofflCdSszxQmsqOXV1kg1Ldxq1a9mOPjs&sid=6a&type=tcp&headerType=none#1.🇱🇹 GeminiRoute
