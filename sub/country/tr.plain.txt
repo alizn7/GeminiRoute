@@ -1,2 +1,5 @@
-vless://9ef61079-6f7d-4911-9608-943da85d8e6f@178.83.46.216:2053?encryption=none&security=none&type=tcp#1.🇹🇷 GeminiRoute
-vless://25e16692-d097-4e69-9e2d-8415609c1968@78.135.73.47:443?security=reality&encryption=none&pbk=sZAJkAu23wp1WKY-qeaeiwR38izP5OyfhumoE9xhbB8&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.datadoghq.com&sid=f46cd3ea3d1eb72d#2.🇹🇷 GeminiRoute
+vless://9ef61079-6f7d-4911-9608-943da85d8e6f@test.keoplentuio.xyz:2053?encryption=none&security=none&type=tcp#1.🇹🇷 GeminiRoute
+vless://9ef61079-6f7d-4911-9608-943da85d8e6f@178.83.46.216:2053?encryption=none&security=none&type=tcp#2.🇹🇷 GeminiRoute
+vless://e688f2f5-ad67-4530-a3ad-8ea042171217@taha2021.farshadsdrnz.ir:555?mode=auto&path=%2Fnabzyzyzghsdbdbch&security=tls&encryption=none&extra=%7B%22mode%22%3A%22auto%22%2C%22xPaddingBytes%22%3A%22100-1000%22%7D&insecure=0&host=taha2021.farshadsdrnz.ir&fp=chrome&type=xhttp&allowInsecure=0&sni=taha2021.farshadsdrnz.ir#3.🇹🇷 GeminiRoute
+vless://0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8@151.241.226.201:2053?type=tcp&security=reality&sni=www.apple.com&fp=chrome&pbk=bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104&sid=9e419c0759b54d6f#4.🇹🇷 GeminiRoute
+vless://c0e8fb58-a60f-4c15-9444-4e7c109797a8@176.96.131.251:1280?path=/&security=&encryption=none&type=ws#5.🇹🇷 GeminiRoute
