@@ -1,4 +1,4 @@
-vmess://eyJhZGQiOiIyMDYuMS45OS4xNjAiLCJhaWQiOiIwIiwiaG9zdCI6IiIsImlkIjoiTml0cm9fU2t5Ym90IiwibmV0Ijoid3MiLCJwYXRoIjoiLyIsInBvcnQiOiI0MTMxMCIsInBzIjoiMS7wn4e58J+HtyBHZW1pbmlSb3V0ZSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiJub25lIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9
-vless://9ef61079-6f7d-4911-9608-943da85d8e6f@178.83.46.216:2053/?type=tcp&encryption=none&flow=#2.🇹🇷 GeminiRoute
-vless://25e16692-d097-4e69-9e2d-8415609c1968@78.135.73.47:443?security=reality&encryption=none&pbk=sZAJkAu23wp1WKY-qeaeiwR38izP5OyfhumoE9xhbB8&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.datadoghq.com&sid=f46cd3ea3d1eb72d#3.🇹🇷 GeminiRoute
-vless://c0e8fb58-a60f-4c15-9444-4e7c109797a8@176.96.131.251:1280?path=/&security=&encryption=none&type=ws#4.🇹🇷 GeminiRoute
+vless://9ef61079-6f7d-4911-9608-943da85d8e6f@test.keoplentuio.xyz:2053?encryption=none&security=none&type=tcp#1.🇹🇷 GeminiRoute
+vless://c0e8fb58-a60f-4c15-9444-4e7c109797a8@176.96.131.251:1280?path=/&security=&encryption=none&type=ws#2.🇹🇷 GeminiRoute
+vless://9ef61079-6f7d-4911-9608-943da85d8e6f@178.83.46.216:2053?encryption=none&security=none&type=tcp#3.🇹🇷 GeminiRoute
+vless://25e16692-d097-4e69-9e2d-8415609c1968@78.135.73.47:443?security=reality&encryption=none&pbk=sZAJkAu23wp1WKY-qeaeiwR38izP5OyfhumoE9xhbB8&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.datadoghq.com&sid=f46cd3ea3d1eb72d#4.🇹🇷 GeminiRoute
