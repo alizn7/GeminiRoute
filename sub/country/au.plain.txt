@@ -1,2 +1,1 @@
 vless://d042a74a-c305-4eec-a89f-39a348022c92@208.103.161.5:443?encryption=none&fp=chrome&host=dry-butterfly-8eb9.tmpgnacio83.workers.dev&path=%2F&security=tls&sni=dry-butterfly-8eb9.tmpgnacio83.workers.dev&type=ws#1.🇦🇺 GeminiRoute
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@8.34.70.30:8880?encryption=none&host=vms.lifetime09.workers.dev&path=/&security=none&type=ws#2.🇦🇺 GeminiRoute
