@@ -1,3 +1,2 @@
 vless://fdc1206a-9d2e-42b7-b615-9ccea8cf70ee@tutaim.azad0namah.ir:8080?security=none&encryption=none&host=amd.com&headerType=none&type=tcp#1.🇹🇷 GeminiRoute
-vless://27dc8787-9a5b-4e67-bf80-ee391a46e484@direct-tr02.korvexe.ir:45048?mode=auto&path=/&security=&encryption=none&host=direct-tr02.korvexe.ir&type=xhttp#2.🇹🇷 GeminiRoute
-vless://25e16692-d097-4e69-9e2d-8415609c1968@78.135.73.47:443?security=reality&encryption=none&pbk=sZAJkAu23wp1WKY-qeaeiwR38izP5OyfhumoE9xhbB8&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.datadoghq.com&sid=f46cd3ea3d1eb72d#3.🇹🇷 GeminiRoute
+vless://0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8@151.241.226.201:2053?type=tcp&security=reality&sni=www.apple.com&fp=chrome&pbk=bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104&sid=9e419c0759b54d6f#2.🇹🇷 GeminiRoute
