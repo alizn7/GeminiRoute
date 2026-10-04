@@ -1,0 +1,2 @@
+vmess://eyJhZGQiOiIxNDAuMjM4LjIuMjUwIiwiYWlkIjoiMCIsImlkIjoiNDFhNzA4OWEtMDQwYi00NTM4LThiOGQtMDEwOTAyNDA1YmRlIiwibmV0IjoidGNwIiwicG9ydCI6IjQ0MyIsInBzIjoiMS7wn4ew8J+HtyBHZW1pbmlSb3V0ZSIsInNjeSI6ImF1dG8iLCJza2lwLWNlcnQtdmVyaWZ5Ijp0cnVlLCJ0bHMiOiIiLCJ0eXBlIjoiIiwidiI6IjIifQ==
+vless://87a5d3eb-afd4-4193-9787-c54ef7c26c8c@172.64.88.251:8880?type=ws&host=patient-cake-39c7.44-e7a.workers.dev&path=/pyip=ProxyIP.KR.CMLiussss.net#2.🇰🇷 GeminiRoute
