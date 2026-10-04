@@ -1,2 +1,0 @@
-vless://ac0c2945-b758-11f1-8181-54db13ea7d40@143.246.196.207:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=wSjV1yR_rhDUdoNbM9zIXNGLASLp9RorComnyoayo2c&security=reality&sni=www.blocket.se&type=tcp#1.🇸🇪 GeminiRoute
-vless://9cdcec15-2c73-40d5-b50f-d00381fddd26@stsr.hospitaldt.ir:8443?path=/&security=tls&encryption=none&insecure=0&type=ws&allowInsecure=0&sni=stsr.hospitaldt.ir#2.🇸🇪 GeminiRoute
