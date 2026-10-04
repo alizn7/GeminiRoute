@@ -1,2 +1,1 @@
 vless://bc659d88-a1e0-4c65-a49a-7b51b26a7a7f@87.192.47.10:52006?flow=xtls-rprx-vision&encryption=none&security=tls&sni=grok.setlisting.ru&alpn=h2, http/1.1&fp=chrome&type=tcp&headerType=none#1.🇱🇻 GeminiRoute
-vless://40cba749-bca9-4089-9c02-84a357244ce0@104.252.19.114:8443?security=reality&encryption=none&pbk=cD8mVX41lqyVGCuPz0-tQWcNqkMxiPZxU7JJsyyNAEI&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=omvpn.info#2.🇱🇻 GeminiRoute
