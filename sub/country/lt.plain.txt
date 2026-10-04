@@ -1,1 +1,2 @@
-vless://2eceaf2b-a775-5a9c-9990-dad2b3660fb6@62.77.158.1:443?security=reality&type=tcp&sni=online.1c.ru&fp=chrome&flow=xtls-rprx-vision&sid=6a&pbk=sVhkyiMXvpofflCdSszxQmsqOXV1kg1Ldxq1a9mOPjs&encryption=none#1.🇱🇹 GeminiRoute
+vless://7610be85-9855-4010-8929-ce16d4993969@84.32.215.96:443?security=reality&encryption=none&pbk=5pR15ATlWW3tVzfnMN3xoiN56LjIUbhnOMp37ZvTFUc&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=app26.betust.net&sid=d44d6d46#1.🇱🇹 GeminiRoute
+vless://7610be85-9855-4010-8929-ce16d4993969@188.225.25.142:443?security=reality&encryption=none&pbk=SxbaWzlvE_HQqqsA4PNX2PFcSYXTVE2nZlgLc7cPOgk&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=prime.betust.net&sid=8681edc9#2.🇱🇹 GeminiRoute
