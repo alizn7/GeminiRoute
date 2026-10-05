@@ -1,2 +1,1 @@
-vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@at-tati.failspace.top:443?sni=at-tati.failspace.top&alpn=h2&flow=xtls-rprx-vision-udp443&fp=chrome&security=tls#1.🇦🇹 GeminiRoute
-vless://bc659d88-a1e0-076c-a49a-7b51b26a7a7f@31.77.227.6:52006?encryption=none&flow=xtls-rprx-vision&security=tls&sni=bigdick.gamegrow.ru&type=tcp#2.🇦🇹 GeminiRoute
+vless://bc659d88-a1e0-076c-a49a-7b51b26a7a7f@31.77.227.6:52006?security=tls&encryption=none&insecure=0&headerType=none&type=tcp&allowInsecure=0&flow=xtls-rprx-vision&sni=bigdick.gamegrow.ru#1.🇦🇹 GeminiRoute
