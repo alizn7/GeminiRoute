@@ -1,2 +1,2 @@
-vless://79ccb156-bfc6-11f1-9811-525400d1d4f7@143.246.199.124:443?security=reality&encryption=none&pbk=wSjV1yR_rhDUdoNbM9zIXNGLASLp9RorComnyoayo2c&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.blocket.se#1.🇸🇪 GeminiRoute
-vless://33016f3d-8509-493c-bd8b-d26447d48135@psf-2.weedly.top:80/?type=ws&encryption=none&flow=&host=stigmata.ir&path=/#2.🇸🇪 GeminiRoute
+vless://33016f3d-8509-493c-bd8b-d26447d48135@psf-2.weedly.top:80/?type=ws&encryption=none&flow=&host=stigmata.ir&path=/#1.🇸🇪 GeminiRoute
+vless://79ccb156-bfc6-11f1-9811-525400d1d4f7@143.246.199.124:443?security=reality&encryption=none&pbk=wSjV1yR_rhDUdoNbM9zIXNGLASLp9RorComnyoayo2c&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.blocket.se#2.🇸🇪 GeminiRoute
