@@ -1,2 +1,1 @@
-vless://ee18d188-14cc-417e-beb1-70e4add6d023@216.173.71.43:443?encryption=none&type=tcp&flow=xtls-rprx-vision&security=reality&sni=lv.nztvpn.com&fp=chrome&pbk=miDhSALrcCvSfc38VjCDYlzNh5M61NMR5IkUli7IN08&sid=0da7e14db353e7d0&allowInsecure=1#1.🇱🇻 GeminiRoute
-vless://bc659d88-a1e0-4c65-a49a-7b51b26a7a7f@87.192.47.10:52006?flow=xtls-rprx-vision&encryption=none&security=tls&sni=grok.setlisting.ru&alpn=h2, http/1.1&fp=chrome&type=tcp&headerType=none#2.🇱🇻 GeminiRoute
+vless://bc659d88-a1e0-4c65-a49a-7b51b26a7a7f@87.192.47.10:52006?flow=xtls-rprx-vision&encryption=none&security=tls&sni=grok.setlisting.ru&alpn=h2, http/1.1&fp=chrome&type=tcp&headerType=none#1.🇱🇻 GeminiRoute
