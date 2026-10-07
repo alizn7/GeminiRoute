@@ -1,2 +1,0 @@
-vless://4d852af3-a121-41aa-9aed-4ca40a6f7b4d@193.233.232.96:443?security=reality&encryption=none&pbk=uC4W93YTVI5kbpN5ih2WZfQjikpNBn61-AhljO8ExFg&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=addons.mozilla.org&sid=fa764ccf#1.🇦🇹 GeminiRoute
-vless://e75ad2eb-6c1f-45ce-8023-f5f10875df66@185.104.63.173:443?security=reality&encryption=none&pbk=Dj1TD7Sy_TciG915ffXFpMu_pYHnrpGo_ypyyDw44Uc&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=zsat.eu-cdn294.com&sid=8fbdc8d37cc76852#2.🇦🇹 GeminiRoute
