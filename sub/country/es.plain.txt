@@ -1,2 +1,1 @@
-vless://e75ad2eb-6c1f-45ce-8023-f5f10875df66@8gm8kr.palka-cdn.win:443?security=reality&encryption=none&pbk=ajzyADs9mOY6I3v7OWym5KgYh0afKmlCFaNw1pdQsWA&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=zses.eu-cdn294.com&sid=6b4cf686eebb37b9#1.🇪🇸 GeminiRoute
-vless://4f466863-b6c5-4fdc-955e-7a601c18d89a@217.26.30.125:7443?mode=gun&security=reality&encryption=none&pbk=EuRD8QK-uL3uQqnQ_IC2Ybj7v8feXRxCiEaXYjhHx3c&fp=chrome&type=grpc&sni=yahoo.com#2.🇪🇸 GeminiRoute
+vless://4f466863-b6c5-4fdc-955e-7a601c18d89a@217.26.30.125:7443?mode=gun&security=reality&encryption=none&pbk=EuRD8QK-uL3uQqnQ_IC2Ybj7v8feXRxCiEaXYjhHx3c&fp=chrome&type=grpc&sni=yahoo.com#1.🇪🇸 GeminiRoute
