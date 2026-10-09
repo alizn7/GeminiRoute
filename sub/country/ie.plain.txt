@@ -1,2 +1,2 @@
-trojan://UX82473651@loved-shark.rooster465.autos:443?security=tls&sni=loved-shark.rooster465.autos#1.🇮🇪 GeminiRoute
-trojan://UX82473651@sacred-anemone.rooster465.autos:443?security=tls&sni=sacred-anemone.rooster465.autos#2.🇮🇪 GeminiRoute
+trojan://UX82473651@sacred-anemone.rooster465.autos:443?security=tls&sni=sacred-anemone.rooster465.autos#1.🇮🇪 GeminiRoute
+trojan://UX82473651@loved-shark.rooster465.autos:443?security=tls&sni=loved-shark.rooster465.autos#2.🇮🇪 GeminiRoute
