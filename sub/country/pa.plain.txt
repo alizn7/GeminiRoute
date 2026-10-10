@@ -1,0 +1,2 @@
+vless://d806a58b-33aa-42e0-b170-395e49c16b37@104.238.2.82:443?encryption=none&flow=xtls-rprx-vision&pbk=Y0noOXC8qHmbM0GmDpj-9BBwKSOtHs-uMbNfKU050GQ&security=reality&sid=b558b9305a0b&sni=www.microsoft.com&type=tcp#1.🇵🇦 GeminiRoute
+vless://d806a58b-33aa-42e0-b170-395e49c16b37@sql.popmintxo.cc:443?encryption=none&flow=xtls-rprx-vision&pbk=Y0noOXC8qHmbM0GmDpj-9BBwKSOtHs-uMbNfKU050GQ&security=reality&sid=b558b9305a0b&sni=www.microsoft.com&type=tcp#2.🇵🇦 GeminiRoute

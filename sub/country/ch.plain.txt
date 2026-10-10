@@ -1,1 +1,1 @@
-trojan://ea4y8s7qdshp547j@195.15.202.111:4455?security=reality&pbk=f4lHcjcn_RbaaNCQonkTpOyRhfPKWYxpYvL03kCXemo&headerType=none&fp=chrome&spx=/3b2238cdad49967&type=tcp&sni=play-apps-features.googleusercontent.com&sid=9b6b4ff59dce3d#1.🇨🇭 GeminiRoute
+trojan://ea4y8s7qdshp547j@195.15.202.111:4455?fp=&pbk=f4lHcjcn_RbaaNCQonkTpOyRhfPKWYxpYvL03kCXemo&security=reality&sid=9b6b4ff59dce3d&sni=play-apps-features.googleusercontent.com#1.🇨🇭 GeminiRoute

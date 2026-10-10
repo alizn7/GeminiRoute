@@ -1,21 +1,25 @@
-vless://e9d9f06f-d5dd-460a-998f-52efc4732636@172.64.144.180:8880?security=none&type=ws&path=/pyip=ProxyIP.SG.CMLiussss.net&host=bitter-meadow-1d60.313-0f9.workers.dev&packetEncoding=xudp#1.🇸🇬 GeminiRoute
-vless://ba9ba1d3-19c8-4792-9d3f-ddd2cdcc2e65@170.114.45.6:8443?path=/xprolk-primeline&security=tls&encryption=none&insecure=0&host=primelinelk.me&fp=chrome&type=ws&allowInsecure=0&sni=primelinelk.me#2.🇸🇬 GeminiRoute
+vless://ba9ba1d3-19c8-4792-9d3f-ddd2cdcc2e65@170.114.45.6:8443?path=/xprolk-primeline&security=tls&encryption=none&insecure=0&host=primelinelk.me&fp=chrome&type=ws&allowInsecure=0&sni=primelinelk.me#1.🇸🇬 GeminiRoute
+vless://ba9ba1d3-19c8-4792-9d3f-ddd2cdcc2e65@170.114.46.6:8443?path=/xprolk-primeline&security=tls&encryption=none&insecure=0&host=primelinelk.me&fp=chrome&type=ws&allowInsecure=0&sni=primelinelk.me#2.🇸🇬 GeminiRoute
 vless://ba9ba1d3-19c8-4792-9d3f-ddd2cdcc2e65@support.zoom.us:8443?path=/xprolk-primeline&security=tls&encryption=none&insecure=0&host=primelinelk.me&fp=chrome&type=ws&allowInsecure=0&sni=primelinelk.me#3.🇸🇬 GeminiRoute
-vless://ba9ba1d3-19c8-4792-9d3f-ddd2cdcc2e65@170.114.46.6:8443?path=/xprolk-primeline&security=tls&encryption=none&insecure=0&host=primelinelk.me&fp=chrome&type=ws&allowInsecure=0&sni=primelinelk.me#4.🇸🇬 GeminiRoute
-vmess://eyJhZGQiOiJ3dzExLmxldmlrb2dqZ2ZkZC5pciIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiVGVsZWdyYW0tTGV2aWtvX3YycmF5IiwiaWQiOiJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicGNzIjoiIiwicG9ydCI6IjE4MDAwIiwicHMiOiI1LvCfh7jwn4esIEdlbWluaVJvdXRlIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIiLCJ2Y24iOiIifQ==
-vmess://eyJ2IjoiMiIsInBzIjoiNi7wn4e48J+HrCBHZW1pbmlSb3V0ZSIsImFkZCI6IjE0OS44OC4yMy4yMDIiLCJwb3J0IjoiMTgwMDAiLCJpZCI6ImY4YzhkYzNkLTBkMzctNDZiMC04YjM0LWE3MjMyODgyZmNmZSIsImFpZCI6IjAiLCJzY3kiOiJhdXRvIiwibmV0IjoidGNwIiwidHlwZSI6IiIsImhvc3QiOiIiLCJwYXRoIjoiIiwidGxzIjoiIiwic25pIjoiIiwidGVzdF9uYW1lIjoiMTA0Iiwic2tpcC1jZXJ0LXZlcmlmeSI6dHJ1ZX0=
-vmess://eyJhZGQiOiIxNDkuODguMjMuMjA3IiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6ImY4YzhkYzNkLTBkMzctNDZiMC04YjM0LWE3MjMyODgyZmNmZSIsIm5ldCI6InRjcCIsInBhdGgiOiIvIiwicG9ydCI6IjE4MDAwIiwicHMiOiI3LvCfh7jwn4esIEdlbWluaVJvdXRlIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==
-vless://6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2@139.162.27.96:2096?path=/free-server.techsonic.dev&security=tls&encryption=none&insecure=0&host=free-server.techsonic.dev&fp=chrome&type=ws&allowInsecure=0&sni=free-server.techsonic.dev#8.🇸🇬 GeminiRoute
-trojan://UX82473651@inviting-ferret.rooster465.autos:443?security=tls&sni=inviting-ferret.rooster465.autos#9.🇸🇬 GeminiRoute
-vless://a853e120-3570-462b-aec1-e8f3d4f92d24@47.251.95.178:443?path=/&security=tls&encryption=none&insecure=0&host=asia.csmaster.site&fp=chrome&type=ws&allowInsecure=0&sni=asia.csmaster.site#10.🇸🇬 GeminiRoute
-vless://9d9a048b-3aea-4b3e-b106-1106bf301feb@54.251.9.130:24146?security=reality&encryption=none&pbk=VeluC9A7XDurAWQNgXKShS2SJSgoK79QHFgiAMYrvGo&headerType=&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.intel.com&sid=7205d9079521832c#11.🇸🇬 GeminiRoute
-vless://a853e120-3570-462b-aec1-e8f3d4f92d24@72.146.234.10:443?security=tls&encryption=none&insecure=0&host=asia.csmaster.site&fp=chrome&type=ws&allowInsecure=0&sni=asia.csmaster.site#12.🇸🇬 GeminiRoute
-vless://2d1ad594-80a4-4bfb-87a6-038e39701f51@146.235.16.130:19825?encryption=none&flow=xtls-rprx-vision&fp=&pbk=GvvkY8xYb9QjvwvzYq_uNC4tOGd0DCxRnz6770-xgkI&security=reality&sid=6ba85179e30d4fc2&sni=sg2-8sb.6121999.dpdns.org&type=tcp#13.🇸🇬 GeminiRoute
-trojan://UX82473651@real-cardinal.rooster465.autos:443?security=tls&sni=real-cardinal.rooster465.autos#14.🇸🇬 GeminiRoute
-trojan://UX82473651@holy-lamb.rooster465.autos:443?security=tls&sni=holy-lamb.rooster465.autos#15.🇸🇬 GeminiRoute
-trojan://UX82473651@pet-antelope.rooster465.autos:443?security=tls&sni=pet-antelope.rooster465.autos#16.🇸🇬 GeminiRoute
-vless://e5cc16a6-ea42-46b2-82ae-ad2157e1641b@104.18.0.181:2082?path=/fp&security=&encryption=none&host=hhlfy.twiladaphne.ndjp.net&type=ws&sni=hhlfy.twiladaphne.ndjp.net#17.🇸🇬 GeminiRoute
-vless://2a6c617d-98e4-49c3-95ab-76f02fcf0150@46.137.202.178:12512?security=reality&encryption=none&pbk=sO0RBMr_l8TLtZaYBX8n3NdI9AtaugUqJpCR1szNsyA&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.intel.com&sid=e692a8250d2e2fd0#18.🇸🇬 GeminiRoute
-vless://e5cc16a6-ea42-46b2-82ae-ad2157e1641b@104.18.35.86:8080?path=/sg-melbi&security=&encryption=none&host=hhlfy.twiladaphne.ndjp.net&type=ws&sni=hhlfy.twiladaphne.ndjp.net#19.🇸🇬 GeminiRoute
-vless://8991a496-1baa-486f-9948-ffe44e68c072@162.159.156.214:8880?host=soft-band-8da6.426.workers.dev&path=%2Fpyip%3DProxyIP.SG.CMLiussss.net&type=ws#20.🇸🇬 GeminiRoute
-vless://8e8e2034-33eb-4ccc-938f-ba86d877c449@188.114.97.6:443?path=/pyip=ProxyIP.SG.CMLiussss.net&security=tls&encryption=none&insecure=0&host=icy-hall-8013.386-58c.workers.dev&type=ws&allowInsecure=0&sni=icy-hall-8013.386-58c.workers.dev#21.🇸🇬 GeminiRoute
+vmess://eyJ2IjoiMiIsInBzIjoiNC7wn4e48J+HrCBHZW1pbmlSb3V0ZSIsImFkZCI6IjE0OS44OC4yMy4yMDIiLCJwb3J0IjoiMTgwMDAiLCJpZCI6ImY4YzhkYzNkLTBkMzctNDZiMC04YjM0LWE3MjMyODgyZmNmZSIsImFpZCI6IjAiLCJzY3kiOiJhdXRvIiwibmV0IjoidGNwIiwidHlwZSI6IiIsImhvc3QiOiIiLCJwYXRoIjoiIiwidGxzIjoiIiwic25pIjoiIiwidGVzdF9uYW1lIjoiMTA0Iiwic2tpcC1jZXJ0LXZlcmlmeSI6dHJ1ZX0=
+vmess://eyJhZGQiOiIxNDkuODguMjMuMjA3IiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6ImY4YzhkYzNkLTBkMzctNDZiMC04YjM0LWE3MjMyODgyZmNmZSIsIm5ldCI6InRjcCIsInBhdGgiOiIvIiwicG9ydCI6IjE4MDAwIiwicHMiOiI1LvCfh7jwn4esIEdlbWluaVJvdXRlIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==
+vmess://eyJhZGQiOiJ3dzExLmxldmlrb2dqZ2ZkZC5pciIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiVGVsZWdyYW0tTGV2aWtvX3YycmF5IiwiaWQiOiJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicGNzIjoiIiwicG9ydCI6IjE4MDAwIiwicHMiOiI2LvCfh7jwn4esIEdlbWluaVJvdXRlIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIiLCJ2Y24iOiIifQ==
+vless://6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2@139.162.27.96:2096?path=/free-server.techsonic.dev&security=tls&encryption=none&insecure=0&host=free-server.techsonic.dev&fp=chrome&type=ws&allowInsecure=0&sni=free-server.techsonic.dev#7.🇸🇬 GeminiRoute
+trojan://UX82473651@pet-antelope.rooster465.autos:443?security=tls&sni=pet-antelope.rooster465.autos#8.🇸🇬 GeminiRoute
+vless://9d9a048b-3aea-4b3e-b106-1106bf301feb@54.251.9.130:24146?security=reality&encryption=none&pbk=VeluC9A7XDurAWQNgXKShS2SJSgoK79QHFgiAMYrvGo&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.intel.com&sid=7205d9079521832c#9.🇸🇬 GeminiRoute
+trojan://UX82473651@real-cardinal.rooster465.autos:443?security=tls&sni=real-cardinal.rooster465.autos#10.🇸🇬 GeminiRoute
+trojan://UX82473651@moral-basilisk.rooster465.autos:443?security=tls&sni=moral-basilisk.rooster465.autos#11.🇸🇬 GeminiRoute
+trojan://UX82473651@simple-molly.rooster465.autos:443?security=tls&sni=simple-molly.rooster465.autos#12.🇸🇬 GeminiRoute
+trojan://UX82473651@ace-liger.rooster465.autos:443?security=tls&sni=ace-liger.rooster465.autos#13.🇸🇬 GeminiRoute
+trojan://UX82473651@fond-mammoth.rooster465.autos:443?security=tls&sni=fond-mammoth.rooster465.autos#14.🇸🇬 GeminiRoute
+trojan://UX82473651@inspired-hound.rooster465.autos:443?security=tls&sni=inspired-hound.rooster465.autos#15.🇸🇬 GeminiRoute
+trojan://UX82473651@brave-tomcat.rooster465.autos:443?security=tls&sni=brave-tomcat.rooster465.autos#16.🇸🇬 GeminiRoute
+trojan://UX82473651@joint-ewe.rooster465.autos:443?security=tls&sni=joint-ewe.rooster465.autos#17.🇸🇬 GeminiRoute
+trojan://UX82473651@intense-wildcat.rooster465.autos:443?security=tls&sni=intense-wildcat.rooster465.autos#18.🇸🇬 GeminiRoute
+trojan://UX82473651@rested-seahorse.rooster465.autos:443?security=tls&sni=rested-seahorse.rooster465.autos#19.🇸🇬 GeminiRoute
+vless://2d1ad594-80a4-4bfb-87a6-038e39701f51@sg2-8sb.6121999.dpdns.org:19825?security=reality&type=tcp&sni=sg2-8sb.6121999.dpdns.org&fp=chrome&flow=xtls-rprx-vision&sid=6ba85179e30d4fc2&pbk=GvvkY8xYb9QjvwvzYq_uNC4tOGd0DCxRnz6770-xgkI#20.🇸🇬 GeminiRoute
+vless://2d1ad594-80a4-4bfb-87a6-038e39701f51@146.235.16.130:19825?encryption=none&flow=xtls-rprx-vision&pbk=GvvkY8xYb9QjvwvzYq_uNC4tOGd0DCxRnz6770-xgkI&security=reality&sid=6ba85179e30d4fc2&sni=sg2-8sb.6121999.dpdns.org&type=tcp#21.🇸🇬 GeminiRoute
+trojan://UX82473651@musical-mouse.rooster465.autos:443?security=tls&sni=musical-mouse.rooster465.autos#22.🇸🇬 GeminiRoute
+vless://e5cc16a6-ea42-46b2-82ae-ad2157e1641b@172.64.150.28:2082?path=%2Ffp&security=&encryption=none&host=hhlfy.twiladaphne.ndjp.net&type=ws#23.🇸🇬 GeminiRoute
+vless://e5cc16a6-ea42-46b2-82ae-ad2157e1641b@104.18.0.181:2082?path=/fp&security=&encryption=none&host=hhlfy.twiladaphne.ndjp.net&type=ws&sni=hhlfy.twiladaphne.ndjp.net#24.🇸🇬 GeminiRoute
+trojan://UX82473651@inviting-ferret.rooster465.autos:443?security=tls&sni=inviting-ferret.rooster465.autos#25.🇸🇬 GeminiRoute
