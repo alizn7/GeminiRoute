@@ -1,0 +1,2 @@
+vless://f90b7d43-69e2-4b46-a672-8029bc6796a2@se3.h1cloud.net:25119?security=reality&encryption=none&pbk=szPq4a3cvxfBOmGyg-UJCV3d1Jqjnj7YR3gaxyYtnk4&headerType=none&fp=chrome&spx=/5xmOzu3pGosH91u&type=tcp&flow=xtls-rprx-vision&sni=www.samsung.com&sid=10f517#1.🇸🇪 GeminiRoute
+vless://c20751de-06c3-4044-b6a4-eebc9b040d92@5.157.10.250:443?security=reality&encryption=none&pbk=pgG2grngQEtOFJImLfz0AEm-O2IodM2jCY4aMCYQI1U&headerType=none&fp=firefox&type=tcp&flow=xtls-rprx-vision&sni=swebz.loozerp.wiki&sid=6aa2d2e950441a9a#2.🇸🇪 GeminiRoute
