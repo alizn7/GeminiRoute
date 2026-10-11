@@ -1,3 +1,2 @@
-vless://efe19c5a-0ea1-4666-8a4c-4a33f4670775@104.21.70.22:443?path=/raccoonwsvless&security=tls&alpn=http/1.1&encryption=none&fm={"tcp": [{"type": "fragment", "settings": {"packets": "1-1", "lengths": ["100", "16384"], "delays": ["1"], "maxSplit": "2"}}]}&insecure=0&host=brightlux.forum&fp=chrome&ech=crypto.cloudflare.com+udp://8.8.8.8:53&type=ws&allowInsecure=0&sni=brightlux.forum#1.🇨🇦 GeminiRoute
-vmess://eyJ2IjoiMiIsInBzIjoiMi7wn4eo8J+HpiBHZW1pbmlSb3V0ZSIsImFkZCI6IjIzLjE2Mi4yMDAuMTk4IiwicG9ydCI6IjE4MDAwIiwiaWQiOiJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCJzY3kiOiJhdXRvIiwibmV0IjoicmF3IiwidHlwZSI6Im5vbmUifQ==
-vless://6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8@milo.rubinaz.xyz:8080?encryption=none&security=none&type=tcp#3.🇨🇦 GeminiRoute
+vmess://eyJ2IjoiMiIsInBzIjoiMS7wn4eo8J+HpiBHZW1pbmlSb3V0ZSIsImFkZCI6IjIzLjE2Mi4yMDAuMTk4IiwicG9ydCI6IjE4MDAwIiwiaWQiOiJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCJzY3kiOiJhdXRvIiwibmV0IjoicmF3IiwidHlwZSI6Im5vbmUifQ==
+vless://6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8@milo.rubinaz.xyz:8080?encryption=none&security=none&type=tcp#2.🇨🇦 GeminiRoute
