@@ -1,2 +1,2 @@
-vmess://eyJ2IjoiMiIsInBzIjoiMS7wn4eo8J+HpiBHZW1pbmlSb3V0ZSIsImFkZCI6IjIzLjE2Mi4yMDAuMTk4IiwicG9ydCI6IjE4MDAwIiwiaWQiOiJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCJzY3kiOiJhdXRvIiwibmV0IjoicmF3IiwidHlwZSI6Im5vbmUifQ==
+vless://6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8@212.74.39.188:8080?encryption=none&security=none&type=tcp#1.🇨🇦 GeminiRoute
 vless://6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8@milo.rubinaz.xyz:8080?encryption=none&security=none&type=tcp#2.🇨🇦 GeminiRoute
