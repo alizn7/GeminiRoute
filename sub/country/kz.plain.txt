@@ -1,3 +1,2 @@
 vless://9977ba41-b6aa-4033-9492-2f6abfcade31@206.223.249.90:33891?security=reality&encryption=none&pbk=fj5f0rWTOAgd2gqCCWgag3oAGwb6MCef3OFNdnQLWW8&headerType=none&fp=chrome&spx=/api&type=tcp&flow=xtls-rprx-vision&sni=browser.yandex.com&sid=f5bc6788#1.🇰🇿 GeminiRoute
-vless://a00d89f6-ab7e-4e30-a5e5-54c701d62c93@178.236.16.98:35728?security=reality&encryption=none&pbk=vhUFNoFcvtZAVMo8y5K5eU2V43m5q6yjmWIhp5RkFng&headerType=none&fp=chrome&type=tcp&sni=yahoo.com&sid=69a2#2.🇰🇿 GeminiRoute
-vless://b573cefb-7bc7-4a42-b407-b8b534e66773@109.248.170.119:13447?encryption=none&fp=&pbk=_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE&security=reality&sid=83&sni=yahoo.com&type=tcp#3.🇰🇿 GeminiRoute
+vless://b573cefb-7bc7-4a42-b407-b8b534e66773@109.248.170.119:13447?encryption=none&fp=&pbk=_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE&security=reality&sid=83&sni=yahoo.com&type=tcp#2.🇰🇿 GeminiRoute
