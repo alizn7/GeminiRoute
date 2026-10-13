@@ -1,2 +1,1 @@
-vless://ead0dd61-d398-40ad-80d6-a0e1e516d7d3@212.227.235.66:2053?security=reality&type=tcp&packetEncoding=xudp&sni=www.apple.com&fp=chrome&sid=29e8dcd2b37aaa7f&pbk=7Y6Xb5Ql_03K25x8yKUSOKI2JTOMyv2nyCcFza90uxk#1.🇪🇸 GeminiRoute
-vless://f83ce3c4-07d9-4895-bd14-cb74abbcab37@spainspeedboostjbl88.qcloud.surf:27311?security=reality&encryption=none&pbk=9vHDWMrmerdjndp_XHbCc9jaR-9K95H_mwpLvI2emkY&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=metrika.yandex.ru&sid=56daff9a#2.🇪🇸 GeminiRoute
+vless://f83ce3c4-07d9-4895-bd14-cb74abbcab37@spainspeedboostjbl88.qcloud.surf:27311?security=reality&encryption=none&pbk=9vHDWMrmerdjndp_XHbCc9jaR-9K95H_mwpLvI2emkY&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=metrika.yandex.ru&sid=56daff9a#1.🇪🇸 GeminiRoute
