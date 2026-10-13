@@ -1,0 +1,2 @@
+vless://ee18d188-14cc-417e-beb1-70e4add6d023@84.32.109.20:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=litv.nztvpn.com&security=reality&pbk=3jySGemfaqPZ2vM66Qtzo5SotO3eoRn1FeGaKp6KBQ4&sid=0da7e14db353e7d0#1.🇱🇹 GeminiRoute
+vless://f90b7d43-69e2-4b46-a672-8029bc6796a2@80.209.237.144:443?encryption=none&fp=&pbk=MbRONgV8ADD5B_aKDBv15LAW2a8QZok5bkkZexRRVAs&security=reality&sid=2301ac8aee8bf6d4&sni=b58e68t.lt1.h1clayd.click&type=tcp#2.🇱🇹 GeminiRoute
