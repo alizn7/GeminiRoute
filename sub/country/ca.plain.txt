@@ -1,2 +1,2 @@
 vless://f0466557-2fd5-442e-94cb-12c6b764155e@51.79.31.36:31146?security=reality&encryption=none&pbk=QAoJHZT6_DZsBu-jH74uYZUTpGgxmvN2tXpRKj4CygE&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=play-fe.googleapis.com&sid=cf4e6f8338#1.🇨🇦 GeminiRoute
-vless://efe19c5a-0ea1-4666-8a4c-4a33f4670775@104.21.70.22:443?path=/raccoonwsvless&security=tls&alpn=http/1.1&encryption=none&insecure=0&host=brightlux.forum&type=ws&allowInsecure=0&sni=brightlux.forum#2.🇨🇦 GeminiRoute
+trojan://Trojan@82164024@ca.tronsg.com:443?security=tls&insecure=0&headerType=none&type=tcp&allowInsecure=0&sni=ca.tronsg.com#2.🇨🇦 GeminiRoute
