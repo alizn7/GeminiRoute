@@ -1,2 +1,3 @@
-vless://f0466557-2fd5-442e-94cb-12c6b764155e@51.79.31.36:31146?security=reality&encryption=none&pbk=QAoJHZT6_DZsBu-jH74uYZUTpGgxmvN2tXpRKj4CygE&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=play-fe.googleapis.com&sid=cf4e6f8338#1.🇨🇦 GeminiRoute
-trojan://Trojan@82164024@ca.tronsg.com:443?allowInsecure=0&fp=chrome&headerType=none&security=tls&sni=ca.tronsg.com&type=tcp&insecure=0#2.🇨🇦 GeminiRoute
+trojan://Trojan@82164024@ca.tronsg.com:443?security=tls&insecure=0&headerType=none&type=tcp&allowInsecure=0&sni=ca.tronsg.com#1.🇨🇦 GeminiRoute
+vless://6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8@milo.rubinaz.xyz:8080?encryption=none&security=none&type=tcp#2.🇨🇦 GeminiRoute
+vless://f0466557-2fd5-442e-94cb-12c6b764155e@51.79.31.36:31146?security=reality&encryption=none&pbk=QAoJHZT6_DZsBu-jH74uYZUTpGgxmvN2tXpRKj4CygE&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=play-fe.googleapis.com&sid=cf4e6f8338#3.🇨🇦 GeminiRoute
