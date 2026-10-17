@@ -1,4 +1,2 @@
-trojan://Trojan@82164024@ca.tronsg.com:443?security=tls&sni=ca.tronsg.com#1.🇨🇦 GeminiRoute
-vmess://eyJhZGQiOiIyMy4xNjIuMjAwLjE5OCIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicGNzIjoiIiwicG9ydCI6IjE4MDAwIiwicHMiOiIyLvCfh6jwn4emIEdlbWluaVJvdXRlIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIiLCJ2Y24iOiIifQ==
-vless://6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8@milo.rubinaz.xyz:8080?encryption=none&security=none&type=tcp#3.🇨🇦 GeminiRoute
-vless://92295a0d-b610-4075-85e9-bfab09ec6f3a@time.salphetka.ru:443?security=reality&encryption=none&pbk=5qe0MF8LdxPLFyPkyPkUdQs58rK9J7B0Q5TUj7tSnn4&headerType=none&fp=chrome&spx=/&type=tcp&flow=xtls-rprx-vision&sni=www.unb.ca&sid=654119f9d6f01dba#4.🇨🇦 GeminiRoute
+vmess://eyJhZGQiOiIyMy4xNjIuMjAwLjE5OCIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicGNzIjoiIiwicG9ydCI6IjE4MDAwIiwicHMiOiIxLvCfh6jwn4emIEdlbWluaVJvdXRlIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIiLCJ2Y24iOiIifQ==
+trojan://Trojan@82164024@ca.tronsg.com:443?security=tls&sni=ca.tronsg.com#2.🇨🇦 GeminiRoute
