@@ -1,1 +1,2 @@
 vless://318c935d-c195-41d3-99ad-9bbcfdab3386@ch.srv.vbuste.ru:444?mode=gun&security=reality&encryption=none&pbk=0-or5ogGhYbBgsVSrSC2Fhxyp2BN97Y9pqIdg61Qd08&fp=chrome&type=grpc&sni=ch.srv.vbuste.ru&sid=4be4110078ebed4a#1.🇨🇭 GeminiRoute
+vless://a04c750d-3b71-493b-b2c1-6473ff1209dd@79.132.141.248:23202?mode=auto&path=/&security=reality&encryption=none&extra={"mode":"auto","xPaddingBytes":"100-1000"}&pbk=6oC15TpJ0YxlXVvax9G4Zw-FcP3kKoqgs4iSwOHlvwc&fp=chrome&spx=/0f6ac3bda1db9c4&type=xhttp&sni=www.sony.com&sid=8c6e#2.🇨🇭 GeminiRoute
