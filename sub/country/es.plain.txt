@@ -1,2 +1,2 @@
-vless://63ff4bfa-0f1d-48e4-8314-e882b14e602c@217.76.158.214:36326?security=none&type=ws&path=/jdiedjiedjijd#1.🇪🇸 GeminiRoute
-vless://068c73f5-c2fc-4579-96be-6e37cfcf58ed@45.151.101.107:8443?path=/xhttp&security=reality&encryption=none&pbk=dSH20qQm9nyDIN1gI1KyUjtVOilHh0wG8t-Xw1iz638&fp=chrome&type=xhttp&sni=cdn-es.cahmes.space&sid=01f0a0809d05552b#2.🇪🇸 GeminiRoute
+vless://63ff4bfa-0f1d-48e4-8314-e882b14e602c@217.76.158.214:36326?path=/jdiedjiedjijd&security=&encryption=none&type=ws#1.🇪🇸 GeminiRoute
+vless://c379d8e4-c67d-42ec-a3ed-ca99d1ad0546@196.245.52.149:25535?security=reality&encryption=none&pbk=Jh7CocBJSA55VZcLfXwXwoQ_Hi5pV-L1vv1SY-IrSh4&headerType=&type=tcp&sni=www.microsoft.com&sid=7642ce57308852e7#2.🇪🇸 GeminiRoute
