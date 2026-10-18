@@ -1,1 +1,2 @@
-vless://f667a096-5231-4cfb-8759-92bb32473139@77.91.68.70:55983?security=reality&encryption=none&pbk=nWQ7b9l9X6N3PrXLgIzOvMM8iSYrqjVHEb9ikWxqYSg&headerType=none&fp=chrome&type=tcp&sni=yahoo.com&sid=0e#1.🇦🇲 GeminiRoute
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@45.12.30.30:8880?path=/&security=none&encryption=none&host=vms.lifetime28.workers.dev&type=ws#1.🇦🇲 GeminiRoute
+vless://f667a096-5231-4cfb-8759-92bb32473139@77.91.68.70:55983?security=reality&encryption=none&pbk=nWQ7b9l9X6N3PrXLgIzOvMM8iSYrqjVHEb9ikWxqYSg&headerType=none&fp=chrome&type=tcp&sni=yahoo.com&sid=0e#2.🇦🇲 GeminiRoute

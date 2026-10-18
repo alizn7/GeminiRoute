@@ -1,0 +1,1 @@
+vless://d78d6815-5f00-4fe3-8aae-3344aeb7783f@1f0c1c7297521d51.wgse.info:443?path=/ws&security=tls&encryption=none&insecure=0&host=1f0c1c7297521d51.wgse.info&fp=chrome&type=ws&allowInsecure=0&sni=1f0c1c7297521d51.wgse.info#1.🇨🇿 GeminiRoute
