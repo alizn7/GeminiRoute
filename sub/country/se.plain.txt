@@ -1,3 +1,2 @@
-vless://80de563a-cac8-40ea-8cb0-4cb082dd92f9@5.178.109.174:14430?&sni=5.178.109.174&type=ws&headerType=none&host=5.178.109.174&path=/vless#1.🇸🇪 GeminiRoute
+vless://80de563a-cac8-40ea-8cb0-4cb082dd92f9@5.178.109.174:14430?path=/vless&security=&encryption=none&host=5.178.109.174&type=ws&sni=5.178.109.174#1.🇸🇪 GeminiRoute
 vless://c19ecc7f-8312-4d9d-90c9-1a997d82d3c5@87.242.117.59:443?mode=gun&security=tls&alpn=h2&encryption=none&insecure=0&fp=chrome&type=grpc&serviceName=hls-vod.iJxGWWENB3HP4nTjN8IcrA.1790085537.2512.0x5000039ce83a2b8d.2ac8ad72028049619c2fb844a825a.ca.mp4.segment-20-v1-a1.ts&allowInsecure=0&sni=se1.my-cdn.org#2.🇸🇪 GeminiRoute
-vless://ef841361-5a82-0096-887c-3be03f6eac99@45.8.99.5:8443?security=reality&encryption=none&pbk=7T9ZSCdUh4IUlx17R1Vbzk8kjiopA3j5mI7-inh6aQU&headerType=none&fp=chrome&spx=/93bf0f8620a25a3&type=tcp&sni=x5club.ru&sid=187eea0acfb7f778#3.🇸🇪 GeminiRoute
