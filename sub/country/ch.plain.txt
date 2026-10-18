@@ -1,2 +1,1 @@
 vless://a04c750d-3b71-493b-b2c1-6473ff1209dd@79.132.141.248:8443/?type=tcp&encryption=none&flow=&sni=npdev.uk&security=reality&pbk=rp_TkuctK207nrtJP6AYTvsWWkHToQLtRLOSYP3zpg0&sid=ac6bf30f3e#1.🇨🇭 GeminiRoute
-vless://318c935d-c195-41d3-99ad-9bbcfdab3386@167.148.183.51:444?mode=gun&security=reality&encryption=none&pbk=0-or5ogGhYbBgsVSrSC2Fhxyp2BN97Y9pqIdg61Qd08&fp=chrome&type=grpc&sni=ch.srv.vbuste.ru&sid=4be4110078ebed4a#2.🇨🇭 GeminiRoute
