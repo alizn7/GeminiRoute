@@ -1,1 +1,1 @@
-vless://a04c750d-3b71-493b-b2c1-6473ff1209dd@79.132.141.248:8443/?type=tcp&encryption=none&flow=&sni=npdev.uk&security=reality&pbk=rp_TkuctK207nrtJP6AYTvsWWkHToQLtRLOSYP3zpg0&sid=ac6bf30f3e#1.🇨🇭 GeminiRoute
+vless://c0dd6d59-1573-43af-8b70-1470b2632a6d@208.69.78.217:2053?Telegram=@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad&type=tcp&security=reality&fp=chrome&pbk=A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0&sid=ad86e2d52ff40ebd&sni=www.apple.com#1.🇨🇭 GeminiRoute
