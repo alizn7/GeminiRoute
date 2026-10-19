@@ -1,5 +1,3 @@
 vless://dc620cd6-a9d8-4a0f-8f18-006b895db77e@66.70.179.198:2053?encryption=none&fp=&pbk=k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU&security=reality&sid=83f8317a948bb769&sni=www.cloudflare.com&type=tcp#1.🇨🇦 GeminiRoute
 vless://6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8@milo.rubinaz.xyz:8080?encryption=none&security=none&type=tcp#2.🇨🇦 GeminiRoute
-vless://e6df2095-a73c-4043-8693-8d5a03686870@cf.090227.xyz:443?path=/cart/docs/www/proxyip&security=tls&encryption=none&insecure=0&host=lucasjow.us.ci&fp=chrome&type=ws&allowInsecure=0&sni=lucasjow.us.ci#3.🇨🇦 GeminiRoute
-vless://495c7195-85b8-498a-bf20-2ea9ce9175b5@188.114.98.0:443?encryption=none&security=tls&sni=snip.edgeoneai.cc.cd&alpn=http/1.1&fp=chrome&ech=cloudflare-ech.com+udp://1.1.1.1&type=ws&host=snip.edgeoneai.cc.cd&path=/fdip&headers={  "Host": "snip.edgeoneai.cc.cd"}#4.🇨🇦 GeminiRoute
-trojan://Trojan@82164024@ca.tronsg.com:443?security=tls&sni=ca.tronsg.com#5.🇨🇦 GeminiRoute
+trojan://Trojan@82164024@ca.tronsg.com:443?security=tls&sni=ca.tronsg.com#3.🇨🇦 GeminiRoute
