@@ -1,80 +1,79 @@
 {
-  "generated_at": "2026-10-22T14:06:30.368620+00:00",
+  "generated_at": "2026-10-22T18:48:54.677579+00:00",
   "funnel": {
     "collected": 7061,
-    "after_dedup": 3828,
-    "after_pre_validation": 2477,
-    "after_connectivity": 659,
-    "after_gemini": 283
+    "after_dedup": 3781,
+    "after_pre_validation": 2384,
+    "after_connectivity": 582,
+    "after_gemini": 278
   },
-  "gemini_success_rate": 0.4294,
-  "average_latency_ms": 316.12,
+  "gemini_success_rate": 0.4777,
+  "average_latency_ms": 385.26,
   "nodes_by_country": {
-    "us": 62,
-    "nl": 44,
-    "de": 38,
-    "fr": 24,
-    "fi": 15,
-    "sg": 11,
+    "us": 55,
+    "nl": 45,
+    "de": 41,
+    "fr": 28,
+    "fi": 13,
     "gb": 11,
-    "rs": 10,
-    "pl": 9,
-    "jp": 8,
-    "bg": 8,
-    "md": 8,
-    "in": 7,
-    "ca": 5,
-    "it": 3,
+    "in": 10,
+    "jp": 9,
+    "rs": 9,
+    "sg": 8,
+    "pl": 7,
+    "bg": 6,
+    "hk": 6,
+    "md": 6,
+    "tr": 3,
     "ee": 2,
-    "tr": 2,
-    "ro": 2,
+    "kr": 2,
+    "lv": 2,
+    "ae": 2,
     "lt": 2,
-    "kz": 2,
-    "hk": 2,
-    "es": 1,
-    "lv": 1,
-    "gr": 1,
-    "ae": 1,
-    "ch": 1,
+    "it": 2,
+    "th": 2,
+    "am": 2,
+    "ca": 1,
     "tw": 1,
-    "cz": 1,
-    "am": 1
+    "ch": 1,
+    "es": 1,
+    "ua": 1
   },
   "sources": [
     {
       "name": "barry-far-vless",
-      "contributed": 1925,
-      "reachable": 493,
-      "gemini_ok": 204,
-      "yield": 0.106
+      "contributed": 1871,
+      "reachable": 423,
+      "gemini_ok": 202,
+      "yield": 0.108
     },
     {
       "name": "barry-far-trojan",
-      "contributed": 124,
-      "reachable": 65,
-      "gemini_ok": 47,
-      "yield": 0.379
+      "contributed": 121,
+      "reachable": 62,
+      "gemini_ok": 39,
+      "yield": 0.3223
     },
     {
       "name": "barry-far-vmess",
-      "contributed": 155,
-      "reachable": 60,
+      "contributed": 150,
+      "reachable": 63,
       "gemini_ok": 29,
-      "yield": 0.1871
+      "yield": 0.1933
     },
     {
       "name": "matinghanbari-vless",
-      "contributed": 166,
-      "reachable": 76,
-      "gemini_ok": 26,
-      "yield": 0.1566
+      "contributed": 125,
+      "reachable": 46,
+      "gemini_ok": 29,
+      "yield": 0.232
     },
     {
       "name": "matinghanbari-trojan",
-      "contributed": 209,
-      "reachable": 26,
-      "gemini_ok": 9,
-      "yield": 0.0431
+      "contributed": 206,
+      "reachable": 35,
+      "gemini_ok": 16,
+      "yield": 0.0777
     }
   ]
 }
