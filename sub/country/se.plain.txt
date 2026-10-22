@@ -1,1 +1,0 @@
-vless://80de563a-cac8-40ea-8cb0-4cb082dd92f9@5.178.109.174:14430?encryption=none&path=/vless&security=none&type=ws#1.🇸🇪 GeminiRoute

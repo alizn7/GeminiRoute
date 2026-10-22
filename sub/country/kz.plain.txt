@@ -1,0 +1,2 @@
+vless://30572b57-f5ab-4eb8-82d4-a24d399b99f6@45.144.30.92:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=astana.vkusnews.com&fp=chrome&security=reality&pbk=Buy9pirx5Ih_LHwc6R3BCmvRL4g4Ljx6B3MEsZfIZhU&sid=#1.🇰🇿 GeminiRoute
+vless://b573cefb-7bc7-4a42-b407-b8b534e66773@109.248.170.119:13447?security=reality&encryption=none&pbk=_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE&headerType=none&fp=chrome&type=tcp&sni=yahoo.com&sid=83#2.🇰🇿 GeminiRoute
