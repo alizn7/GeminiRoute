@@ -1,1 +1,3 @@
 vless://a346c521-7a7f-452b-9356-a4893feb5982@62.133.63.45:8444?security=reality&encryption=none&pbk=FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0&fp=chrome&type=grpc&serviceName=GunService&sni=github.com&sid=457fab2ac885dbe0#1.🇹🇷 GeminiRoute
+vless://0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8@151.241.226.201:2053?type=tcp&security=reality&sni=www.apple.com&fp=chrome&pbk=bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104&sid=9e419c0759b54d6f#2.🇹🇷 GeminiRoute
+vless://633c1bb0-60d5-41fb-a9c4-11f408b264ec@sable56.fars-remen.ir:8446?encryption=none&security=reality&sni=storage-p2.googleapis.com&fp=chrome&pbk=7OwcalQiQ5RaMsYRjvtwTxZWS3sCpjOefcr3WYKFh04&sid=73da8baa63f8d537&type=tcp&headerType=none#3.🇹🇷 GeminiRoute
