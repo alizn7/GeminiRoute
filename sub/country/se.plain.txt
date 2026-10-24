@@ -1,3 +1,2 @@
-vless://a52fcd33-b235-4b30-a4e8-165287302c66@aws.root.sync-bridge.ir:443?mode=gun&security=reality&encryption=none&pbk=cSku9Lo_wLXixUZuWW2JZxcSUK-fGprJLKrCGUfoAgI&fp=chrome&spx=/e30c438f7ceb9c7&type=grpc&sni=www.cloudflare.com&sid=8a31#1.🇸🇪 GeminiRoute
-vless://80de563a-cac8-40ea-8cb0-4cb082dd92f9@5.178.109.174:14430?&sni=5.178.109.174&type=ws&headerType=none&host=5.178.109.174&path=/vless#2.🇸🇪 GeminiRoute
-vless://30572b57-f5ab-4eb8-82d4-a24d399b99f6@196.247.163.10:443?security=reality&encryption=none&pbk=5984Ah0pkfSVekU5xafQ1trZZN7MyNCJ-3KfCo-O6A4&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=britainmh.eosvpn.com#3.🇸🇪 GeminiRoute
+vless://a52fcd33-b235-4b30-a4e8-165287302c66@aws.root.sync-bridge.ir:443?encryption=none&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=cSku9Lo_wLXixUZuWW2JZxcSUK-fGprJLKrCGUfoAgI&sid=8a31&spx=/e30c438f7ceb9c7&type=grpc#1.🇸🇪 GeminiRoute
+vless://30572b57-f5ab-4eb8-82d4-a24d399b99f6@196.247.163.10:443?security=reality&encryption=none&pbk=5984Ah0pkfSVekU5xafQ1trZZN7MyNCJ-3KfCo-O6A4&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=britainmh.eosvpn.com#2.🇸🇪 GeminiRoute
