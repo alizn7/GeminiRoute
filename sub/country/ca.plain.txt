@@ -1,4 +1,4 @@
 vless://6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8@milo.rubinaz.xyz:8080?security=&encryption=none&headerType=none&type=tcp#1.🇨🇦 GeminiRoute
-vless://12af3df8-2ffe-48fe-9b60-376f015ea4f8@51.161.72.153:37765?encryption=none&fp=&pbk=g-4UVtgbojoxQaglMCttyLme4xjtTqomqxdZaVsruQ4&security=reality&serviceName=grpc_common1&sid=defda00d613c&sni=www.semiconductor.samsung.com&type=grpc#2.🇨🇦 GeminiRoute
-vless://0b418782-e023-447e-ba99-e66b84ff118d@38.145.220.58:2093?encryption=none&flow=xtls-rprx-vision&fp=&pbk=C_GA8wVjeLmyqLK6em5OHn4WPlsbndA-RyvyNU1aGFM&security=reality&sid=8a9725533854a7e8&sni=www.apple.com&type=tcp#3.🇨🇦 GeminiRoute
+vless://0b418782-e023-447e-ba99-e66b84ff118d@38.145.220.58:2093?encryption=none&flow=xtls-rprx-vision&fp=&pbk=C_GA8wVjeLmyqLK6em5OHn4WPlsbndA-RyvyNU1aGFM&security=reality&sid=8a9725533854a7e8&sni=www.apple.com&type=tcp#2.🇨🇦 GeminiRoute
+vless://12af3df8-2ffe-48fe-9b60-376f015ea4f8@51.161.72.153:37765?encryption=none&fp=&pbk=g-4UVtgbojoxQaglMCttyLme4xjtTqomqxdZaVsruQ4&security=reality&serviceName=grpc_common1&sid=defda00d613c&sni=www.semiconductor.samsung.com&type=grpc#3.🇨🇦 GeminiRoute
 vless://0b418782-e023-447e-ba99-e66b84ff118d@50.7.245.205:2093?encryption=none&flow=xtls-rprx-vision&fp=&pbk=C_GA8wVjeLmyqLK6em5OHn4WPlsbndA-RyvyNU1aGFM&security=reality&sid=8a9725533854a7e8&sni=www.apple.com&type=tcp#4.🇨🇦 GeminiRoute

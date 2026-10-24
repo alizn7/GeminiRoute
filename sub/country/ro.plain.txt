@@ -1,3 +1,1 @@
-vless://6da2c981-8c77-4340-bda3-93399b7aea26@163.245.41.52:2096?mode=auto&path=/apple-xh&security=reality&encryption=none&pbk=2riaCWjnC6m96hid0WcL9BG4vwzh8NoW_ps8CrVo1mo&fp=chrome&type=xhttp&sni=www.apple.com&sid=3649e084544949f1#1.🇷🇴 GeminiRoute
-vless://caf3d607-95c9-4ea0-98b5-864027056ba0@ro1.accessboy.com:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1TtWNQhTJr_3H7-ypMw4EiLzVxy22AzUtMiE5JmQMl4&security=reality&sid=1c5869a95671bcb0&sni=ro1.accessboy.com&spx=/&type=tcp#2.🇷🇴 GeminiRoute
-vless://679439c5-28f2-485e-af5f-60a5fcd9c36c@82.117.255.174:443?security=reality&type=tcp&packetEncoding=xudp&sni=gateway.icloud.com&fp=chrome&flow=xtls-rprx-vision&sid=31e91d43e553bf32&pbk=0QDBHaCRO2dPeeSVy3B3R_U12ZOvbvWl1JTFW_ZcpD0#3.🇷🇴 GeminiRoute
+vless://1a8ecc41-6e62-431b-8eca-87c2fa4dc286@edge10.cyrionflare.com:2052?security=&encryption=none&headerType=none&type=tcp#1.🇷🇴 GeminiRoute
