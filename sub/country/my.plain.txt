@@ -1,2 +1,0 @@
-vless://30572b57-f5ab-4eb8-82d4-a24d399b99f6@111.90.143.184:61111?mode=gun&security=reality&encryption=none&pbk=jT5prLDhvJ86zZVz5pDX907oQbeZ0Hyb_VcDSiJxQQU&fp=chrome&type=grpc&sni=github.com&sid=1378f725da558887#1.🇲🇾 GeminiRoute
-vmess://eyJ2IjoiMiIsInBzIjoiMi7wn4ey8J+HviBHZW1pbmlSb3V0ZSIsImFkZCI6IjQ3LjI1MC4xMzUuMjQ0IiwicG9ydCI6IjEwMDAwIiwiaWQiOiJhZWRjNjZiOC05OWQ3LTRhMjEtODMxMC02MTg3MGU3Zjg3MGQiLCJhaWQiOiIwIiwic2N5IjoiYXV0byIsIm5ldCI6InRjcCIsInR5cGUiOiIiLCJ0bHMiOiIiLCJhbHBuIjoiIiwic2tpcC1jZXJ0LXZlcmlmeSI6dHJ1ZX0=
