@@ -1,2 +1,0 @@
-vless://5131b5e9-2c3c-44a0-8f18-0641f3f21cac@lv5.himoy.space:443?security=reality&encryption=none&pbk=S8fcWoOddbw_d-s7yrgi6Udb69A2XnW2xfJ-Xk6ubko&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=lv5.himoy.space&sid=5ff4fb909a3dfebf#1.🇱🇻 GeminiRoute
-vless://5131b5e9-2c3c-44a0-8f18-0641f3f21cac@lv2.himoy.space:443?security=reality&encryption=none&pbk=AoPku9i0xSD2cCzJdPcUSSft8c_RkIZbsbP888VO938&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=lv2.himoy.space&sid=287b3d62899669d7#2.🇱🇻 GeminiRoute
