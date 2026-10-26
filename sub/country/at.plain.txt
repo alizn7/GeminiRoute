@@ -1,3 +1,2 @@
-vless://2b0e5676-fb62-4bf0-9607-6e7818421e8e@au2.pad-sservice.lat:8443?path=/A11U&security=tls&encryption=none&insecure=0&host=au2.pad-service.com&type=ws&allowInsecure=0&sni=au2.pad-sservice.lat#1.🇦🇹 GeminiRoute
-vless://2b0e5676-fb62-4bf0-9607-6e7818421e8e@au5.pad-sservice.lat:8443?path=/AU5W&security=tls&encryption=none&insecure=0&host=au5.pad-sservice.lat&type=ws&allowInsecure=0&sni=au5.pad-sservice.lat#2.🇦🇹 GeminiRoute
-vless://2b0e5676-fb62-4bf0-9607-6e7818421e8e@au6.pad-sservice.lat:8443?encryption=none&security=tls&sni=au6.pad-sservice.lat&type=ws&host=au6.pad-sservice.lat&path=/AU6W#3.🇦🇹 GeminiRoute
+vless://2b0e5676-fb62-4bf0-9607-6e7818421e8e@au5.pad-sservice.lat:8443?path=/AU5W&security=tls&encryption=none&insecure=0&host=au5.pad-sservice.lat&type=ws&allowInsecure=0&sni=au5.pad-sservice.lat#1.🇦🇹 GeminiRoute
+vless://2b0e5676-fb62-4bf0-9607-6e7818421e8e@au6.pad-sservice.lat:8443?path=/AU6W&security=tls&encryption=none&insecure=0&host=au6.pad-sservice.lat&type=ws&allowInsecure=0&sni=au6.pad-sservice.lat#2.🇦🇹 GeminiRoute
