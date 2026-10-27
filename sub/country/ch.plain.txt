@@ -1,1 +1,1 @@
-vless://054362fb-e485-4a3f-9568-4c5b0f60e074@swz.proxyplankton.ru:443?alpn=h2,http/1.1&encryption=none&fp=chrome&security=tls&sni=swz.proxyplankton.ru&type=tcp#1.🇨🇭 GeminiRoute
+vless://67eb6b17-7797-4ded-bf52-423c4c5f6cbd@50.117.15.225:443?security=reality&type=tcp&packetEncoding=xudp&sni=www.foxsports.com&fp=chrome&flow=xtls-rprx-vision&sid=91af08b1ce1f&pbk=G7bpUPFSW28-oE6ff8qZac1_apU6PiJ-GHmi7tAPDSY&encryption=none#1.🇨🇭 GeminiRoute

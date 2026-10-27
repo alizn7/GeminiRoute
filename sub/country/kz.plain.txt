@@ -1,2 +1,2 @@
-vless://846cedee-2a52-4a62-a0b9-11850ead6a8b@46.8.43.125:443?Telegram=@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad&security=reality&type=tcp&packetEncoding=xudp&sni=kz-central.v8x2b.lol&fp=chrome&pbk=ER-T5En54-sn6IXy7jU8vQVcBbOiWvznnezf3qZ273w#1.🇰🇿 GeminiRoute
+vless://846cedee-2a52-4a62-a0b9-11850ead6a8b@46.8.43.125:443?security=reality&type=tcp&packetEncoding=xudp&sni=kz-central.v8x2b.lol&fp=chrome&pbk=ER-T5En54-sn6IXy7jU8vQVcBbOiWvznnezf3qZ273w#1.🇰🇿 GeminiRoute
 vless://b573cefb-7bc7-4a42-b407-b8b534e66773@109.248.170.119:13447?security=reality&encryption=none&pbk=_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE&headerType=none&fp=chrome&type=tcp&sni=yahoo.com&sid=83#2.🇰🇿 GeminiRoute
