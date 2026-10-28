@@ -1,0 +1,2 @@
+vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@50.7.5.188:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&security=tls&sni=ir-new-ded.failspace.top&type=tcp#1.🇮🇪 GeminiRoute
+vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@ir-new-ded.failspace.top:443?alpn=h2&encryption=none&flow=xtls-rprx-vision&fp=chrome&security=tls&sni=ir-new-ded.failspace.top&type=tcp#2.🇮🇪 GeminiRoute
