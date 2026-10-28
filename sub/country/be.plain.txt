@@ -1,1 +1,0 @@
-vless://FastKey_145297@185.22.154.131:8080?path=/api&security=&encryption=none&host=google.com&type=ws#1.🇧🇪 GeminiRoute
