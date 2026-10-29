@@ -1,2 +1,2 @@
-vless://80de563a-cac8-40ea-8cb0-4cb082dd92f9@5.178.109.174:14430?path=/vless&security=&encryption=none&host=5.178.109.174&type=ws#1.🇸🇪 GeminiRoute
+vless://80de563a-cac8-40ea-8cb0-4cb082dd92f9@5.178.109.174:14430?&sni=5.178.109.174&type=ws&headerType=none&host=5.178.109.174&path=/vless#1.🇸🇪 GeminiRoute
 vless://5a519754-a673-4462-83f6-5eb25d2af141@se3.h1cloud.net:25387?security=reality&encryption=none&pbk=_nrnGiJUdyeLv2afSwe6P4j02AMayY34WFMjUJp5Kwc&headerType=none&fp=chrome&type=tcp&sni=www.cloudflare.com&sid=9608a9c65d315d52#2.🇸🇪 GeminiRoute
