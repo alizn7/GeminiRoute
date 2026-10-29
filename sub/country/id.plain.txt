@@ -1,3 +1,0 @@
-vless://e9a8144e-5237-488a-afb1-9ca3d8d54c80@130.94.95.198:57353?encryption=none&fp=chrome&security=tls&sni=in001.zestapp778.com&type=tcp#1.🇮🇩 GeminiRoute
-vless://e9a8144e-5237-488a-afb1-9ca3d8d54c80@in001.zestapp778.com:57353?type=tcp&security=tls&fp=chrome&sni=in001.zestapp778.com#2.🇮🇩 GeminiRoute
-vless://5a380395-9c91-4174-8330-475d1235ed61@202.10.40.89:8443?security=reality&encryption=none&pbk=GcraWawjMdjBJLD_HvSZ3BQuHvFnSWjbesCkMeCaITY&headerType=none&fp=chrome&spx=%2F&type=tcp&flow=xtls-rprx-vision&sni=amproject.my.id&sid=5b4a12ef7e1694dd#3.🇮🇩 GeminiRoute
