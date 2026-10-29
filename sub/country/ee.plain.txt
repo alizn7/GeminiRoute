@@ -1,0 +1,1 @@
+vless://5d9fb46f-c4bc-4d6e-9a26-a4d5f51abd28@ee-2e06d85dc0.shamanapp.online:34451?encryption=none&host=ee-2e06d85dc0.shamanapp.online&mode=stream-up&path=/ShamanXHTTP2026&security=tls&sni=ee-2e06d85dc0.shamanapp.online&type=xhttp#1.🇪🇪 GeminiRoute
