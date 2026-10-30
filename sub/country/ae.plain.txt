@@ -1,2 +1,0 @@
-vless://965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0@95.174.68.188:14430?&sni=95.174.68.188&type=ws&headerType=none&host=95.174.68.188&path=/vless#1.🇦🇪 GeminiRoute
-vless://7c730089-1791-4828-89b2-86e7e1663063@ae.privatevip.ir:450?path=/&security=none&encryption=none&host=ae.privatevip.ir&type=ws#2.🇦🇪 GeminiRoute

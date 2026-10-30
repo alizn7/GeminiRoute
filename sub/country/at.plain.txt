@@ -1,0 +1,1 @@
+vless://69158986-cfae-4567-8391-0f96d9d985bd@av.neuroniko.com:8443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=av.neuroniko.com&fp=chrome&pbk=ud15DX-emDBS7QsLMabJ7CjgIteK61jxwSp1v0Fewxc&sid=10a59b0a94367ac2&type=tcp&headerType=none#1.🇦🇹 GeminiRoute
