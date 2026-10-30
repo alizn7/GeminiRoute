@@ -1,1 +1,2 @@
-vless://b573cefb-7bc7-4a42-b407-b8b534e66773@109.248.170.119:13447?security=reality&encryption=none&pbk=_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE&headerType=none&type=tcp&sni=yahoo.com&sid=83#1.🇰🇿 GeminiRoute
+vless://1fe01c8a-ab37-4e95-bbfc-95d4a608931e@95.56.251.12:47443?security=reality&encryption=none&pbk=z1GSwCEACvO9RLcMVpcURiT8er4oeIdeSJhraw_0cGU&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=kz1.waspnest.space&sid=ae97223a8f799877#1.🇰🇿 GeminiRoute
+vless://b573cefb-7bc7-4a42-b407-b8b534e66773@109.248.170.119:13447?security=reality&encryption=none&pbk=_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE&headerType=none&type=tcp&sni=yahoo.com&sid=83#2.🇰🇿 GeminiRoute
