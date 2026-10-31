@@ -1,4 +1,4 @@
 trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@70.34.207.14:443?security=tls&insecure=0&headerType=none&type=tcp&allowInsecure=0&sni=searchhealthcarejobsandbuildmedicalcareerpathway.com#1.🇸🇪 GeminiRoute
-vless://80de563a-cac8-40ea-8cb0-4cb082dd92f9@5.178.109.174:14430?path=/vless&security=&encryption=none&host=5.178.109.174&type=ws#2.🇸🇪 GeminiRoute
-vless://69158986-cfae-4567-8391-0f96d9d985bd@sw.neuroniko.com:2083?type=xhttp&security=reality&fp=chrome&pbk=ud15DX-emDBS7QsLMabJ7CjgIteK61jxwSp1v0Fewxc&sid=10a59b0a94367ac2&sni=sw.neuroniko.com&mode=auto#3.🇸🇪 GeminiRoute
-vless://30572b57-f5ab-4eb8-82d4-a24d399b99f6@46.29.255.123:59539?security=reality&encryption=none&pbk=R6mPqCsjZMWauci4LHw7Qp1LGKmBd-sxMXplyOn9bSQ&type=tcp&flow=xtls-rprx-vision&sni=cloudflare-dns.com&fp=chrome#4.🇸🇪 GeminiRoute
+vless://30572b57-f5ab-4eb8-82d4-a24d399b99f6@46.29.255.123:59539?security=reality&encryption=none&pbk=R6mPqCsjZMWauci4LHw7Qp1LGKmBd-sxMXplyOn9bSQ&headerType=none&fp=firefox&type=tcp&flow=xtls-rprx-vision&sni=cloudflare-dns.com#2.🇸🇪 GeminiRoute
+vless://80de563a-cac8-40ea-8cb0-4cb082dd92f9@5.178.109.174:14430?&sni=5.178.109.174&type=ws&headerType=none&host=5.178.109.174&path=/vless#3.🇸🇪 GeminiRoute
+vless://69158986-cfae-4567-8391-0f96d9d985bd@sw.neuroniko.com:2083?type=xhttp&security=reality&fp=chrome&pbk=ud15DX-emDBS7QsLMabJ7CjgIteK61jxwSp1v0Fewxc&sid=10a59b0a94367ac2&sni=sw.neuroniko.com&mode=auto#4.🇸🇪 GeminiRoute

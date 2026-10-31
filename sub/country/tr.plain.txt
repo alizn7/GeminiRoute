@@ -1,2 +1,0 @@
-vless://a346c521-7a7f-452b-9356-a4893feb5982@62.133.63.45:8444?security=reality&encryption=none&pbk=FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0&fp=chrome&type=grpc&serviceName=GunService&sni=github.com&sid=457fab2ac885dbe0#1.🇹🇷 GeminiRoute
-vless://42a64b9a-ab79-4094-8656-30366a7c2ea3@tr.peregrine-sub.net:8443?encryption=none&type=xhttp&path=/&security=reality&fp=chrome&sni=tr.peregrine-sub.net&pbk=PUj1la__ltNjv_ASE5n4HJY7GiRs--N-0aYhkcAApCI&sid=7b6803a79bba5c52#2.🇹🇷 GeminiRoute
