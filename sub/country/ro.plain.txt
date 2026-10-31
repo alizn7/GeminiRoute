@@ -1,3 +1,1 @@
 vless://1a8ecc41-6e62-431b-8eca-87c2fa4dc286@edge10.cyrionflare.com:2052?#1.🇷🇴 GeminiRoute
-vless://d1a6a033-fdbd-46a6-a177-3370ba042b9f@46.28.67.55:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU&sid=d06d78e974491b6e&type=tcp&headerType=none#2.🇷🇴 GeminiRoute
-vless://07680ffb-0666-4836-b6ad-ec0de62bc38f@app-ms-90.next-gen-shopping.com:443?security=reality&encryption=none&pbk=HA8RX24k72lyACy0T1mCDeYcUQh22XRlT4wuhj3Onl4&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=assets-ms-90.next-gen-shopping.com&sid=36b707a341db758d#3.🇷🇴 GeminiRoute
