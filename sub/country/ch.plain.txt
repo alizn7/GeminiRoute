@@ -1,4 +1,6 @@
-trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@208.69.78.19:443?security=tls&insecure=0&headerType=none&type=tcp&allowInsecure=0&sni=www.yourultimateprofessionalcareerhub.com#1.🇨🇭 GeminiRoute
-vless://f5e70ce3-cfb4-4df1-b25c-d19bfae627c0@45.90.57.119:8443?security=reality&encryption=none&pbk=L6DeK_a25_ZjPKFOrQLoCPWuXi5KCIH_EcRpARmCwkI&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=twitch.tv&sid=16036bbef04d0509#2.🇨🇭 GeminiRoute
-trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@208.69.78.29:443?security=tls&insecure=0&headerType=none&type=tcp&allowInsecure=0&sni=learn.yourultimateprofessionalcareerhub.com#3.🇨🇭 GeminiRoute
-vless://054362fb-e485-4a3f-9568-4c5b0f60e074@149.33.15.213:443?security=tls&encryption=none&insecure=0&headerType=none&fp=chrome&type=tcp&allowInsecure=0&sni=swz.proxyplankton.ru#4.🇨🇭 GeminiRoute
+vless://f5e70ce3-cfb4-4df1-b25c-d19bfae627c0@45.90.57.119:8443?security=reality&encryption=none&pbk=L6DeK_a25_ZjPKFOrQLoCPWuXi5KCIH_EcRpARmCwkI&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=twitch.tv&sid=16036bbef04d0509#1.🇨🇭 GeminiRoute
+trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@208.69.78.33:443?security=tls&fp=chrome&sni=courses.yourultimateprofessionalcareerhub.com#2.🇨🇭 GeminiRoute
+trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@208.69.78.19:443?security=tls&headerType=none&type=tcp&allowInsecure=1&sni=www.yourultimateprofessionalcareerhub.com#3.🇨🇭 GeminiRoute
+trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@208.69.78.29:443?security=tls&insecure=0&headerType=none&type=tcp&allowInsecure=0&sni=learn.yourultimateprofessionalcareerhub.com#4.🇨🇭 GeminiRoute
+vless://1c8f7130-8c1a-4949-831d-1d45b39c795b@5.181.158.193:8461?security=reality&encryption=none&pbk=Yc75IKp6PRsGSw82GhGepMrRpJweW7WXUp9azkGuMAk&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=svoboda.bystriynet.online&sid=735f09fb3fedb191#5.🇨🇭 GeminiRoute
+vless://054362fb-e485-4a3f-9568-4c5b0f60e074@149.33.15.213:443?security=tls&encryption=none&insecure=0&headerType=none&fp=chrome&type=tcp&allowInsecure=0&sni=swz.proxyplankton.ru#6.🇨🇭 GeminiRoute

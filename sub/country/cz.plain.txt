@@ -1,2 +1,2 @@
-vless://b18d5990-96eb-4587-a386-7f8ef7591e6a@31.77.13.22:2063?encryption=none&flow=xtls-rprx-vision&security=reality&sni=rusbid.de&fp=chrome&pbk=MMpt_jWc4J3oySBdf5sPDVRkiWlZmOObth6A1scM9BM&type=tcp&headerType=none#1.🇨🇿 GeminiRoute
-vless://b18d5990-96eb-4587-a386-7f8ef7591e6a@cz-prg.dontblockmepls.com:2063?encryption=none&flow=xtls-rprx-vision&security=reality&sni=rusbid.de&fp=chrome&pbk=MMpt_jWc4J3oySBdf5sPDVRkiWlZmOObth6A1scM9BM&type=tcp&headerType=none#2.🇨🇿 GeminiRoute
+vless://b18d5990-96eb-4587-a386-7f8ef7591e6a@cz-prg.dontblockmepls.com:2063?encryption=none&flow=xtls-rprx-vision&security=reality&sni=rusbid.de&fp=chrome&pbk=MMpt_jWc4J3oySBdf5sPDVRkiWlZmOObth6A1scM9BM&type=tcp&headerType=none#1.🇨🇿 GeminiRoute
+vless://b18d5990-96eb-4587-a386-7f8ef7591e6a@31.77.13.22:2063?encryption=none&flow=xtls-rprx-vision&security=reality&sni=rusbid.de&fp=chrome&pbk=MMpt_jWc4J3oySBdf5sPDVRkiWlZmOObth6A1scM9BM&type=tcp&headerType=none#2.🇨🇿 GeminiRoute
