@@ -1,1 +1,0 @@
-vless://5d7b401c-78fa-4254-872e-6d42bf7e75ec@212.147.234.124:443?type=ws&security=tls&fp=chrome&sni=vp5.1145678.xyz&host=vp5.1145678.xyz#1.🇩🇰 GeminiRoute
