@@ -1,2 +1,2 @@
-trojan://5t6i121em5lkmsmk@ph001.zestapp778.com:46298?security=tls&sni=ph001.zestapp778.com#1.🇵🇭 GeminiRoute
-trojan://5t6i121em5lkmsmk@130.94.52.157:46298?security=tls&sni=ph001.zestapp778.com#2.🇵🇭 GeminiRoute
+trojan://5t6i121em5lkmsmk@130.94.52.157:46298?security=tls&sni=ph001.zestapp778.com#1.🇵🇭 GeminiRoute
+trojan://5t6i121em5lkmsmk@ph001.zestapp778.com:46298?security=tls&sni=ph001.zestapp778.com#2.🇵🇭 GeminiRoute

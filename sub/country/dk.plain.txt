@@ -1,1 +1,0 @@
-vless://24409c31-447c-401a-9260-b5f701cf2e8e@friren.iki-servers.com:443?type=xhttp&security=reality&fp=chrome&pbk=iD0nfLVyK9EbtFtKZgj_UcuGINq6yTqQM4jFfuTMFSY&sid=5f5962cc9ec6b180&sni=friren.iki-servers.com&path=/shield&mode=packet-up#1.🇩🇰 GeminiRoute
