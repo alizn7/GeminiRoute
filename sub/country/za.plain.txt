@@ -1,0 +1,1 @@
+vless://7df4f23f-b361-412a-883a-54dfdb5b8c8f@bot.vudfaro.ir:5065?encryption=none&security=none&type=tcp#1.🇿🇦 GeminiRoute

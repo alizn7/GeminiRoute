@@ -1,1 +1,2 @@
-vless://7c053ca8-38cc-45e2-930c-eda1fd66f903@195.123.245.241:443?security=reality&type=tcp&packetEncoding=xudp&sni=gateway.icloud.com&fp=chrome&flow=xtls-rprx-vision&sid=23d0950d60bc0d5b&pbk=hlY5ce1UsVIgE46y5PlEZhUsSaXUnCtoDLLaGrhInjw#1.🇨🇿 GeminiRoute
+vless://689a62e4-37e7-41de-9e6a-f2a56368c9e2@178.208.89.21:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&security=tls&sni=prod-eu-east-cz6.api-gateway.service-mesh.ingress-observability.speedtestinternet.link&fp=chrome#1.🇨🇿 GeminiRoute
+vless://7c053ca8-38cc-45e2-930c-eda1fd66f903@195.123.245.241:443?security=reality&type=tcp&packetEncoding=xudp&sni=gateway.icloud.com&fp=chrome&flow=xtls-rprx-vision&sid=23d0950d60bc0d5b&pbk=hlY5ce1UsVIgE46y5PlEZhUsSaXUnCtoDLLaGrhInjw#2.🇨🇿 GeminiRoute
