@@ -1,9 +1,4 @@
-trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@66.163.118.166:443?security=tls&sni=learn.discovergreatjobsandadvanceyourcareer.com#1.🇪🇸 GeminiRoute
-trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@66.163.118.131:443?security=tls&headerType=none&type=tcp&sni=www.discovergreatjobsandadvanceyourcareer.com#2.🇪🇸 GeminiRoute
-trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@66.163.118.244:443?security=tls&headerType=none&type=tcp&sni=api.discovergreatjobsandadvanceyourcareer.com#3.🇪🇸 GeminiRoute
-trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@66.163.118.251:443?security=tls&sni=resources.discovergreatjobsandadvanceyourcareer.com#4.🇪🇸 GeminiRoute
-vless://3e21e3d3-6d26-4155-b851-764dd8e8c6b5@156.252.229.136:8443?security=reality&encryption=none&pbk=7jPluypHwPilf_Mq7JOY96SwKkbK35WuIlN1HwGQ_0A&headerType=none&fp=chrome&spx=%2F&type=tcp&sni=play.googleapis.com&sid=974f7f8f#5.🇪🇸 GeminiRoute
-vless://3e21e3d3-6d26-4155-b851-764dd8e8c6b5@156.252.229.11:8443?security=reality&encryption=none&pbk=7jPluypHwPilf_Mq7JOY96SwKkbK35WuIlN1HwGQ_0A&headerType=&fp=chrome&spx=%2F&type=tcp&sni=play.googleapis.com&sid=974f7f8f#6.🇪🇸 GeminiRoute
-trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@66.163.118.62:443?security=tls&sni=courses.discovergreatjobsandadvanceyourcareer.com#7.🇪🇸 GeminiRoute
-vless://7d1a74fd-8a38-4a29-863f-5da53a9e557e@api.ferrin.uk:443?mode=stream-one&path=/es&security=tls&alpn=h2&encryption=none&extra={  "xmux" : {    "hMaxReusableSecs" : "1140-1260",    "maxConnections" : 3  }}&insecure=0&fp=chrome&type=xhttp&allowInsecure=0&sni=7d1a74fd.ferrin.uk#8.🇪🇸 GeminiRoute
-vless://056405e8-de9f-4d0d-8145-956f13cc34da@45.198.55.200:25152?security=reality&type=tcp&packetEncoding=xudp&sni=www.samsung.com&fp=chrome&flow=xtls-rprx-vision&sid=08c379434f36cdbe&pbk=ZIZIfEd-cs4jAgYIav5ZAkfWaqvpG8DQP-SH6xhGDmc#9.🇪🇸 GeminiRoute
+vless://3e21e3d3-6d26-4155-b851-764dd8e8c6b5@156.252.229.136:8443?security=reality&encryption=none&pbk=7jPluypHwPilf_Mq7JOY96SwKkbK35WuIlN1HwGQ_0A&headerType=none&fp=chrome&spx=%2F&type=tcp&sni=play.googleapis.com&sid=974f7f8f#1.🇪🇸 GeminiRoute
+vless://3e21e3d3-6d26-4155-b851-764dd8e8c6b5@156.252.229.11:8443?security=reality&encryption=none&pbk=7jPluypHwPilf_Mq7JOY96SwKkbK35WuIlN1HwGQ_0A&headerType=&fp=chrome&spx=%2F&type=tcp&sni=play.googleapis.com&sid=974f7f8f#2.🇪🇸 GeminiRoute
+vless://7d1a74fd-8a38-4a29-863f-5da53a9e557e@api.ferrin.uk:443?mode=stream-one&path=/es&security=tls&alpn=h2&encryption=none&extra={  "xmux" : {    "hMaxReusableSecs" : "1140-1260",    "maxConnections" : 3  }}&insecure=0&fp=chrome&type=xhttp&allowInsecure=0&sni=7d1a74fd.ferrin.uk#3.🇪🇸 GeminiRoute
+trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@66.163.118.131:443?security=tls&headerType=none&type=tcp&sni=www.discovergreatjobsandadvanceyourcareer.com#4.🇪🇸 GeminiRoute
