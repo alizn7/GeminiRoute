@@ -1,2 +1,3 @@
-vless://c0dd6d59-1573-43af-8b70-1470b2632a6d@208.69.78.217:2053?Telegram=@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad&type=tcp&security=reality&fp=chrome&pbk=A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0&sid=ad86e2d52ff40ebd&sni=www.apple.com#1.🇨🇭 GeminiRoute
-trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@208.69.78.29:443?security=tls&headerType=none&type=tcp&sni=learn.yourultimateprofessionalcareerhub.com#2.🇨🇭 GeminiRoute
+trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@208.69.78.29:443?security=tls&headerType=none&type=tcp&sni=learn.yourultimateprofessionalcareerhub.com#1.🇨🇭 GeminiRoute
+vless://67eb6b17-7797-4ded-bf52-423c4c5f6cbd@50.117.15.225:443?security=reality&type=tcp&packetEncoding=xudp&sni=www.foxsports.com&fp=chrome&flow=xtls-rprx-vision&sid=91af08b1ce1f&pbk=G7bpUPFSW28-oE6ff8qZac1_apU6PiJ-GHmi7tAPDSY&encryption=none#2.🇨🇭 GeminiRoute
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@chat.openai.com:8880?security=&encryption=none&host=vms.lifetime29.workers.dev&type=ws#3.🇨🇭 GeminiRoute
