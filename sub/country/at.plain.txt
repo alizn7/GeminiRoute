@@ -1,1 +1,0 @@
-vless://610ac982-04eb-34c0-80b1-5dd3c2ca131e@201.10.90.113:443?security=reality&encryption=none&pbk=6z3VlbF2v0C3FTWQQemYDxX-MIzwaz_k8_B-xyc0Xyg&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=undef-aut-0.undef.network#1.🇦🇹 GeminiRoute
