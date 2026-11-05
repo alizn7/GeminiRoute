@@ -1,2 +1,3 @@
-vless://5c32201a-6c0e-451b-8f0a-24b4bd40df59@31.77.236.114:443?security=reality&encryption=none&pbk=kBTMVLCNE0jjwuJF6H5-65l5Pe0QToS0Hg-9Tmaa7Sk&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=files.porsche.com&sid=1a2b3c4d#1.🇪🇪 GeminiRoute
-vless://13e541f3-d09d-4633-89df-8513db0ced20@45.86.60.174:16443?encryption=none&type=tcp&security=none#2.🇪🇪 GeminiRoute
+vless://b7b8ee80-db83-4276-8c68-87dc88b0b0b5@201.8.71.38:443?encryption=none&fp=&pbk=3wFF83gtIA0sXj-6GGCAa--oQbSr0MVUj0FBc-0QmiE&security=reality&sid=e572b6579ea525d4&sni=71b840t.de7.h1clayd.click&type=tcp#1.🇪🇪 GeminiRoute
+vless://5c32201a-6c0e-451b-8f0a-24b4bd40df59@31.77.236.114:443?security=reality&encryption=none&pbk=kBTMVLCNE0jjwuJF6H5-65l5Pe0QToS0Hg-9Tmaa7Sk&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=files.porsche.com&sid=1a2b3c4d#2.🇪🇪 GeminiRoute
+vless://13e541f3-d09d-4633-89df-8513db0ced20@45.86.60.174:16443?encryption=none&type=tcp&security=none#3.🇪🇪 GeminiRoute

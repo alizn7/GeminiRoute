@@ -1,1 +1,2 @@
-vless://ccb8ff48-3934-4250-b4ec-bb76b95d154f@no1.fox-lisa.ru:443?security=reality&encryption=none&pbk=NaCZ-sS4poEbFwKmD7ePAVyc5OhHxsD9nkAStjXkoWs&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=no1.fox-lisa.ru&sid=027af64166562b09#1.🇳🇴 GeminiRoute
+vless://ccb8ff48-3934-4250-b4ec-bb76b95d154f@185.90.61.65:443?flow=xtls-rprx-vision&fp=chrome&pbk=NaCZ-sS4poEbFwKmD7ePAVyc5OhHxsD9nkAStjXkoWs&security=reality&sid=027af64166562b09&sni=no1.fox-lisa.ru&type=raw#1.🇳🇴 GeminiRoute
+vless://ccb8ff48-3934-4250-b4ec-bb76b95d154f@no1.fox-lisa.ru:443?security=reality&encryption=none&pbk=NaCZ-sS4poEbFwKmD7ePAVyc5OhHxsD9nkAStjXkoWs&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=no1.fox-lisa.ru&sid=027af64166562b09#2.🇳🇴 GeminiRoute

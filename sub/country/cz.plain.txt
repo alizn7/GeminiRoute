@@ -1,2 +1,0 @@
-vless://b34a52cb-cd52-49a8-9362-b8e97c151d49@212.102.38.25:443?security=reality&type=tcp&packetEncoding=xudp&sni=udemy.com&fp=chrome&flow=xtls-rprx-vision&sid=e90360ec7cc61b20&pbk=23cb4W9THzBKsrECsLh-A_FcKZfkAtUONoDze8-GnQE&encryption=none#1.🇨🇿 GeminiRoute
-vless://b18d5990-96eb-4587-a386-7f8ef7591e6a@cz-prg.dontblockmepls.com:2063?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&fp=chrome&sni=rusbid.de&pbk=MMpt_jWc4J3oySBdf5sPDVRkiWlZmOObth6A1scM9BM#2.🇨🇿 GeminiRoute
