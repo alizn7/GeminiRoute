@@ -1,3 +1,0 @@
-vless://ccb8ff48-3934-4250-b4ec-bb76b95d154f@no1.fox-lisa.ru:443?security=reality&encryption=none&pbk=NaCZ-sS4poEbFwKmD7ePAVyc5OhHxsD9nkAStjXkoWs&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=no1.fox-lisa.ru&sid=027af64166562b09#1.🇳🇴 GeminiRoute
-vless://ccb8ff48-3934-4250-b4ec-bb76b95d154f@185.90.61.65:443?flow=xtls-rprx-vision&fp=chrome&pbk=NaCZ-sS4poEbFwKmD7ePAVyc5OhHxsD9nkAStjXkoWs&security=reality&sid=027af64166562b09&sni=no1.fox-lisa.ru&type=raw#2.🇳🇴 GeminiRoute
-vless://2f6c70f3-206a-4bc1-ac1f-6b70153f9c73@connect2.accessgate.link:2086?type=tcp&security=reality&flow=xtls-rprx-vision&pbk=CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko&sid=b0d8c9a285c70f6f&sni=unpkg.com&fp=chrome#3.🇳🇴 GeminiRoute
