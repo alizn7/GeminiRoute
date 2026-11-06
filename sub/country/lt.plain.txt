@@ -1,1 +1,1 @@
-vless://2232d904-8e6a-4202-8240-6efd8aec02e9@app26.betust.net:443?security=reality&encryption=none&pbk=5pR15ATlWW3tVzfnMN3xoiN56LjIUbhnOMp37ZvTFUc&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=app26.betust.net&sid=d44d6d46#1.🇱🇹 GeminiRoute
+vless://2232d904-8e6a-4202-8240-6efd8aec02e9@app26.betust.net:443?flow=xtls-rprx-vision&encryption=none&security=reality&sni=app26.betust.net&fp=chrome&pbk=5pR15ATlWW3tVzfnMN3xoiN56LjIUbhnOMp37ZvTFUc&sid=d44d6d46&type=tcp&headerType=none#1.🇱🇹 GeminiRoute

@@ -1,0 +1,1 @@
+vless://db80088c-32a1-4cb8-a907-0f3cb7844152@at1.japancase.site:443?security=reality&encryption=none&pbk=zEntiD6D81wY__YHPvIw78e09CBIgYkyQ5meIo7c_hg&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=at1.japancase.site&sid=41ae8e266bc3346f#1.🇦🇹 GeminiRoute
