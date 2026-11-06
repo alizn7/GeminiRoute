@@ -1,4 +1,5 @@
-vless://59b0d30e-9b29-4fda-a35c-b2901ec32db7@45.144.234.157:14430?&sni=45.144.234.157&type=ws&headerType=none&host=45.144.234.157&path=/vless#1.🇫🇮 GeminiRoute
-vless://f8d52ece-fad4-478d-875d-df6eed3befa7@sw.golangwikito.cfd:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=sw.golangwikito.cfd&fp=chrome&pbk=Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg&sid=a1037b25dcef6aa7&type=tcp&headerType=none#2.🇫🇮 GeminiRoute
+trojan://gHQP0D7D15@104.25.239.113:2053?insecure=0&allowInsecure=0&security=tls&sni=marvdasht.phonecomparisonblog.org&path=/&type=ws#1.🇫🇮 GeminiRoute
+vless://59b0d30e-9b29-4fda-a35c-b2901ec32db7@45.144.234.157:14430?&sni=45.144.234.157&type=ws&headerType=none&host=45.144.234.157&path=/vless#2.🇫🇮 GeminiRoute
 vless://9b12b97f-e185-41a3-ad50-a31a092f35c9@31.76.46.221:10851?encryption=none&security=reality&type=grpc&serviceName=grpc_common1&mode=gun&sni=ap-author.led.samsung.com&fp=chrome&pbk=nTNsyJaBeqGkLNk4lbqRiKQd993pRt2QSmYNfeUhRXs&sid=aacd5d42a33b2a4e#3.🇫🇮 GeminiRoute
 vless://8d954cbe-7ca9-402d-bfaf-aca6c92c04c3@217.144.188.185:443?security=reality&encryption=none&pbk=_ZRqqX7UVPTq--m8Lk8YHhrfElad2dIIpTh3D59f8zk&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.nordea.fi#4.🇫🇮 GeminiRoute
+trojan://gHQP0D7D15@172.67.118.45:2053?security=tls&insecure=0&type=ws&allowInsecure=0&sni=marvdasht.phonecomparisonblog.org#5.🇫🇮 GeminiRoute
