@@ -1,2 +1,5 @@
-vless://39947382-3212-41c9-bc3a-589574ac8b23@uae.unixzone.us:22573?encryption=none&security=none&type=ws&host=uae.unixzone.us&path=/#1.🇦🇪 GeminiRoute
-trojan://d9064589-74af-432a-9390-5d8a9da281bf@Sclass-C1.catcat321.com:20086?security=tls&insecure=0&headerType=none&fp=chrome&type=tcp&allowInsecure=0&sni=hk.catxstar.com#2.🇦🇪 GeminiRoute
+vless://965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0@95.174.68.188:14430?&sni=95.174.68.188&type=ws&headerType=none&host=95.174.68.188&path=/vless#1.🇦🇪 GeminiRoute
+vless://aebe5a70-0ca3-46ce-8208-8b5bab1346ce@mybb.com:443?path=/&security=tls&encryption=none&insecure=0&host=rayan-007.nastaran.dpdns.org&fp=chrome&type=ws&allowInsecure=0&sni=rAyAn-007.nAsTaRaN.DpDnS.OrG#2.🇦🇪 GeminiRoute
+trojan://d9064589-74af-432a-9390-5d8a9da281bf@sclass-c1.catcat321.com:20086?security=tls&sni=hk.catxstar.com#3.🇦🇪 GeminiRoute
+trojan://d9064589-74af-432a-9390-5d8a9da281bf@Sclass-00.catcat321.com:20123?security=tls&sni=hk.catxstar.com#4.🇦🇪 GeminiRoute
+vless://39947382-3212-41c9-bc3a-589574ac8b23@uae.unixzone.us:22573?encryption=none&security=none&type=ws&host=uae.unixzone.us&path=/#5.🇦🇪 GeminiRoute
