@@ -1,4 +1,4 @@
-vless://db80088c-32a1-4cb8-a907-0f3cb7844152@45.86.60.190:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=zEntiD6D81wY__YHPvIw78e09CBIgYkyQ5meIo7c_hg&security=reality&sid=41ae8e266bc3346f&sni=ee2.japancase.site&type=tcp#1.🇪🇪 GeminiRoute
-vless://13e541f3-d09d-4633-89df-8513db0ced20@45.86.60.174:16443?encryption=none&type=tcp&security=none#2.🇪🇪 GeminiRoute
-vless://90157e25-cee1-4217-921e-91f300bc1a24@ee.subv.ru:443?security=reality&encryption=none&pbk=1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs&headerType=none&fp=chrome&spx=/&type=tcp&flow=xtls-rprx-vision&sni=dvizhok.su&sid=428ef87fd47a3a32#3.🇪🇪 GeminiRoute
-vless://b7b8ee80-db83-4276-8c68-87dc88b0b0b5@201.8.71.38:443?encryption=none&fp=&pbk=3wFF83gtIA0sXj-6GGCAa--oQbSr0MVUj0FBc-0QmiE&security=reality&sid=e572b6579ea525d4&sni=71b840t.de7.h1clayd.click&type=tcp#4.🇪🇪 GeminiRoute
+vless://90157e25-cee1-4217-921e-91f300bc1a24@ee.subv.ru:443?security=reality&encryption=none&pbk=1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs&headerType=none&fp=chrome&spx=/&type=tcp&flow=xtls-rprx-vision&sni=dvizhok.su&sid=428ef87fd47a3a32#1.🇪🇪 GeminiRoute
+vless://db80088c-32a1-4cb8-a907-0f3cb7844152@45.86.60.190:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=zEntiD6D81wY__YHPvIw78e09CBIgYkyQ5meIo7c_hg&security=reality&sid=41ae8e266bc3346f&sni=ee2.japancase.site&type=tcp#2.🇪🇪 GeminiRoute
+vless://b7b8ee80-db83-4276-8c68-87dc88b0b0b5@201.8.71.38:443?encryption=none&fp=&pbk=3wFF83gtIA0sXj-6GGCAa--oQbSr0MVUj0FBc-0QmiE&security=reality&sid=e572b6579ea525d4&sni=71b840t.de7.h1clayd.click&type=tcp#3.🇪🇪 GeminiRoute
+vless://13e541f3-d09d-4633-89df-8513db0ced20@45.86.60.174:16443?encryption=none&type=tcp&security=none#4.🇪🇪 GeminiRoute
