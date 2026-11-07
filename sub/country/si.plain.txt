@@ -1,0 +1,2 @@
+vless://a60da2ca-0abf-49f8-9dcb-156989d76ad2@92.42.201.160:14443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=node-slo05.rkitman.ru&security=reality&pbk=fmZQYGYXw4xYtiuMFvH4Dgse1DBoGazt-vWM7LOdchY&sid=e013fa99a81badcc#1.🇸🇮 GeminiRoute
+vless://a60da2ca-0abf-49f8-9dcb-156989d76ad2@92.42.201.155:14443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=mGTe1s-luknrPURs4KI4fjdCXZAq03f_-b7by6Dr-CI&security=reality&sid=e204defc87a8949e&sni=node-slo04.rkitman.ru&type=tcp#2.🇸🇮 GeminiRoute
