@@ -1,1 +1,2 @@
 vless://91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a@152.32.167.33:443?security=reality&encryption=none&pbk=Q8QwBSGN6J-FqgDV1pYNm0VThS_xNRyQ3DPPa9YZ3j4&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.amazon.com&sid=cff998a4#1.🇹🇼 GeminiRoute
+vless://91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a@n04.jinggai.online:8443?&security=tls&fp=chrome&sni=n04.jinggai.online&type=ws&headerType=none&host=n04.jinggai.online&path=/nvl-n04-ws/e0577fe8fd7c8823#2.🇹🇼 GeminiRoute
