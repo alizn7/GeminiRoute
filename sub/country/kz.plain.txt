@@ -1,3 +1,1 @@
-vless://db80088c-32a1-4cb8-a907-0f3cb7844152@95.57.50.87:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=eV6ewGF7oTHf2pTQHKYvwJt-vU8hUC-1CjiUl20HtXE&security=reality&sid=4000cdda6278d236&sni=kz1.japancase.site&type=tcp#1.🇰🇿 GeminiRoute
-vless://dc95c1dd-2cd3-414c-8cf1-71ae86dad666@90.156.230.179:443?security=reality&encryption=none&pbk=Au1rmQdDRjlEJk17IfLQv5PBUEEosMWNhAlrWZj6mnY&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=kz-cdn-prsv-forum.keno.su&sid=14324280#2.🇰🇿 GeminiRoute
-vless://dc95c1dd-2cd3-414c-8cf1-71ae86dad666@kz-cdn-prsv-forum.keno.su:443?security=reality&encryption=none&pbk=Au1rmQdDRjlEJk17IfLQv5PBUEEosMWNhAlrWZj6mnY&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=kz-cdn-prsv-forum.keno.su&sid=14324280#3.🇰🇿 GeminiRoute
+vless://2424febb-43cb-488d-bdd1-401e923c8e48@3h-kazakhstan1.09vpn.com:8443?path=/vless/&security=tls&encryption=none&insecure=0&type=ws&allowInsecure=0#1.🇰🇿 GeminiRoute

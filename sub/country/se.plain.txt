@@ -1,10 +1,8 @@
-vless://80de563a-cac8-40ea-8cb0-4cb082dd92f9@5.178.109.174:14430?path=/vless&security=&encryption=none&host=5.178.109.174&type=ws#1.🇸🇪 GeminiRoute
+vless://80de563a-cac8-40ea-8cb0-4cb082dd92f9@5.178.109.174:14430?&sni=5.178.109.174&type=ws&headerType=none&host=5.178.109.174&path=/vless#1.🇸🇪 GeminiRoute
 vmess://eyJhZGQiOiI2Mi45My4xNjYuMTg0IiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6IjVjMDQwZjFkLTQ1ZGItNDNiZC04ZDQ2LWU0OTUwZTQzMzczNSIsImluc2VjdXJlIjoiMCIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwY3MiOiIiLCJwb3J0IjoiMTI3MCIsInBzIjoiMi7wn4e48J+HqiBHZW1pbmlSb3V0ZSIsInNjeSI6ImF1dG8iLCJzbmkiOiJ4bWZobHB5LmNvbSIsInRscyI6InRscyIsInR5cGUiOiJub25lIiwidiI6IjIiLCJ2Y24iOiIifQ==
-vless://3bb97d46-789b-4229-88f6-9beb222a4137@smart.bachidze.com:443?pbk=vzRgIP8Mvd9V6krwKxw5EwwzvC4uiaW3wo0Y2ri2_Wc&fp=chrome&security=reality&sni=smart.bachidze.com&flow=xtls-rprx-vision&type=tcp&headerType=none&encryption=none#3.🇸🇪 GeminiRoute
-trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@70.34.207.14:443?security=tls&sni=searchhealthcarejobsandbuildmedicalcareerpathway.com#4.🇸🇪 GeminiRoute
-vless://b2fe1fa4-6a79-4938-a3f4-63b54ae7f16b@138.124.86.230:48115?encryption=none&fp=chrome&security=tls&serviceName=138-124-86-230-sslip-io&sni=138-124-86-230.sslip.io&type=grpc#5.🇸🇪 GeminiRoute
-vless://6ba4ed2e-b42b-4880-8b3b-c7e2df2d02f6@se3.shtil.io:443?security=tls&alpn=h2,http/1.1&encryption=none&headerType=none&fp=chrome&type=tcp&allowInsecure=0&sni=se3.shtil.io#6.🇸🇪 GeminiRoute
-vless://6ba4ed2e-b42b-4880-8b3b-c7e2df2d02f6@194.104.94.141:443?encryption=none&type=tcp&security=tls&fp=chrome&sni=se3.shtil.io&alpn=h2,http/1.1#7.🇸🇪 GeminiRoute
-trojan://FkQH0Q5EFneySv20Qj3yoArD2GSb2XZF@95.143.196.97:443?security=tls&alpn=h2,http/1.1&insecure=0&headerType=none&fp=chrome&type=tcp&allowInsecure=0&sni=connect-se.mimowhat.online#8.🇸🇪 GeminiRoute
-vless://30572b57-f5ab-4eb8-82d4-a24d399b99f6@46.29.255.123:59539?security=reality&encryption=none&pbk=R6mPqCsjZMWauci4LHw7Qp1LGKmBd-sxMXplyOn9bSQ&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=cloudflare-dns.com#9.🇸🇪 GeminiRoute
-vless://3bb97d46-789b-4229-88f6-9beb222a4137@88.216.223.100:443?security=reality&encryption=none&pbk=vzRgIP8Mvd9V6krwKxw5EwwzvC4uiaW3wo0Y2ri2_Wc&headerType=none&fp=firefox&type=tcp&flow=xtls-rprx-vision&sni=smart.bachidze.com#10.🇸🇪 GeminiRoute
+vless://6ba4ed2e-b42b-4880-8b3b-c7e2df2d02f6@194.104.94.141:443?encryption=none&type=tcp&security=tls&fp=chrome&sni=se3.shtil.io&alpn=h2,http/1.1#3.🇸🇪 GeminiRoute
+vless://b2fe1fa4-6a79-4938-a3f4-63b54ae7f16b@138.124.86.230:48115?encryption=none&fp=chrome&security=tls&serviceName=138-124-86-230-sslip-io&sni=138-124-86-230.sslip.io&type=grpc#4.🇸🇪 GeminiRoute
+vless://6ba4ed2e-b42b-4880-8b3b-c7e2df2d02f6@se3.shtil.io:443?security=tls&alpn=h2,http/1.1&encryption=none&headerType=none&fp=chrome&type=tcp&sni=se3.shtil.io#5.🇸🇪 GeminiRoute
+trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@70.34.207.14:443?security=tls&sni=searchhealthcarejobsandbuildmedicalcareerpathway.com#6.🇸🇪 GeminiRoute
+trojan://FkQH0Q5EFneySv20Qj3yoArD2GSb2XZF@95.143.196.97:443?security=tls&alpn=h2,http/1.1&insecure=0&headerType=none&fp=chrome&type=tcp&allowInsecure=0&sni=connect-se.mimowhat.online#7.🇸🇪 GeminiRoute
+vless://30572b57-f5ab-4eb8-82d4-a24d399b99f6@46.29.255.123:59539?security=reality&encryption=none&pbk=R6mPqCsjZMWauci4LHw7Qp1LGKmBd-sxMXplyOn9bSQ&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=cloudflare-dns.com#8.🇸🇪 GeminiRoute

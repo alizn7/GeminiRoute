@@ -1,2 +1,0 @@
-vless://9f9c913b-0b78-4d14-a4db-560794cbc90f@plov.plus-hit.ru:443?security=reality&encryption=none&pbk=QsUgVxHyjCKdtYBnBGoEM74F3k9uc2kimLPbf_qAAAM&headerType=none&fp=chrome&spx=/&type=tcp&flow=xtls-rprx-vision&sni=plov.plus-hit.ru&sid=bf8b003cb32c968b#1.🇺🇿 GeminiRoute
-vless://9f9c913b-0b78-4d14-a4db-560794cbc90f@46.8.114.205:443?security=reality&encryption=none&pbk=QsUgVxHyjCKdtYBnBGoEM74F3k9uc2kimLPbf_qAAAM&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=plov.plus-hit.ru&sid=bf8b003cb32c968b#2.🇺🇿 GeminiRoute
