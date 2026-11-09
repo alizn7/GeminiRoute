@@ -2,5 +2,3 @@ vless://90157e25-cee1-4217-921e-91f300bc1a24@185.215.184.53:443/?type=tcp&encryp
 vless://90157e25-cee1-4217-921e-91f300bc1a24@185.215.184.49:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs&security=reality&sid=428ef87fd47a3a32&sni=dvizhok.su&type=tcp#2.🇪🇪 GeminiRoute
 vless://90157e25-cee1-4217-921e-91f300bc1a24@185.215.184.85:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs&security=reality&sid=428ef87fd47a3a32&sni=dvizhok.su&type=tcp#3.🇪🇪 GeminiRoute
 vless://90157e25-cee1-4217-921e-91f300bc1a24@ee.subv.ru:443?security=reality&encryption=none&pbk=1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs&headerType=&type=tcp&flow=xtls-rprx-vision&sni=dvizhok.su&sid=428ef87fd47a3a32#4.🇪🇪 GeminiRoute
-vless://13e541f3-d09d-4633-89df-8513db0ced20@45.86.60.174:16443?encryption=none&type=tcp&security=none#5.🇪🇪 GeminiRoute
-vless://dc95c1dd-2cd3-414c-8cf1-71ae86dad666@esso-music-coroborito.keno.su:443?security=reality&encryption=none&pbk=_MeP-WwmolUvi6wMXNoSs_zo6miG_OW7xk4ibzADiHY&headerType=&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=esso-music-coroborito.keno.su#6.🇪🇪 GeminiRoute
