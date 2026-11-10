@@ -1,5 +1,3 @@
-vmess://eyJhZGQiOiIxNDAuMjM4LjIuMjUwIiwiYWlkIjoiMCIsImlkIjoiNDFhNzA4OWEtMDQwYi00NTM4LThiOGQtMDEwOTAyNDA1YmRlIiwibmV0IjoidGNwIiwicG9ydCI6IjQ0MyIsInBzIjoiMS7wn4ew8J+HtyBHZW1pbmlSb3V0ZSIsInNjeSI6ImF1dG8iLCJza2lwLWNlcnQtdmVyaWZ5Ijp0cnVlLCJ0bHMiOiIiLCJ0eXBlIjoiIiwidiI6IjIifQ==
-vless://814bd064-544d-4255-a070-5705c03f6da9@3.39.4.109:18967?flow=xtls-rprx-vision&fp=chrome&pbk=k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0&security=reality&sid=48050fab&sni=www.apple.com&type=tcp#2.🇰🇷 GeminiRoute
-trojan://5t6i121em5lkmsmk@kr002.zestapp778.com:48851?security=tls&sni=kr002.zestapp778.com#3.🇰🇷 GeminiRoute
-vmess://eyJ2IjoiMiIsInBzIjoiNC7wn4ew8J+HtyBHZW1pbmlSb3V0ZSIsImFkZCI6IjEyOS4xNTQuNjEuMTk2IiwicG9ydCI6IjgwMCIsImlkIjoiYTkxNWIxZDYtY2YyOC00ZGM4LWU0YjQtZTA5YzQ4YzM3ZWMwIiwiYWlkIjoiMCIsInNjeSI6ImF1dG8iLCJuZXQiOiJ0Y3AiLCJ0eXBlIjoiIiwidGxzIjoiIiwiYWxwbiI6IiIsInNraXAtY2VydC12ZXJpZnkiOnRydWV9
-trojan://5t6i121em5lkmsmk@158.247.255.150:48851?security=tls&insecure=0&headerType=none&fp=chrome&type=tcp&allowInsecure=0&sni=kr002.zestapp778.com#5.🇰🇷 GeminiRoute
+vless://814bd064-544d-4255-a070-5705c03f6da9@3.39.4.109:18967?flow=xtls-rprx-vision&fp=chrome&pbk=k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0&security=reality&sid=48050fab&sni=www.apple.com&type=tcp#1.🇰🇷 GeminiRoute
+vmess://eyJ2IjoiMiIsInBzIjoiMi7wn4ew8J+HtyBHZW1pbmlSb3V0ZSIsImFkZCI6IjEyOS4xNTQuNjEuMTk2IiwicG9ydCI6IjgwMCIsImlkIjoiYTkxNWIxZDYtY2YyOC00ZGM4LWU0YjQtZTA5YzQ4YzM3ZWMwIiwiYWlkIjoiMCIsInNjeSI6ImF1dG8iLCJuZXQiOiJ0Y3AiLCJ0eXBlIjoiIiwidGxzIjoiIiwiYWxwbiI6IiIsInNraXAtY2VydC12ZXJpZnkiOnRydWV9
+vless://e15db5c2-2dca-49fc-857b-aa37a7ba1c79@43.108.85.54:443?security=reality&type=tcp&packetEncoding=xudp&sni=cloudflare.com&fp=chrome&sid=68307e&pbk=v5HjgwMvPEsrpqwtgEytMQ3xs-1Cdv2gOCiGMZ2vimc#3.🇰🇷 GeminiRoute

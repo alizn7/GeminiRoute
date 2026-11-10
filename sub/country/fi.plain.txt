@@ -1,7 +1,5 @@
-vless://59b0d30e-9b29-4fda-a35c-b2901ec32db7@45.144.234.157:14430?encryption=none&type=ws&path=/vless#1.🇫🇮 GeminiRoute
+vless://59b0d30e-9b29-4fda-a35c-b2901ec32db7@45.144.234.157:14430?&sni=45.144.234.157&type=ws&headerType=none&host=45.144.234.157&path=/vless#1.🇫🇮 GeminiRoute
 vless://ce698f0c-a8ec-474a-b5d8-3be8032deeb8@146.103.118.189:443?encryption=none&type=ws&security=tls&path=/574ck-finland&host=nl2.574ck.xyz&sni=nl2.574ck.xyz&fp=chrome#2.🇫🇮 GeminiRoute
-vless://42a64b9a-ab79-4094-8656-30366a7c2ea3@fi.peregrine-sub.net:443?security=reality&encryption=none&pbk=Y2uyTCt5ofoFht6Xl-55dBPCBUiYi1fFTVcmZtoiqFw&headerType=&type=tcp&flow=xtls-rprx-vision&sni=fi.peregrine-sub.net#3.🇫🇮 GeminiRoute
-vless://ead9f716-0131-4c16-a107-6b9b16090961@78.17.39.129:443?mode=packet-up&path=/assets/finvip02/&security=tls&alpn=h2,http/1.1&encryption=none&insecure=0&fp=chrome&type=xhttp&allowInsecure=0&sni=78.17.39.129#4.🇫🇮 GeminiRoute
+vless://42a64b9a-ab79-4094-8656-30366a7c2ea3@fi.peregrine-sub.net:443?security=reality&encryption=none&pbk=Y2uyTCt5ofoFht6Xl-55dBPCBUiYi1fFTVcmZtoiqFw&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=fi.peregrine-sub.net#3.🇫🇮 GeminiRoute
+vless://99c5b713-dedf-4a10-8070-916ff3f49b0e@138.124.124.157:443?&security=tls&fp=chrome&sni=fs.qicai99.com&type=ws&headerType=none&host=fs.qicai99.com&path=/#4.🇫🇮 GeminiRoute
 vless://42a64b9a-ab79-4094-8656-30366a7c2ea3@31.76.103.92:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&fp=chrome&sni=fi.peregrine-sub.net&pbk=Y2uyTCt5ofoFht6Xl-55dBPCBUiYi1fFTVcmZtoiqFw#5.🇫🇮 GeminiRoute
-vless://88742d38-3f5c-4b9c-b256-7df5db8257ec@107.181.151.128:443?security=reality&encryption=none&pbk=zfsjt2A8ur0qHWIuCG7F9W4wZN3VTuL6fkTljC-9R0s&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.mozilla.org&sid=8f79726c5002#6.🇫🇮 GeminiRoute
-vless://b62e3646-b84d-443c-9c94-718b646502e0@webdisk.jaggyslawa.org:443?security=reality&encryption=none&pbk=zfsjt2A8ur0qHWIuCG7F9W4wZN3VTuL6fkTljC-9R0s&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.foxsports.com&sid=dda5f542d835#7.🇫🇮 GeminiRoute

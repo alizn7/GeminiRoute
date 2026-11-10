@@ -1,1 +1,1 @@
-vless://90157e25-cee1-4217-921e-91f300bc1a24@66.90.106.28:443?encryption=none&flow=xtls-rprx-vision&pbk=1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs&security=reality&sid=428ef87fd47a3a32&sni=banket-restoran.su&type=tcp&fp=chrome#1.🇦🇹 GeminiRoute
+vless://90157e25-cee1-4217-921e-91f300bc1a24@66.90.106.28:443?security=reality&encryption=none&pbk=1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=banket-restoran.su&sid=428ef87fd47a3a32#1.🇦🇹 GeminiRoute
