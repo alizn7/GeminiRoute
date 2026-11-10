@@ -1,5 +1,5 @@
-vless://59b0d30e-9b29-4fda-a35c-b2901ec32db7@45.144.234.157:14430?&sni=45.144.234.157&type=ws&headerType=none&host=45.144.234.157&path=/vless#1.🇫🇮 GeminiRoute
+vless://4662bf2b-af58-0001-ae5f-ef3d7d3a624f@185.178.208.167:443?alpn=http/1.1&host=mbr.rkn-pediki.site&path=/session&security=tls&sni=mbr.rkn-pediki.site&type=ws&fp=chrome#1.🇫🇮 GeminiRoute
 vless://ce698f0c-a8ec-474a-b5d8-3be8032deeb8@146.103.118.189:443?encryption=none&type=ws&security=tls&path=/574ck-finland&host=nl2.574ck.xyz&sni=nl2.574ck.xyz&fp=chrome#2.🇫🇮 GeminiRoute
-vless://42a64b9a-ab79-4094-8656-30366a7c2ea3@fi.peregrine-sub.net:443?security=reality&encryption=none&pbk=Y2uyTCt5ofoFht6Xl-55dBPCBUiYi1fFTVcmZtoiqFw&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=fi.peregrine-sub.net#3.🇫🇮 GeminiRoute
-vless://99c5b713-dedf-4a10-8070-916ff3f49b0e@138.124.124.157:443?&security=tls&fp=chrome&sni=fs.qicai99.com&type=ws&headerType=none&host=fs.qicai99.com&path=/#4.🇫🇮 GeminiRoute
-vless://42a64b9a-ab79-4094-8656-30366a7c2ea3@31.76.103.92:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&fp=chrome&sni=fi.peregrine-sub.net&pbk=Y2uyTCt5ofoFht6Xl-55dBPCBUiYi1fFTVcmZtoiqFw#5.🇫🇮 GeminiRoute
+vless://b7374077-9fdc-4d28-9fb1-5cbc262fb53d@185.22.172.249:443?Telegram=@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad&mode=packet-up&path=/dragon-stream&security=tls&encryption=none&host=fortuna.golden-dragon.de5.net&type=xhttp&allowInsecure=0&sni=fortuna.golden-dragon.de5.net#3.🇫🇮 GeminiRoute
+vless://59b0d30e-9b29-4fda-a35c-b2901ec32db7@45.144.234.157:14430?encryption=none&type=ws&path=/vless#4.🇫🇮 GeminiRoute
+vless://622654a4-b666-000b-9260-fb717e05154f@169.40.34.41:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=key-master-saver.com&fp=chrome&pbk=6VMgXXhZdJCiOG05EyK_zTHh00kpFGrZJeZIEPgqhjY&sid=1c3e8241a8743df9&type=tcp&headerType=none#5.🇫🇮 GeminiRoute

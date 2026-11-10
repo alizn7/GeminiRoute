@@ -1,4 +1,1 @@
-vless://53555197-bf0a-49e6-bea1-211fcfc1d962@45.81.252.143:2053?alpn=h2&encryption=none&security=tls&sni=germany3.banovano.space&type=grpc#1.🇱🇹 GeminiRoute
-vless://53555197-bf0a-49e6-bea1-211fcfc1d962@germany3.banovano.space:2053?alpn=h2&encryption=none&security=tls&sni=germany3.banovano.space&type=grpc#2.🇱🇹 GeminiRoute
-vless://3f25b15b-1777-4c08-9ade-60336ac92a82@84.32.209.103:443?encryption=none&fp=chrome&mode=multi&security=tls&serviceName=grpc&sni=edge-lt.lindenpixel.com&type=grpc#3.🇱🇹 GeminiRoute
-vless://95d0e214-eab0-4701-93ed-fea4f1b56062@admin.betust.net:443?security=reality&encryption=none&pbk=zZjrHRzULoXKVccVdPqtrtXLEUPJXwqdE1138vu5x3w&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=admin.betust.net&sid=3e137406#4.🇱🇹 GeminiRoute
+vless://3f25b15b-1777-4c08-9ade-60336ac92a82@84.32.209.103:443?sni=edge-lt.lindenpixel.com&type=grpc&serviceName=grpc&fp=chrome&security=tls#1.🇱🇹 GeminiRoute
