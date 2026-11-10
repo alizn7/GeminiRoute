@@ -1,2 +1,9 @@
-vless://7d1a74fd-8a38-4a29-863f-5da53a9e557e@84.32.108.4:443?encryption=none&fp=chrome&mode=auto&path=/es&security=tls&sni=7d1a74fd.ferrin.uk&type=xhttp#1.🇪🇸 GeminiRoute
-vless://12c53e32-e589-47d6-b857-e4132294f767@46.28.71.247:443?security=reality&type=tcp&packetEncoding=xudp&sni=www.cloudflare.com&fp=chrome&flow=xtls-rprx-vision&sid=0dfc23fe80778c00&pbk=v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE&encryption=none#2.🇪🇸 GeminiRoute
+vless://52a5a29f-c162-411a-8a37-a3f11b0dc537@68.221.177.135:2083?Telegram=@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad&headerType=none&type=tcp&encryption=none&sid=0123456789abcdef&pbk=WbgtxLlo2gmTzB4Wzxgh_U7G97d4ENTS10fYIoujET4&security=reality&fp=chrome&flow=xtls-rprx-vision&sni=www.apple.com#1.🇪🇸 GeminiRoute
+trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@66.163.118.40:443?security=tls&headerType=none&type=tcp&sni=cdn.discovergreatjobsandadvanceyourcareer.com#2.🇪🇸 GeminiRoute
+trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@66.163.118.203:443?security=tls&host=/?TELEGRAM---MARAMBASHI---MARAMBASHI---MARAMBASHI---MARAMBASHI&headerType=none&type=tcp&sni=blog.discovergreatjobsandadvanceyourcareer.com#3.🇪🇸 GeminiRoute
+trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@66.163.118.131:443?security=tls&headerType=none&type=tcp&sni=www.discovergreatjobsandadvanceyourcareer.com#4.🇪🇸 GeminiRoute
+vless://ead0dd61-d398-40ad-80d6-a0e1e516d7d3@212.227.235.66:2053?security=reality&type=tcp&packetEncoding=xudp&sni=www.apple.com&fp=chrome&sid=29e8dcd2b37aaa7f&pbk=7Y6Xb5Ql_03K25x8yKUSOKI2JTOMyv2nyCcFza90uxk#5.🇪🇸 GeminiRoute
+trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@66.163.118.251:443?security=tls&insecure=0&headerType=none&type=tcp&allowInsecure=0&sni=resources.discovergreatjobsandadvanceyourcareer.com#6.🇪🇸 GeminiRoute
+vless://7d1a74fd-8a38-4a29-863f-5da53a9e557e@84.32.108.4:443?encryption=none&fp=chrome&mode=auto&path=/es&security=tls&sni=7d1a74fd.ferrin.uk&type=xhttp#7.🇪🇸 GeminiRoute
+trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@66.163.118.62:443?security=tls&sni=courses.discovergreatjobsandadvanceyourcareer.com#8.🇪🇸 GeminiRoute
+vless://4201786b-d99b-4147-a5f0-20d47acddb81@195.206.235.121:443?encryption=none&fp=chrome&pbk=4mgkA2kT_Im0rkGi-fVSUU5CyF5xvMVcjA6MXBSEDAA&security=reality&sid=d5501b156391e01d&sni=38917fx.es1.h1clayd.click&type=xhttp#9.🇪🇸 GeminiRoute

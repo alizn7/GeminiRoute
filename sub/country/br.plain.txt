@@ -1,2 +1,2 @@
-trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@216.238.104.154:443?security=tls&headerType=none&type=tcp&allowInsecure=0&sni=findtemporaryworkandfreelancerprojectsonlineplatform.com#1.🇧🇷 GeminiRoute
-vless://bb3723d7-462e-442c-9472-496750476f45@109.104.155.131:2053?flow=xtls-rprx-vision&security=reality&sni=dir-br1.filesapp.org&fp=chrome&pbk=MwJoFytMWCLdwCCt0cSTM8L6ZzYKxlZbFMML_3nnJms&sid=508118120e886b5a#2.🇧🇷 GeminiRoute
+vmess://eyJhZGQiOiIxMDMuODguMjMyLjU1IiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6IjVjMDQwZjFkLTQ1ZGItNDNiZC04ZDQ2LWU0OTUwZTQzMzczNSIsImluc2VjdXJlIjoiMCIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwY3MiOiIiLCJwb3J0IjoiMTI3MCIsInBzIjoiMS7wn4en8J+HtyBHZW1pbmlSb3V0ZSIsInNjeSI6ImF1dG8iLCJzbmkiOiJ4bWZobHB5LmNvbSIsInRscyI6InRscyIsInR5cGUiOiJub25lIiwidiI6IjIiLCJ2Y24iOiIifQ==
+trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@216.238.104.154:443?security=tls&sni=findtemporaryworkandfreelancerprojectsonlineplatform.com#2.🇧🇷 GeminiRoute
