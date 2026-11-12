@@ -1,6 +1,1 @@
-vless://27c5483f-17f4-48ae-9a04-def53d88440d@152.69.226.63:25555?&type=ws&headerType=none&path=/#1.🇰🇷 GeminiRoute
-trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@158.247.253.243:443?security=tls&sni=connectgraduateswithjobopeningsandgrowprofessionally.com#2.🇰🇷 GeminiRoute
-vmess://eyJhZGQiOiIxMzIuMTQ1LjgwLjIzMCIsImFpZCI6MCwiaG9zdCI6ImtyMDIuYTBhLnh5eiIsImlkIjoiNTE1NTg2MGUtZDA3ZC00NmMzLTkxMjgtM2FmYmQ4NDYyNmM3IiwibmV0Ijoid3MiLCJwYXRoIjoiL2NjdHYxMy5tM3U4IiwicG9ydCI6ODAsInBzIjoiMy7wn4ew8J+HtyBHZW1pbmlSb3V0ZSIsInRscyI6IiIsInR5cGUiOiJhdXRvIiwic2VjdXJpdHkiOiJhdXRvIiwic2tpcC1jZXJ0LXZlcmlmeSI6dHJ1ZSwic25pIjoiIn0=
-vless://9a5e7b1c-bf39-4b1f-891f-ac87824ee38f@23.95.72.244:2096?security=reality&encryption=none&pbk=71OwuN_2X-et_42RLIteY2parqX2cARuv-718eg_VD4&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=api.amazonalexa.com&sid=b88b4ed92599c16a#4.🇰🇷 GeminiRoute
-vless://9a5e7b1c-bf39-4b1f-891f-ac87824ee38f@23.95.72.244:5455?security=reality&encryption=none&pbk=57RM7KBz_R-RMNj9BbOXK8yYz0e8Mjv7iA8FvKGbnXU&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=api.adidas.com&sid=bb32911d6c#5.🇰🇷 GeminiRoute
-vless://9a5e7b1c-bf39-4b1f-891f-ac87824ee38f@23.95.72.244:50135?security=reality&encryption=none&pbk=ugirklnmY9hUeY9BQ9rdeVbu29iGblEM8N2_HHA8Rk4&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=api.adidas.com&sid=8cd0eddfb0#6.🇰🇷 GeminiRoute
+trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@158.247.253.243:443?security=tls&sni=connectgraduateswithjobopeningsandgrowprofessionally.com#1.🇰🇷 GeminiRoute

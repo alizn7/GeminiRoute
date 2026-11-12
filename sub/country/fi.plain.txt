@@ -1,4 +1,8 @@
-vless://622654a4-b666-000b-9260-fb717e05154f@169.40.34.41:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=key-master-saver.com&fp=chrome&pbk=6VMgXXhZdJCiOG05EyK_zTHh00kpFGrZJeZIEPgqhjY&sid=1c3e8241a8743df9&spx=/HesarWeb&type=tcp&headerType=none#1.🇫🇮 GeminiRoute
-vless://5f07a2a1-82a5-494d-847b-b882e6903192@free.for.member.iiproxy.com:443?alpn=h2,http/1.1&encryption=none&fp=chrome&security=tls&sni=free.for.member.iiproxy.com&type=tcp#2.🇫🇮 GeminiRoute
+vless://59b0d30e-9b29-4fda-a35c-b2901ec32db7@45.144.234.157:14430?&sni=45.144.234.157&type=ws&headerType=none&host=45.144.234.157&path=/vless#1.🇫🇮 GeminiRoute
+vless://ce698f0c-a8ec-474a-b5d8-3be8032deeb8@146.103.118.189:443?encryption=none&type=ws&security=tls&path=/574ck-finland&host=nl2.574ck.xyz&sni=nl2.574ck.xyz&fp=chrome#2.🇫🇮 GeminiRoute
 vless://664f65f4-33b3-43a3-b9e5-68192d1d428e@200.102.182.11:8443?security=reality&encryption=none&pbk=PTIRbxzUvuwon8uDA2LjTtIJc9nItRvnGqQxS4K9pgg&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=2veos3wvwtx8.cdn.cachefleet.com#3.🇫🇮 GeminiRoute
-vless://99c5b713-dedf-4a10-8070-916ff3f49b0e@138.124.124.157:443?encryption=none&host=fs.qicai99.com&path=/&security=tls&sni=fs.qicai99.com&type=ws#4.🇫🇮 GeminiRoute
+vless://5f07a2a1-82a5-494d-847b-b882e6903192@65.109.208.183:443?encryption=none&fp=chrome&security=tls&sni=free.for.member.iiproxy.com&type=tcp#4.🇫🇮 GeminiRoute
+vless://5f07a2a1-82a5-494d-847b-b882e6903192@free.for.member.iiproxy.com:443?alpn=h2,http/1.1&encryption=none&fp=chrome&security=tls&sni=free.for.member.iiproxy.com&type=tcp#5.🇫🇮 GeminiRoute
+vless://99c5b713-dedf-4a10-8070-916ff3f49b0e@138.124.49.108:8443?path=/fp&security=tls&encryption=none&insecure=0&host=fs.qicai99.com&type=ws&allowInsecure=0&sni=fs.qicai99.com#6.🇫🇮 GeminiRoute
+vless://99c5b713-dedf-4a10-8070-916ff3f49b0e@138.124.124.157:443?encryption=none&host=fs.qicai99.com&path=/&security=tls&sni=fs.qicai99.com&type=ws#7.🇫🇮 GeminiRoute
+vless://99c5b713-dedf-4a10-8070-916ff3f49b0e@109.120.134.181:443?encryption=none&host=fs.qicai99.com&path=/fp=chrome&security=tls&sni=fs.qicai99.com&type=ws#8.🇫🇮 GeminiRoute
