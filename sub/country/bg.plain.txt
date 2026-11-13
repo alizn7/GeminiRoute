@@ -1,1 +1,2 @@
-vless://1d46250c-f015-439d-a7fd-c4d9e2a4c63d@88.80.150.15:443?encryption=none&type=grpc&serviceName=grpc&mode=gun&authority=bg2.oncloudvpn.com&security=tls&sni=bg2.oncloudvpn.com&fp=chrome&alpn=h2#1.🇧🇬 GeminiRoute
+vless://b0511969-f769-460b-963b-70c6b84b6967@p1real5.greewebservices.ir:1270?encryption=none&fp=chrome&pbk=xQnXh5EfPDhcEBB7rRiLca33GYrMEeUa35domLL_yA8&security=reality&sid=9b60d3&sni=play.googleapis.com&type=tcp#1.🇧🇬 GeminiRoute
+vless://b0511969-f769-460b-963b-70c6b84b6967@p1real4.greewebservices.ir:1260?encryption=none&fp=chrome&pbk=xQnXh5EfPDhcEBB7rRiLca33GYrMEeUa35domLL_yA8&security=reality&sid=9b60d3&sni=play.googleapis.com&type=tcp#2.🇧🇬 GeminiRoute

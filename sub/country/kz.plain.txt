@@ -1,2 +1,2 @@
 vless://664f65f4-33b3-43a3-b9e5-68192d1d428e@200.102.183.45:443?security=reality&encryption=none&pbk=KOgPteoWEwtVtykS2FGV5NHdZw6197VzbITPGkUJDBQ&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=maple-cove.cdn.cachefleet.com#1.🇰🇿 GeminiRoute
-vless://b573cefb-7bc7-4a42-b407-b8b534e66773@109.248.170.119:13447?security=reality&encryption=none&pbk=_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE&host=/?TELEGRAM---MARAMBASHI---MARAMBASHI---MARAMBASHI---MARAMBASHI&headerType=none&fp=chrome&type=tcp&sni=yahoo.com&sid=83#2.🇰🇿 GeminiRoute
+vless://b573cefb-7bc7-4a42-b407-b8b534e66773@109.248.170.119:13447?security=reality&encryption=none&pbk=_0wM2ep44eAcrgf5PflKaBivknCWT6kMvQBQUoScCkE&headerType=none&fp=chrome&type=tcp&sni=yahoo.com&sid=83#2.🇰🇿 GeminiRoute
