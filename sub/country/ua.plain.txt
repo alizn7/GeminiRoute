@@ -1,0 +1,1 @@
+vless://9b3faa36-f3d9-4b47-a2cc-54effcdc0b19@lla.ribot1.ir:443?encryption=none&security=reality&type=tcp&headerType=none&sni=play.google.com&fp=chrome&pbk=0te-XmVHa15mVZb5pKCbSiKzhpuh8-viQQGygJPVZDU&sid=da4b0f71d84859a1#1.🇺🇦 GeminiRoute
