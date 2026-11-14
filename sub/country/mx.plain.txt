@@ -1,0 +1,1 @@
+trojan://5t6i121em5lkmsmk@149.104.87.125:15083?security=tls&sni=mx001.zestapp778.com&fp=chrome#1.🇲🇽 GeminiRoute
