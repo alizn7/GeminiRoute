@@ -1,3 +1,1 @@
-vless://dadf78d3-5cc9-453f-a3e6-2f0826a59c68@217.60.148.152:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=in.static-s3.org&fp=chrome&security=reality&pbk=drhDo_VnUaM05YqwqE03ISx_8ZG8FlNGpSMCnAeqvFk&sid=159246753f750720#1.🇮🇳 GeminiRoute
-vless://06a5afa1-2bbc-a5d1-1770-becd1089c636@xray-dmr3b3hy-calm-maple-7.cloady.io:443?type=ws&path=%2F0175469f14317d82&host=xray-dmr3b3hy-calm-maple-7.cloady.io&security=tls&sni=xray-dmr3b3hy-calm-maple-7.cloady.io&fp=chrome#2.🇮🇳 GeminiRoute
-vless://e99ba96d-dec8-42eb-be53-19e71eef7cab@5.253.42.164:40443?security=reality&encryption=none&pbk=g77ZJbm18JEotapmVRjaXi133MzkbhkU2lxhVeXx8zw&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=deepl.com&sid=68a8#3.🇮🇳 GeminiRoute
+vless://6bdc8320-7eae-46fc-be08-f5f54e65dfc8@in.smrtai.top:443?fp=random&pbk=3LbVuwKpQv55GngyRhvGl9KyAHIDAgvJx_VRM5mUD2Q&security=reality&sid=6bdc8320&sni=www.cloudflare.com&type=tcp#1.🇮🇳 GeminiRoute
