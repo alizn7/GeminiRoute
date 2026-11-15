@@ -1,1 +1,1 @@
-vless://6bdc8320-7eae-46fc-be08-f5f54e65dfc8@in.smrtai.top:443?fp=random&pbk=3LbVuwKpQv55GngyRhvGl9KyAHIDAgvJx_VRM5mUD2Q&security=reality&sid=6bdc8320&sni=www.cloudflare.com&type=tcp#1.🇮🇳 GeminiRoute
+vless://06a5afa1-2bbc-a5d1-1770-becd1089c636@xray-dmr3b3hy-calm-maple-7.cloady.io:443?type=ws&path=%2F0175469f14317d82&host=xray-dmr3b3hy-calm-maple-7.cloady.io&security=tls&sni=xray-dmr3b3hy-calm-maple-7.cloady.io&fp=chrome#1.🇮🇳 GeminiRoute

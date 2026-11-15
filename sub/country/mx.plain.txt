@@ -1,1 +1,0 @@
-trojan://5t6i121em5lkmsmk@149.104.87.125:15083/?type=tcp&security=tls&sni=mx001.zestapp778.com&allowInsecure=1#1.🇲🇽 GeminiRoute
