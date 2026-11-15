@@ -1,3 +1,2 @@
 vless://f4c5605a-8424-441e-b23d-d6384d012c28@www.true.th:80?&type=ws&headerType=none&host=dcm4kwis2exkw.cloudfront.net&path=/#1.🇹🇭 GeminiRoute
 vless://0c85001b-ad48-4f43-bdc9-b2b5c626a26e@assets.opensignal.com:80?&type=ws&headerType=none&host=d36lt9hzl2ug3d.cloudfront.net:assets.opensignal.com&path=/logout#2.🇹🇭 GeminiRoute
-vless://57beeeb0-03fc-4fc9-94da-7604488a7134@zfapi.zalolink.com:11802?security=reality&flow=xtls-rprx-vision&pbk=FUBjYwXlKIVwF7IuJf5dt_HU2sUnrEt10s4TIlTe8Q4&sid=6c84fbac2d&fp=chrome&sni=psstatic.cdn.bcebos.com&type=tcp&headerType=none&host=zfapi.zalolink.com&path=/#3.🇹🇭 GeminiRoute
