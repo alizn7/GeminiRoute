@@ -1,1 +1,2 @@
 vmess://eyJ2IjoiMiIsInBzIjoiMS7wn4em8J+HuSBHZW1pbmlSb3V0ZSIsImFkZCI6IjE1NC40Ny4xOS4yMjUiLCJwb3J0IjoiMTI3MCIsImlkIjoiNWMwNDBmMWQtNDVkYi00M2JkLThkNDYtZTQ5NTBlNDMzNzM1IiwiYWlkIjowLCJzY3kiOiJhdXRvIiwibmV0IjoidGNwIiwidHlwZSI6Im5vbmUiLCJob3N0IjoieG1maGxweS5jb20iLCJ0bHMiOiJ0bHMiLCJzbmkiOiJ4bWZobHB5LmNvbSJ9
+vless://7af8ad56-33ce-4f3d-ad15-ef32a71d67f7@66.90.106.210:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=2okfB1oMV1oQX1QZLbd_gQx4ZGtIDkP8KkELglZIBys&security=reality&sid=accded3297&sni=dash.syn2.online&type=tcp#2.🇦🇹 GeminiRoute
