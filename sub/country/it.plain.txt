@@ -1,0 +1,2 @@
+vless://dc2259c4-388e-4285-ba18-df619b6672b6@82.118.16.187:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=R5ycsjJ-v024902dMSqTsSdqxUwCFEXMebdBEWFt9VU&security=reality&sid=cd6065902eea7a02&sni=www.cloudflare.com&type=tcp#1.🇮🇹 GeminiRoute
+vless://29f178f7-f96f-46ba-8fc0-bbcd690ba788@82.118.16.189:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=zmo2VkZkfjh2kWjaRghXUs39ImQo87LmPhjvzbX3yB4&security=reality&sid=1e9a49dd374c1191&sni=www.cloudflare.com&type=tcp#2.🇮🇹 GeminiRoute
