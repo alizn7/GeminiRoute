@@ -1,4 +1,4 @@
-vless://27c5483f-17f4-48ae-9a04-def53d88440d@152.69.226.63:25555?&type=ws&headerType=none&path=/#1.🇰🇷 GeminiRoute
-trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@158.247.253.243:443?security=tls&sni=connectgraduateswithjobopeningsandgrowprofessionally.com#2.🇰🇷 GeminiRoute
-vless://a2de9567-9646-45a9-a410-7303a43bdb6c@151.245.106.49:2053/?type=tcp&encryption=none&flow=&sni=www.cloudflare.com&security=reality&pbk=F6C33iIbfmt1mUsuLTarIC8ygdHKMqsaGvrSQltyxUo&sid=429499c03d4cc8a0#3.🇰🇷 GeminiRoute
-vmess://eyJ2IjoiMiIsInBzIjoiNC7wn4ew8J+HtyBHZW1pbmlSb3V0ZSIsImFkZCI6IjEzMi4xNDUuODAuMjMwIiwicG9ydCI6IjgwIiwiaWQiOiI1MTU1ODYwZS1kMDdkLTQ2YzMtOTEyOC0zYWZiZDg0NjI2YzciLCJhaWQiOiIwIiwic2N5IjoiYXV0byIsIm5ldCI6IndzIiwidHlwZSI6Im5vbmUiLCJob3N0IjoiIiwicGF0aCI6Ii9jY3R2MTMubTN1OCIsInRscyI6IiIsInNuaSI6ImtyMDIuYTBhLnh5eiIsInRlc3RfbmFtZSI6IjEwMCIsInNraXAtY2VydC12ZXJpZnkiOnRydWV9
+trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@158.247.253.243:443?security=tls&sni=connectgraduateswithjobopeningsandgrowprofessionally.com#1.🇰🇷 GeminiRoute
+vless://a2de9567-9646-45a9-a410-7303a43bdb6c@151.245.106.49:2053/?type=tcp&encryption=none&flow=&sni=www.cloudflare.com&security=reality&pbk=F6C33iIbfmt1mUsuLTarIC8ygdHKMqsaGvrSQltyxUo&sid=429499c03d4cc8a0#2.🇰🇷 GeminiRoute
+vless://319d5ffb-57e8-4bbd-ac0c-5d55d0c253de@47.80.19.173:2053?security=reality&encryption=none&pbk=DfFU5OG93GxB1x25Dl2BTkxKsBTFF4Su4PXYPbYvmms&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=gateway.icloud.com&sid=3c4041d3#3.🇰🇷 GeminiRoute
+vless://27c5483f-17f4-48ae-9a04-def53d88440d@152.69.226.63:25555?&type=ws&headerType=none&path=/#4.🇰🇷 GeminiRoute
