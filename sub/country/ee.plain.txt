@@ -1,2 +1,2 @@
-vless://dfe50e18-28ce-459e-a6b9-0f2585bcc3b6@48.102.209.71:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&security=tls&sni=ee.point.cookie-line.cc&fp=chrome#1.🇪🇪 GeminiRoute
+vless://dfe50e18-28ce-459e-a6b9-0f2585bcc3b6@ee.point.cookie-line.cc:443?security=tls&encryption=none&insecure=0&headerType=none&fp=chrome&type=tcp&allowInsecure=0&flow=xtls-rprx-vision&sni=ee.point.cookie-line.cc#1.🇪🇪 GeminiRoute
 vless://13e541f3-d09d-4633-89df-8513db0ced20@45.86.60.174:16443?encryption=none&type=tcp&security=none#2.🇪🇪 GeminiRoute
