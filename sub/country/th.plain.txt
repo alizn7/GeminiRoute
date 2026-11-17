@@ -1,1 +1,0 @@
-vless://f4c5605a-8424-441e-b23d-d6384d012c28@www.true.th:80?path=%2F&security=&encryption=none&host=dcm4kwis2exkw.cloudfront.net&type=ws#1.🇹🇭 GeminiRoute
