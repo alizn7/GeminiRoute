@@ -1,2 +1,2 @@
-trojan://d7563108-615c-4338-a7bd-77f359869a4a@sclass-b1.catcat321.com:20051?security=tls&sni=hk.catxstar.com#1.🇳🇬 GeminiRoute
-trojan://d9064589-74af-432a-9390-5d8a9da281bf@sclass-c2.catcat321.com:20051?security=tls&sni=hk.catxstar.com#2.🇳🇬 GeminiRoute
+vless://8197b9b9-8945-460f-99c9-325ef8a8a7c3@167.88.51.43:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&sni=ng1.gofizz.in&pbk=SYKJ-zsxnjo1DG-ChEhfq2Smfo-f7CvKKssj9rzuCRw&sid=2d850fa7&fp=chrome&spx=/b4fcc6d25bda84e#1.🇳🇬 GeminiRoute
+trojan://d7563108-615c-4338-a7bd-77f359869a4a@sclass-01.catcat321.com:20103?security=tls&sni=hk.catxstar.com#2.🇳🇬 GeminiRoute
