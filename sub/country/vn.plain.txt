@@ -1,1 +1,1 @@
-vless://57beeeb0-03fc-4fc9-94da-7604488a7134@win2loxfde0202.gggrelay.org:42120?type=raw&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=f6Tj8-uvWsLv3V-lGLuPciArp5oKqUImBg-U7-WJ-0A&sid=bb82c8&sni=www.tesla.com#1.🇻🇳 GeminiRoute
+vless://a1f0cbb8-c74a-4c27-b881-7b14d96aece1@kir3.crackerbinam.org:56026?security=reality&encryption=none&pbk=gjOKbmRb5cGDPbdz3x8xkBFL43pn3xqL-I6sALHO7ls&headerType=&fp=chrome&type=tcp&sni=www.cloudflare.com&sid=99676967e6867063#1.🇻🇳 GeminiRoute

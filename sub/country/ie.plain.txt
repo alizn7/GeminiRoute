@@ -1,1 +1,0 @@
-vless://6daa0b95-9210-4f29-be40-8c6db00bc5bb@108.131.170.67:80/?type=tcp&encryption=none&flow=#1.🇮🇪 GeminiRoute
