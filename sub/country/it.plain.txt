@@ -1,1 +1,0 @@
-vless://e347aeea-6bfc-4d39-8536-ead65b93ddde@freev2.cloudflare.182682.xyz:443?path=/announcement?ed=2048&security=tls&encryption=none&insecure=0&host=it-mil.862400.xyz&fp=chrome&type=ws&allowInsecure=0&sni=it-mil.862400.xyz#1.🇮🇹 GeminiRoute
