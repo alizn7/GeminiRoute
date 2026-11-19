@@ -1,1 +1,0 @@
-vless://7c053ca8-38cc-45e2-930c-eda1fd66f903@195.123.245.241:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=gateway.icloud.com&fp=chrome&security=reality&pbk=hlY5ce1UsVIgE46y5PlEZhUsSaXUnCtoDLLaGrhInjw&sid=23d0950d60bc0d5b&packetEncoding=xudp#1.🇨🇿 GeminiRoute
