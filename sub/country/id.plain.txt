@@ -1,1 +1,0 @@
-vless://12d67d2b-ae5c-4d56-9f14-d71d96f7826f@104.17.3.81:443?path=/vlessws&security=tls&encryption=none&host=natan.srpcom.cloud&type=ws&sni=natan.srpcom.cloud#1.🇮🇩 GeminiRoute
