@@ -1,1 +1,2 @@
 trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@45.63.30.142:443?security=tls&sni=connectwithemployerstohireyouridealteam.com#1.🇦🇺 GeminiRoute
+vless://debafe5b-6760-4b00-b0b2-ee30cbf769f0@ujp.xn--ghqu5fm27b67w.com:443?path=/e0843c8ad581&security=tls&encryption=none&insecure=0&host=portland-wins-robbie-skirt.trycloudflare.com&fp=chrome&type=ws&allowInsecure=0&sni=portland-wins-robbie-skirt.trycloudflare.com#2.🇦🇺 GeminiRoute
