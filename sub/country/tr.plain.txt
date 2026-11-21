@@ -1,2 +1,2 @@
-vless://01e61db7-9e0b-4431-a995-a5288a01b951@leviko-tr3098.shopingggg.ir:43000?encryption=none&flow=xtls-rprx-vision&type=tcp&headerType=none&security=reality&fp=chrome&sni=147.45.66.208&pbk=DbL9RJFvJrnxBu6fFhWkHF8nsD6cK_DKMuMV00RmlWg&sid=4d3d8e15#1.🇹🇷 GeminiRoute
+vless://01e61db7-9e0b-4431-a995-a5288a01b951@147.45.66.208:43000?security=reality&encryption=none&pbk=DbL9RJFvJrnxBu6fFhWkHF8nsD6cK_DKMuMV00RmlWg&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=147.45.66.208&sid=4d3d8e15#1.🇹🇷 GeminiRoute
 vless://c34a41b6-598f-46ac-bea3-8b39a906f922@87.76.154.28:57231?encryption=none&security=none&type=tcp#2.🇹🇷 GeminiRoute

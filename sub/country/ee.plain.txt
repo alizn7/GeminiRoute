@@ -1,2 +1,2 @@
-vless://13e541f3-d09d-4633-89df-8513db0ced20@45.86.60.174:16443?encryption=none&type=tcp&security=none#1.🇪🇪 GeminiRoute
-vless://a346c521-7a7f-452b-9356-a4893feb5982@48.103.231.2:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0&security=reality&sid=457fab2ac885dbe0&sni=ee1-r.bankai.party&type=tcp#2.🇪🇪 GeminiRoute
+vless://a346c521-7a7f-452b-9356-a4893feb5982@48.103.231.2:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0&security=reality&sid=457fab2ac885dbe0&sni=ee1-r.bankai.party&type=tcp#1.🇪🇪 GeminiRoute
+vless://13e541f3-d09d-4633-89df-8513db0ced20@45.86.60.174:16443?encryption=none&type=tcp&security=none#2.🇪🇪 GeminiRoute
