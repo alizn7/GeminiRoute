@@ -1,2 +1,3 @@
 vless://27c5483f-17f4-48ae-9a04-def53d88440d@leviko-kr7255.shopingggg.ir:25555?security=&encryption=none&type=ws#1.🇰🇷 GeminiRoute
-trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@158.247.253.243:443?allowInsecure=1&security=tls&sni=connectgraduateswithjobopeningsandgrowprofessionally.com#2.🇰🇷 GeminiRoute
+vless://4ded3111-b418-475a-93de-0360932508b2@43.108.109.112:443?security=reality&type=tcp&sni=www.samsung.com&fp=chrome&flow=xtls-rprx-vision&sid=b79a86e2b1a586a0&pbk=vrFq4-k-eiTSyRF3T3e7Fqmlv4XSKmByKYsw55zeX3w&encryption=none#2.🇰🇷 GeminiRoute
+trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@158.247.253.243:443?security=tls&sni=connectgraduateswithjobopeningsandgrowprofessionally.com#3.🇰🇷 GeminiRoute
