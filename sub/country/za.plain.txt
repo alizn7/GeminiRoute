@@ -1,1 +1,1 @@
-trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@139.84.231.142:443?security=tls&sni=explorecareerpathsandunlockprofessionalsuccesstoday.com&type=tcp&fp=chrome&allowInsecure=0#1.🇿🇦 GeminiRoute
+trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@139.84.231.142:443?sni=explorecareerpathsandunlockprofessionalsuccesstoday.com&peer=explorecareerpathsandunlockprofessionalsuccesstoday.com&security=tls#1.🇿🇦 GeminiRoute
