@@ -1,2 +1,2 @@
-vless://c2425034-91ef-44bf-9fd4-f2be9c1e989a@chatgpt.com:443?encryption=none&type=ws&host=sinavm3.soft10.ir&path=/SiNAVM-SiNAVM-SiNAVM-SiNAVM&security=tls&fp=chrome&sni=sinavm3.soft10.ir&alpn=http/1.1#1.🇹🇷 GeminiRoute
+vless://c2425034-91ef-44bf-9fd4-f2be9c1e989a@sinavm3.soft10.ir:8443?mode=auto&security=tls&encryption=none&extra=%7B%22mode%22%3A%22auto%22%2C%22xPaddingBytes%22%3A%22100-1000%22%7D&insecure=0&fp=chrome&type=xhttp&allowInsecure=0&sni=sinavm3.soft10.ir#1.🇹🇷 GeminiRoute
 vless://01e61db7-9e0b-4431-a995-a5288a01b951@147.45.66.208:43000?security=reality&encryption=none&pbk=DbL9RJFvJrnxBu6fFhWkHF8nsD6cK_DKMuMV00RmlWg&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=147.45.66.208&sid=4d3d8e15#2.🇹🇷 GeminiRoute
