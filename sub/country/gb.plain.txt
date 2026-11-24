@@ -1,3 +1,2 @@
-vless://9e20b04d-5a81-4e16-b421-01e502f0aac6@57.129.132.223:80?type=ws&host=google.com&path=/vless/#1.🇬🇧 GeminiRoute
-vmess://eyJhZGQiOiI1Ny4xMjkuMTMyLjIyMyIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiZ29vZ2xlLmNvbSIsImlkIjoiYTI1Y2JmMTEtMjkwOC00YTFiLWEzYTgtOWE1NzE3NzdkY2EzIiwiaW5zZWN1cmUiOiIwIiwibmV0Ijoid3MiLCJwYXRoIjoiL3ZtZXNzLyIsInBjcyI6IiIsInBvcnQiOiI4MCIsInBzIjoiMi7wn4es8J+HpyBHZW1pbmlSb3V0ZSIsInNjeSI6ImF1dG8iLCJzbmkiOiJnb29nbGUuY29tIiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiIsInZjbiI6IiJ9
-vless://9f61cdf4-810d-4052-bbc7-2da0c8e20104@83.147.18.3:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=3iVJAIGPx6JMlhlRmfpGrHkSmLpHJ4CPvBBH7KsFrFA&security=reality&sid=fd8cf7e1173f0edb&sni=www.cloudflare.com&type=tcp#3.🇬🇧 GeminiRoute
+vless://e58384f2-76ba-400b-ae0a-8271b4c9c310@188.114.97.6:443?security=tls&type=xhttp&path=/api/v1/stream&host=crm.dpdns.org&packetEncoding=xudp&alpn=h2,http/1.1&sni=crm.dpdns.org&fp=unsafe&mode=auto#1.🇬🇧 GeminiRoute
+vless://9e20b04d-5a81-4e16-b421-01e502f0aac6@57.129.132.223:80?path=/vless/&security=&encryption=none&host=google.com&type=ws#2.🇬🇧 GeminiRoute

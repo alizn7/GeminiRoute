@@ -1,3 +1,2 @@
-vless://a1f0cbb8-c74a-4c27-b881-7b14d96aece1@kir3.crackerbinam.org:56026?security=reality&encryption=none&pbk=gjOKbmRb5cGDPbdz3x8xkBFL43pn3xqL-I6sALHO7ls&headerType=none&fp=chrome&type=tcp&sni=www.cloudflare.com&sid=99676967e6867063#1.🇻🇳 GeminiRoute
-vless://a1f0cbb8-c74a-4c27-b881-7b14d96aece1@103.163.24.22:56026?security=reality&encryption=none&pbk=gjOKbmRb5cGDPbdz3x8xkBFL43pn3xqL-I6sALHO7ls&headerType=none&fp=chrome&type=tcp&sni=www.cloudflare.com&sid=99676967e6867063#2.🇻🇳 GeminiRoute
-vless://b83faafc-cbb7-4655-99d4-2c4c39a49d1b@150.95.109.109:2086?#3.🇻🇳 GeminiRoute
+trojan://57beeeb0-03fc-4fc9-94da-7604488a7134@xvxn1hkzf.mateflora.com:443?security=tls&insecure=0&headerType=none&type=tcp&allowInsecure=0&sni=xvxn1hkzf.mateflora.com#1.🇻🇳 GeminiRoute
+vless://a1f0cbb8-c74a-4c27-b881-7b14d96aece1@kir3.crackerbinam.org:56026?security=reality&encryption=none&pbk=gjOKbmRb5cGDPbdz3x8xkBFL43pn3xqL-I6sALHO7ls&headerType=none&fp=chrome&type=tcp&sni=www.cloudflare.com&sid=99676967e6867063#2.🇻🇳 GeminiRoute
