@@ -1,1 +1,2 @@
-vless://4ded3111-b418-475a-93de-0360932508b2@43.108.109.112:443?security=reality&type=tcp&sni=www.samsung.com&fp=chrome&flow=xtls-rprx-vision&sid=b79a86e2b1a586a0&pbk=vrFq4-k-eiTSyRF3T3e7Fqmlv4XSKmByKYsw55zeX3w&encryption=none#1.🇰🇷 GeminiRoute
+vless://27c5483f-17f4-48ae-9a04-def53d88440d@152.69.226.63:25555?type=ws&path=/#1.🇰🇷 GeminiRoute
+vless://319d5ffb-57e8-4bbd-ac0c-5d55d0c253de@47.80.19.173:2053?security=reality&encryption=none&pbk=DfFU5OG93GxB1x25Dl2BTkxKsBTFF4Su4PXYPbYvmms&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=gateway.icloud.com&sid=3c4041d3#2.🇰🇷 GeminiRoute
