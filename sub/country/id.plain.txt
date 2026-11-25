@@ -1,1 +1,0 @@
-vless://3b01a777-55e7-49f6-8637-d94ee69607c6@kozel.cc.cd:443?&security=tls&fp=chrome&sni=kozel.cc.cd&type=ws&headerType=none&host=kozel.cc.cd&path=/118.151.222.66=17317#1.🇮🇩 GeminiRoute

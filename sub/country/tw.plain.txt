@@ -1,1 +1,0 @@
-vless://bf14dc50-e9f2-49fd-8642-620446edeafb@83.147.14.62:8443?security=tls&encryption=none&insecure=0&host=v3-duz.pages.dev&fp=chrome&type=ws&allowInsecure=0#1.🇹🇼 GeminiRoute

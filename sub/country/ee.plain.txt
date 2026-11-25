@@ -1,2 +1,1 @@
 vless://de32225b-374c-4a6a-830e-7c4e367fcfb5@vexlum.klyck.online:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&sni=vexlum.klyck.online&pbk=ocBBxRqpWdvUTfd6hRdEcOq7TtiHdQi65s5thInXjkw&sid=a503308602b56095&fp=chrome#1.🇪🇪 GeminiRoute
-vless://73ebb72a-e2a8-44c8-a0e3-938740a4f578@13.141.36.163:443?security=reality&encryption=none&pbk=NMS-P97L7IrYGl7mQv1j2K_EBX6G57fu6DvREZYl01U&headerType=none&fp=chrome&type=tcp&sni=079b6et.ee5.h1clayd.shop&sid=35a329a23bb50d2b#2.🇪🇪 GeminiRoute
