@@ -1,5 +1,2 @@
 vmess://eyJ2IjoiMiIsInBzIjoiMS7wn4eo8J+HpiBHZW1pbmlSb3V0ZSIsImFkZCI6IjEzNC4xOTUuMTk2LjIxMSIsInBvcnQiOiIxODAwMCIsImlkIjoiZjhjOGRjM2QtMGQzNy00NmIwLThiMzQtYTcyMzI4ODJmY2ZlIiwiYWlkIjoiMCIsInNjeSI6ImF1dG8iLCJuZXQiOiJ0Y3AiLCJ0eXBlIjoibm9uZSIsInRscyI6IiIsInNuaSI6IiIsImFscG4iOiIiLCJmcCI6IiIsImluc2VjdXJlIjoiMCJ9
 vless://03fcc618-b93d-6796-6aed-8a38c975d581@66.163.113.9:443?security=tls&encryption=none&insecure=0&headerType=none&type=tcp&allowInsecure=0&sni=kuruish.org#2.🇨🇦 GeminiRoute
-vmess://eyJ2IjoiMiIsInBzIjoiMy7wn4eo8J+HpiBHZW1pbmlSb3V0ZSIsImFkZCI6IjIzLjE2Mi4yMDAuMTk4IiwicG9ydCI6MTgwMDAsImlkIjoiZjhjOGRjM2QtMGQzNy00NmIwLThiMzQtYTcyMzI4ODJmY2ZlIiwiYWlkIjowLCJzY3kiOiJhdXRvIiwibmV0IjoidGNwIiwidHlwZSI6IiIsInRscyI6IiIsInNraXAtY2VydC12ZXJpZnkiOnRydWV9
-vless://03fcc618-b93d-6796-6aed-8a38c975d581@kuruish.org:443/?type=tcp&encryption=none&flow=&security=tls&sni=kuruish.org&allowInsecure=1#4.🇨🇦 GeminiRoute
-vless://42c83523-9f96-41b2-82d6-2edb71a4ac19@92.246.138.161:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=jFqwGpIrZSPqlvF4XglDWhsuHxljBLeiaMtESLsZsVk&security=reality&sni=q88k7v7gi0pg.img-assets.world&type=tcp#5.🇨🇦 GeminiRoute
