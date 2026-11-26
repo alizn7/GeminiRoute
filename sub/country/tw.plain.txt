@@ -1,0 +1,2 @@
+vless://bf14dc50-e9f2-49fd-8642-620446edeafb@83.147.14.62:8443?security=tls&encryption=none&insecure=0&host=v3-duz.pages.dev&fp=firefox&type=ws&allowInsecure=0#1.🇹🇼 GeminiRoute
+vmess://eyJhZGQiOiJkb2ctdHcua3VubHVuMDFkbnMuY29tIiwiYWlkIjowLCJob3N0IjoiIiwiaWQiOiI5NDY0Y2E0MC1kZDc1LTM3NDItYTYyOC1kOTMxYTlmNDEzYjIiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjIxMDM1IiwicHMiOiIyLvCfh7nwn4e8IEdlbWluaVJvdXRlIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiIsInNraXAtY2VydC12ZXJpZnkiOnRydWV9
