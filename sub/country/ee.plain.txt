@@ -1,1 +1,3 @@
-vless://0173d52e-8e1b-4681-831e-11529677b72f@165.231.157.126:8443?security=tls&encryption=none&insecure=0&headerType=none&fp=chrome&type=tcp&allowInsecure=0&flow=xtls-rprx-vision&sni=api-6b04608f.adhil.uk#1.🇪🇪 GeminiRoute
+vless://fbe22815-0718-4eae-816f-e91c67d15b54@94.159.98.82:2053?security=tls&encryption=none&insecure=0&headerType=none&fp=chrome&type=tcp&allowInsecure=0&flow=xtls-rprx-vision&sni=94.159.98.82#1.🇪🇪 GeminiRoute
+vless://0173d52e-8e1b-4681-831e-11529677b72f@165.231.157.126:8443?security=tls&encryption=none&host=/?Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=api-6b04608f.adhil.uk#2.🇪🇪 GeminiRoute
+vless://0173d52e-8e1b-4681-831e-11529677b72f@one.alpheratzz.org:8443?security=tls&alpn=h2&encryption=none&insecure=0&headerType=none&fp=chrome&type=tcp&allowInsecure=0&flow=xtls-rprx-vision&sni=api-6b04608f.adhil.uk#3.🇪🇪 GeminiRoute
