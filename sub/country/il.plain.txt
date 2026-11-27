@@ -1,2 +1,0 @@
-vless://cda0862a-0f87-4be9-8ed8-1d0c9e382839@195.206.235.74:443?encryption=none&security=reality&sni=80cb66x.nl13.h1clayd.click&fp=chrome&pbk=jhVdP7NFUaEXGfrmOqJlMCHTvqn3fymbzPfPT6NO4i0&sid=f72d4a2c7cbbacb1&type=xhttp&path=/d610f026b146&mode=auto#1.🇮🇱 GeminiRoute
-vless://26843758-24de-4f76-b5d0-624038e353c4@195.206.235.72:443?encryption=none&security=reality&sni=71b840t.de7.h1clayd.click&pbk=3wFF83gtIA0sXj-6GGCAa--oQbSr0MVUj0FBc-0QmiE&sid=e572b6579ea525d4&type=tcp&headerType=none#2.🇮🇱 GeminiRoute
