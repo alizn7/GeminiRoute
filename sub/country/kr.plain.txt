@@ -1,5 +1,4 @@
 vless://27c5483f-17f4-48ae-9a04-def53d88440d@152.69.226.63:25555?type=ws&path=/#1.🇰🇷 GeminiRoute
-vmess://eyJ2IjoiMiIsInBzIjoiMi7wn4ew8J+HtyBHZW1pbmlSb3V0ZSIsImFkZCI6IjEyOS4xNTQuNjEuMTk2IiwicG9ydCI6ODAwLCJpZCI6ImE5MTViMWQ2LWNmMjgtNGRjOC1lNGI0LWUwOWM0OGMzN2VjMCIsImFpZCI6MCwic2N5IjoiYXV0byIsIm5ldCI6InRjcCIsInR5cGUiOiIiLCJ0bHMiOiIiLCJza2lwLWNlcnQtdmVyaWZ5Ijp0cnVlfQ==
-vless://db906786-8c49-4b17-9182-cea680ef954d@104.26.13.54:443?path=/kw7x2mq9&security=tls&encryption=none&insecure=0&host=krc.80782636.xyz&fp=chrome&type=ws&allowInsecure=0&sni=krc.80782636.xyz#3.🇰🇷 GeminiRoute
-vless://db906786-8c49-4b17-9182-cea680ef954d@104.20.28.74:443?path=/kw7x2mq9&security=tls&encryption=none&insecure=0&host=krc.80782636.xyz&type=ws&allowInsecure=0&sni=krc.80782636.xyz#4.🇰🇷 GeminiRoute
-vless://db906786-8c49-4b17-9182-cea680ef954d@162.159.160.73:443?path=/kw7x2mq9&security=tls&encryption=none&insecure=0&host=krc.80782636.xyz&type=ws&allowInsecure=0&sni=krc.80782636.xyz#5.🇰🇷 GeminiRoute
+vless://db906786-8c49-4b17-9182-cea680ef954d@krd.80782636.xyz:443?&security=tls&fp=chrome&sni=krd.80782636.xyz&type=ws&headerType=none&host=krd.80782636.xyz&path=/kw7x2mq9#2.🇰🇷 GeminiRoute
+vless://21096a6d-88df-49c7-8882-d09e73b4da95@43.155.208.90:443?flow=xtls-rprx-vision&security=reality&sni=w.fugui.us&fp=chrome&pbk=J2yp_4F_8h4hHTntLf3URZRrdScOhOPOt1ct9LZJ5n4&sid=9cab9354c40d5f68#3.🇰🇷 GeminiRoute
+vmess://eyJhZGQiOiIxMjkuMTU0LjYxLjE5NiIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJhOTE1YjFkNi1jZjI4LTRkYzgtZTRiNC1lMDljNDhjMzdlYzAiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicGNzIjoiIiwicG9ydCI6IjgwMCIsInBzIjoiNC7wn4ew8J+HtyBHZW1pbmlSb3V0ZSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoiIiwidiI6IjIiLCJ2Y24iOiIifQ==
